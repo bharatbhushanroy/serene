@@ -5,7 +5,7 @@ import { ArrowRight, Star, Sparkles } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <section className="relative w-full min-h-[calc(100vh-80px)] flex items-center justify-center py-16 px-6 md:px-12 lg:px-24 overflow-hidden hero-background">
+    <section className="relative w-full min-h-[calc(100vh-80px)] flex items-center justify-center py-16 px-6 md:px-12 lg:px-24 overflow-hidden"> {/* Removed hero-background here */}
       {/* Background dots/pattern - simplified with a placeholder image for now */}
       <div className="absolute inset-0 opacity-20 z-0">
         {/* This could be a more complex SVG pattern or a background image */}

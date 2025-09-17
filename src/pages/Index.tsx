@@ -4,18 +4,19 @@ import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import Footer from "@/components/Footer"; // Import the new Footer component
+import Footer from "@/components/Footer";
+import InstantLoansSection from "@/components/InstantLoansSection"; // Import the new section
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-qicky-dark text-qicky-text">
+    <div className="min-h-screen bg-qicky-dark text-qicky-text hero-background"> {/* Applied hero-background here */}
       <Header />
       <HeroSection />
+      <InstantLoansSection /> {/* Added the new section here */}
       <FeaturesSection />
       <HowItWorksSection />
       <TestimonialsSection />
-      {/* Other sections will be added here */}
-      <Footer /> {/* Add the Footer component here */}
+      <Footer />
       <MadeWithDyad />
     </div>
   );
