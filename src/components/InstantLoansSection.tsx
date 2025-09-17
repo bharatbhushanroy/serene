@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Clock, FileText, Download, CreditCard } from 'lucide-react';
+import { ArrowRight, Clock, FileText, Download, CreditCard, Star } from 'lucide-react';
 
 const InstantLoansSection = () => {
   return (
