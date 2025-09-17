@@ -3,16 +3,15 @@ import { Button } from '@/components/ui/button';
 import HeroCarousel from './HeroCarousel';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import AnimatedBackgroundShapes from './AnimatedBackgroundShapes'; // Import the new component
 
 const HeroSection = () => {
   const [showCookieBanner, setShowCookieBanner] = useState(true);
 
   return (
     <section className="relative w-full min-h-[calc(100vh-80px)] flex items-center justify-center py-16 px-6 md:px-12 lg:px-24 overflow-hidden">
-      {/* Background dots/pattern - simplified with a placeholder image for now */}
-      <div className="absolute inset-0 opacity-20 z-0">
-        {/* This could be a more complex SVG pattern or a background image */}
-      </div>
+      {/* Animated Background Shapes */}
+      <AnimatedBackgroundShapes />
 
       <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between w-full max-w-7xl gap-12">
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-2xl">
