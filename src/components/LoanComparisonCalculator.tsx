@@ -233,7 +233,7 @@ const LoanComparisonCalculator = () => {
                   {formatCurrency(loanBResults?.emi)}
                 </span>
               </div>
-              {loanAResults?.emi !== null && loanBResults?.emi !== null && (
+              {loanAResults && loanBResults && loanAResults.emi !== null && loanBResults.emi !== null && (
                 <p className="text-xs text-qicky-textmuted">
                   Difference: <span className={getDifferenceColor(loanAResults.emi - loanBResults.emi)}>
                     {formatCurrency(Math.abs(loanAResults.emi - loanBResults.emi))}
@@ -253,7 +253,7 @@ const LoanComparisonCalculator = () => {
                   {formatCurrency(loanBResults?.totalInterest)}
                 </span>
               </div>
-              {loanAResults?.totalInterest !== null && loanBResults?.totalInterest !== null && (
+              {loanAResults && loanBResults && loanAResults.totalInterest !== null && loanBResults.totalInterest !== null && (
                 <p className="text-xs text-qicky-textmuted">
                   Difference: <span className={getDifferenceColor(loanAResults.totalInterest - loanBResults.totalInterest)}>
                     {formatCurrency(Math.abs(loanAResults.totalInterest - loanBResults.totalInterest))}
@@ -273,7 +273,7 @@ const LoanComparisonCalculator = () => {
                   {formatCurrency(loanBResults?.totalPayable)}
                 </span>
               </div>
-              {loanAResults?.totalPayable !== null && loanBResults?.totalPayable !== null && (
+              {loanAResults && loanBResults && loanAResults.totalPayable !== null && loanBResults.totalPayable !== null && (
                 <p className="text-xs text-qicky-textmuted">
                   Difference: <span className={getDifferenceColor(loanAResults.totalPayable - loanBResults.totalPayable)}>
                     {formatCurrency(Math.abs(loanAResults.totalPayable - loanBResults.totalPayable))}
