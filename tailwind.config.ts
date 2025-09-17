@@ -19,7 +19,7 @@ export default {
     },
     extend: {
       boxShadow: {
-        'glow-orange': '0 0 20px 0 rgba(249, 115, 22, 0.6)',
+        'glow-purple': '0 0 20px 0 rgba(125, 60, 255, 0.6)',
       },
       colors: {
         border: "hsl(var(--border))",
@@ -65,15 +65,19 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Custom colors for modern fintech theme
-        brand: {
-          dark: "#101010",
-          orange: "#F97316",
-          "light-orange": "#FBBF24",
-          text: "#F5F5F5",
-          "text-muted": "#A3A3A3",
-          border: "#262626",
-        },
+        qicky: {
+          dark: '#0F172A',
+          blue: '#3B82F6',
+          purple: '#7d3cff',
+          orange: '#ff3a22',
+          green: '#59ce8f',
+          text: '#F8FAFC',
+          textmuted: '#94A3B8',
+          border: '#334155',
+          card: '#1E293B',
+          lightblue: '#7DD3FC',
+          deepblue: '#1561ad',
+        }
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -103,8 +107,8 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       backgroundImage: {
-        'gradient-button-primary': 'linear-gradient(90deg, #F97316 0%, #FBBF24 100%)',
-        'gradient-dark-card': 'linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%)',
+        'gradient-button-primary': 'linear-gradient(90deg, #7d3cff 0%, #3B82F6 100%)',
+        'gradient-dark-card': 'linear-gradient(180deg, rgba(51, 65, 85, 0.5) 0%, rgba(30, 41, 59, 0.5) 100%)',
       }
     },
   },
