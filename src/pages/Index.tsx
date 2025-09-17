@@ -5,14 +5,18 @@ import FeaturesSection from "@/components/FeaturesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
-import InstantLoansSection from "@/components/InstantLoansSection"; // Import the new section
+import InstantLoansSection from "@/components/InstantLoansSection";
+import AdvanceLoanSimulator from "@/components/AdvanceLoanSimulator"; // Import the new simulator
+import LoanComparisonCalculator from "@/components/LoanComparisonCalculator"; // Import the new calculator
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-qicky-dark text-qicky-text hero-background"> {/* Applied hero-background here */}
+    <div className="min-h-screen bg-qicky-dark text-qicky-text hero-background">
       <Header />
       <HeroSection />
-      <InstantLoansSection /> {/* Added the new section here */}
+      <InstantLoansSection />
+      <AdvanceLoanSimulator /> {/* Added the new simulator here */}
+      <LoanComparisonCalculator /> {/* Added the new calculator here */}
       <FeaturesSection />
       <HowItWorksSection />
       <TestimonialsSection />
