@@ -148,7 +148,8 @@ const LoanComparisonCalculator = () => {
           </Button>
         </div>
 
-        {(loanAResults?.emi !== null || loanBResults?.emi !== null) && (
+        {/* Only render results if at least one loan has valid EMI results */}
+        {((loanAResults && loanAResults.emi !== null) || (loanBResults && loanBResults.emi !== null)) && (
           <div className="mt-12 max-w-4xl mx-auto">
             <h3 className="text-3xl font-bold text-qicky-text mb-6 text-center">Comparison Results</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -161,19 +162,19 @@ const LoanComparisonCalculator = () => {
                   <div className="flex justify-between items-center border-b border-qicky-blue/30 pb-2">
                     <p className="text-qicky-textmuted">Monthly EMI:</p>
                     <p className="font-bold text-lg">
-                      {loanAResults?.emi !== null ? `₹ ${loanAResults.emi.toFixed(2)}` : 'N/A'}
+                      {loanAResults?.emi !== null ? `₹ ${loanAResults.emi?.toFixed(2)}` : 'N/A'}
                     </p>
                   </div>
                   <div className="flex justify-between items-center border-b border-qicky-blue/30 pb-2">
                     <p className="text-qicky-textmuted">Total Interest Payable:</p>
                     <p className="font-bold text-lg">
-                      {loanAResults?.totalInterest !== null ? `₹ ${loanAResults.totalInterest.toFixed(2)}` : 'N/A'}
+                      {loanAResults?.totalInterest !== null ? `₹ ${loanAResults.totalInterest?.toFixed(2)}` : 'N/A'}
                     </p>
                   </div>
                   <div className="flex justify-between items-center">
                     <p className="text-qicky-textmuted">Total Payable Amount:</p>
                     <p className="font-bold text-lg">
-                      {loanAResults?.totalPayable !== null ? `₹ ${loanAResults.totalPayable.toFixed(2)}` : 'N/A'}
+                      {loanAResults?.totalPayable !== null ? `₹ ${loanAResults.totalPayable?.toFixed(2)}` : 'N/A'}
                     </p>
                   </div>
                 </CardContent>
@@ -188,19 +189,19 @@ const LoanComparisonCalculator = () => {
                   <div className="flex justify-between items-center border-b border-qicky-blue/30 pb-2">
                     <p className="text-qicky-textmuted">Monthly EMI:</p>
                     <p className="font-bold text-lg">
-                      {loanBResults?.emi !== null ? `₹ ${loanBResults.emi.toFixed(2)}` : 'N/A'}
+                      {loanBResults?.emi !== null ? `₹ ${loanBResults.emi?.toFixed(2)}` : 'N/A'}
                     </p>
                   </div>
                   <div className="flex justify-between items-center border-b border-qicky-blue/30 pb-2">
                     <p className="text-qicky-textmuted">Total Interest Payable:</p>
                     <p className="font-bold text-lg">
-                      {loanBResults?.totalInterest !== null ? `₹ ${loanBResults.totalInterest.toFixed(2)}` : 'N/A'}
+                      {loanBResults?.totalInterest !== null ? `₹ ${loanBResults.totalInterest?.toFixed(2)}` : 'N/A'}
                     </p>
                   </div>
                   <div className="flex justify-between items-center">
                     <p className="text-qicky-textmuted">Total Payable Amount:</p>
                     <p className="font-bold text-lg">
-                      {loanBResults?.totalPayable !== null ? `₹ ${loanBResults.totalPayable.toFixed(2)}` : 'N/A'}
+                      {loanBResults?.totalPayable !== null ? `₹ ${loanBResults.totalPayable?.toFixed(2)}` : 'N/A'}
                     </p>
                   </div>
                 </CardContent>
