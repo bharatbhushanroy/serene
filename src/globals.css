@@ -96,6 +96,15 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    /* Using a custom dark background for the Qicky theme */
+    @apply bg-qicky-dark text-qicky-text;
   }
+}
+
+/* Custom background for the hero section with dots */
+.hero-background {
+  background-image: url('/public/placeholder.svg'), linear-gradient(180deg, #0A0A2A 0%, #1A0A3A 100%);
+  background-size: cover, cover; /* Adjust as needed */
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
 }
