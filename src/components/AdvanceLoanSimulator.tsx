@@ -49,47 +49,47 @@ const AdvanceLoanSimulator = () => {
   };
 
   return (
-    <section className="relative z-10 w-full py-20 px-6 md:px-12 lg:px-24 text-qicky-text">
+    <section className="relative z-10 w-full py-20 px-6 md:px-12 lg:px-24 text-fintech-text-dark">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-12 text-center">
-          Advance <span className="bg-gradient-to-r from-qicky-purple to-qicky-blue text-transparent bg-clip-text">Loan Simulator</span>
+          Advance <span className="bg-gradient-to-r from-fintech-blue-accent to-fintech-blue-soft text-transparent bg-clip-text">Loan Simulator</span>
         </h2>
-        <Card className="bg-gradient-dark-card border border-qicky-border p-6 rounded-xl shadow-lg max-w-2xl mx-auto">
+        <Card className="bg-gradient-card-light border border-fintech-border-light p-6 rounded-xl shadow-lg max-w-2xl mx-auto">
           <CardHeader>
-            <CardTitle className="text-2xl font-bold text-qicky-text mb-4">Calculate Your EMI</CardTitle>
+            <CardTitle className="text-2xl font-bold text-fintech-text-dark mb-4">Calculate Your EMI</CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
             <div>
-              <Label htmlFor="loanAmount" className="text-qicky-textmuted mb-2 block">Loan Amount (₹)</Label>
+              <Label htmlFor="loanAmount" className="text-fintech-text-muted mb-2 block">Loan Amount (₹)</Label>
               <Input
                 id="loanAmount"
                 type="number"
                 placeholder="e.g., 500000"
                 value={loanAmount}
                 onChange={(e) => setLoanAmount(e.target.value)}
-                className="bg-qicky-dark border-qicky-border text-qicky-text focus:border-qicky-purple"
+                className="bg-fintech-background-offwhite border-fintech-border-light text-fintech-text-dark focus:border-fintech-blue-accent"
               />
             </div>
             <div>
-              <Label htmlFor="interestRate" className="text-qicky-textmuted mb-2 block">Annual Interest Rate (%)</Label>
+              <Label htmlFor="interestRate" className="text-fintech-text-muted mb-2 block">Annual Interest Rate (%)</Label>
               <Input
                 id="interestRate"
                 type="number"
                 placeholder="e.g., 10"
                 value={interestRate}
                 onChange={(e) => setInterestRate(e.target.value)}
-                className="bg-qicky-dark border-qicky-border text-qicky-text focus:border-qicky-purple"
+                className="bg-fintech-background-offwhite border-fintech-border-light text-fintech-text-dark focus:border-fintech-blue-accent"
               />
             </div>
             <div>
-              <Label htmlFor="loanTenure" className="text-qicky-textmuted mb-2 block">Loan Tenure (Years)</Label>
+              <Label htmlFor="loanTenure" className="text-fintech-text-muted mb-2 block">Loan Tenure (Years)</Label>
               <Input
                 id="loanTenure"
                 type="number"
                 placeholder="e.g., 5"
                 value={loanTenure}
                 onChange={(e) => setLoanTenure(e.target.value)}
-                className="bg-qicky-dark border-qicky-border text-qicky-text focus:border-qicky-purple"
+                className="bg-fintech-background-offwhite border-fintech-border-light text-fintech-text-dark focus:border-fintech-blue-accent"
               />
             </div>
             <Button
@@ -100,18 +100,18 @@ const AdvanceLoanSimulator = () => {
             </Button>
 
             {emi !== null && (
-              <div className="mt-8 space-y-4 text-qicky-text">
+              <div className="mt-8 space-y-4 text-fintech-text-dark">
                 <h3 className="text-xl font-bold">Calculation Results:</h3>
-                <div className="flex justify-between items-center border-b border-qicky-border pb-2">
-                  <p className="text-qicky-textmuted">Monthly EMI:</p>
+                <div className="flex justify-between items-center border-b border-fintech-border-light pb-2">
+                  <p className="text-fintech-text-muted">Monthly EMI:</p>
                   <p className="font-bold text-lg">₹ {emi.toFixed(2)}</p>
                 </div>
-                <div className="flex justify-between items-center border-b border-qicky-border pb-2">
-                  <p className="text-qicky-textmuted">Total Interest Payable:</p>
+                <div className="flex justify-between items-center border-b border-fintech-border-light pb-2">
+                  <p className="text-fintech-text-muted">Total Interest Payable:</p>
                   <p className="font-bold text-lg">₹ {totalInterest?.toFixed(2)}</p>
                 </div>
                 <div className="flex justify-between items-center">
-                  <p className="text-qicky-textmuted">Total Payable Amount:</p>
+                  <p className="text-fintech-text-muted">Total Payable Amount:</p>
                   <p className="font-bold text-lg">₹ {totalPayable?.toFixed(2)}</p>
                 </div>
               </div>

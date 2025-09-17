@@ -6,8 +6,8 @@ import { CheckCircle, ShieldCheck } from 'lucide-react';
 
 const QickyLogo = () => (
   <div className="flex items-center space-x-2">
-    <ShieldCheck className="w-8 h-8 text-qicky-purple" />
-    <span className="text-2xl font-bold text-white">Qicky</span>
+    <ShieldCheck className="w-8 h-8 text-fintech-blue-accent" />
+    <span className="text-2xl font-bold text-fintech-text-dark">Qicky</span>
   </div>
 );
 
@@ -18,7 +18,7 @@ const LoanApprovedMockup = () => {
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, amount: 0.5 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
-      className="relative z-10 w-full max-w-xs mx-auto bg-qicky-card/50 backdrop-blur-lg border border-qicky-border/50 rounded-3xl p-6 shadow-2xl shadow-qicky-purple/20"
+      className="relative z-10 w-full max-w-xs mx-auto bg-fintech-card-light/80 backdrop-blur-lg border border-fintech-border-light rounded-3xl p-6 shadow-2xl shadow-fintech-blue-accent/20"
     >
       <div className="flex flex-col items-center text-center">
         <QickyLogo />
@@ -29,13 +29,13 @@ const LoanApprovedMockup = () => {
           transition={{ duration: 0.5, delay: 0.5, type: 'spring', stiffness: 150 }}
           className="mt-8 mb-4"
         >
-          <CheckCircle className="w-20 h-20 text-qicky-green" />
+          <CheckCircle className="w-20 h-20 text-fintech-green-success" />
         </motion.div>
-        <h2 className="text-2xl font-semibold text-white">Loan Approved!</h2>
-        <p className="text-gray-300 mt-2">Your funds are on the way</p>
-        <div className="mt-8 w-full bg-qicky-dark/50 rounded-xl p-4">
-          <p className="text-sm text-gray-400">Amount</p>
-          <p className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-teal-300 to-blue-400 mt-1">
+        <h2 className="text-2xl font-semibold text-fintech-text-dark">Loan Approved!</h2>
+        <p className="text-fintech-text-muted mt-2">Your funds are on the way</p>
+        <div className="mt-8 w-full bg-fintech-background-offwhite rounded-xl p-4">
+          <p className="text-sm text-fintech-text-muted">Amount</p>
+          <p className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-fintech-green-success via-fintech-cyan-light to-fintech-blue-soft mt-1">
             $5,000
           </p>
         </div>

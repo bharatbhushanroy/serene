@@ -19,7 +19,7 @@ export default {
     },
     extend: {
       boxShadow: {
-        'glow-purple': '0 0 20px 0 rgba(125, 60, 255, 0.6)',
+        'glow-blue': '0 0 20px 0 rgba(59, 130, 246, 0.3)', // Soft blue glow
       },
       colors: {
         border: "hsl(var(--border))",
@@ -65,18 +65,18 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        qicky: {
-          dark: '#0F172A',
-          blue: '#3B82F6',
-          purple: '#7d3cff',
-          orange: '#ff3a22',
-          green: '#59ce8f',
-          text: '#F8FAFC',
-          textmuted: '#94A3B8',
-          border: '#334155',
-          card: '#1E293B',
-          lightblue: '#7DD3FC',
-          deepblue: '#1561ad',
+        // New custom colors for the light, modern fintech theme
+        fintech: {
+          'background-light': '#FFFFFF', // Main background
+          'background-offwhite': '#F9FAFB', // Slightly off-white for subtle contrast
+          'text-dark': '#1F2937', // Dark grey for main text
+          'text-muted': '#6B7280', // Muted grey for secondary text
+          'blue-soft': '#BFDBFE', // Soft blue for highlights
+          'blue-accent': '#3B82F6', // Bold blue for CTAs and primary elements
+          'cyan-light': '#A7F3D0', // Light cyan for subtle accents/imagery
+          'green-success': '#10B981', // Green for success states
+          'border-light': '#E5E7EB', // Light grey for borders
+          'card-light': '#FFFFFF', // Card background
         }
       },
       borderRadius: {
@@ -107,8 +107,8 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       backgroundImage: {
-        'gradient-button-primary': 'linear-gradient(90deg, #7d3cff 0%, #3B82F6 100%)',
-        'gradient-dark-card': 'linear-gradient(180deg, rgba(51, 65, 85, 0.5) 0%, rgba(30, 41, 59, 0.5) 100%)',
+        'gradient-button-primary': 'linear-gradient(90deg, #3B82F6 0%, #60A5FA 100%)', // Blue gradient for primary buttons
+        'gradient-card-light': 'linear-gradient(180deg, #FFFFFF 0%, #F9FAFB 100%)', // Subtle gradient for cards
       }
     },
   },

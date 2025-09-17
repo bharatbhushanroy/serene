@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 
 interface CircularProgressBarProps {
   percentage: number;
-  progressClassName: string; // e.g., 'stroke-qicky-purple'
+  progressClassName: string; // e.g., 'stroke-fintech-blue-accent'
   size?: number;
   strokeWidth?: number;
 }
@@ -22,7 +22,7 @@ const CircularProgressBar: React.FC<CircularProgressBarProps> = ({
     <svg width={size} height={size} className="transform -rotate-90">
       {/* Background circle */}
       <circle
-        stroke="#334155" // Using the new border color
+        stroke="#E5E7EB" // Using the new border color
         fill="transparent"
         strokeWidth={strokeWidth}
         r={radius}

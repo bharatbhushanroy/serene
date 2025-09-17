@@ -6,32 +6,32 @@ import { ChevronDown } from 'lucide-react';
 
 const Header = () => {
   return (
-    <header className="sticky top-0 z-50 w-full bg-qicky-dark/80 backdrop-blur-sm py-4 px-6 md:px-12 lg:px-24 flex items-center justify-between border-b border-qicky-border">
+    <header className="sticky top-0 z-50 w-full bg-fintech-background-light/80 backdrop-blur-sm py-4 px-6 md:px-12 lg:px-24 flex items-center justify-between border-b border-fintech-border-light">
       <div className="flex items-center">
         <Link to="/" className="flex items-center space-x-2">
           <img src="/public/favicon.ico" alt="Qicky Logo" className="h-8 w-8" />
-          <span className="text-2xl font-bold text-qicky-text">Qicky</span>
+          <span className="text-2xl font-bold text-fintech-text-dark">Qicky</span>
         </Link>
       </div>
       <nav className="hidden lg:flex items-center space-x-8">
-        <Link to="/" className="text-qicky-textmuted hover:text-qicky-text transition-colors">Home</Link>
-        <Link to="/about" className="text-qicky-textmuted hover:text-qicky-text transition-colors">About Us</Link>
-        <Link to="/blog" className="text-qicky-textmuted hover:text-qicky-text transition-colors">Blog</Link>
+        <Link to="/" className="text-fintech-text-muted hover:text-fintech-text-dark transition-colors">Home</Link>
+        <Link to="/about" className="text-fintech-text-muted hover:text-fintech-text-dark transition-colors">About Us</Link>
+        <Link to="/blog" className="text-fintech-text-muted hover:text-fintech-text-dark transition-colors">Blog</Link>
         <DropdownMenu>
-          <DropdownMenuTrigger className="flex items-center text-qicky-textmuted hover:text-qicky-text transition-colors focus:outline-none">
+          <DropdownMenuTrigger className="flex items-center text-fintech-text-muted hover:text-fintech-text-dark transition-colors focus:outline-none">
             Tools & Resources <ChevronDown className="ml-1 h-4 w-4" />
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="bg-qicky-dark border-qicky-purple text-qicky-text">
-            <Link to="/loan-calculator"><DropdownMenuItem className="hover:bg-qicky-purple/20">Loan Calculator</DropdownMenuItem></Link>
-            <Link to="/faqs"><DropdownMenuItem className="hover:bg-qicky-purple/20">FAQs</DropdownMenuItem></Link>
-            <Link to="/blog"><DropdownMenuItem className="hover:bg-qicky-purple/20">Blog Posts</DropdownMenuItem></Link>
+          <DropdownMenuContent className="bg-fintech-card-light border-fintech-blue-accent text-fintech-text-dark">
+            <Link to="/loan-calculator"><DropdownMenuItem className="hover:bg-fintech-blue-soft/20">Loan Calculator</DropdownMenuItem></Link>
+            <Link to="/faqs"><DropdownMenuItem className="hover:bg-fintech-blue-soft/20">FAQs</DropdownMenuItem></Link>
+            <Link to="/blog"><DropdownMenuItem className="hover:bg-fintech-blue-soft/20">Blog Posts</DropdownMenuItem></Link>
           </DropdownMenuContent>
         </DropdownMenu>
-        <Link to="/contact" className="text-qicky-textmuted hover:text-qicky-text transition-colors">Contact Us</Link>
+        <Link to="/contact" className="text-fintech-text-muted hover:text-fintech-text-dark transition-colors">Contact Us</Link>
       </nav>
       <div className="hidden lg:flex items-center space-x-4">
-        <Link to="/apply-loan"><Button variant="ghost" className="text-qicky-textmuted hover:text-qicky-text hover:bg-qicky-purple/10">Apply Now</Button></Link>
-        <Link to="/login"><Button variant="ghost" className="text-qicky-textmuted hover:text-qicky-text hover:bg-qicky-purple/10">Login</Button></Link>
+        <Link to="/apply-loan"><Button variant="ghost" className="text-fintech-text-muted hover:text-fintech-text-dark hover:bg-fintech-blue-soft/10">Apply Now</Button></Link>
+        <Link to="/login"><Button variant="ghost" className="text-fintech-text-muted hover:text-fintech-text-dark hover:bg-fintech-blue-soft/10">Login</Button></Link>
         <Link to="/signup"><Button className="bg-gradient-button-primary text-white px-6 py-2 rounded-full hover:opacity-90 transition-opacity">Sign Up</Button></Link>
       </div>
       {/* Mobile menu toggle would go here */}
