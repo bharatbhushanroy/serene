@@ -1,11 +1,11 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
-import { ArrowRight, Star, Sparkles } from 'lucide-react';
+import HeroCarousel from './HeroCarousel'; // Import the new carousel component
+import { ArrowRight } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <section className="relative w-full min-h-[calc(100vh-80px)] flex items-center justify-center py-16 px-6 md:px-12 lg:px-24 overflow-hidden"> {/* Removed hero-background here */}
+    <section className="relative w-full min-h-[calc(100vh-80px)] flex items-center justify-center py-16 px-6 md:px-12 lg:px-24 overflow-hidden">
       {/* Background dots/pattern - simplified with a placeholder image for now */}
       <div className="absolute inset-0 opacity-20 z-0">
         {/* This could be a more complex SVG pattern or a background image */}
@@ -36,30 +36,8 @@ const HeroSection = () => {
           </div>
         </div>
 
-        <Card className="w-full max-w-md bg-gradient-dark-card border border-qicky-blue/30 rounded-xl p-6 shadow-lg">
-          <div className="flex items-center mb-4">
-            <Sparkles className="h-6 w-6 text-qicky-lightblue mr-3" />
-            <h3 className="text-xl font-semibold text-qicky-text">Competitive Rates</h3>
-          </div>
-          <p className="text-qicky-textmuted mb-6">Starting at just 9.99% per annum</p>
-          {/* Placeholder for carousel/slider indicators and navigation */}
-          <div className="flex items-center justify-between mt-8">
-            <div className="flex space-x-2">
-              <span className="h-2 w-2 rounded-full bg-qicky-blue"></span>
-              <span className="h-2 w-2 rounded-full bg-qicky-textmuted opacity-50"></span>
-              <span className="h-2 w-2 rounded-full bg-qicky-textmuted opacity-50"></span>
-              <span className="h-2 w-2 rounded-full bg-qicky-textmuted opacity-50"></span>
-            </div>
-            <div className="flex space-x-2">
-              <Button variant="ghost" size="icon" className="text-qicky-textmuted hover:bg-qicky-blue/20 rounded-full">
-                <ArrowRight className="h-5 w-5 rotate-180" />
-              </Button>
-              <Button variant="ghost" size="icon" className="text-qicky-textmuted hover:bg-qicky-blue/20 rounded-full">
-                <ArrowRight className="h-5 w-5" />
-              </Button>
-            </div>
-          </div>
-        </Card>
+        {/* Integrated HeroCarousel here */}
+        <HeroCarousel />
       </div>
 
       {/* Cookie Consent Banner - as seen in screenshot */}
