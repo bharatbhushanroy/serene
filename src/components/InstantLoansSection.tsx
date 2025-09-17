@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Clock, FileText, Download, CreditCard, Star } from 'lucide-react';
+import { ArrowRight, Clock, FileText, Download, CreditCard, CheckCircle } from 'lucide-react';
 
 const features = [
   { icon: CreditCard, text: "Instant Personal loans up to ₹5,00,000", highlight: "" },
@@ -39,25 +39,31 @@ const InstantLoansSection = () => {
           </div>
         </div>
 
-        {/* Right side: Image */}
+        {/* Right side: Image with UI elements */}
         <div className="w-full lg:w-1/2 flex justify-center lg:justify-end mt-12 lg:mt-0">
           <div className="relative w-full max-w-sm">
             <div className="absolute -inset-2 bg-gradient-to-br from-qicky-purple to-qicky-blue rounded-3xl opacity-30 blur-2xl"></div>
-            <div className="relative w-full max-w-sm aspect-[9/16] rounded-3xl overflow-hidden bg-gradient-dark-card border border-qicky-blue/30 shadow-2xl">
+            <div className="relative w-full max-w-sm aspect-[9/16] rounded-3xl overflow-hidden bg-gradient-dark-card border border-qicky-blue/30 shadow-2xl flex flex-col justify-end">
               <img
                 src="https://images.unsplash.com/photo-1631501541333-a0a90e3aa5c3?q=80&w=1964&auto=format&fit=crop"
                 alt="Instant loans simplified on mobile"
                 className="absolute inset-0 w-full h-full object-cover opacity-80"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-qicky-dark/80 to-transparent"></div>
-              <div className="absolute top-6 left-0 right-0 text-center text-qicky-text p-4">
-                <h3 className="text-2xl font-bold mb-2 drop-shadow-lg">Qicky</h3>
-                <div className="flex justify-center mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current mx-0.5 drop-shadow-md" />
-                  ))}
+              
+              {/* Bottom part - The new UI element */}
+              <div className="relative z-10 p-4">
+                <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 text-white">
+                  <div className="flex items-center mb-3">
+                    <CheckCircle className="h-6 w-6 text-green-400 mr-3" />
+                    <h4 className="text-lg font-semibold">Your Loan is Approved!</h4>
+                  </div>
+                  <p className="text-sm text-white/80 mb-1">Loan Amount</p>
+                  <p className="text-4xl font-bold mb-4">₹2,50,000</p>
+                  <button className="w-full bg-gradient-button-primary text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition-opacity flex items-center justify-center group">
+                    Accept & Continue <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </button>
                 </div>
-                <p className="text-xl font-semibold italic drop-shadow-lg">"Instant loans, Simplified."</p>
               </div>
             </div>
           </div>
