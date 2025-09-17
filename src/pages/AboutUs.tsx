@@ -45,9 +45,9 @@ const AboutUs = () => {
           </div>
           <div className="flex items-center justify-center">
             <img
-              src="/public/placeholder.svg" // Placeholder image for About Us section
-              alt="About Us"
-              className="w-full max-w-lg rounded-xl shadow-2xl border border-qicky-blue/30"
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop"
+              alt="Our team working together"
+              className="w-full max-w-lg rounded-xl shadow-2xl border border-qicky-blue/30 object-cover aspect-square"
             />
           </div>
         </div>

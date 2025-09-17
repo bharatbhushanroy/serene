@@ -13,7 +13,7 @@ const blogPosts = [
     date: "October 26, 2023",
     category: "Personal Finance",
     excerpt: "Personal loans can be a great financial tool if used wisely. This guide covers the basics, benefits, and how to apply.",
-    imageUrl: "/public/placeholder.svg", // Placeholder image
+    imageUrl: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?q=80&w=2070&auto=format&fit=crop",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const blogPosts = [
     date: "September 15, 2023",
     category: "Credit Management",
     excerpt: "A good credit score opens doors to better loan rates. Here are five actionable tips to boost your score.",
-    imageUrl: "/public/placeholder.svg", // Placeholder image
+    imageUrl: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?q=80&w=1974&auto=format&fit=crop",
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const blogPosts = [
     date: "August 01, 2023",
     category: "Fintech",
     excerpt: "Explore the exciting innovations shaping the digital lending landscape and how they benefit consumers.",
-    imageUrl: "/public/placeholder.svg", // Placeholder image
+    imageUrl: "https://images.unsplash.com/photo-1639754503286-51539a72708c?q=80&w=2070&auto=format&fit=crop",
   },
 ];
 

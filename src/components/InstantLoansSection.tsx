@@ -45,7 +45,7 @@ const InstantLoansSection = () => {
             <div className="absolute -inset-2 bg-gradient-to-br from-qicky-purple to-qicky-blue rounded-3xl opacity-30 blur-2xl"></div>
             <div className="relative w-full max-w-sm aspect-[9/16] rounded-3xl overflow-hidden bg-gradient-dark-card border border-qicky-blue/30 shadow-2xl">
               <img
-                src="/public/placeholder.svg"
+                src="https://images.unsplash.com/photo-1614098512494-a69502c35f29?q=80&w=1964&auto=format&fit=crop"
                 alt="Instant loans simplified on mobile"
                 className="absolute inset-0 w-full h-full object-cover opacity-80"
               />
