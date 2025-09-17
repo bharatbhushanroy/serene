@@ -1,7 +1,8 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import HeroCarousel from './HeroCarousel'; // Import the new carousel component
+import HeroCarousel from './HeroCarousel';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom'; // Import Link
 
 const HeroSection = () => {
   return (
@@ -27,9 +28,11 @@ const HeroSection = () => {
             Get instant access to personal loans with flexible repayment options, competitive interest rates, and a seamless digital experience.
           </p>
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-            <Button className="bg-gradient-button-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity group">
-              Apply Now <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            <Link to="/apply-loan"> {/* Link the button to the ApplyLoanPage */}
+              <Button className="bg-gradient-button-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity group">
+                Apply Now <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
             <Button variant="outline" className="bg-transparent border-qicky-textmuted text-qicky-text px-8 py-3 rounded-full text-lg font-semibold hover:bg-qicky-blue/20 transition-colors">
               Learn More
             </Button>

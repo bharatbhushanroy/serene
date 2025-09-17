@@ -10,7 +10,10 @@ import Blog from "./pages/Blog";
 import ContactUs from "./pages/ContactUs";
 import FAQs from "./pages/FAQs";
 import LoanCalculatorPage from "./pages/LoanCalculatorPage";
-import PrivacyPolicy from "./pages/PrivacyPolicy"; // Import the new PrivacyPolicy page
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import LoginPage from "./pages/LoginPage"; // Import the new LoginPage
+import SignupPage from "./pages/SignupPage"; // Import the new SignupPage
+import ApplyLoanPage from "./pages/ApplyLoanPage"; // Import the new ApplyLoanPage
 
 const queryClient = new QueryClient();
 
@@ -27,7 +30,10 @@ const App = () => (
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/faqs" element={<FAQs />} />
           <Route path="/loan-calculator" element={<LoanCalculatorPage />} />
-          <Route path="/privacy" element={<PrivacyPolicy />} /> {/* Add the Privacy Policy route */}
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/login" element={<LoginPage />} /> {/* Add the Login route */}
+          <Route path="/signup" element={<SignupPage />} /> {/* Add the Signup route */}
+          <Route path="/apply-loan" element={<ApplyLoanPage />} /> {/* Add the Apply Loan route */}
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -22,7 +22,7 @@ const Header = () => {
             Tools & Resources <ChevronDown className="ml-1 h-4 w-4" />
           </DropdownMenuTrigger>
           <DropdownMenuContent className="bg-qicky-dark border-qicky-blue text-qicky-text">
-            <Link to="/loan-calculator"><DropdownMenuItem className="hover:bg-qicky-blue/20">Loan Calculator</DropdownMenuItem></Link> {/* Updated link */}
+            <Link to="/loan-calculator"><DropdownMenuItem className="hover:bg-qicky-blue/20">Loan Calculator</DropdownMenuItem></Link>
             <Link to="/faqs"><DropdownMenuItem className="hover:bg-qicky-blue/20">FAQs</DropdownMenuItem></Link>
             <Link to="/blog"><DropdownMenuItem className="hover:bg-qicky-blue/20">Blog Posts</DropdownMenuItem></Link>
           </DropdownMenuContent>
@@ -30,9 +30,9 @@ const Header = () => {
         <Link to="/contact" className="text-qicky-textmuted hover:text-qicky-text transition-colors">Contact Us</Link>
       </nav>
       <div className="hidden lg:flex items-center space-x-4">
-        <Button variant="ghost" className="text-qicky-textmuted hover:text-qicky-text hover:bg-qicky-blue/20">Apply Now</Button>
-        <Button variant="ghost" className="text-qicky-textmuted hover:text-qicky-text hover:bg-qicky-blue/20">Login</Button>
-        <Button className="bg-gradient-to-r from-qicky-purple to-qicky-blue text-white px-6 py-2 rounded-full hover:opacity-90 transition-opacity">Sign Up</Button>
+        <Link to="/apply-loan"><Button variant="ghost" className="text-qicky-textmuted hover:text-qicky-text hover:bg-qicky-blue/20">Apply Now</Button></Link>
+        <Link to="/login"><Button variant="ghost" className="text-qicky-textmuted hover:text-qicky-text hover:bg-qicky-blue/20">Login</Button></Link>
+        <Link to="/signup"><Button className="bg-gradient-to-r from-qicky-purple to-qicky-blue text-white px-6 py-2 rounded-full hover:opacity-90 transition-opacity">Sign Up</Button></Link>
       </div>
       {/* Mobile menu toggle would go here */}
     </header>
