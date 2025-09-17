@@ -57,8 +57,9 @@ const LoanComparisonCalculator = () => {
     setLoanBResults(resultsB);
   }, [loanAAmount, loanARate, loanATenure, loanBAmount, loanBRate, loanBTenure]);
 
-  const formatCurrency = (value: number | null) =>
-    value !== null ? `₹ ${value.toLocaleString('en-IN', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}` : 'N/A';
+  // Updated formatCurrency to handle undefined as well
+  const formatCurrency = (value: number | null | undefined) =>
+    (value !== null && value !== undefined) ? `₹ ${value.toLocaleString('en-IN', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}` : 'N/A';
 
   const getRateBadge = (rate: number) => {
     if (rate <= 8) return <span className="ml-2 px-2 py-1 rounded-full text-xs font-semibold bg-green-500 text-white">Excellent</span>;
