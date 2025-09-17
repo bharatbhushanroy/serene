@@ -14,6 +14,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import LoginPage from "./pages/LoginPage"; // Import the new LoginPage
 import SignupPage from "./pages/SignupPage"; // Import the new SignupPage
 import ApplyLoanPage from "./pages/ApplyLoanPage"; // Import the new ApplyLoanPage
+import AiChatbot from "./components/AiChatbot";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      <AiChatbot />
     </TooltipProvider>
   </QueryClientProvider>
 );
