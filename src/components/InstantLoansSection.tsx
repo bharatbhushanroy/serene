@@ -2,10 +2,13 @@ import React from 'react';
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
 import LoanApprovedMockup from './LoanApprovedMockup';
+import AnimatedBackgroundShapes from './AnimatedBackgroundShapes'; // Import the new component
 
 const InstantLoansSection = () => {
   return (
     <section className="relative bg-fintech-background-light text-fintech-text-dark py-20 sm:py-32 overflow-hidden">
+      {/* Animated Background Shapes */}
+      <AnimatedBackgroundShapes />
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
