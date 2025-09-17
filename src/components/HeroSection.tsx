@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import HeroCarousel from './HeroCarousel';
 import { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom'; // Import Link
+import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
+  const [showCookieBanner, setShowCookieBanner] = useState(true);
+
   return (
     <section className="relative w-full min-h-[calc(100vh-80px)] flex items-center justify-center py-16 px-6 md:px-12 lg:px-24 overflow-hidden">
       {/* Background dots/pattern - simplified with a placeholder image for now */}
@@ -33,9 +35,11 @@ const HeroSection = () => {
                 Apply Now <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
-            <Button variant="outline" className="bg-transparent border-qicky-textmuted text-qicky-text px-8 py-3 rounded-full text-lg font-semibold hover:bg-qicky-blue/20 transition-colors">
-              Learn More
-            </Button>
+            <Link to="/about">
+              <Button variant="outline" className="bg-transparent border-qicky-textmuted text-qicky-text px-8 py-3 rounded-full text-lg font-semibold hover:bg-qicky-blue/20 transition-colors">
+                Learn More
+              </Button>
+            </Link>
           </div>
         </div>
 
@@ -44,18 +48,20 @@ const HeroSection = () => {
       </div>
 
       {/* Cookie Consent Banner - as seen in screenshot */}
-      <div className="absolute bottom-0 left-0 right-0 bg-qicky-dark/90 backdrop-blur-sm p-4 flex flex-col md:flex-row items-center justify-between text-qicky-text text-sm border-t border-qicky-blue/30">
-        <div className="flex items-center mb-2 md:mb-0">
-          <span className="mr-2 text-qicky-lightblue">🍪</span>
-          <p>
-            We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.
-          </p>
+      {showCookieBanner && (
+        <div className="absolute bottom-0 left-0 right-0 bg-qicky-dark/90 backdrop-blur-sm p-4 flex flex-col md:flex-row items-center justify-between text-qicky-text text-sm border-t border-qicky-blue/30">
+          <div className="flex items-center mb-2 md:mb-0">
+            <span className="mr-2 text-qicky-lightblue">🍪</span>
+            <p>
+              We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.
+            </p>
+          </div>
+          <div className="flex space-x-2">
+            <Button variant="outline" className="border-qicky-textmuted text-qicky-text hover:bg-qicky-blue/20" onClick={() => setShowCookieBanner(false)}>Decline</Button>
+            <Button className="bg-gradient-button-primary text-white hover:opacity-90" onClick={() => setShowCookieBanner(false)}>Accept All</Button>
+          </div>
         </div>
-        <div className="flex space-x-2">
-          <Button variant="outline" className="border-qicky-textmuted text-qicky-text hover:bg-qicky-blue/20">Decline</Button>
-          <Button className="bg-gradient-button-primary text-white hover:opacity-90">Accept All</Button>
-        </div>
-      </div>
+      )}
     </section>
   );
 };

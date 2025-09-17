@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { ArrowRight, Sparkles, ShieldCheck, TrendingUp } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
 
 interface CarouselSlideProps {
   icon: React.ElementType;
@@ -20,9 +21,11 @@ const CarouselSlide: React.FC<CarouselSlideProps> = ({ icon: Icon, title, descri
     </div>
     <p className="text-qicky-textmuted mb-6">{description}</p>
     <div className="flex items-center justify-end mt-8">
-      <Button variant="ghost" className="text-qicky-textmuted hover:text-qicky-blue hover:bg-qicky-blue/20 transition-colors">
-        Learn More <ArrowRight className="ml-2 h-4 w-4" />
-      </Button>
+      <Link to="/about">
+        <Button variant="ghost" className="text-qicky-textmuted hover:text-qicky-blue hover:bg-qicky-blue/20 transition-colors">
+          Learn More <ArrowRight className="ml-2 h-4 w-4" />
+        </Button>
+      </Link>
     </div>
   </Card>
 );

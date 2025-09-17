@@ -3,7 +3,9 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { MadeWithDyad } from '@/components/made-with-dyad';
 import { Card } from '@/components/ui/card';
-import { Users, Lightbulb, Handshake } from 'lucide-react';
+import { Users, Lightbulb } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const AboutUs = () => {
   return (
@@ -57,9 +59,11 @@ const AboutUs = () => {
           <p className="text-lg text-qicky-textmuted mb-8 max-w-3xl mx-auto">
             Whether you're looking for a quick loan or a long-term financial partner, Qicky is here to support you every step of the way. Experience the future of lending today.
           </p>
-          <Button className="bg-gradient-button-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity">
-            Apply for a Loan
-          </Button>
+          <Link to="/apply-loan">
+            <Button className="bg-gradient-button-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity">
+              Apply for a Loan
+            </Button>
+          </Link>
         </div>
       </main>
       <Footer />
