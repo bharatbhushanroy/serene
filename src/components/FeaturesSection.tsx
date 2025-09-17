@@ -7,33 +7,33 @@ const features = [
     icon: Zap,
     title: "Instant Approvals",
     description: "Get your loan approved in minutes, not days. Our streamlined process ensures quick decisions.",
-    gradient: "from-qicky-purple to-qicky-blue",
-    shadow: "hover:shadow-glow-purple",
+    gradient: "from-brand-orange to-brand-light-orange",
+    shadow: "hover:shadow-glow-orange",
   },
   {
     icon: ShieldCheck,
     title: "Secure & Transparent",
     description: "Your data is safe with us. Enjoy complete transparency with no hidden fees or surprises.",
-    gradient: "from-qicky-pink to-qicky-lightpurple",
-    shadow: "hover:shadow-glow-pink",
+    gradient: "from-brand-orange to-brand-light-orange",
+    shadow: "hover:shadow-glow-orange",
   },
   {
     icon: TrendingUp,
     title: "Flexible Repayments",
     description: "Choose a repayment plan that fits your budget and lifestyle, with options to adjust as needed.",
-    gradient: "from-qicky-blue to-qicky-lightblue",
-    shadow: "hover:shadow-glow-blue",
+    gradient: "from-brand-orange to-brand-light-orange",
+    shadow: "hover:shadow-glow-orange",
   },
 ];
 
 const FeaturesSection = () => {
   return (
-    <section className="relative z-10 w-full py-20 px-6 md:px-12 lg:px-24 bg-qicky-dark text-qicky-text">
+    <section className="relative z-10 w-full py-20 px-6 md:px-12 lg:px-24 bg-brand-dark text-brand-text">
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
-          Why Choose <span className="bg-gradient-to-r from-qicky-purple to-qicky-blue text-transparent bg-clip-text">Qicky?</span>
+          Why Choose <span className="bg-gradient-to-r from-brand-orange to-brand-light-orange text-transparent bg-clip-text">Qicky?</span>
         </h2>
-        <p className="text-lg text-qicky-textmuted mb-12 max-w-3xl mx-auto">
+        <p className="text-lg text-brand-text-muted mb-12 max-w-3xl mx-auto">
           Experience a new era of financial freedom with Qicky. We offer unparalleled benefits designed to make your borrowing journey smooth and stress-free.
         </p>
 

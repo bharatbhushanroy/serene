@@ -96,9 +96,9 @@
   }
 
   body {
-    /* Using a custom dark background for the Qicky theme */
-    @apply bg-qicky-dark text-qicky-text;
-    background-image: radial-gradient(circle at 50% 0%, rgba(76, 81, 191, 0.2) 0%, transparent 40%),
+    /* Using a custom dark background for the new theme */
+    @apply bg-brand-dark text-brand-text;
+    background-image: radial-gradient(circle at 50% 0%, rgba(249, 115, 22, 0.1) 0%, transparent 40%),
                       radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
     background-size: 100% 100%, 15px 15px;
   }
@@ -107,7 +107,7 @@
 /* Custom background for the hero section with dots */
 .hero-background {
   background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.1) 1px, transparent 0),
-                    linear-gradient(180deg, #0A0A2A 0%, #1A0A3A 100%);
+                    linear-gradient(180deg, #101010 0%, #181818 100%);
   background-size: 15px 15px, cover; /* Smaller size for denser dots */
   background-position: center, center;
   background-repeat: repeat, no-repeat;

@@ -1,15 +1,16 @@
 import React from 'react';
+import { cn } from '@/lib/utils';
 
 interface CircularProgressBarProps {
   percentage: number;
-  color: string; // Tailwind class for color, e.g., 'text-qicky-blue'
+  progressClassName: string; // e.g., 'stroke-brand-orange'
   size?: number;
   strokeWidth?: number;
 }
 
 const CircularProgressBar: React.FC<CircularProgressBarProps> = ({
   percentage,
-  color,
+  progressClassName,
   size = 60,
   strokeWidth = 6,
 }) => {
@@ -21,7 +22,7 @@ const CircularProgressBar: React.FC<CircularProgressBarProps> = ({
     <svg width={size} height={size} className="transform -rotate-90">
       {/* Background circle */}
       <circle
-        stroke="#3B3B6B" // A darker shade for the background of the progress bar
+        stroke="#262626" // Using the new border color
         fill="transparent"
         strokeWidth={strokeWidth}
         r={radius}
@@ -30,7 +31,6 @@ const CircularProgressBar: React.FC<CircularProgressBarProps> = ({
       />
       {/* Progress circle */}
       <circle
-        stroke={color}
         fill="transparent"
         strokeWidth={strokeWidth}
         strokeDasharray={circumference + ' ' + circumference}
@@ -39,7 +39,7 @@ const CircularProgressBar: React.FC<CircularProgressBarProps> = ({
         r={radius}
         cx={size / 2}
         cy={size / 2}
-        className="transition-all duration-500 ease-in-out"
+        className={cn("transition-all duration-500 ease-in-out", progressClassName)}
       />
       {/* Text for percentage */}
       <text

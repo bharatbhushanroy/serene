@@ -6,7 +6,7 @@ import { CheckCircle, ShieldCheck } from 'lucide-react';
 
 const QickyLogo = () => (
   <div className="flex items-center space-x-2">
-    <ShieldCheck className="w-8 h-8 text-qicky-purple" />
+    <ShieldCheck className="w-8 h-8 text-brand-orange" />
     <span className="text-2xl font-bold text-white">Qicky</span>
   </div>
 );
@@ -18,7 +18,7 @@ const LoanApprovedMockup = () => {
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, amount: 0.5 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
-      className="relative z-10 w-full max-w-xs mx-auto bg-gray-800/50 backdrop-blur-lg border border-gray-700/50 rounded-3xl p-6 shadow-2xl shadow-qicky-purple/20"
+      className="relative z-10 w-full max-w-xs mx-auto bg-gray-800/50 backdrop-blur-lg border border-gray-700/50 rounded-3xl p-6 shadow-2xl shadow-brand-orange/20"
     >
       <div className="flex flex-col items-center text-center">
         <QickyLogo />

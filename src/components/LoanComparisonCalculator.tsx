@@ -71,27 +71,27 @@ const LoanComparisonCalculator = () => {
   const getDifferenceColor = (diff: number) => {
     if (diff < 0) return 'text-green-400';
     if (diff > 0) return 'text-red-400';
-    return 'text-qicky-textmuted';
+    return 'text-brand-text-muted';
   };
 
   return (
-    <section className="relative z-10 w-full py-20 px-6 md:px-12 lg:px-24 text-qicky-text">
+    <section className="relative z-10 w-full py-20 px-6 md:px-12 lg:px-24 text-brand-text">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Left Column: Loan Inputs */}
         <div className="space-y-8">
           {/* Loan 1 Card */}
-          <Card className="bg-gradient-dark-card border border-qicky-blue/30 p-6 rounded-xl shadow-lg">
+          <Card className="bg-gradient-dark-card border border-brand-border p-6 rounded-xl shadow-lg">
             <CardHeader>
-              <CardTitle className="text-3xl font-bold text-qicky-text mb-6">Loan 1</CardTitle>
+              <CardTitle className="text-3xl font-bold text-brand-text mb-6">Loan 1</CardTitle>
             </CardHeader>
             <CardContent className="space-y-8">
               {/* Loan Amount */}
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <Label htmlFor="loanAAmount" className="text-qicky-textmuted flex items-center">
-                    <DollarSign className="h-5 w-5 mr-2 text-qicky-lightblue" /> Loan Amount
+                  <Label htmlFor="loanAAmount" className="text-brand-text-muted flex items-center">
+                    <DollarSign className="h-5 w-5 mr-2 text-brand-light-orange" /> Loan Amount
                   </Label>
-                  <span className="text-lg font-semibold text-qicky-text">{formatCurrency(loanAAmount)}</span>
+                  <span className="text-lg font-semibold text-brand-text">{formatCurrency(loanAAmount)}</span>
                 </div>
                 <Slider
                   id="loanAAmount"
@@ -100,18 +100,18 @@ const LoanComparisonCalculator = () => {
                   step={10000}
                   value={[loanAAmount]}
                   onValueChange={(val) => setLoanAAmount(val[0])}
-                  className="[&>span:first-child]:h-2 [&>span:first-child]:bg-gradient-to-r [&>span:first-child]:from-qicky-purple [&>span:first-child]:to-qicky-blue [&_[role=slider]]:h-5 [&_[role=slider]]:w-5 [&_[role=slider]]:bg-qicky-blue [&_[role=slider]]:border-2 [&_[role=slider]]:border-qicky-blue"
+                  className="[&>span:first-child]:h-2 [&>span:first-child]:bg-gradient-to-r [&>span:first-child]:from-brand-orange [&>span:first-child]:to-brand-light-orange [&_[role=slider]]:h-5 [&_[role=slider]]:w-5 [&_[role=slider]]:bg-brand-orange [&_[role=slider]]:border-2 [&_[role=slider]]:border-brand-orange"
                 />
               </div>
 
               {/* Interest Rate */}
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <Label htmlFor="loanARate" className="text-qicky-textmuted flex items-center">
-                    <Zap className="h-5 w-5 mr-2 text-qicky-pink" /> Interest Rate
+                  <Label htmlFor="loanARate" className="text-brand-text-muted flex items-center">
+                    <Zap className="h-5 w-5 mr-2 text-brand-orange" /> Interest Rate
                   </Label>
                   <div className="flex items-center">
-                    <span className="text-lg font-semibold text-qicky-text">{loanARate}%</span>
+                    <span className="text-lg font-semibold text-brand-text">{loanARate}%</span>
                     {getRateBadge(loanARate)}
                   </div>
                 </div>
@@ -122,17 +122,17 @@ const LoanComparisonCalculator = () => {
                   step={0.5}
                   value={[loanARate]}
                   onValueChange={(val) => setLoanARate(val[0])}
-                  className="[&>span:first-child]:h-2 [&>span:first-child]:bg-gradient-to-r [&>span:first-child]:from-qicky-pink [&>span:first-child]:to-qicky-lightpurple [&_[role=slider]]:h-5 [&_[role=slider]]:w-5 [&_[role=slider]]:bg-qicky-pink [&_[role=slider]]:border-2 [&_[role=slider]]:border-qicky-pink"
+                  className="[&>span:first-child]:h-2 [&>span:first-child]:bg-gradient-to-r [&>span:first-child]:from-brand-orange [&>span:first-child]:to-brand-light-orange [&_[role=slider]]:h-5 [&_[role=slider]]:w-5 [&_[role=slider]]:bg-brand-orange [&_[role=slider]]:border-2 [&_[role=slider]]:border-brand-orange"
                 />
               </div>
 
               {/* Loan Tenure */}
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <Label htmlFor="loanATenure" className="text-qicky-textmuted flex items-center">
-                    <CalendarDays className="h-5 w-5 mr-2 text-qicky-lightblue" /> Loan Tenure (Months)
+                  <Label htmlFor="loanATenure" className="text-brand-text-muted flex items-center">
+                    <CalendarDays className="h-5 w-5 mr-2 text-brand-light-orange" /> Loan Tenure (Months)
                   </Label>
-                  <span className="text-lg font-semibold text-qicky-text">{loanATenure} months</span>
+                  <span className="text-lg font-semibold text-brand-text">{loanATenure} months</span>
                 </div>
                 <Slider
                   id="loanATenure"
@@ -141,25 +141,25 @@ const LoanComparisonCalculator = () => {
                   step={6}
                   value={[loanATenure]}
                   onValueChange={(val) => setLoanATenure(val[0])}
-                  className="[&>span:first-child]:h-2 [&>span:first-child]:bg-gradient-to-r [&>span:first-child]:from-qicky-blue [&>span:first-child]:to-qicky-lightblue [&_[role=slider]]:h-5 [&_[role=slider]]:w-5 [&_[role=slider]]:bg-qicky-lightblue [&_[role=slider]]:border-2 [&_[role=slider]]:border-qicky-lightblue"
+                  className="[&>span:first-child]:h-2 [&>span:first-child]:bg-gradient-to-r [&>span:first-child]:from-brand-orange [&>span:first-child]:to-brand-light-orange [&_[role=slider]]:h-5 [&_[role=slider]]:w-5 [&_[role=slider]]:bg-brand-light-orange [&_[role=slider]]:border-2 [&_[role=slider]]:border-brand-light-orange"
                 />
               </div>
             </CardContent>
           </Card>
 
           {/* Loan 2 Card */}
-          <Card className="bg-gradient-dark-card border border-qicky-blue/30 p-6 rounded-xl shadow-lg">
+          <Card className="bg-gradient-dark-card border border-brand-border p-6 rounded-xl shadow-lg">
             <CardHeader>
-              <CardTitle className="text-3xl font-bold text-qicky-text mb-6">Loan 2</CardTitle>
+              <CardTitle className="text-3xl font-bold text-brand-text mb-6">Loan 2</CardTitle>
             </CardHeader>
             <CardContent className="space-y-8">
               {/* Loan Amount */}
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <Label htmlFor="loanBAmount" className="text-qicky-textmuted flex items-center">
-                    <DollarSign className="h-5 w-5 mr-2 text-qicky-lightblue" /> Loan Amount
+                  <Label htmlFor="loanBAmount" className="text-brand-text-muted flex items-center">
+                    <DollarSign className="h-5 w-5 mr-2 text-brand-light-orange" /> Loan Amount
                   </Label>
-                  <span className="text-lg font-semibold text-qicky-text">{formatCurrency(loanBAmount)}</span>
+                  <span className="text-lg font-semibold text-brand-text">{formatCurrency(loanBAmount)}</span>
                 </div>
                 <Slider
                   id="loanBAmount"
@@ -168,18 +168,18 @@ const LoanComparisonCalculator = () => {
                   step={10000}
                   value={[loanBAmount]}
                   onValueChange={(val) => setLoanBAmount(val[0])}
-                  className="[&>span:first-child]:h-2 [&>span:first-child]:bg-gradient-to-r [&>span:first-child]:from-qicky-purple [&>span:first-child]:to-qicky-blue [&_[role=slider]]:h-5 [&_[role=slider]]:w-5 [&_[role=slider]]:bg-qicky-blue [&_[role=slider]]:border-2 [&_[role=slider]]:border-qicky-blue"
+                  className="[&>span:first-child]:h-2 [&>span:first-child]:bg-gradient-to-r [&>span:first-child]:from-brand-orange [&>span:first-child]:to-brand-light-orange [&_[role=slider]]:h-5 [&_[role=slider]]:w-5 [&_[role=slider]]:bg-brand-orange [&_[role=slider]]:border-2 [&_[role=slider]]:border-brand-orange"
                 />
               </div>
 
               {/* Interest Rate */}
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <Label htmlFor="loanBRate" className="text-qicky-textmuted flex items-center">
-                    <Zap className="h-5 w-5 mr-2 text-qicky-pink" /> Interest Rate
+                  <Label htmlFor="loanBRate" className="text-brand-text-muted flex items-center">
+                    <Zap className="h-5 w-5 mr-2 text-brand-orange" /> Interest Rate
                   </Label>
                   <div className="flex items-center">
-                    <span className="text-lg font-semibold text-qicky-text">{loanBRate}%</span>
+                    <span className="text-lg font-semibold text-brand-text">{loanBRate}%</span>
                     {getRateBadge(loanBRate)}
                   </div>
                 </div>
@@ -190,17 +190,17 @@ const LoanComparisonCalculator = () => {
                   step={0.5}
                   value={[loanBRate]}
                   onValueChange={(val) => setLoanBRate(val[0])}
-                  className="[&>span:first-child]:h-2 [&>span:first-child]:bg-gradient-to-r [&>span:first-child]:from-qicky-pink [&>span:first-child]:to-qicky-lightpurple [&_[role=slider]]:h-5 [&_[role=slider]]:w-5 [&_[role=slider]]:bg-qicky-pink [&_[role=slider]]:border-2 [&_[role=slider]]:border-qicky-pink"
+                  className="[&>span:first-child]:h-2 [&>span:first-child]:bg-gradient-to-r [&>span:first-child]:from-brand-orange [&>span:first-child]:to-brand-light-orange [&_[role=slider]]:h-5 [&_[role=slider]]:w-5 [&_[role=slider]]:bg-brand-orange [&_[role=slider]]:border-2 [&_[role=slider]]:border-brand-orange"
                 />
               </div>
 
               {/* Loan Tenure */}
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <Label htmlFor="loanBTenure" className="text-qicky-textmuted flex items-center">
-                    <CalendarDays className="h-5 w-5 mr-2 text-qicky-lightblue" /> Loan Tenure (Months)
+                  <Label htmlFor="loanBTenure" className="text-brand-text-muted flex items-center">
+                    <CalendarDays className="h-5 w-5 mr-2 text-brand-light-orange" /> Loan Tenure (Months)
                   </Label>
-                  <span className="text-lg font-semibold text-qicky-text">{loanBTenure} months</span>
+                  <span className="text-lg font-semibold text-brand-text">{loanBTenure} months</span>
                 </div>
                 <Slider
                   id="loanBTenure"
@@ -209,7 +209,7 @@ const LoanComparisonCalculator = () => {
                   step={6}
                   value={[loanBTenure]}
                   onValueChange={(val) => setLoanBTenure(val[0])}
-                  className="[&>span:first-child]:h-2 [&>span:first-child]:bg-gradient-to-r [&>span:first-child]:from-qicky-blue [&>span:first-child]:to-qicky-lightblue [&_[role=slider]]:h-5 [&_[role=slider]]:w-5 [&_[role=slider]]:bg-qicky-lightblue [&_[role=slider]]:border-2 [&_[role=slider]]:border-qicky-lightblue"
+                  className="[&>span:first-child]:h-2 [&>span:first-child]:bg-gradient-to-r [&>span:first-child]:from-brand-orange [&>span:first-child]:to-brand-light-orange [&_[role=slider]]:h-5 [&_[role=slider]]:w-5 [&_[role=slider]]:bg-brand-light-orange [&_[role=slider]]:border-2 [&_[role=slider]]:border-brand-light-orange"
                 />
               </div>
             </CardContent>
@@ -217,24 +217,24 @@ const LoanComparisonCalculator = () => {
         </div>
 
         {/* Right Column: Loan Comparison Results */}
-        <Card className="bg-gradient-dark-card border border-qicky-blue/30 p-6 rounded-xl shadow-lg h-fit">
+        <Card className="bg-gradient-dark-card border border-brand-border p-6 rounded-xl shadow-lg h-fit">
           <CardHeader>
-            <CardTitle className="text-3xl font-bold text-qicky-text mb-6">Loan Comparison</CardTitle>
+            <CardTitle className="text-3xl font-bold text-brand-text mb-6">Loan Comparison</CardTitle>
           </CardHeader>
           <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* EMI (Monthly Payment) */}
-            <Card className="bg-qicky-dark/50 border border-qicky-blue/20 p-4 rounded-lg">
-              <h4 className="text-qicky-textmuted text-sm mb-2">EMI (Monthly Payment)</h4>
+            <Card className="bg-brand-dark/50 border border-brand-border/50 p-4 rounded-lg">
+              <h4 className="text-brand-text-muted text-sm mb-2">EMI (Monthly Payment)</h4>
               <div className="flex justify-between items-baseline mb-1">
-                <span className="text-qicky-lightblue font-bold text-xl">
+                <span className="text-brand-light-orange font-bold text-xl">
                   {formatCurrency(loanAResults?.emi)}
                 </span>
-                <span className="text-qicky-lightpurple font-bold text-xl">
+                <span className="text-brand-orange font-bold text-xl">
                   {formatCurrency(loanBResults?.emi)}
                 </span>
               </div>
               {loanAResults && loanBResults && loanAResults.emi !== null && loanBResults.emi !== null && (
-                <p className="text-xs text-qicky-textmuted">
+                <p className="text-xs text-brand-text-muted">
                   Difference: <span className={getDifferenceColor(loanAResults.emi - loanBResults.emi)}>
                     {formatCurrency(Math.abs(loanAResults.emi - loanBResults.emi))}
                   </span>
@@ -243,18 +243,18 @@ const LoanComparisonCalculator = () => {
             </Card>
 
             {/* Total Interest */}
-            <Card className="bg-qicky-dark/50 border border-qicky-blue/20 p-4 rounded-lg">
-              <h4 className="text-qicky-textmuted text-sm mb-2">Total Interest</h4>
+            <Card className="bg-brand-dark/50 border border-brand-border/50 p-4 rounded-lg">
+              <h4 className="text-brand-text-muted text-sm mb-2">Total Interest</h4>
               <div className="flex justify-between items-baseline mb-1">
-                <span className="text-qicky-lightblue font-bold text-xl">
+                <span className="text-brand-light-orange font-bold text-xl">
                   {formatCurrency(loanAResults?.totalInterest)}
                 </span>
-                <span className="text-qicky-lightpurple font-bold text-xl">
+                <span className="text-brand-orange font-bold text-xl">
                   {formatCurrency(loanBResults?.totalInterest)}
                 </span>
               </div>
               {loanAResults && loanBResults && loanAResults.totalInterest !== null && loanBResults.totalInterest !== null && (
-                <p className="text-xs text-qicky-textmuted">
+                <p className="text-xs text-brand-text-muted">
                   Difference: <span className={getDifferenceColor(loanAResults.totalInterest - loanBResults.totalInterest)}>
                     {formatCurrency(Math.abs(loanAResults.totalInterest - loanBResults.totalInterest))}
                   </span>
@@ -263,18 +263,18 @@ const LoanComparisonCalculator = () => {
             </Card>
 
             {/* Total Payment */}
-            <Card className="bg-qicky-dark/50 border border-qicky-blue/20 p-4 rounded-lg">
-              <h4 className="text-qicky-textmuted text-sm mb-2">Total Payment</h4>
+            <Card className="bg-brand-dark/50 border border-brand-border/50 p-4 rounded-lg">
+              <h4 className="text-brand-text-muted text-sm mb-2">Total Payment</h4>
               <div className="flex justify-between items-baseline mb-1">
-                <span className="text-qicky-lightblue font-bold text-xl">
+                <span className="text-brand-light-orange font-bold text-xl">
                   {formatCurrency(loanAResults?.totalPayable)}
                 </span>
-                <span className="text-qicky-lightpurple font-bold text-xl">
+                <span className="text-brand-orange font-bold text-xl">
                   {formatCurrency(loanBResults?.totalPayable)}
                 </span>
               </div>
               {loanAResults && loanBResults && loanAResults.totalPayable !== null && loanBResults.totalPayable !== null && (
-                <p className="text-xs text-qicky-textmuted">
+                <p className="text-xs text-brand-text-muted">
                   Difference: <span className={getDifferenceColor(loanAResults.totalPayable - loanBResults.totalPayable)}>
                     {formatCurrency(Math.abs(loanAResults.totalPayable - loanBResults.totalPayable))}
                   </span>
@@ -283,22 +283,22 @@ const LoanComparisonCalculator = () => {
             </Card>
 
             {/* Loan Efficiency */}
-            <Card className="bg-qicky-dark/50 border border-qicky-blue/20 p-4 rounded-lg">
-              <h4 className="text-qicky-textmuted text-sm mb-2">Loan Efficiency</h4>
+            <Card className="bg-brand-dark/50 border border-brand-border/50 p-4 rounded-lg">
+              <h4 className="text-brand-text-muted text-sm mb-2">Loan Efficiency</h4>
               <div className="flex justify-around items-center h-full">
                 <div className="flex flex-col items-center">
                   <CircularProgressBar
                     percentage={loanAResults?.loanEfficiency ?? 0}
-                    color="hsl(var(--qicky-blue))" // Using HSL for direct Tailwind color
+                    progressClassName="stroke-brand-light-orange"
                   />
-                  <span className="text-qicky-textmuted text-xs mt-1">Loan 1</span>
+                  <span className="text-brand-text-muted text-xs mt-1">Loan 1</span>
                 </div>
                 <div className="flex flex-col items-center">
                   <CircularProgressBar
                     percentage={loanBResults?.loanEfficiency ?? 0}
-                    color="hsl(var(--qicky-purple))" // Using HSL for direct Tailwind color
+                    progressClassName="stroke-brand-orange"
                   />
-                  <span className="text-qicky-textmuted text-xs mt-1">Loan 2</span>
+                  <span className="text-brand-text-muted text-xs mt-1">Loan 2</span>
                 </div>
               </div>
             </Card>

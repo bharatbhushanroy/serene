@@ -92,13 +92,13 @@ const AiChatbot = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 50, scale: 0.9 }}
             transition={{ duration: 0.3, ease: 'easeOut' }}
-            className="fixed bottom-24 right-4 w-full max-w-sm h-[60vh] bg-qicky-dark bg-gradient-dark-card border border-qicky-blue/30 rounded-2xl shadow-2xl shadow-qicky-purple/30 flex flex-col z-50"
+            className="fixed bottom-24 right-4 w-full max-w-sm h-[60vh] bg-brand-dark bg-gradient-dark-card border border-brand-border rounded-2xl shadow-2xl shadow-brand-orange/30 flex flex-col z-50"
           >
-            <header className="flex items-center justify-between p-4 border-b border-qicky-blue/30">
+            <header className="flex items-center justify-between p-4 border-b border-brand-border">
               <div className="flex items-center space-x-3">
-                <Bot className="h-7 w-7 text-qicky-lightblue" />
+                <Bot className="h-7 w-7 text-brand-light-orange" />
                 <div>
-                  <h3 className="font-bold text-qicky-text text-lg">Qicky AI Assistant</h3>
+                  <h3 className="font-bold text-brand-text text-lg">Qicky AI Assistant</h3>
                   <p className="text-xs text-green-400 flex items-center">
                     <span className="relative flex h-2 w-2 mr-2">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
@@ -108,7 +108,7 @@ const AiChatbot = () => {
                   </p>
                 </div>
               </div>
-              <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="text-qicky-textmuted hover:text-qicky-text">
+              <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="text-brand-text-muted hover:text-brand-text">
                 <X className="h-5 w-5" />
               </Button>
             </header>
@@ -125,13 +125,13 @@ const AiChatbot = () => {
                       message.sender === 'user' ? 'justify-end' : 'justify-start'
                     )}
                   >
-                    {message.sender === 'bot' && <Bot className="h-6 w-6 text-qicky-lightblue flex-shrink-0" />}
+                    {message.sender === 'bot' && <Bot className="h-6 w-6 text-brand-light-orange flex-shrink-0" />}
                     <div
                       className={cn(
                         "max-w-xs rounded-2xl px-4 py-2 text-sm",
                         message.sender === 'user'
-                          ? 'bg-qicky-blue text-white rounded-br-none'
-                          : 'bg-qicky-dark border border-qicky-blue/50 text-qicky-text rounded-bl-none'
+                          ? 'bg-brand-orange text-white rounded-br-none'
+                          : 'bg-brand-dark border border-brand-border text-brand-text rounded-bl-none'
                       )}
                     >
                       {message.text}
@@ -140,7 +140,7 @@ const AiChatbot = () => {
                 ))}
               </div>
             </ScrollArea>
-            <footer className="p-4 border-t border-qicky-blue/30">
+            <footer className="p-4 border-t border-brand-border">
               <div className="flex items-center space-x-2">
                 <Input
                   type="text"
@@ -148,7 +148,7 @@ const AiChatbot = () => {
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-                  className="bg-qicky-dark border-qicky-blue/50 text-qicky-text focus:border-qicky-blue"
+                  className="bg-brand-dark border-brand-border text-brand-text focus:border-brand-orange"
                 />
                 <Button
                   size="icon"
@@ -172,7 +172,7 @@ const AiChatbot = () => {
         <Button
           size="icon"
           onClick={() => setIsOpen(!isOpen)}
-          className="w-16 h-16 rounded-full bg-gradient-to-r from-qicky-purple to-qicky-blue text-white shadow-2xl shadow-qicky-purple/40"
+          className="w-16 h-16 rounded-full bg-gradient-to-r from-brand-orange to-brand-light-orange text-white shadow-2xl shadow-brand-orange/40"
         >
           <AnimatePresence initial={false} mode="wait">
             <motion.div
