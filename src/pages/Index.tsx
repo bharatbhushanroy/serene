@@ -5,8 +5,8 @@ import FeaturesSection from "@/components/FeaturesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
+import InstantLoansSection from "@/components/InstantLoansSection";
 import CtaSection from "@/components/CtaSection";
-import LoanTypesSection from "@/components/LoanTypesSection";
 
 const Index = () => {
   return (
@@ -14,7 +14,7 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
-        <LoanTypesSection />
+        <InstantLoansSection />
         <FeaturesSection />
         <HowItWorksSection />
         <TestimonialsSection />
