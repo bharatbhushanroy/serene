@@ -9,7 +9,8 @@ import AboutUs from "./pages/AboutUs";
 import Blog from "./pages/Blog";
 import ContactUs from "./pages/ContactUs";
 import FAQs from "./pages/FAQs";
-import LoanCalculatorPage from "./pages/LoanCalculatorPage"; // Import the new LoanCalculatorPage
+import LoanCalculatorPage from "./pages/LoanCalculatorPage";
+import PrivacyPolicy from "./pages/PrivacyPolicy"; // Import the new PrivacyPolicy page
 
 const queryClient = new QueryClient();
 
@@ -25,7 +26,8 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/faqs" element={<FAQs />} />
-          <Route path="/loan-calculator" element={<LoanCalculatorPage />} /> {/* Add the Loan Calculator route */}
+          <Route path="/loan-calculator" element={<LoanCalculatorPage />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} /> {/* Add the Privacy Policy route */}
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

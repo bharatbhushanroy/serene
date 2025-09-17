@@ -34,7 +34,7 @@ const Footer = () => {
           <h4 className="text-lg font-semibold mb-4 text-qicky-text">Resources</h4>
           <ul className="space-y-2 text-center md:text-left">
             <li><Link to="/faqs" className="text-qicky-textmuted hover:text-qicky-text transition-colors">FAQs</Link></li>
-            <li><Link to="/loan-calculator" className="text-qicky-textmuted hover:text-qicky-text transition-colors">Loan Calculator</Link></li> {/* Updated link */}
+            <li><Link to="/loan-calculator" className="text-qicky-textmuted hover:text-qicky-text transition-colors">Loan Calculator</Link></li>
             <li><Link to="/blog" className="text-qicky-textmuted hover:text-qicky-text transition-colors">Blog Posts</Link></li>
           </ul>
         </div>
@@ -43,7 +43,7 @@ const Footer = () => {
         <div className="col-span-1 flex flex-col items-center md:items-start">
           <h4 className="text-lg font-semibold mb-4 text-qicky-text">Legal</h4>
           <ul className="space-y-2 text-center md:text-left">
-            <li><Link to="/privacy" className="text-qicky-textmuted hover:text-qicky-text transition-colors">Privacy Policy</Link></li>
+            <li><Link to="/privacy" className="text-qicky-textmuted hover:text-qicky-text transition-colors">Privacy Policy</Link></li> {/* Updated link */}
             <li><Link to="/terms" className="text-qicky-textmuted hover:text-qicky-text transition-colors">Terms of Service</Link></li>
             <li><Link to="/cookies" className="text-qicky-textmuted hover:text-qicky-text transition-colors">Cookie Policy</Link></li>
           </ul>
