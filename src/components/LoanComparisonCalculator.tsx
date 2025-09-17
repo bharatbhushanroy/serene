@@ -288,14 +288,14 @@ const LoanComparisonCalculator = () => {
               <div className="flex justify-around items-center h-full">
                 <div className="flex flex-col items-center">
                   <CircularProgressBar
-                    percentage={loanAResults?.loanEfficiency !== null ? loanAResults.loanEfficiency : 0}
+                    percentage={loanAResults?.loanEfficiency ?? 0}
                     color="hsl(var(--qicky-blue))" // Using HSL for direct Tailwind color
                   />
                   <span className="text-qicky-textmuted text-xs mt-1">Loan 1</span>
                 </div>
                 <div className="flex flex-col items-center">
                   <CircularProgressBar
-                    percentage={loanBResults?.loanEfficiency !== null ? loanBResults.loanEfficiency : 0}
+                    percentage={loanBResults?.loanEfficiency ?? 0}
                     color="hsl(var(--qicky-purple))" // Using HSL for direct Tailwind color
                   />
                   <span className="text-qicky-textmuted text-xs mt-1">Loan 2</span>
