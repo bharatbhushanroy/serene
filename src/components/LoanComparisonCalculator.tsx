@@ -92,7 +92,7 @@ const LoanComparisonCalculator = () => {
                   onChange={(e) => setLoanATenure(e.target.value)}
                   className="bg-qicky-dark border-qicky-blue/50 text-qicky-text focus:border-qicky-blue"
                 />
-              </div
+              </div>
             </CardContent>
           </Card>
 
