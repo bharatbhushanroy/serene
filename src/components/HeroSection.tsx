@@ -9,7 +9,7 @@ const HeroSection = () => {
   const [showCookieBanner, setShowCookieBanner] = useState(true);
 
   return (
-    <section className="relative w-full min-h-[calc(100vh-80px)] flex items-center justify-center py-16 px-6 md:px-12 lg:px-24 overflow-hidden">
+    <section className="relative w-full min-h-[calc(100vh-80px)] flex items-center justify-center py-16 px-6 md:px-12 lg:px-24 overflow-hidden bg-gray-950">
       {/* Animated Background Shapes */}
       <AnimatedBackgroundShapes />
 
@@ -22,10 +22,10 @@ const HeroSection = () => {
             </span>
             Instant Approvals Available
           </div>
-          <h1 className="text-5xl md:text-6xl font-extrabold text-fintech-text-dark leading-tight mb-4">
+          <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-4">
             Quick Loans for <span className="bg-gradient-to-r from-fintech-blue-accent to-fintech-blue-soft text-transparent bg-clip-text">Every Need</span>
           </h1>
-          <p className="text-lg text-fintech-text-muted mb-8 max-w-xl">
+          <p className="text-lg text-gray-300 mb-8 max-w-xl">
             Get instant access to personal loans with flexible repayment options, competitive interest rates, and a seamless digital experience.
           </p>
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
@@ -35,7 +35,7 @@ const HeroSection = () => {
               </Button>
             </Link>
             <Link to="/about">
-              <Button variant="outline" className="bg-transparent border-fintech-text-muted text-fintech-text-dark px-8 py-3 rounded-full text-lg font-semibold hover:bg-fintech-blue-soft/10 hover:border-fintech-blue-accent transition-colors">
+              <Button variant="outline" className="bg-transparent border-gray-700 text-gray-200 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-800 hover:border-fintech-blue-accent transition-colors">
                 Learn More
               </Button>
             </Link>
@@ -48,7 +48,7 @@ const HeroSection = () => {
 
       {/* Cookie Consent Banner - as seen in screenshot */}
       {showCookieBanner && (
-        <div className="absolute bottom-0 left-0 right-0 bg-fintech-background-light/90 backdrop-blur-sm p-4 flex flex-col md:flex-row items-center justify-between text-fintech-text-dark text-sm border-t border-fintech-border-light">
+        <div className="absolute bottom-0 left-0 right-0 bg-gray-900/90 backdrop-blur-sm p-4 flex flex-col md:flex-row items-center justify-between text-gray-200 text-sm border-t border-gray-800">
           <div className="flex items-center mb-2 md:mb-0">
             <span className="mr-2 text-fintech-blue-accent">🍪</span>
             <p>
@@ -56,7 +56,7 @@ const HeroSection = () => {
             </p>
           </div>
           <div className="flex space-x-2">
-            <Button variant="outline" className="border-fintech-text-muted text-fintech-text-dark hover:bg-fintech-blue-soft/10" onClick={() => setShowCookieBanner(false)}>Decline</Button>
+            <Button variant="outline" className="border-gray-700 text-gray-200 hover:bg-gray-800" onClick={() => setShowCookieBanner(false)}>Decline</Button>
             <Button className="bg-gradient-button-primary text-white hover:opacity-90" onClick={() => setShowCookieBanner(false)}>Accept All</Button>
           </div>
         </div>
