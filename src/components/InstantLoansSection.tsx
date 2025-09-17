@@ -1,71 +1,81 @@
-import React from 'react';
-import { ArrowRight, Clock, FileText, Download, CreditCard, CheckCircle } from 'lucide-react';
+"use client";
 
-const features = [
-  { icon: CreditCard, text: "Instant Personal loans up to ₹5,00,000", highlight: "" },
-  { icon: Clock, text: "Disbursement in", highlight: "5 minutes" },
-  { icon: FileText, text: "100% Digital process with", highlight: "Zero paperwork" },
-  { icon: Download, text: "Money", highlight: "transferred directly", textAfter: "to your bank account" },
-];
+import React from 'react';
+import { Button } from './ui/button';
+import { motion } from 'framer-motion';
+import LoanApprovedMockup from './LoanApprovedMockup';
 
 const InstantLoansSection = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: 'easeOut',
+      },
+    },
+  };
+
   return (
-    <section className="relative z-10 w-full py-20 px-6 md:px-12 lg:px-24 text-qicky-text">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12">
-        {/* Left side: Title and Feature Cards */}
-        <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-2xl">
-          <div className="flex items-center mb-4">
-            <div className="w-8 h-1 bg-gradient-to-r from-qicky-purple to-qicky-blue rounded-full mr-3"></div>
-            <span className="text-sm font-semibold text-qicky-textmuted uppercase tracking-wider">Fast & Seamless</span>
-          </div>
-          <h2 className="text-5xl md:text-6xl font-extrabold leading-tight mb-8">
-            Instant Personal Loans <span className="bg-gradient-to-r from-qicky-pink to-qicky-lightpurple text-transparent bg-clip-text">At Your Fingertips</span>
-          </h2>
-
-          <div className="w-full space-y-4">
-            {features.map((feature, index) => (
-              <div key={index} className="group flex items-center justify-between p-4 rounded-xl bg-white/5 border border-transparent hover:border-qicky-blue/50 hover:bg-white/10 transition-all duration-300 cursor-pointer">
-                <div className="flex items-center">
-                  <div className="p-2 bg-qicky-blue/20 rounded-lg mr-4">
-                    <feature.icon className="h-6 w-6 text-qicky-lightblue" />
-                  </div>
-                  <p className="text-lg font-medium text-qicky-text">
-                    {feature.text} <span className="font-bold text-qicky-lightblue">{feature.highlight}</span> {feature.textAfter}
-                  </p>
-                </div>
-                <ArrowRight className="h-5 w-5 text-qicky-textmuted group-hover:translate-x-1 transition-transform" />
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Right side: Image with UI elements */}
-        <div className="w-full lg:w-1/2 flex justify-center lg:justify-end mt-12 lg:mt-0">
-          <div className="relative w-full max-w-sm">
-            <div className="absolute -inset-2 bg-gradient-to-br from-qicky-purple to-qicky-blue rounded-3xl opacity-30 blur-2xl"></div>
-            <div className="relative w-full max-w-sm aspect-[9/16] rounded-3xl overflow-hidden bg-gradient-dark-card border border-qicky-blue/30 shadow-2xl flex flex-col justify-end">
-              <img
-                src="https://images.unsplash.com/photo-1631501541333-a0a90e3aa5c3?q=80&w=1964&auto-format&fit=crop"
-                alt="Instant loans simplified on mobile"
-                className="absolute inset-0 w-full h-full object-cover opacity-80"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-qicky-dark/80 via-qicky-purple/30 to-transparent"></div>
-              
-              {/* Bottom part - The new UI element */}
-              <div className="relative z-10 p-4">
-                <div className="bg-qicky-dark/40 backdrop-blur-xl border border-qicky-blue/50 rounded-2xl p-6 text-white">
-                  <div className="flex items-center mb-3">
-                    <CheckCircle className="h-6 w-6 text-green-400 mr-3" />
-                    <h4 className="text-lg font-semibold">Your Loan is Approved!</h4>
-                  </div>
-                  <p className="text-sm text-white/80 mb-1">Loan Amount</p>
-                  <p className="text-4xl font-bold mb-4 bg-gradient-to-r from-qicky-pink to-qicky-lightpurple text-transparent bg-clip-text">₹2,50,000</p>
-                  <button className="w-full bg-gradient-button-primary text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition-opacity flex items-center justify-center group">
-                    Accept & Continue <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </div>
-              </div>
-            </div>
+    <section className="py-20 bg-qicky-dark text-white">
+      <div className="container mx-auto px-4">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <motion.div
+            className="space-y-6"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <motion.h2 variants={itemVariants} className="text-4xl font-bold">Instant Loans, When You Need Them Most</motion.h2>
+            <motion.p variants={itemVariants} className="text-qicky-gray">
+              Life is full of surprises. For moments when you need a financial boost, Qicky offers instant loans with a hassle-free application process. Get approved in minutes and receive funds directly in your account.
+            </motion.p>
+            <motion.ul variants={itemVariants} className="space-y-3">
+              <li className="flex items-center">
+                <svg className="w-5 h-5 text-qicky-purple mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                </svg>
+                <span>Quick and easy online application</span>
+              </li>
+              <li className="flex items-center">
+                <svg className="w-5 h-5 text-qicky-purple mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                </svg>
+                <span>Competitive interest rates</span>
+              </li>
+              <li className="flex items-center">
+                <svg className="w-5 h-5 text-qicky-purple mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                </svg>
+                <span>No hidden fees or prepayment penalties</span>
+              </li>
+            </motion.ul>
+            <motion.div variants={itemVariants}>
+              <Button size="lg" variant="qicky">Apply for a Loan</Button>
+            </motion.div>
+          </motion.div>
+          <div className="relative h-[500px] rounded-lg overflow-hidden flex items-center justify-center">
+            <img
+              src="https://images.unsplash.com/photo-1611095790444-1dfa36e39c23?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Instant Loan"
+              className="w-full h-full object-cover absolute inset-0"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-qicky-dark/80 via-qicky-purple/30 to-transparent"></div>
+            
+            <LoanApprovedMockup />
           </div>
         </div>
       </div>
