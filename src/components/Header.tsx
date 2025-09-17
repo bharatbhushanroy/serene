@@ -23,7 +23,7 @@ const Header = () => {
           </DropdownMenuTrigger>
           <DropdownMenuContent className="bg-qicky-dark border-qicky-blue text-qicky-text">
             <DropdownMenuItem className="hover:bg-qicky-blue/20">Loan Calculator</DropdownMenuItem>
-            <DropdownMenuItem className="hover:bg-qicky-blue/20">FAQs</DropdownMenuItem>
+            <DropdownMenuItem className="hover:bg-qicky-blue/20">FAQs</DropdownMenuItem> {/* Added FAQ link */}
             <DropdownMenuItem className="hover:bg-qicky-blue/20">Blog Posts</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

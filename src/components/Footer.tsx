@@ -32,16 +32,11 @@ const Footer = () => {
         {/* Tools & Resources */}
         <div className="col-span-1 flex flex-col items-center md:items-start">
           <h4 className="text-lg font-semibold mb-4 text-qicky-text">Resources</h4>
-          <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center text-qicky-textmuted hover:text-qicky-text transition-colors focus:outline-none">
-              Tools & Resources <ChevronDown className="ml-1 h-4 w-4" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="bg-qicky-dark border-qicky-blue text-qicky-text">
-              <DropdownMenuItem className="hover:bg-qicky-blue/20">Loan Calculator</DropdownMenuItem>
-              <DropdownMenuItem className="hover:bg-qicky-blue/20">FAQs</DropdownMenuItem>
-              <DropdownMenuItem className="hover:bg-qicky-blue/20">Blog Posts</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <ul className="space-y-2 text-center md:text-left">
+            <li><Link to="/faqs" className="text-qicky-textmuted hover:text-qicky-text transition-colors">FAQs</Link></li> {/* Added FAQ link */}
+            <li><Link to="/loan-calculator" className="text-qicky-textmuted hover:text-qicky-text transition-colors">Loan Calculator</Link></li>
+            <li><Link to="/blog" className="text-qicky-textmuted hover:text-qicky-text transition-colors">Blog Posts</Link></li>
+          </ul>
         </div>
 
         {/* Legal Links */}
