@@ -1,214 +1,308 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
-import { Separator } from '@/components/ui/separator';
+import { Slider } from '@/components/ui/slider'; // Assuming shadcn/ui Slider
+import { DollarSign, Zap, CalendarDays, TrendingUp } from 'lucide-react';
+import CircularProgressBar from './CircularProgressBar'; // Import the new component
 
-// Helper function to calculate EMI
-const calculateLoanEmi = (principal: number, annualRate: number, years: number) => {
+// Helper function to calculate EMI and efficiency
+const calculateLoanDetails = (principal: number, annualRate: number, years: number) => {
   if (isNaN(principal) || isNaN(annualRate) || isNaN(years) || principal <= 0 || annualRate < 0 || years <= 0) {
-    return { emi: null, totalInterest: null, totalPayable: null };
+    return { emi: null, totalInterest: null, totalPayable: null, loanEfficiency: null };
   }
 
   const monthlyRate = annualRate / (12 * 100);
   const months = years * 12;
 
+  let emi: number;
+  let totalPayable: number;
+  let totalInterest: number;
+
   if (monthlyRate === 0) {
-    const emi = principal / months;
-    return { emi, totalInterest: 0, totalPayable: principal };
+    emi = principal / months;
+    totalInterest = 0;
+    totalPayable = principal;
   } else {
     const emiNumerator = principal * monthlyRate * Math.pow(1 + monthlyRate, months);
     const emiDenominator = Math.pow(1 + monthlyRate, months) - 1;
-    const emi = emiNumerator / emiDenominator;
-    const totalPayable = emi * months;
-    const totalInterest = totalPayable - principal;
-    return { emi, totalInterest, totalPayable };
+    emi = emiNumerator / emiDenominator;
+    totalPayable = emi * months;
+    totalInterest = totalPayable - principal;
   }
+
+  const loanEfficiency = (principal / totalPayable) * 100;
+
+  return { emi, totalInterest, totalPayable, loanEfficiency };
 };
 
 const LoanComparisonCalculator = () => {
   // State for Loan A
-  const [loanAAmount, setLoanAAmount] = useState<number | string>('');
-  const [loanARate, setLoanARate] = useState<number | string>('');
-  const [loanATenure, setLoanATenure] = useState<number | string>('');
-  const [loanAResults, setLoanAResults] = useState<{ emi: number | null; totalInterest: number | null; totalPayable: number | null } | null>(null);
+  const [loanAAmount, setLoanAAmount] = useState<number>(100000);
+  const [loanARate, setLoanARate] = useState<number>(12);
+  const [loanATenure, setLoanATenure] = useState<number>(24); // in months
 
   // State for Loan B
-  const [loanBAmount, setLoanBAmount] = useState<number | string>('');
-  const [loanBRate, setLoanBRate] = useState<number | string>('');
-  const [loanBTenure, setLoanBTenure] = useState<number | string>('');
-  const [loanBResults, setLoanBResults] = useState<{ emi: number | null; totalInterest: number | null; totalPayable: number | null } | null>(null);
+  const [loanBAmount, setLoanBAmount] = useState<number>(100000);
+  const [loanBRate, setLoanBRate] = useState<number>(10);
+  const [loanBTenure, setLoanBTenure] = useState<number>(36); // in months
 
-  const compareLoans = () => {
-    const resultsA = calculateLoanEmi(Number(loanAAmount), Number(loanARate), Number(loanATenure));
-    const resultsB = calculateLoanEmi(Number(loanBAmount), Number(loanBRate), Number(loanBTenure));
+  const [loanAResults, setLoanAResults] = useState<ReturnType<typeof calculateLoanDetails> | null>(null);
+  const [loanBResults, setLoanBResults] = useState<ReturnType<typeof calculateLoanDetails> | null>(null);
+
+  useEffect(() => {
+    const resultsA = calculateLoanDetails(loanAAmount, loanARate, loanATenure / 12);
+    const resultsB = calculateLoanDetails(loanBAmount, loanBRate, loanBTenure / 12);
     setLoanAResults(resultsA);
     setLoanBResults(resultsB);
+  }, [loanAAmount, loanARate, loanATenure, loanBAmount, loanBRate, loanBTenure]);
+
+  const formatCurrency = (value: number | null) =>
+    value !== null ? `₹ ${value.toLocaleString('en-IN', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}` : 'N/A';
+
+  const getRateBadge = (rate: number) => {
+    if (rate <= 8) return <span className="ml-2 px-2 py-1 rounded-full text-xs font-semibold bg-green-500 text-white">Excellent</span>;
+    if (rate <= 12) return <span className="ml-2 px-2 py-1 rounded-full text-xs font-semibold bg-yellow-500 text-white">Good</span>;
+    if (rate <= 16) return <span className="ml-2 px-2 py-1 rounded-full text-xs font-semibold bg-orange-500 text-white">Fair</span>;
+    return <span className="ml-2 px-2 py-1 rounded-full text-xs font-semibold bg-red-500 text-white">High</span>;
+  };
+
+  const getDifferenceColor = (diff: number) => {
+    if (diff < 0) return 'text-green-400';
+    if (diff > 0) return 'text-red-400';
+    return 'text-qicky-textmuted';
   };
 
   return (
     <section className="relative z-10 w-full py-20 px-6 md:px-12 lg:px-24 text-qicky-text">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-12 text-center">
-          Loan <span className="bg-gradient-to-r from-qicky-pink to-qicky-lightpurple text-transparent bg-clip-text">Comparison Calculator</span>
-        </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {/* Loan A Input Card */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* Left Column: Loan Inputs */}
+        <div className="space-y-8">
+          {/* Loan 1 Card */}
           <Card className="bg-gradient-dark-card border border-qicky-blue/30 p-6 rounded-xl shadow-lg">
             <CardHeader>
-              <CardTitle className="text-2xl font-bold text-qicky-text mb-4">Loan A Details</CardTitle>
+              <CardTitle className="text-3xl font-bold text-qicky-text mb-6">Loan 1</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-6">
+            <CardContent className="space-y-8">
+              {/* Loan Amount */}
               <div>
-                <Label htmlFor="loanAAmount" className="text-qicky-textmuted mb-2 block">Loan Amount (₹)</Label>
-                <Input
+                <div className="flex items-center justify-between mb-2">
+                  <Label htmlFor="loanAAmount" className="text-qicky-textmuted flex items-center">
+                    <DollarSign className="h-5 w-5 mr-2 text-qicky-lightblue" /> Loan Amount
+                  </Label>
+                  <span className="text-lg font-semibold text-qicky-text">{formatCurrency(loanAAmount)}</span>
+                </div>
+                <Slider
                   id="loanAAmount"
-                  type="number"
-                  placeholder="e.g., 500000"
-                  value={loanAAmount}
-                  onChange={(e) => setLoanAAmount(e.target.value)}
-                  className="bg-qicky-dark border-qicky-blue/50 text-qicky-text focus:border-qicky-blue"
+                  min={10000}
+                  max={1000000}
+                  step={10000}
+                  value={[loanAAmount]}
+                  onValueChange={(val) => setLoanAAmount(val[0])}
+                  className="[&>span:first-child]:h-2 [&>span:first-child]:bg-gradient-to-r [&>span:first-child]:from-qicky-purple [&>span:first-child]:to-qicky-blue [&_[role=slider]]:h-5 [&_[role=slider]]:w-5 [&_[role=slider]]:bg-qicky-blue [&_[role=slider]]:border-2 [&_[role=slider]]:border-qicky-blue"
                 />
               </div>
+
+              {/* Interest Rate */}
               <div>
-                <Label htmlFor="loanARate" className="text-qicky-textmuted mb-2 block">Annual Interest Rate (%)</Label>
-                <Input
+                <div className="flex items-center justify-between mb-2">
+                  <Label htmlFor="loanARate" className="text-qicky-textmuted flex items-center">
+                    <Zap className="h-5 w-5 mr-2 text-qicky-pink" /> Interest Rate
+                  </Label>
+                  <div className="flex items-center">
+                    <span className="text-lg font-semibold text-qicky-text">{loanARate}%</span>
+                    {getRateBadge(loanARate)}
+                  </div>
+                </div>
+                <Slider
                   id="loanARate"
-                  type="number"
-                  placeholder="e.g., 10"
-                  value={loanARate}
-                  onChange={(e) => setLoanARate(e.target.value)}
-                  className="bg-qicky-dark border-qicky-blue/50 text-qicky-text focus:border-qicky-blue"
+                  min={5}
+                  max={25}
+                  step={0.5}
+                  value={[loanARate]}
+                  onValueChange={(val) => setLoanARate(val[0])}
+                  className="[&>span:first-child]:h-2 [&>span:first-child]:bg-gradient-to-r [&>span:first-child]:from-qicky-pink [&>span:first-child]:to-qicky-lightpurple [&_[role=slider]]:h-5 [&_[role=slider]]:w-5 [&_[role=slider]]:bg-qicky-pink [&_[role=slider]]:border-2 [&_[role=slider]]:border-qicky-pink"
                 />
               </div>
+
+              {/* Loan Tenure */}
               <div>
-                <Label htmlFor="loanATenure" className="text-qicky-textmuted mb-2 block">Loan Tenure (Years)</Label>
-                <Input
+                <div className="flex items-center justify-between mb-2">
+                  <Label htmlFor="loanATenure" className="text-qicky-textmuted flex items-center">
+                    <CalendarDays className="h-5 w-5 mr-2 text-qicky-lightblue" /> Loan Tenure (Months)
+                  </Label>
+                  <span className="text-lg font-semibold text-qicky-text">{loanATenure} months</span>
+                </div>
+                <Slider
                   id="loanATenure"
-                  type="number"
-                  placeholder="e.g., 5"
-                  value={loanATenure}
-                  onChange={(e) => setLoanATenure(e.target.value)}
-                  className="bg-qicky-dark border-qicky-blue/50 text-qicky-text focus:border-qicky-blue"
+                  min={6}
+                  max={120}
+                  step={6}
+                  value={[loanATenure]}
+                  onValueChange={(val) => setLoanATenure(val[0])}
+                  className="[&>span:first-child]:h-2 [&>span:first-child]:bg-gradient-to-r [&>span:first-child]:from-qicky-blue [&>span:first-child]:to-qicky-lightblue [&_[role=slider]]:h-5 [&_[role=slider]]:w-5 [&_[role=slider]]:bg-qicky-lightblue [&_[role=slider]]:border-2 [&_[role=slider]]:border-qicky-lightblue"
                 />
               </div>
             </CardContent>
           </Card>
 
-          {/* Loan B Input Card */}
+          {/* Loan 2 Card */}
           <Card className="bg-gradient-dark-card border border-qicky-blue/30 p-6 rounded-xl shadow-lg">
             <CardHeader>
-              <CardTitle className="text-2xl font-bold text-qicky-text mb-4">Loan B Details</CardTitle>
+              <CardTitle className="text-3xl font-bold text-qicky-text mb-6">Loan 2</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-6">
+            <CardContent className="space-y-8">
+              {/* Loan Amount */}
               <div>
-                <Label htmlFor="loanBAmount" className="text-qicky-textmuted mb-2 block">Loan Amount (₹)</Label>
-                <Input
+                <div className="flex items-center justify-between mb-2">
+                  <Label htmlFor="loanBAmount" className="text-qicky-textmuted flex items-center">
+                    <DollarSign className="h-5 w-5 mr-2 text-qicky-lightblue" /> Loan Amount
+                  </Label>
+                  <span className="text-lg font-semibold text-qicky-text">{formatCurrency(loanBAmount)}</span>
+                </div>
+                <Slider
                   id="loanBAmount"
-                  type="number"
-                  placeholder="e.g., 600000"
-                  value={loanBAmount}
-                  onChange={(e) => setLoanBAmount(e.target.value)}
-                  className="bg-qicky-dark border-qicky-blue/50 text-qicky-text focus:border-qicky-blue"
+                  min={10000}
+                  max={1000000}
+                  step={10000}
+                  value={[loanBAmount]}
+                  onValueChange={(val) => setLoanBAmount(val[0])}
+                  className="[&>span:first-child]:h-2 [&>span:first-child]:bg-gradient-to-r [&>span:first-child]:from-qicky-purple [&>span:first-child]:to-qicky-blue [&_[role=slider]]:h-5 [&_[role=slider]]:w-5 [&_[role=slider]]:bg-qicky-blue [&_[role=slider]]:border-2 [&_[role=slider]]:border-qicky-blue"
                 />
               </div>
+
+              {/* Interest Rate */}
               <div>
-                <Label htmlFor="loanBRate" className="text-qicky-textmuted mb-2 block">Annual Interest Rate (%)</Label>
-                <Input
+                <div className="flex items-center justify-between mb-2">
+                  <Label htmlFor="loanBRate" className="text-qicky-textmuted flex items-center">
+                    <Zap className="h-5 w-5 mr-2 text-qicky-pink" /> Interest Rate
+                  </Label>
+                  <div className="flex items-center">
+                    <span className="text-lg font-semibold text-qicky-text">{loanBRate}%</span>
+                    {getRateBadge(loanBRate)}
+                  </div>
+                </div>
+                <Slider
                   id="loanBRate"
-                  type="number"
-                  placeholder="e.g., 9"
-                  value={loanBRate}
-                  onChange={(e) => setLoanBRate(e.target.value)}
-                  className="bg-qicky-dark border-qicky-blue/50 text-qicky-text focus:border-qicky-blue"
+                  min={5}
+                  max={25}
+                  step={0.5}
+                  value={[loanBRate]}
+                  onValueChange={(val) => setLoanBRate(val[0])}
+                  className="[&>span:first-child]:h-2 [&>span:first-child]:bg-gradient-to-r [&>span:first-child]:from-qicky-pink [&>span:first-child]:to-qicky-lightpurple [&_[role=slider]]:h-5 [&_[role=slider]]:w-5 [&_[role=slider]]:bg-qicky-pink [&_[role=slider]]:border-2 [&_[role=slider]]:border-qicky-pink"
                 />
               </div>
+
+              {/* Loan Tenure */}
               <div>
-                <Label htmlFor="loanBTenure" className="text-qicky-textmuted mb-2 block">Loan Tenure (Years)</Label>
-                <Input
+                <div className="flex items-center justify-between mb-2">
+                  <Label htmlFor="loanBTenure" className="text-qicky-textmuted flex items-center">
+                    <CalendarDays className="h-5 w-5 mr-2 text-qicky-lightblue" /> Loan Tenure (Months)
+                  </Label>
+                  <span className="text-lg font-semibold text-qicky-text">{loanBTenure} months</span>
+                </div>
+                <Slider
                   id="loanBTenure"
-                  type="number"
-                  placeholder="e.g., 7"
-                  value={loanBTenure}
-                  onChange={(e) => setLoanBTenure(e.target.value)}
-                  className="bg-qicky-dark border-qicky-blue/50 text-qicky-text focus:border-qicky-blue"
+                  min={6}
+                  max={120}
+                  step={6}
+                  value={[loanBTenure]}
+                  onValueChange={(val) => setLoanBTenure(val[0])}
+                  className="[&>span:first-child]:h-2 [&>span:first-child]:bg-gradient-to-r [&>span:first-child]:from-qicky-blue [&>span:first-child]:to-qicky-lightblue [&_[role=slider]]:h-5 [&_[role=slider]]:w-5 [&_[role=slider]]:bg-qicky-lightblue [&_[role=slider]]:border-2 [&_[role=slider]]:border-qicky-lightblue"
                 />
               </div>
             </CardContent>
           </Card>
         </div>
 
-        <div className="mt-8 text-center max-w-4xl mx-auto">
-          <Button
-            onClick={compareLoans}
-            className="w-full lg:w-auto bg-gradient-button-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity"
-          >
-            Compare Loans
-          </Button>
-        </div>
+        {/* Right Column: Loan Comparison Results */}
+        <Card className="bg-gradient-dark-card border border-qicky-blue/30 p-6 rounded-xl shadow-lg h-fit">
+          <CardHeader>
+            <CardTitle className="text-3xl font-bold text-qicky-text mb-6">Loan Comparison</CardTitle>
+          </CardHeader>
+          <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* EMI (Monthly Payment) */}
+            <Card className="bg-qicky-dark/50 border border-qicky-blue/20 p-4 rounded-lg">
+              <h4 className="text-qicky-textmuted text-sm mb-2">EMI (Monthly Payment)</h4>
+              <div className="flex justify-between items-baseline mb-1">
+                <span className="text-qicky-lightblue font-bold text-xl">
+                  {formatCurrency(loanAResults?.emi)}
+                </span>
+                <span className="text-qicky-lightpurple font-bold text-xl">
+                  {formatCurrency(loanBResults?.emi)}
+                </span>
+              </div>
+              {loanAResults?.emi !== null && loanBResults?.emi !== null && (
+                <p className="text-xs text-qicky-textmuted">
+                  Difference: <span className={getDifferenceColor(loanAResults.emi - loanBResults.emi)}>
+                    {formatCurrency(Math.abs(loanAResults.emi - loanBResults.emi))}
+                  </span>
+                </p>
+              )}
+            </Card>
 
-        {/* Only render results if at least one loan has valid EMI results */}
-        {((loanAResults && loanAResults.emi !== null) || (loanBResults && loanBResults.emi !== null)) && (
-          <div className="mt-12 max-w-4xl mx-auto">
-            <h3 className="text-3xl font-bold text-qicky-text mb-6 text-center">Comparison Results</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Results for Loan A */}
-              <Card className="bg-gradient-dark-card border border-qicky-blue/30 p-6 rounded-xl shadow-lg">
-                <CardHeader>
-                  <CardTitle className="text-xl font-bold text-qicky-text mb-4">Loan A</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4 text-qicky-text">
-                  <div className="flex justify-between items-center border-b border-qicky-blue/30 pb-2">
-                    <p className="text-qicky-textmuted">Monthly EMI:</p>
-                    <p className="font-bold text-lg">
-                      {loanAResults?.emi !== null ? `₹ ${loanAResults.emi?.toFixed(2)}` : 'N/A'}
-                    </p>
-                  </div>
-                  <div className="flex justify-between items-center border-b border-qicky-blue/30 pb-2">
-                    <p className="text-qicky-textmuted">Total Interest Payable:</p>
-                    <p className="font-bold text-lg">
-                      {loanAResults?.totalInterest !== null ? `₹ ${loanAResults.totalInterest?.toFixed(2)}` : 'N/A'}
-                    </p>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <p className="text-qicky-textmuted">Total Payable Amount:</p>
-                    <p className="font-bold text-lg">
-                      {loanAResults?.totalPayable !== null ? `₹ ${loanAResults.totalPayable?.toFixed(2)}` : 'N/A'}
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
+            {/* Total Interest */}
+            <Card className="bg-qicky-dark/50 border border-qicky-blue/20 p-4 rounded-lg">
+              <h4 className="text-qicky-textmuted text-sm mb-2">Total Interest</h4>
+              <div className="flex justify-between items-baseline mb-1">
+                <span className="text-qicky-lightblue font-bold text-xl">
+                  {formatCurrency(loanAResults?.totalInterest)}
+                </span>
+                <span className="text-qicky-lightpurple font-bold text-xl">
+                  {formatCurrency(loanBResults?.totalInterest)}
+                </span>
+              </div>
+              {loanAResults?.totalInterest !== null && loanBResults?.totalInterest !== null && (
+                <p className="text-xs text-qicky-textmuted">
+                  Difference: <span className={getDifferenceColor(loanAResults.totalInterest - loanBResults.totalInterest)}>
+                    {formatCurrency(Math.abs(loanAResults.totalInterest - loanBResults.totalInterest))}
+                  </span>
+                </p>
+              )}
+            </Card>
 
-              {/* Results for Loan B */}
-              <Card className="bg-gradient-dark-card border border-qicky-blue/30 p-6 rounded-xl shadow-lg">
-                <CardHeader>
-                  <CardTitle className="text-xl font-bold text-qicky-text mb-4">Loan B</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4 text-qicky-text">
-                  <div className="flex justify-between items-center border-b border-qicky-blue/30 pb-2">
-                    <p className="text-qicky-textmuted">Monthly EMI:</p>
-                    <p className="font-bold text-lg">
-                      {loanBResults?.emi !== null ? `₹ ${loanBResults.emi?.toFixed(2)}` : 'N/A'}
-                    </p>
-                  </div>
-                  <div className="flex justify-between items-center border-b border-qicky-blue/30 pb-2">
-                    <p className="text-qicky-textmuted">Total Interest Payable:</p>
-                    <p className="font-bold text-lg">
-                      {loanBResults?.totalInterest !== null ? `₹ ${loanBResults.totalInterest?.toFixed(2)}` : 'N/A'}
-                    </p>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <p className="text-qicky-textmuted">Total Payable Amount:</p>
-                    <p className="font-bold text-lg">
-                      {loanBResults?.totalPayable !== null ? `₹ ${loanBResults.totalPayable?.toFixed(2)}` : 'N/A'}
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        )}
+            {/* Total Payment */}
+            <Card className="bg-qicky-dark/50 border border-qicky-blue/20 p-4 rounded-lg">
+              <h4 className="text-qicky-textmuted text-sm mb-2">Total Payment</h4>
+              <div className="flex justify-between items-baseline mb-1">
+                <span className="text-qicky-lightblue font-bold text-xl">
+                  {formatCurrency(loanAResults?.totalPayable)}
+                </span>
+                <span className="text-qicky-lightpurple font-bold text-xl">
+                  {formatCurrency(loanBResults?.totalPayable)}
+                </span>
+              </div>
+              {loanAResults?.totalPayable !== null && loanBResults?.totalPayable !== null && (
+                <p className="text-xs text-qicky-textmuted">
+                  Difference: <span className={getDifferenceColor(loanAResults.totalPayable - loanBResults.totalPayable)}>
+                    {formatCurrency(Math.abs(loanAResults.totalPayable - loanBResults.totalPayable))}
+                  </span>
+                </p>
+              )}
+            </Card>
+
+            {/* Loan Efficiency */}
+            <Card className="bg-qicky-dark/50 border border-qicky-blue/20 p-4 rounded-lg">
+              <h4 className="text-qicky-textmuted text-sm mb-2">Loan Efficiency</h4>
+              <div className="flex justify-around items-center h-full">
+                <div className="flex flex-col items-center">
+                  <CircularProgressBar
+                    percentage={loanAResults?.loanEfficiency !== null ? loanAResults.loanEfficiency : 0}
+                    color="hsl(var(--qicky-blue))" // Using HSL for direct Tailwind color
+                  />
+                  <span className="text-qicky-textmuted text-xs mt-1">Loan 1</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <CircularProgressBar
+                    percentage={loanBResults?.loanEfficiency !== null ? loanBResults.loanEfficiency : 0}
+                    color="hsl(var(--qicky-purple))" // Using HSL for direct Tailwind color
+                  />
+                  <span className="text-qicky-textmuted text-xs mt-1">Loan 2</span>
+                </div>
+              </div>
+            </Card>
+          </CardContent>
+        </Card>
       </div>
     </section>
   );
