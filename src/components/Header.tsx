@@ -22,9 +22,9 @@ const Header = () => {
             Tools & Resources <ChevronDown className="ml-1 h-4 w-4" />
           </DropdownMenuTrigger>
           <DropdownMenuContent className="bg-qicky-dark border-qicky-blue text-qicky-text">
-            <DropdownMenuItem className="hover:bg-qicky-blue/20">Loan Calculator</DropdownMenuItem>
-            <DropdownMenuItem className="hover:bg-qicky-blue/20">FAQs</DropdownMenuItem> {/* Added FAQ link */}
-            <DropdownMenuItem className="hover:bg-qicky-blue/20">Blog Posts</DropdownMenuItem>
+            <Link to="/loan-calculator"><DropdownMenuItem className="hover:bg-qicky-blue/20">Loan Calculator</DropdownMenuItem></Link> {/* Updated link */}
+            <Link to="/faqs"><DropdownMenuItem className="hover:bg-qicky-blue/20">FAQs</DropdownMenuItem></Link>
+            <Link to="/blog"><DropdownMenuItem className="hover:bg-qicky-blue/20">Blog Posts</DropdownMenuItem></Link>
           </DropdownMenuContent>
         </DropdownMenu>
         <Link to="/contact" className="text-qicky-textmuted hover:text-qicky-text transition-colors">Contact Us</Link>

@@ -8,7 +8,8 @@ import NotFound from "./pages/NotFound";
 import AboutUs from "./pages/AboutUs";
 import Blog from "./pages/Blog";
 import ContactUs from "./pages/ContactUs";
-import FAQs from "./pages/FAQs"; // Import the new FAQs page
+import FAQs from "./pages/FAQs";
+import LoanCalculatorPage from "./pages/LoanCalculatorPage"; // Import the new LoanCalculatorPage
 
 const queryClient = new QueryClient();
 
@@ -23,7 +24,8 @@ const App = () => (
           <Route path="/about" element={<AboutUs />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<ContactUs />} />
-          <Route path="/faqs" element={<FAQs />} /> {/* Add the FAQs route */}
+          <Route path="/faqs" element={<FAQs />} />
+          <Route path="/loan-calculator" element={<LoanCalculatorPage />} /> {/* Add the Loan Calculator route */}
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

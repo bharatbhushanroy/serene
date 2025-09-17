@@ -6,8 +6,7 @@ import HowItWorksSection from "@/components/HowItWorksSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
 import InstantLoansSection from "@/components/InstantLoansSection";
-import AdvanceLoanSimulator from "@/components/AdvanceLoanSimulator"; // Import the new simulator
-import LoanComparisonCalculator from "@/components/LoanComparisonCalculator"; // Import the new calculator
+// Removed AdvanceLoanSimulator and LoanComparisonCalculator imports as they are now on their own page
 
 const Index = () => {
   return (
@@ -15,8 +14,7 @@ const Index = () => {
       <Header />
       <HeroSection />
       <InstantLoansSection />
-      <AdvanceLoanSimulator /> {/* Added the new simulator here */}
-      <LoanComparisonCalculator /> {/* Added the new calculator here */}
+      {/* Removed AdvanceLoanSimulator and LoanComparisonCalculator from here */}
       <FeaturesSection />
       <HowItWorksSection />
       <TestimonialsSection />
