@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import Footer from "@/components/Footer"; // Import the new Footer component
 
 const Index = () => {
   return (
@@ -14,6 +15,7 @@ const Index = () => {
       <HowItWorksSection />
       <TestimonialsSection />
       {/* Other sections will be added here */}
+      <Footer /> {/* Add the Footer component here */}
       <MadeWithDyad />
     </div>
   );
