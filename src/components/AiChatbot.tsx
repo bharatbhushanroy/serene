@@ -92,7 +92,7 @@ const AiChatbot = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 50, scale: 0.9 }}
             transition={{ duration: 0.3, ease: 'easeOut' }}
-            className="fixed bottom-24 right-4 w-full max-w-sm h-[60vh] bg-gradient-dark-card border border-qicky-blue/30 rounded-2xl shadow-2xl shadow-qicky-purple/30 flex flex-col z-50"
+            className="fixed bottom-24 right-4 w-full max-w-sm h-[60vh] bg-qicky-dark bg-gradient-dark-card border border-qicky-blue/30 rounded-2xl shadow-2xl shadow-qicky-purple/30 flex flex-col z-50"
           >
             <header className="flex items-center justify-between p-4 border-b border-qicky-blue/30">
               <div className="flex items-center space-x-3">
