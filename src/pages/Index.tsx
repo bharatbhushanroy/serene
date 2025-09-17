@@ -10,7 +10,7 @@ import CtaSection from "@/components/CtaSection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-qicky-dark text-qicky-text">
       <Header />
       <main>
         <HeroSection />

@@ -18,6 +18,11 @@ export default {
       },
     },
     extend: {
+      boxShadow: {
+        'glow-purple': '0 0 20px 0 rgba(107, 70, 193, 0.6)',
+        'glow-blue': '0 0 20px 0 rgba(76, 81, 191, 0.6)',
+        'glow-pink': '0 0 20px 0 rgba(236, 72, 153, 0.6)',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -52,6 +57,27 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        sidebar: {
+          DEFAULT: "hsl(var(--sidebar-background))",
+          foreground: "hsl(var(--sidebar-foreground))",
+          primary: "hsl(var(--sidebar-primary))",
+          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
+          accent: "hsl(var(--sidebar-accent))",
+          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
+          border: "hsl(var(--sidebar-border))",
+          ring: "hsl(var(--sidebar-ring))",
+        },
+        // Custom colors for Qicky theme
+        qicky: {
+          dark: "#0A0A2A", // A very dark blue/purple for background
+          purple: "#6B46C1", // A vibrant purple
+          blue: "#4C51BF", // A vibrant blue
+          pink: "#EC4899", // A vibrant pink
+          lightpurple: "#9F7AEA", // A lighter purple
+          lightblue: "#667EEA", // A lighter blue
+          text: "#E0E0E0", // Light text color
+          textmuted: "#A0A0A0", // Muted text color
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -80,6 +106,15 @@ export default {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      backgroundImage: {
+        'gradient-hero': 'linear-gradient(180deg, #0A0A2A 0%, #1A0A3A 100%)',
+        'gradient-button-primary': 'linear-gradient(90deg, #6B46C1 0%, #4C51BF 100%)',
+        'gradient-card-1': 'linear-gradient(90deg, #6B46C1 0%, #4C51BF 100%)',
+        'gradient-card-2': 'linear-gradient(90deg, #EC4899 0%, #9F7AEA 100%)',
+        'gradient-card-3': 'linear-gradient(90deg, #4C51BF 0%, #667EEA 100%)',
+        'gradient-card-4': 'linear-gradient(90deg, #9F7AEA 0%, #EC4899 100%)',
+        'gradient-dark-card': 'linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%)',
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],
