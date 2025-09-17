@@ -6,18 +6,20 @@ import HowItWorksSection from "@/components/HowItWorksSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
 import InstantLoansSection from "@/components/InstantLoansSection";
-// Removed AdvanceLoanSimulator and LoanComparisonCalculator imports as they are now on their own page
+import CtaSection from "@/components/CtaSection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-qicky-dark text-qicky-text hero-background">
+    <div className="min-h-screen bg-qicky-dark text-qicky-text">
       <Header />
-      <HeroSection />
-      <InstantLoansSection />
-      {/* Removed AdvanceLoanSimulator and LoanComparisonCalculator from here */}
-      <FeaturesSection />
-      <HowItWorksSection />
-      <TestimonialsSection />
+      <main>
+        <HeroSection />
+        <InstantLoansSection />
+        <FeaturesSection />
+        <HowItWorksSection />
+        <TestimonialsSection />
+        <CtaSection />
+      </main>
       <Footer />
       <MadeWithDyad />
     </div>

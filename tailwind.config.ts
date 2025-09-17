@@ -18,6 +18,11 @@ export default {
       },
     },
     extend: {
+      boxShadow: {
+        'glow-purple': '0 0 20px 0 rgba(107, 70, 193, 0.6)',
+        'glow-blue': '0 0 20px 0 rgba(76, 81, 191, 0.6)',
+        'glow-pink': '0 0 20px 0 rgba(236, 72, 153, 0.6)',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

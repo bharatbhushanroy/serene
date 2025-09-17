@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card } from '@/components/ui/card';
-import { Star } from 'lucide-react';
+import { Star, Quote } from 'lucide-react';
 
 const TestimonialsSection = () => {
   const testimonials = [
@@ -33,7 +33,8 @@ const TestimonialsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="bg-gradient-dark-card border border-qicky-blue/30 p-6 rounded-xl shadow-lg text-qicky-text text-left">
+            <Card key={index} className="relative bg-white/5 backdrop-blur-lg border border-qicky-blue/30 p-6 rounded-xl shadow-lg text-qicky-text text-left transition-all duration-300 hover:border-qicky-blue hover:bg-white/10">
+              <Quote className="absolute top-4 right-4 h-12 w-12 text-qicky-blue/20" />
               <div className="flex mb-4">
                 {[...Array(5)].map((_, i) => (
                   <Star
@@ -42,7 +43,7 @@ const TestimonialsSection = () => {
                   />
                 ))}
               </div>
-              <p className="text-base text-qicky-text mb-4 italic">"{testimonial.quote}"</p>
+              <p className="text-base text-qicky-text mb-4 italic z-10 relative">"{testimonial.quote}"</p>
               <p className="font-semibold text-qicky-lightblue">- {testimonial.name}</p>
             </Card>
           ))}

@@ -98,6 +98,9 @@
   body {
     /* Using a custom dark background for the Qicky theme */
     @apply bg-qicky-dark text-qicky-text;
+    background-image: radial-gradient(circle at 50% 0%, rgba(76, 81, 191, 0.2) 0%, transparent 40%),
+                      radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+    background-size: 100% 100%, 15px 15px;
   }
 }
 

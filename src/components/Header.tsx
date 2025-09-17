@@ -6,7 +6,7 @@ import { ChevronDown } from 'lucide-react';
 
 const Header = () => {
   return (
-    <header className="relative z-10 w-full bg-transparent py-4 px-6 md:px-12 lg:px-24 flex items-center justify-between">
+    <header className="sticky top-0 z-50 w-full bg-qicky-dark/80 backdrop-blur-sm py-4 px-6 md:px-12 lg:px-24 flex items-center justify-between border-b border-qicky-blue/20">
       <div className="flex items-center">
         <Link to="/" className="flex items-center space-x-2">
           <img src="/public/favicon.ico" alt="Qicky Logo" className="h-8 w-8" />

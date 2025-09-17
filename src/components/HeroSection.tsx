@@ -31,12 +31,12 @@ const HeroSection = () => {
           </p>
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
             <Link to="/apply-loan"> {/* Link the button to the ApplyLoanPage */}
-              <Button className="bg-gradient-button-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity group">
+              <Button className="bg-gradient-button-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-all duration-300 hover:shadow-glow-purple group">
                 Apply Now <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
             <Link to="/about">
-              <Button variant="outline" className="bg-transparent border-qicky-textmuted text-qicky-text px-8 py-3 rounded-full text-lg font-semibold hover:bg-qicky-blue/20 transition-colors">
+              <Button variant="outline" className="bg-transparent border-qicky-textmuted text-qicky-text px-8 py-3 rounded-full text-lg font-semibold hover:bg-qicky-blue/20 hover:border-qicky-blue transition-colors">
                 Learn More
               </Button>
             </Link>
