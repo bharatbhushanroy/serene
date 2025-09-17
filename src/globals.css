@@ -103,8 +103,9 @@
 
 /* Custom background for the hero section with dots */
 .hero-background {
-  background-image: url('/public/placeholder.svg'), linear-gradient(180deg, #0A0A2A 0%, #1A0A3A 100%);
-  background-size: cover, cover; /* Adjust as needed */
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.1) 1px, transparent 0),
+                    linear-gradient(180deg, #0A0A2A 0%, #1A0A3A 100%);
+  background-size: 15px 15px, cover; /* Smaller size for denser dots */
   background-position: center, center;
-  background-repeat: no-repeat, no-repeat;
+  background-repeat: repeat, no-repeat;
 }
