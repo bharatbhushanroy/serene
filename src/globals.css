@@ -82,6 +82,9 @@
     --fintech-phone-bg-blue: 210 80% 40%; /* Blue background inside phone */
     --fintech-phone-text-blue: 210 40% 98%; /* White text inside phone */
     --fintech-phone-star-yellow: 40 90% 60%; /* Yellow stars inside phone */
+
+    /* New color for Interactive Loan Simulator */
+    --fintech-simulator-card-bg: 220 10% 15%; /* Dark grey/blue for simulator card */
   }
 
   .dark {

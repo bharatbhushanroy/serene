@@ -108,6 +108,8 @@ export default {
           'phone-bg-blue': 'hsl(var(--fintech-phone-bg-blue))',
           'phone-text-blue': 'hsl(var(--fintech-phone-text-blue))',
           'phone-star-yellow': 'hsl(var(--fintech-phone-star-yellow))',
+          // New color for Interactive Loan Simulator
+          'simulator-card-bg': 'hsl(var(--fintech-simulator-card-bg))',
         }
       },
       borderRadius: {
