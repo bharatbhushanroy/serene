@@ -3,6 +3,7 @@ import { Button } from './ui/button';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Link as LinkIcon, Clock, FileText, Download, Star, ArrowRight, Wifi, BatteryCharging } from 'lucide-react';
+import QickyLogo from './QickyLogo'; // Import the new QickyLogo component
 
 const InstantLoansSection = () => {
   return (
@@ -113,7 +114,7 @@ const InstantLoansSection = () => {
                 </div>
               </div>
 
-              <img src="/public/qicky-logo.png" alt="Qicky Logo" className="h-10 w-auto mb-4" />
+              <QickyLogo size="sm" className="mb-4" /> {/* Use the new QickyLogo component */}
               <div className="flex mb-2">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="h-5 w-5 text-fintech-star-yellow fill-current" />

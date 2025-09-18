@@ -2,14 +2,8 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle, ShieldCheck } from 'lucide-react';
-
-const QickyLogo = () => (
-  <div className="flex items-center space-x-2">
-    <ShieldCheck className="w-8 h-8 text-fintech-blue-accent" />
-    <span className="text-2xl font-bold text-fintech-text-dark">Qicky</span>
-  </div>
-);
+import { CheckCircle } from 'lucide-react';
+import QickyLogo from './QickyLogo'; // Import the new QickyLogo component
 
 const LoanApprovedMockup = () => {
   return (
@@ -21,7 +15,7 @@ const LoanApprovedMockup = () => {
       className="relative z-10 w-full max-w-xs mx-auto bg-fintech-card-light/80 backdrop-blur-lg border border-fintech-border-light rounded-3xl p-6 shadow-2xl shadow-fintech-blue-accent/20"
     >
       <div className="flex flex-col items-center text-center">
-        <QickyLogo />
+        <QickyLogo size="md" /> {/* Use the new QickyLogo component */}
         <motion.div
           initial={{ scale: 0 }}
           whileInView={{ scale: 1 }}

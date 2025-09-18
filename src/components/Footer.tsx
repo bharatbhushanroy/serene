@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { ChevronDown, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import QickyLogo from './QickyLogo'; // Import the new QickyLogo component
 
 const Footer = () => {
   return (
@@ -9,8 +10,8 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-8">
         {/* Logo and Description */}
         <div className="col-span-full lg:col-span-1 flex flex-col items-center md:items-start text-center md:text-left">
-          <Link to="/" className="flex items-center space-x-2 mb-4">
-            <img src="/public/qicky-logo.png" alt="Qicky Logo" className="h-8 w-auto" />
+          <Link to="/" className="flex items-center mb-4">
+            <QickyLogo size="md" /> {/* Use the new QickyLogo component */}
           </Link>
           <p className="text-sm text-fintech-text-muted max-w-xs">
             Your trusted partner for quick and flexible personal loans.

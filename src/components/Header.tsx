@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { ChevronDown } from 'lucide-react';
+import QickyLogo from './QickyLogo'; // Import the new QickyLogo component
 
 const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full bg-fintech-background-light/80 backdrop-blur-sm py-4 px-6 md:px-12 lg:px-24 flex items-center justify-between border-b border-fintech-border-light">
       <div className="flex items-center">
-        <Link to="/" className="flex items-center space-x-2">
-          <img src="/public/qicky-logo.png" alt="Qicky Logo" className="h-8 w-auto" />
+        <Link to="/" className="flex items-center">
+          <QickyLogo size="md" /> {/* Use the new QickyLogo component */}
         </Link>
       </div>
       <nav className="hidden lg:flex items-center space-x-8">
