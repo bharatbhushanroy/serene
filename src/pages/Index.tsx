@@ -4,14 +4,14 @@ import HeroSection from "@/components/HeroSection";
 import ApplyStepsSection from "@/components/ApplyStepsSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
+import MemberTestimonialsSection from "@/components/MemberTestimonialsSection"; // Import the new component
 import Footer from "@/components/Footer";
 import InstantLoansSection from "@/components/InstantLoansSection";
 import CtaSection from "@/components/CtaSection";
 import TopUpLoansSection from "@/components/TopUpLoansSection";
 import InteractiveLoanSimulatorSection from "@/components/InteractiveLoanSimulatorSection";
 import FinancialFreedomSection from "@/components/FinancialFreedomSection";
-import LoanComparisonCalculator from "@/components/LoanComparisonCalculator"; // Import the LoanComparisonCalculator
+import LoanComparisonCalculator from "@/components/LoanComparisonCalculator";
 
 const Index = () => {
   return (
@@ -25,9 +25,9 @@ const Index = () => {
         <TopUpLoansSection />
         <InteractiveLoanSimulatorSection />
         <HowItWorksSection />
-        <LoanComparisonCalculator /> {/* Add the LoanComparisonCalculator here */}
+        <LoanComparisonCalculator />
         <FinancialFreedomSection />
-        <TestimonialsSection />
+        <MemberTestimonialsSection /> {/* Use the new component here */}
         <CtaSection />
       </main>
       <Footer />
