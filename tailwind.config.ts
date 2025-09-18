@@ -81,6 +81,17 @@ export default {
           // New colors for the "Apply Loan in Simple Steps" section
           'peach-background': 'hsl(var(--fintech-peach-background))',
           'orange-accent': 'hsl(var(--fintech-orange-accent))',
+          // New colors for the Instant Personal Loans section
+          'dark-bg': '#0A0A1A', // Very dark blue/purple for section background
+          'gradient-blue-start': '#4F46E5', // Indigo-600
+          'gradient-blue-end': '#6366F1', // Indigo-500
+          'gradient-purple-start': '#8B5CF6', // Violet-500
+          'gradient-purple-end': '#A78BFA', // Violet-400
+          'gradient-pink-start': '#EC4899', // Pink-500
+          'gradient-pink-end': '#F472B6', // Pink-400
+          'gradient-cyan-start': '#06B6D4', // Cyan-500
+          'gradient-cyan-end': '#22D3EE', // Cyan-400
+          'star-yellow': '#FBBF24', // Amber-400
         }
       },
       borderRadius: {
@@ -105,10 +116,25 @@ export default {
             height: "0",
           },
         },
+        blob: {
+          "0%": {
+            transform: "translate(0px, 0px) scale(1)",
+          },
+          "33%": {
+            transform: "translate(30px, -50px) scale(1.1)",
+          },
+          "66%": {
+            transform: "translate(-20px, 20px) scale(0.9)",
+          },
+          "100%": {
+            transform: "translate(0px, 0px) scale(1)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        blob: "blob 7s infinite",
       },
       backgroundImage: {
         'gradient-button-primary': 'linear-gradient(90deg, #3B82F6 0%, #60A5FA 100%)', // Blue gradient for primary buttons

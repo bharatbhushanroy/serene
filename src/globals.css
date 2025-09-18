@@ -53,6 +53,18 @@
     /* New colors for the "Apply Loan in Simple Steps" section */
     --fintech-peach-background: 30 100% 96%; /* A light peach/orange */
     --fintech-orange-accent: 36 100% 50%; /* A vibrant orange */
+
+    /* New colors for the Instant Personal Loans section */
+    --fintech-dark-bg: 240 10% 3.9%; /* A very dark blue/purple */
+    --fintech-gradient-blue-start: 235 69% 61%;
+    --fintech-gradient-blue-end: 235 69% 71%;
+    --fintech-gradient-purple-start: 260 70% 60%;
+    --fintech-gradient-purple-end: 260 70% 70%;
+    --fintech-gradient-pink-start: 330 80% 60%;
+    --fintech-gradient-pink-end: 330 80% 70%;
+    --fintech-gradient-cyan-start: 190 80% 50%;
+    --fintech-gradient-cyan-end: 190 80% 60%;
+    --fintech-star-yellow: 40 90% 60%;
   }
 
   .dark {
@@ -115,4 +127,9 @@
   background-size: 15px 15px, cover; /* Smaller size for denser dots */
   background-position: center, center;
   background-repeat: repeat, no-repeat;
+}
+
+/* Animation for background blobs */
+.animation-delay-2000 {
+  animation-delay: 2s;
 }

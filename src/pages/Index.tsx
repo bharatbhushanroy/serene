@@ -1,12 +1,12 @@
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import ApplyStepsSection from "@/components/ApplyStepsSection"; // Import the new component
+import ApplyStepsSection from "@/components/ApplyStepsSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
-import InstantLoansSection from "@/components/InstantLoansSection";
+import InstantLoansSection from "@/components/InstantLoansSection"; // This component has been modified
 import CtaSection from "@/components/CtaSection";
 
 const Index = () => {
@@ -15,8 +15,8 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
-        <ApplyStepsSection /> {/* Add the new section here */}
-        <InstantLoansSection />
+        <ApplyStepsSection />
+        <InstantLoansSection /> {/* This is the modified section */}
         <FeaturesSection />
         <HowItWorksSection />
         <TestimonialsSection />
