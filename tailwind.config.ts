@@ -92,6 +92,22 @@ export default {
           'gradient-cyan-start': '#06B6D4', // Cyan-500
           'gradient-cyan-end': '#22D3EE', // Cyan-400
           'star-yellow': '#FBBF24', // Amber-400
+          // New colors for the Top-Up Loans section
+          'dark-purple-bg': 'hsl(var(--fintech-dark-purple-bg))',
+          'topup-line': 'hsl(var(--fintech-topup-line))',
+          'topup-gradient-start': 'hsl(var(--fintech-topup-gradient-start))',
+          'topup-gradient-end': 'hsl(var(--fintech-topup-gradient-end))',
+          'card-pink-start': 'hsl(var(--fintech-card-pink-start))',
+          'card-pink-end': 'hsl(var(--fintech-card-pink-end))',
+          'card-purple-start': 'hsl(var(--fintech-card-purple-start))',
+          'card-purple-end': 'hsl(var(--fintech-card-purple-end))',
+          'card-blue-start': 'hsl(var(--fintech-card-blue-start))',
+          'card-blue-end': 'hsl(var(--fintech-card-blue-end))',
+          'card-darkblue-start': 'hsl(var(--fintech-card-darkblue-start))',
+          'card-darkblue-end': 'hsl(var(--fintech-card-darkblue-end))',
+          'phone-bg-blue': 'hsl(var(--fintech-phone-bg-blue))',
+          'phone-text-blue': 'hsl(var(--fintech-phone-text-blue))',
+          'phone-star-yellow': 'hsl(var(--fintech-phone-star-yellow))',
         }
       },
       borderRadius: {

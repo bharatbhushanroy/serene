@@ -65,6 +65,23 @@
     --fintech-gradient-cyan-start: 190 80% 50%;
     --fintech-gradient-cyan-end: 190 80% 60%;
     --fintech-star-yellow: 40 90% 60%;
+
+    /* New colors for the Top-Up Loans section */
+    --fintech-dark-purple-bg: 240 10% 3.9%; /* Very dark purple/black */
+    --fintech-topup-line: 260 70% 70%; /* Light purple for the line */
+    --fintech-topup-gradient-start: 260 70% 60%; /* Purple for title gradient start */
+    --fintech-topup-gradient-end: 330 80% 60%; /* Pink for title gradient end */
+    --fintech-card-pink-start: 330 80% 60%;
+    --fintech-card-pink-end: 330 80% 70%;
+    --fintech-card-purple-start: 260 70% 60%;
+    --fintech-card-purple-end: 260 70% 70%;
+    --fintech-card-blue-start: 235 69% 61%;
+    --fintech-card-blue-end: 235 69% 71%;
+    --fintech-card-darkblue-start: 220 80% 40%;
+    --fintech-card-darkblue-end: 220 80% 50%;
+    --fintech-phone-bg-blue: 210 80% 40%; /* Blue background inside phone */
+    --fintech-phone-text-blue: 210 40% 98%; /* White text inside phone */
+    --fintech-phone-star-yellow: 40 90% 60%; /* Yellow stars inside phone */
   }
 
   .dark {

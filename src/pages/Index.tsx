@@ -6,8 +6,9 @@ import FeaturesSection from "@/components/FeaturesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
-import InstantLoansSection from "@/components/InstantLoansSection"; // This component has been modified
+import InstantLoansSection from "@/components/InstantLoansSection";
 import CtaSection from "@/components/CtaSection";
+import TopUpLoansSection from "@/components/TopUpLoansSection"; // Import the new component
 
 const Index = () => {
   return (
@@ -16,8 +17,9 @@ const Index = () => {
       <main>
         <HeroSection />
         <ApplyStepsSection />
-        <InstantLoansSection /> {/* This is the modified section */}
+        <InstantLoansSection />
         <FeaturesSection />
+        <TopUpLoansSection /> {/* Add the new section here */}
         <HowItWorksSection />
         <TestimonialsSection />
         <CtaSection />
