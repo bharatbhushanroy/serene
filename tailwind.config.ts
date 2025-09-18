@@ -20,6 +20,7 @@ export default {
     extend: {
       boxShadow: {
         'glow-blue': '0 0 20px 0 rgba(59, 130, 246, 0.3)', // Soft blue glow
+        'glow-orange': '0 0 20px 0 rgba(255, 152, 0, 0.3)', // Soft orange glow
       },
       colors: {
         border: "hsl(var(--border))",
@@ -77,6 +78,9 @@ export default {
           'green-success': '#10B981', // Green for success states
           'border-light': '#E5E7EB', // Light grey for borders
           'card-light': '#FFFFFF', // Card background
+          // New colors for the "Apply Loan in Simple Steps" section
+          'peach-background': 'hsl(var(--fintech-peach-background))',
+          'orange-accent': 'hsl(var(--fintech-orange-accent))',
         }
       },
       borderRadius: {

@@ -1,7 +1,7 @@
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import HowQickyWorksSection from "@/components/HowQickyWorksSection"; // Import the new component
+import ApplyStepsSection from "@/components/ApplyStepsSection"; // Import the new component
 import FeaturesSection from "@/components/FeaturesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
@@ -15,7 +15,7 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
-        <HowQickyWorksSection /> {/* Add the new section here */}
+        <ApplyStepsSection /> {/* Add the new section here */}
         <InstantLoansSection />
         <FeaturesSection />
         <HowItWorksSection />

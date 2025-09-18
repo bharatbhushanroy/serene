@@ -49,6 +49,10 @@
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* New colors for the "Apply Loan in Simple Steps" section */
+    --fintech-peach-background: 30 100% 96%; /* A light peach/orange */
+    --fintech-orange-accent: 36 100% 50%; /* A vibrant orange */
   }
 
   .dark {
