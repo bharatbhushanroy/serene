@@ -5,6 +5,16 @@ import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider'; // Assuming shadcn/ui Slider
 import { DollarSign, Zap, CalendarDays, TrendingUp } from 'lucide-react';
 import CircularProgressBar from './CircularProgressBar'; // Import the new component
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from 'recharts'; // Import recharts components
 
 // Helper function to calculate EMI and efficiency
 const calculateLoanDetails = (principal: number, annualRate: number, years: number) => {
@@ -74,236 +84,293 @@ const LoanComparisonCalculator = () => {
     return 'text-fintech-text-muted';
   };
 
+  // Prepare data for the bar chart
+  const barChartData = [
+    {
+      name: 'Loan 1',
+      'Monthly Payment': loanAResults?.emi ?? 0,
+      'Total Interest': loanAResults?.totalInterest ?? 0,
+      'Principal Amount': loanAAmount,
+    },
+    {
+      name: 'Loan 2',
+      'Monthly Payment': loanBResults?.emi ?? 0,
+      'Total Interest': loanBResults?.totalInterest ?? 0,
+      'Principal Amount': loanBAmount,
+    },
+  ];
+
   return (
-    <section className="relative z-10 w-full py-20 px-6 md:px-12 lg:px-24 text-fintech-text-dark">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {/* Left Column: Loan Inputs */}
-        <div className="space-y-8">
-          {/* Loan 1 Card */}
-          <Card className="bg-gradient-card-light border border-fintech-border-light p-6 rounded-xl shadow-lg">
-            <CardHeader>
-              <CardTitle className="text-3xl font-bold text-fintech-text-dark mb-6">Loan 1</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-8">
-              {/* Loan Amount */}
-              <div>
-                <div className="flex items-center justify-between mb-2">
-                  <Label htmlFor="loanAAmount" className="text-fintech-text-muted flex items-center">
-                    <DollarSign className="h-5 w-5 mr-2 text-fintech-blue-accent" /> Loan Amount
-                  </Label>
-                  <span className="text-lg font-semibold text-fintech-text-dark">{formatCurrency(loanAAmount)}</span>
-                </div>
-                <Slider
-                  id="loanAAmount"
-                  min={10000}
-                  max={1000000}
-                  step={10000}
-                  value={[loanAAmount]}
-                  onValueChange={(val) => setLoanAAmount(val[0])}
-                  className="[&>span:first-child]:h-2 [&>span:first-child]:bg-gradient-to-r [&>span:first-child]:from-fintech-blue-accent [&>span:first-child]:to-fintech-blue-soft [&_[role=slider]]:h-5 [&_[role=slider]]:w-5 [&_[role=slider]]:bg-fintech-blue-accent [&_[role=slider]]:border-2 [&_[role=slider]]:border-fintech-blue-accent"
-                />
-              </div>
-
-              {/* Interest Rate */}
-              <div>
-                <div className="flex items-center justify-between mb-2">
-                  <Label htmlFor="loanARate" className="text-fintech-text-muted flex items-center">
-                    <Zap className="h-5 w-5 mr-2 text-fintech-blue-accent" /> Interest Rate
-                  </Label>
-                  <div className="flex items-center">
-                    <span className="text-lg font-semibold text-fintech-text-dark">{loanARate}%</span>
-                    {getRateBadge(loanARate)}
+    <section className="relative z-10 w-full py-20 px-6 md:px-12 lg:px-24 text-fintech-text-dark bg-fintech-dark-bg"> {/* Changed background to dark */}
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-12 text-center text-white"> {/* Changed text to white */}
+          Compare Your <span className="bg-gradient-to-r from-fintech-blue-accent to-fintech-blue-soft text-transparent bg-clip-text">Loan Options</span>
+        </h2>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Left Column: Loan Inputs */}
+          <div className="space-y-8">
+            {/* Loan 1 Card */}
+            <Card className="bg-fintech-simulator-card-bg border border-fintech-border-light p-6 rounded-xl shadow-lg"> {/* Changed card background */}
+              <CardHeader>
+                <CardTitle className="text-3xl font-bold text-white mb-6">Loan 1</CardTitle> {/* Changed text to white */}
+              </CardHeader>
+              <CardContent className="space-y-8">
+                {/* Loan Amount */}
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <Label htmlFor="loanAAmount" className="text-fintech-text-muted flex items-center">
+                      <DollarSign className="h-5 w-5 mr-2 text-fintech-blue-accent" /> Loan Amount
+                    </Label>
+                    <span className="text-lg font-semibold text-white">{formatCurrency(loanAAmount)}</span> {/* Changed text to white */}
                   </div>
+                  <Slider
+                    id="loanAAmount"
+                    min={10000}
+                    max={1000000}
+                    step={10000}
+                    value={[loanAAmount]}
+                    onValueChange={(val) => setLoanAAmount(val[0])}
+                    className="[&>span:first-child]:h-2 [&>span:first-child]:bg-gray-700 [&>span:first-child>span]:bg-fintech-blue-accent [&_[role=slider]]:h-5 [&_[role=slider]]:w-5 [&_[role=slider]]:bg-fintech-blue-accent [&_[role=slider]]:border-2 [&_[role=slider]]:border-fintech-blue-accent"
+                  />
                 </div>
-                <Slider
-                  id="loanARate"
-                  min={5}
-                  max={25}
-                  step={0.5}
-                  value={[loanARate]}
-                  onValueChange={(val) => setLoanARate(val[0])}
-                  className="[&>span:first-child]:h-2 [&>span:first-child]:bg-gradient-to-r [&>span:first-child]:from-fintech-blue-accent [&>span:first-child]:to-fintech-blue-soft [&_[role=slider]]:h-5 [&_[role=slider]]:w-5 [&_[role=slider]]:bg-fintech-blue-accent [&_[role=slider]]:border-2 [&_[role=slider]]:border-fintech-blue-accent"
-                />
-              </div>
 
-              {/* Loan Tenure */}
-              <div>
-                <div className="flex items-center justify-between mb-2">
-                  <Label htmlFor="loanATenure" className="text-fintech-text-muted flex items-center">
-                    <CalendarDays className="h-5 w-5 mr-2 text-fintech-blue-accent" /> Loan Tenure (Months)
-                  </Label>
-                  <span className="text-lg font-semibold text-fintech-text-dark">{loanATenure} months</span>
-                </div>
-                <Slider
-                  id="loanATenure"
-                  min={6}
-                  max={120}
-                  step={6}
-                  value={[loanATenure]}
-                  onValueChange={(val) => setLoanATenure(val[0])}
-                  className="[&>span:first-child]:h-2 [&>span:first-child]:bg-gradient-to-r [&>span:first-child]:from-fintech-blue-accent [&>span:first-child]:to-fintech-blue-soft [&_[role=slider]]:h-5 [&_[role=slider]]:w-5 [&_[role=slider]]:bg-fintech-blue-accent [&_[role=slider]]:border-2 [&_[role=slider]]:border-fintech-blue-accent"
-                />
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Loan 2 Card */}
-          <Card className="bg-gradient-card-light border border-fintech-border-light p-6 rounded-xl shadow-lg">
-            <CardHeader>
-              <CardTitle className="text-3xl font-bold text-fintech-text-dark mb-6">Loan 2</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-8">
-              {/* Loan Amount */}
-              <div>
-                <div className="flex items-center justify-between mb-2">
-                  <Label htmlFor="loanBAmount" className="text-fintech-text-muted flex items-center">
-                    <DollarSign className="h-5 w-5 mr-2 text-fintech-blue-accent" /> Loan Amount
-                  </Label>
-                  <span className="text-lg font-semibold text-fintech-text-dark">{formatCurrency(loanBAmount)}</span>
-                </div>
-                <Slider
-                  id="loanBAmount"
-                  min={10000}
-                  max={1000000}
-                  step={10000}
-                  value={[loanBAmount]}
-                  onValueChange={(val) => setLoanBAmount(val[0])}
-                  className="[&>span:first-child]:h-2 [&>span:first-child]:bg-gradient-to-r [&>span:first-child]:from-fintech-blue-accent [&>span:first-child]:to-fintech-blue-soft [&_[role=slider]]:h-5 [&_[role=slider]]:w-5 [&_[role=slider]]:bg-fintech-blue-accent [&_[role=slider]]:border-2 [&_[role=slider]]:border-fintech-blue-accent"
-                />
-              </div>
-
-              {/* Interest Rate */}
-              <div>
-                <div className="flex items-center justify-between mb-2">
-                  <Label htmlFor="loanBRate" className="text-fintech-text-muted flex items-center">
-                    <Zap className="h-5 w-5 mr-2 text-fintech-blue-accent" /> Interest Rate
-                  </Label>
-                  <div className="flex items-center">
-                    <span className="text-lg font-semibold text-fintech-text-dark">{loanBRate}%</span>
-                    {getRateBadge(loanBRate)}
+                {/* Interest Rate */}
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <Label htmlFor="loanARate" className="text-fintech-text-muted flex items-center">
+                      <Zap className="h-5 w-5 mr-2 text-fintech-blue-accent" /> Interest Rate
+                    </Label>
+                    <div className="flex items-center">
+                      <span className="text-lg font-semibold text-white">{loanARate}%</span> {/* Changed text to white */}
+                      {getRateBadge(loanARate)}
+                    </div>
                   </div>
+                  <Slider
+                    id="loanARate"
+                    min={5}
+                    max={25}
+                    step={0.5}
+                    value={[loanARate]}
+                    onValueChange={(val) => setLoanARate(val[0])}
+                    className="[&>span:first-child]:h-2 [&>span:first-child]:bg-gray-700 [&>span:first-child>span]:bg-fintech-blue-accent [&_[role=slider]]:h-5 [&_[role=slider]]:w-5 [&_[role=slider]]:bg-fintech-blue-accent [&_[role=slider]]:border-2 [&_[role=slider]]:border-fintech-blue-accent"
+                  />
                 </div>
-                <Slider
-                  id="loanBRate"
-                  min={5}
-                  max={25}
-                  step={0.5}
-                  value={[loanBRate]}
-                  onValueChange={(val) => setLoanBRate(val[0])}
-                  className="[&>span:first-child]:h-2 [&>span:first-child]:bg-gradient-to-r [&>span:first-child]:from-fintech-blue-accent [&>span:first-child]:to-fintech-blue-soft [&_[role=slider]]:h-5 [&_[role=slider]]:w-5 [&_[role=slider]]:bg-fintech-blue-accent [&_[role=slider]]:border-2 [&_[role=slider]]:border-fintech-blue-accent"
-                />
-              </div>
 
-              {/* Loan Tenure */}
-              <div>
-                <div className="flex items-center justify-between mb-2">
-                  <Label htmlFor="loanBTenure" className="text-fintech-text-muted flex items-center">
-                    <CalendarDays className="h-5 w-5 mr-2 text-fintech-blue-accent" /> Loan Tenure (Months)
-                  </Label>
-                  <span className="text-lg font-semibold text-fintech-text-dark">{loanBTenure} months</span>
+                {/* Loan Tenure */}
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <Label htmlFor="loanATenure" className="text-fintech-text-muted flex items-center">
+                      <CalendarDays className="h-5 w-5 mr-2 text-fintech-blue-accent" /> Loan Tenure (Months)
+                    </Label>
+                    <span className="text-lg font-semibold text-white">{loanATenure} months</span> {/* Changed text to white */}
+                  </div>
+                  <Slider
+                    id="loanATenure"
+                    min={6}
+                    max={120}
+                    step={6}
+                    value={[loanATenure]}
+                    onValueChange={(val) => setLoanATenure(val[0])}
+                    className="[&>span:first-child]:h-2 [&>span:first-child]:bg-gray-700 [&>span:first-child>span]:bg-fintech-blue-accent [&_[role=slider]]:h-5 [&_[role=slider]]:w-5 [&_[role=slider]]:bg-fintech-blue-accent [&_[role=slider]]:border-2 [&_[role=slider]]:border-fintech-blue-accent"
+                  />
                 </div>
-                <Slider
-                  id="loanBTenure"
-                  min={6}
-                  max={120}
-                  step={6}
-                  value={[loanBTenure]}
-                  onValueChange={(val) => setLoanBTenure(val[0])}
-                  className="[&>span:first-child]:h-2 [&>span:first-child]:bg-gradient-to-r [&>span:first-child]:from-fintech-blue-accent [&>span:first-child]:to-fintech-blue-soft [&_[role=slider]]:h-5 [&_[role=slider]]:w-5 [&_[role=slider]]:bg-fintech-blue-accent [&_[role=slider]]:border-2 [&_[role=slider]]:border-fintech-blue-accent"
-                />
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+
+            {/* Loan 2 Card */}
+            <Card className="bg-fintech-simulator-card-bg border border-fintech-border-light p-6 rounded-xl shadow-lg"> {/* Changed card background */}
+              <CardHeader>
+                <CardTitle className="text-3xl font-bold text-white mb-6">Loan 2</CardTitle> {/* Changed text to white */}
+              </CardHeader>
+              <CardContent className="space-y-8">
+                {/* Loan Amount */}
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <Label htmlFor="loanBAmount" className="text-fintech-text-muted flex items-center">
+                      <DollarSign className="h-5 w-5 mr-2 text-fintech-blue-accent" /> Loan Amount
+                    </Label>
+                    <span className="text-lg font-semibold text-white">{formatCurrency(loanBAmount)}</span> {/* Changed text to white */}
+                  </div>
+                  <Slider
+                    id="loanBAmount"
+                    min={10000}
+                    max={1000000}
+                    step={10000}
+                    value={[loanBAmount]}
+                    onValueChange={(val) => setLoanBAmount(val[0])}
+                    className="[&>span:first-child]:h-2 [&>span:first-child]:bg-gray-700 [&>span:first-child>span]:bg-fintech-blue-accent [&_[role=slider]]:h-5 [&_[role=slider]]:w-5 [&_[role=slider]]:bg-fintech-blue-accent [&_[role=slider]]:border-2 [&_[role=slider]]:border-fintech-blue-accent"
+                  />
+                </div>
+
+                {/* Interest Rate */}
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <Label htmlFor="loanBRate" className="text-fintech-text-muted flex items-center">
+                      <Zap className="h-5 w-5 mr-2 text-fintech-blue-accent" /> Interest Rate
+                    </Label>
+                    <div className="flex items-center">
+                      <span className="text-lg font-semibold text-white">{loanBRate}%</span> {/* Changed text to white */}
+                      {getRateBadge(loanBRate)}
+                    </div>
+                  </div>
+                  <Slider
+                    id="loanBRate"
+                    min={5}
+                    max={25}
+                    step={0.5}
+                    value={[loanBRate]}
+                    onValueChange={(val) => setLoanBRate(val[0])}
+                    className="[&>span:first-child]:h-2 [&>span:first-child]:bg-gray-700 [&>span:first-child>span]:bg-fintech-blue-accent [&_[role=slider]]:h-5 [&_[role=slider]]:w-5 [&_[role=slider]]:bg-fintech-blue-accent [&_[role=slider]]:border-2 [&_[role=slider]]:border-fintech-blue-accent"
+                  />
+                </div>
+
+                {/* Loan Tenure */}
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <Label htmlFor="loanBTenure" className="text-fintech-text-muted flex items-center">
+                      <CalendarDays className="h-5 w-5 mr-2 text-fintech-blue-accent" /> Loan Tenure (Months)
+                    </Label>
+                    <span className="text-lg font-semibold text-white">{loanBTenure} months</span> {/* Changed text to white */}
+                  </div>
+                  <Slider
+                    id="loanBTenure"
+                    min={6}
+                    max={120}
+                    step={6}
+                    value={[loanBTenure]}
+                    onValueChange={(val) => setLoanBTenure(val[0])}
+                    className="[&>span:first-child]:h-2 [&>span:first-child]:bg-gray-700 [&>span:first-child>span]:bg-fintech-blue-accent [&_[role=slider]]:h-5 [&_[role=slider]]:w-5 [&_[role=slider]]:bg-fintech-blue-accent [&_[role=slider]]:border-2 [&_[role=slider]]:border-fintech-blue-accent"
+                  />
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Right Column: Loan Comparison Results */}
+          <div className="space-y-8">
+            <Card className="bg-fintech-simulator-card-bg border border-fintech-border-light p-6 rounded-xl shadow-lg h-fit"> {/* Changed card background */}
+              <CardHeader>
+                <CardTitle className="text-3xl font-bold text-white mb-6">Loan Comparison</CardTitle> {/* Changed text to white */}
+              </CardHeader>
+              <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* EMI (Monthly Payment) */}
+                <Card className="bg-gray-800 border-gray-700 p-4 rounded-lg"> {/* Changed card background */}
+                  <h4 className="text-fintech-text-muted text-sm mb-2">EMI (Monthly Payment)</h4>
+                  <div className="flex justify-between items-baseline mb-1">
+                    <span className="text-fintech-blue-accent font-bold text-xl">
+                      {formatCurrency(loanAResults?.emi)}
+                    </span>
+                    <span className="text-fintech-blue-accent font-bold text-xl">
+                      {formatCurrency(loanBResults?.emi)}
+                    </span>
+                  </div>
+                  {loanAResults && loanBResults && loanAResults.emi !== null && loanBResults.emi !== null && (
+                    <p className="text-xs text-fintech-text-muted">
+                      Difference: <span className={getDifferenceColor(loanAResults.emi - loanBResults.emi)}>
+                        {formatCurrency(Math.abs(loanAResults.emi - loanBResults.emi))}
+                      </span>
+                    </p>
+                  )}
+                </Card>
+
+                {/* Total Interest */}
+                <Card className="bg-gray-800 border-gray-700 p-4 rounded-lg"> {/* Changed card background */}
+                  <h4 className="text-fintech-text-muted text-sm mb-2">Total Interest</h4>
+                  <div className="flex justify-between items-baseline mb-1">
+                    <span className="text-fintech-blue-accent font-bold text-xl">
+                      {formatCurrency(loanAResults?.totalInterest)}
+                    </span>
+                    <span className="text-fintech-blue-accent font-bold text-xl">
+                      {formatCurrency(loanBResults?.totalInterest)}
+                    </span>
+                  </div>
+                  {loanAResults && loanBResults && loanAResults.totalInterest !== null && loanBResults.totalInterest !== null && (
+                    <p className="text-xs text-fintech-text-muted">
+                      Difference: <span className={getDifferenceColor(loanAResults.totalInterest - loanBResults.totalInterest)}>
+                        {formatCurrency(Math.abs(loanAResults.totalInterest - loanBResults.totalInterest))}
+                      </span>
+                    </p>
+                  )}
+                </Card>
+
+                {/* Total Payment */}
+                <Card className="bg-gray-800 border-gray-700 p-4 rounded-lg"> {/* Changed card background */}
+                  <h4 className="text-fintech-text-muted text-sm mb-2">Total Payment</h4>
+                  <div className="flex justify-between items-baseline mb-1">
+                    <span className="text-fintech-blue-accent font-bold text-xl">
+                      {formatCurrency(loanAResults?.totalPayable)}
+                    </span>
+                    <span className="text-fintech-blue-accent font-bold text-xl">
+                      {formatCurrency(loanBResults?.totalPayable)}
+                    </span>
+                  </div>
+                  {loanAResults && loanBResults && loanAResults.totalPayable !== null && loanBResults.totalPayable !== null && (
+                    <p className="text-xs text-fintech-text-muted">
+                      Difference: <span className={getDifferenceColor(loanAResults.totalPayable - loanBResults.totalPayable)}>
+                        {formatCurrency(Math.abs(loanAResults.totalPayable - loanBResults.totalPayable))}
+                      </span>
+                    </p>
+                  )}
+                </Card>
+
+                {/* Loan Efficiency */}
+                <Card className="bg-gray-800 border-gray-700 p-4 rounded-lg"> {/* Changed card background */}
+                  <h4 className="text-fintech-text-muted text-sm mb-2">Loan Efficiency</h4>
+                  <div className="flex justify-around items-center h-full">
+                    <div className="flex flex-col items-center">
+                      <CircularProgressBar
+                        percentage={loanAResults?.loanEfficiency ?? 0}
+                        progressClassName="stroke-fintech-blue-accent"
+                      />
+                      <span className="text-fintech-text-muted text-xs mt-1">Loan 1</span>
+                    </div>
+                    <div className="flex flex-col items-center">
+                      <CircularProgressBar
+                        percentage={loanBResults?.loanEfficiency ?? 0}
+                        progressClassName="stroke-fintech-blue-accent"
+                      />
+                      <span className="text-fintech-text-muted text-xs mt-1">Loan 2</span>
+                    </div>
+                  </div>
+                </Card>
+              </CardContent>
+            </Card>
+
+            {/* Visual Comparison Bar Chart */}
+            <Card className="bg-fintech-simulator-card-bg border border-fintech-border-light p-6 rounded-xl shadow-lg"> {/* Changed card background */}
+              <CardHeader>
+                <CardTitle className="text-3xl font-bold text-white mb-6">Visual Comparison</CardTitle> {/* Changed text to white */}
+              </CardHeader>
+              <CardContent className="h-80">
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart
+                    data={barChartData}
+                    margin={{
+                      top: 20,
+                      right: 30,
+                      left: 20,
+                      bottom: 5,
+                    }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" stroke="#4B5563" /> {/* Darker grid lines */}
+                    <XAxis dataKey="name" stroke="#9CA3AF" /> {/* Lighter axis text */}
+                    <YAxis stroke="#9CA3AF" tickFormatter={(value) => `₹${value.toLocaleString('en-IN', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`} />
+                    <Tooltip
+                      formatter={(value: number) => `₹${value.toLocaleString('en-IN', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`}
+                      contentStyle={{ backgroundColor: '#1F2937', border: 'none', borderRadius: '8px' }}
+                      labelStyle={{ color: '#E5E7EB' }}
+                      itemStyle={{ color: '#E5E7EB' }}
+                    />
+                    <Legend wrapperStyle={{ paddingTop: '10px' }} />
+                    <Bar dataKey="Monthly Payment" fill="#3B82F6" name="Monthly Payment" /> {/* fintech-blue-accent */}
+                    <Bar dataKey="Total Interest" fill="#F97316" name="Total Interest" /> {/* Orange-500, similar to fintech-orange-accent */}
+                    <Bar dataKey="Principal Amount" fill="#10B981" name="Principal Amount" /> {/* fintech-green-success */}
+                  </BarChart>
+                </ResponsiveContainer>
+              </CardContent>
+            </Card>
+          </div>
         </div>
-
-        {/* Right Column: Loan Comparison Results */}
-        <Card className="bg-gradient-card-light border border-fintech-border-light p-6 rounded-xl shadow-lg h-fit">
-          <CardHeader>
-            <CardTitle className="text-3xl font-bold text-fintech-text-dark mb-6">Loan Comparison</CardTitle>
-          </CardHeader>
-          <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {/* EMI (Monthly Payment) */}
-            <Card className="bg-fintech-background-offwhite border border-fintech-border-light/50 p-4 rounded-lg">
-              <h4 className="text-fintech-text-muted text-sm mb-2">EMI (Monthly Payment)</h4>
-              <div className="flex justify-between items-baseline mb-1">
-                <span className="text-fintech-blue-accent font-bold text-xl">
-                  {formatCurrency(loanAResults?.emi)}
-                </span>
-                <span className="text-fintech-blue-accent font-bold text-xl">
-                  {formatCurrency(loanBResults?.emi)}
-                </span>
-              </div>
-              {loanAResults && loanBResults && loanAResults.emi !== null && loanBResults.emi !== null && (
-                <p className="text-xs text-fintech-text-muted">
-                  Difference: <span className={getDifferenceColor(loanAResults.emi - loanBResults.emi)}>
-                    {formatCurrency(Math.abs(loanAResults.emi - loanBResults.emi))}
-                  </span>
-                </p>
-              )}
-            </Card>
-
-            {/* Total Interest */}
-            <Card className="bg-fintech-background-offwhite border border-fintech-border-light/50 p-4 rounded-lg">
-              <h4 className="text-fintech-text-muted text-sm mb-2">Total Interest</h4>
-              <div className="flex justify-between items-baseline mb-1">
-                <span className="text-fintech-blue-accent font-bold text-xl">
-                  {formatCurrency(loanAResults?.totalInterest)}
-                </span>
-                <span className="text-fintech-blue-accent font-bold text-xl">
-                  {formatCurrency(loanBResults?.totalInterest)}
-                </span>
-              </div>
-              {loanAResults && loanBResults && loanAResults.totalInterest !== null && loanBResults.totalInterest !== null && (
-                <p className="text-xs text-fintech-text-muted">
-                  Difference: <span className={getDifferenceColor(loanAResults.totalInterest - loanBResults.totalInterest)}>
-                    {formatCurrency(Math.abs(loanAResults.totalInterest - loanBResults.totalInterest))}
-                  </span>
-                </p>
-              )}
-            </Card>
-
-            {/* Total Payment */}
-            <Card className="bg-fintech-background-offwhite border border-fintech-border-light/50 p-4 rounded-lg">
-              <h4 className="text-fintech-text-muted text-sm mb-2">Total Payment</h4>
-              <div className="flex justify-between items-baseline mb-1">
-                <span className="text-fintech-blue-accent font-bold text-xl">
-                  {formatCurrency(loanAResults?.totalPayable)}
-                </span>
-                <span className="text-fintech-blue-accent font-bold text-xl">
-                  {formatCurrency(loanBResults?.totalPayable)}
-                </span>
-              </div>
-              {loanAResults && loanBResults && loanAResults.totalPayable !== null && loanBResults.totalPayable !== null && (
-                <p className="text-xs text-fintech-text-muted">
-                  Difference: <span className={getDifferenceColor(loanAResults.totalPayable - loanBResults.totalPayable)}>
-                    {formatCurrency(Math.abs(loanAResults.totalPayable - loanBResults.totalPayable))}
-                  </span>
-                </p>
-              )}
-            </Card>
-
-            {/* Loan Efficiency */}
-            <Card className="bg-fintech-background-offwhite border border-fintech-border-light/50 p-4 rounded-lg">
-              <h4 className="text-fintech-text-muted text-sm mb-2">Loan Efficiency</h4>
-              <div className="flex justify-around items-center h-full">
-                <div className="flex flex-col items-center">
-                  <CircularProgressBar
-                    percentage={loanAResults?.loanEfficiency ?? 0}
-                    progressClassName="stroke-fintech-blue-accent"
-                  />
-                  <span className="text-fintech-text-muted text-xs mt-1">Loan 1</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <CircularProgressBar
-                    percentage={loanBResults?.loanEfficiency ?? 0}
-                    progressClassName="stroke-fintech-blue-accent"
-                  />
-                  <span className="text-fintech-text-muted text-xs mt-1">Loan 2</span>
-                </div>
-              </div>
-            </Card>
-          </CardContent>
-        </Card>
       </div>
     </section>
   );

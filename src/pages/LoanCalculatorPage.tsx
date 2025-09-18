@@ -3,7 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { MadeWithDyad } from '@/components/made-with-dyad';
 import AdvanceLoanSimulator from '@/components/AdvanceLoanSimulator';
-import LoanComparisonCalculator from '@/components/LoanComparisonCalculator';
+// import LoanComparisonCalculator from '@/components/LoanComparisonCalculator'; // Removed this import
 
 const LoanCalculatorPage = () => {
   return (
@@ -17,7 +17,7 @@ const LoanCalculatorPage = () => {
           Use our tools to estimate your EMI, compare different loan options, and plan your finances effectively.
         </p>
         <AdvanceLoanSimulator />
-        <LoanComparisonCalculator />
+        {/* LoanComparisonCalculator component removed from here */}
       </main>
       <Footer />
       <MadeWithDyad />
