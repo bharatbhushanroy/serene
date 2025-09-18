@@ -9,8 +9,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full bg-fintech-background-light/80 backdrop-blur-sm py-4 px-6 md:px-12 lg:px-24 flex items-center justify-between border-b border-fintech-border-light">
       <div className="flex items-center">
         <Link to="/" className="flex items-center space-x-2">
-          <img src="/public/favicon.ico" alt="Qicky Logo" className="h-8 w-8" />
-          <span className="text-2xl font-bold text-fintech-text-dark">Qicky</span>
+          <img src="/public/qicky-logo.png" alt="Qicky Logo" className="h-8 w-auto" />
         </Link>
       </div>
       <nav className="hidden lg:flex items-center space-x-8">

@@ -10,8 +10,7 @@ const Footer = () => {
         {/* Logo and Description */}
         <div className="col-span-full lg:col-span-1 flex flex-col items-center md:items-start text-center md:text-left">
           <Link to="/" className="flex items-center space-x-2 mb-4">
-            <img src="/public/favicon.ico" alt="Qicky Logo" className="h-8 w-8" />
-            <span className="text-2xl font-bold text-fintech-text-dark">Qicky</span>
+            <img src="/public/qicky-logo.png" alt="Qicky Logo" className="h-8 w-auto" />
           </Link>
           <p className="text-sm text-fintech-text-muted max-w-xs">
             Your trusted partner for quick and flexible personal loans.
