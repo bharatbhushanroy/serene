@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { showSuccess, showError } from '@/utils/toast';
-import { DollarSign, TrendingUp, User, Briefcase, CheckCircle, XCircle } from 'lucide-react';
+import { DollarSign, TrendingUp, User, Briefcase, CheckCircle, ArrowRight } from 'lucide-react'; // Added ArrowRight
 import { cn } from '@/lib/utils';
 
 const CheckEligibilitySection = () => {
