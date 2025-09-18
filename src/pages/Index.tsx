@@ -9,7 +9,8 @@ import Footer from "@/components/Footer";
 import InstantLoansSection from "@/components/InstantLoansSection";
 import CtaSection from "@/components/CtaSection";
 import TopUpLoansSection from "@/components/TopUpLoansSection";
-import InteractiveLoanSimulatorSection from "@/components/InteractiveLoanSimulatorSection"; // Import the new component
+import InteractiveLoanSimulatorSection from "@/components/InteractiveLoanSimulatorSection";
+import FinancialFreedomSection from "@/components/FinancialFreedomSection"; // Import the new component
 
 const Index = () => {
   return (
@@ -21,8 +22,9 @@ const Index = () => {
         <InstantLoansSection />
         <FeaturesSection />
         <TopUpLoansSection />
-        <InteractiveLoanSimulatorSection /> {/* Add the new section here */}
+        <InteractiveLoanSimulatorSection />
         <HowItWorksSection />
+        <FinancialFreedomSection /> {/* Add the new section here */}
         <TestimonialsSection />
         <CtaSection />
       </main>

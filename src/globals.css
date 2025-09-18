@@ -85,6 +85,13 @@
 
     /* New color for Interactive Loan Simulator */
     --fintech-simulator-card-bg: 220 10% 15%; /* Dark grey/blue for simulator card */
+
+    /* New colors for Financial Freedom Section */
+    --fintech-card-dark-purple: 250 30% 15%; /* Dark purple */
+    --fintech-card-dark-red-purple: 330 30% 15%; /* Dark reddish-purple */
+    --fintech-button-gradient-start: 240 70% 60%; /* Purple */
+    --fintech-button-gradient-end: 280 70% 70%; /* Lighter purple/pink */
+    --fintech-dark-bg-lighter: 240 10% 8%; /* Slightly lighter dark background for CTA */
   }
 
   .dark {

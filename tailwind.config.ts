@@ -110,6 +110,12 @@ export default {
           'phone-star-yellow': 'hsl(var(--fintech-phone-star-yellow))',
           // New color for Interactive Loan Simulator
           'simulator-card-bg': 'hsl(var(--fintech-simulator-card-bg))',
+          // New colors for Financial Freedom Section
+          'card-dark-purple': 'hsl(var(--fintech-card-dark-purple))',
+          'card-dark-red-purple': 'hsl(var(--fintech-card-dark-red-purple))',
+          'button-gradient-start': 'hsl(var(--fintech-button-gradient-start))',
+          'button-gradient-end': 'hsl(var(--fintech-button-gradient-end))',
+          'dark-bg-lighter': 'hsl(var(--fintech-dark-bg-lighter))',
         }
       },
       borderRadius: {
@@ -148,15 +154,30 @@ export default {
             transform: "translate(0px, 0px) scale(1)",
           },
         },
+        'float-up-down': {
+          '0%, 100%': { transform: 'translateY(0) translateX(0) scale(1)' },
+          '25%': { transform: 'translateY(-10px) translateX(5px) scale(1.05)' },
+          '50%': { transform: 'translateY(0px) translateX(-5px) scale(0.95)' },
+          '75%': { transform: 'translateY(10px) translateX(5px) scale(1.05)' },
+        },
+        'float-left-right': {
+          '0%, 100%': { transform: 'translateX(0) translateY(0) scale(1)' },
+          '25%': { transform: 'translateX(-10px) translateY(5px) scale(1.05)' },
+          '50%': { transform: 'translateX(0px) translateY(-5px) scale(0.95)' },
+          '75%': { transform: 'translateX(10px) translateY(5px) scale(1.05)' },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         blob: "blob 7s infinite",
+        'float-up-down': 'float-up-down 15s ease-in-out infinite',
+        'float-left-right': 'float-left-right 18s ease-in-out infinite',
       },
       backgroundImage: {
         'gradient-button-primary': 'linear-gradient(90deg, #3B82F6 0%, #60A5FA 100%)', // Blue gradient for primary buttons
         'gradient-card-light': 'linear-gradient(180deg, #FFFFFF 0%, #F9FAFB 100%)', // Subtle gradient for cards
+        'gradient-button-purple': 'linear-gradient(90deg, var(--fintech-button-gradient-start) 0%, var(--fintech-button-gradient-end) 100%)',
       }
     },
   },
