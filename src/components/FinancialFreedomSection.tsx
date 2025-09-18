@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { DollarSign } from 'lucide-react';
+import { DollarSign, ArrowRight } from 'lucide-react'; // Added ArrowRight
 
 const FinancialFreedomSection = () => {
   const dollarSignVariants = {
