@@ -36,7 +36,7 @@ const LoanApprovedMockup = () => {
         <div className="mt-8 w-full bg-fintech-background-offwhite rounded-xl p-4">
           <p className="text-sm text-fintech-text-muted">Amount</p>
           <p className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-fintech-green-success via-fintech-cyan-light to-fintech-blue-soft mt-1">
-            $5,000
+            ₹5,000
           </p>
         </div>
       </div>
