@@ -19,6 +19,7 @@ const AiChatbot = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState('');
   const scrollAreaRef = useRef<HTMLDivElement>(null);
+  const [lastBotTopic, setLastBotTopic] = useState<string | null>(null); // To store context
 
   useEffect(() => {
     if (isOpen && messages.length === 0) {
@@ -43,22 +44,88 @@ const AiChatbot = () => {
 
   const generateBotResponse = (userInput: string): string => {
     const lowerInput = userInput.toLowerCase();
-    if (lowerInput.includes('loan') && lowerInput.includes('type')) {
-      return "We primarily offer instant personal loans. You can use them for various purposes like medical emergencies, education, or home improvement. Check out our 'Apply Loan' page for more details!";
+
+    // Greetings
+    if (lowerInput.includes('hello') || lowerInput.includes('hi') || lowerInput.includes('hey')) {
+      return "Hello there! How can I assist you today?";
     }
+    if (lowerInput.includes('how are you')) {
+      return "I'm just a bot, but I'm ready to help you with your financial queries!";
+    }
+
+    // Loan Types
+    if (lowerInput.includes('loan') && (lowerInput.includes('type') || lowerInput.includes('kind'))) {
+      setLastBotTopic('loan_types');
+      return "We primarily offer instant personal loans for various needs like medical emergencies, education, or home improvement. We also have options for business and home loans. Which one are you interested in?";
+    }
+    if (lowerInput.includes('personal loan') || (lastBotTopic === 'loan_types' && (lowerInput.includes('personal') || lowerInput.includes('this one')))) {
+      setLastBotTopic('personal_loan');
+      return "Our personal loans are designed for quick access to funds up to ₹5,00,000 with minimal paperwork. They are disbursed within minutes!";
+    }
+    if (lowerInput.includes('business loan')) {
+      setLastBotTopic('business_loan');
+      return "For business loans, we offer flexible terms to help your venture grow. Eligibility depends on your business's financial health. Would you like to know more about the application process?";
+    }
+    if (lowerInput.includes('home loan')) {
+      setLastBotTopic('home_loan');
+      return "Our home loans come with competitive interest rates and extended tenures. We aim to make your dream home a reality. What specific details are you looking for?";
+    }
+
+    // Interest Rates
     if (lowerInput.includes('interest') || lowerInput.includes('rate')) {
-      return "Our interest rates are competitive and vary based on your profile. You can get a personalized quote by starting an application, which won't affect your credit score.";
+      setLastBotTopic('interest_rate');
+      return "Our interest rates are competitive and vary based on your profile and the loan type. You can get a personalized quote by starting an application, which won't affect your credit score.";
     }
-    if (lowerInput.includes('how') && lowerInput.includes('apply')) {
-      return "Applying is easy! Just click the 'Apply Now' button on our website, fill out the simple form, and submit the required documents. The whole process is digital and takes just a few minutes.";
+
+    // How to Apply
+    if ((lowerInput.includes('how') && lowerInput.includes('apply')) || lowerInput.includes('application process')) {
+      setLastBotTopic('how_to_apply');
+      return "Applying is easy! Just click the 'Apply Now' button on our website, fill out the simple digital form, and submit the required documents. The whole process is 100% digital and takes just a few minutes.";
     }
-    if (lowerInput.includes('help') || lowerInput.includes('support')) {
-      return "I can help with general questions about our loans. For specific account inquiries, please visit our Contact Us page to get in touch with our support team.";
+
+    // Eligibility
+    if (lowerInput.includes('eligibility') || lowerInput.includes('qualify')) {
+      setLastBotTopic('eligibility');
+      return "Eligibility generally includes being over 18, having a stable income, and a good credit history. You can use our 'Check Eligibility' tool on the website for an instant assessment.";
     }
-    if (lowerInput.includes('hello') || lowerInput.includes('hi')) {
-        return "Hello there! How can I assist you today?";
+
+    // Documents
+    if (lowerInput.includes('documents') || lowerInput.includes('paperwork')) {
+      setLastBotTopic('documents');
+      return "For personal loans, typically you'll need identity proof (PAN, Aadhaar), address proof, and income proof (bank statements, salary slips). The exact requirements will be detailed during the application.";
     }
-    return "That's a great question! For more detailed information, I recommend visiting our FAQs page or contacting our support team through the 'Contact Us' page.";
+
+    // Repayment
+    if (lowerInput.includes('repay') || lowerInput.includes('emi') || lowerInput.includes('payment')) {
+      setLastBotTopic('repayment');
+      return "We offer flexible repayment options, including early repayment without penalties. You can use our 'Loan Calculator' to estimate your EMIs.";
+    }
+
+    // Fees
+    if (lowerInput.includes('fees') || lowerInput.includes('charges') || lowerInput.includes('hidden')) {
+      setLastBotTopic('fees');
+      return "Qicky is committed to transparency. All fees and charges are clearly communicated upfront, with no hidden surprises. You'll see a full breakdown before you commit.";
+    }
+
+    // Support/Help
+    if (lowerInput.includes('help') || lowerInput.includes('support') || lowerInput.includes('contact')) {
+      setLastBotTopic('support');
+      return "I can help with general questions. For specific account inquiries or personalized assistance, please visit our 'Contact Us' page to get in touch with our support team directly.";
+    }
+
+    // General positive/negative
+    if (lowerInput.includes('thank you') || lowerInput.includes('thanks')) {
+      setLastBotTopic(null);
+      return "You're welcome! Is there anything else I can help you with?";
+    }
+    if (lowerInput.includes('bye') || lowerInput.includes('goodbye')) {
+      setLastBotTopic(null);
+      return "Goodbye! Have a great day. Feel free to chat again if you have more questions.";
+    }
+
+    // Fallback response
+    setLastBotTopic(null); // Reset context for unrecognized queries
+    return "That's a great question! I'm still learning, but I can help with common queries about our loans. For more detailed information, I recommend visiting our FAQs page or contacting our support team through the 'Contact Us' page.";
   };
 
   const handleSendMessage = () => {
