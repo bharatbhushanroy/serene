@@ -9,37 +9,37 @@ import { Link } from 'react-router-dom';
 
 const AboutUs = () => {
   return (
-    <div className="min-h-screen bg-fintech-background-light text-fintech-text-dark hero-background">
+    <div className="min-h-screen bg-fintech-dark-bg text-white">
       <Header />
       <main className="relative z-10 py-20 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
         <h1 className="text-5xl md:text-6xl font-extrabold text-center leading-tight mb-8">
           About <span className="bg-gradient-to-r from-fintech-blue-accent to-fintech-blue-soft text-transparent bg-clip-text">Qicky</span>
         </h1>
         <p className="text-lg text-fintech-text-muted text-center mb-16 max-w-3xl mx-auto">
-          At Qicky, we believe in empowering individuals with fast, flexible, and transparent financial solutions. Our mission is to simplify the loan process and make financial freedom accessible to everyone.
+          At Qicky, we believe in empowering individuals with fast, flexible, and transparent financial solutions. Our mission is to simplify the loan process and make financial freedom accessible to everyone across India.
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
           <div className="space-y-8">
-            <Card className="bg-gradient-card-light border border-fintech-border-light p-8 rounded-xl shadow-lg">
+            <Card className="bg-fintech-simulator-card-bg border border-fintech-border-light p-8 rounded-xl shadow-lg">
               <div className="flex items-center mb-4">
                 <Users className="h-8 w-8 text-fintech-blue-accent mr-4" />
-                <h2 className="text-3xl font-bold text-fintech-text-dark">Our Vision</h2>
+                <h2 className="text-3xl font-bold text-white">Our Vision</h2>
               </div>
               <p className="text-fintech-text-muted text-lg">
-                To be the leading digital lending platform, recognized for our innovative approach, customer-centric services, and commitment to financial inclusion. We envision a world where financial support is just a click away, without the traditional hurdles.
+                To be the leading digital lending platform in India, recognized for our innovative approach, customer-centric services, and unwavering commitment to financial inclusion. We envision a world where financial support is just a click away, without the traditional hurdles.
               </p>
             </Card>
-            <Card className="bg-gradient-card-light border border-fintech-border-light p-8 rounded-xl shadow-lg">
+            <Card className="bg-fintech-simulator-card-bg border border-fintech-border-light p-8 rounded-xl shadow-lg">
               <div className="flex items-center mb-4">
                 <Lightbulb className="h-8 w-8 text-fintech-blue-accent mr-4" />
-                <h2 className="text-3xl font-bold text-fintech-text-dark">Our Values</h2>
+                <h2 className="text-3xl font-bold text-white">Our Values</h2>
               </div>
               <ul className="list-disc list-inside text-fintech-text-muted text-lg space-y-2">
-                <li><span className="font-semibold text-fintech-text-dark">Transparency:</span> No hidden fees, clear terms.</li>
-                <li><span className="font-semibold text-fintech-text-dark">Innovation:</span> Leveraging technology for a better experience.</li>
-                <li><span className="font-semibold text-fintech-text-dark">Customer Focus:</span> Your needs are our priority.</li>
-                <li><span className="font-semibold text-fintech-text-dark">Integrity:</span> Honest and ethical practices.</li>
+                <li><span className="font-semibold text-white">Transparency:</span> No hidden fees, clear terms for every loan.</li>
+                <li><span className="font-semibold text-white">Innovation:</span> Leveraging cutting-edge technology for a superior borrowing experience.</li>
+                <li><span className="font-semibold text-white">Customer Focus:</span> Your financial needs are our utmost priority.</li>
+                <li><span className="font-semibold text-white">Integrity:</span> Upholding honest and ethical practices in all our dealings.</li>
               </ul>
             </Card>
           </div>
