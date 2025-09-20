@@ -104,6 +104,24 @@
     --fintech-card-chip-light: 210 40% 98%; /* Light gray for chip reflection */
     --fintech-dot-pattern: 240 10% 20%; /* Color for the dots in the background */
     --fintech-scroll-indicator-bg: 217.2 91.2% 59.8%; /* Blue for scroll indicator */
+
+    /* Dashboard Colors */
+    --fintech-dashboard-bg: 222 47% 10%;
+    --fintech-dashboard-sidebar-bg: 220 30% 18%;
+    --fintech-dashboard-card-bg: 220 30% 18%;
+    --fintech-dashboard-text-primary: 210 40% 98%;
+    --fintech-dashboard-text-secondary: 215 16% 65%;
+    --fintech-dashboard-accent-blue: 217 91% 59%;
+    --fintech-dashboard-accent-green: 140 80% 45%;
+    --fintech-dashboard-accent-red: 0 84% 60%;
+    --fintech-dashboard-border: 217 20% 30%;
+    --fintech-dashboard-input-bg: 217 20% 30%;
+    --fintech-dashboard-chart-bar-1: 217 91% 59%;
+    --fintech-dashboard-chart-bar-2: 140 80% 45%;
+    --fintech-dashboard-progress-bg: 217 20% 30%;
+    --fintech-dashboard-progress-fill: 217 91% 59%;
+    --fintech-dashboard-logout-button-bg: 0 84% 60%;
+    --fintech-dashboard-logout-button-hover: 0 70% 50%;
   }
 
   .dark {
@@ -152,7 +170,7 @@
 
   body {
     /* Using the new dark background and dot pattern */
-    @apply bg-fintech-hero-dark-bg text-fintech-header-text;
+    @apply bg-fintech-dashboard-bg text-fintech-header-text;
     background-image: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.05) 0%, transparent 40%),
                       radial-gradient(circle at 1px 1px, hsl(var(--fintech-dot-pattern)) 1px, transparent 0);
     background-size: 100% 100%, 20px 20px; /* Adjust dot size */

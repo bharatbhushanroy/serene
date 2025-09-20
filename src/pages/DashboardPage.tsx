@@ -1,0 +1,75 @@
+import React from 'react';
+import DashboardLayout from '@/components/DashboardLayout';
+import OverviewCard from '@/components/OverviewCard';
+import SpendingChart from '@/components/SpendingChart';
+import RecentTransactions from '@/components/RecentTransactions';
+import GoalsProgress from '@/components/GoalsProgress';
+import QuickTransfer from '@/components/QuickTransfer';
+import { DollarSign, TrendingUp, TrendingDown } from 'lucide-react';
+
+const DashboardPage = () => {
+  return (
+    <DashboardLayout>
+      <div className="space-y-6">
+        {/* Overview Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <OverviewCard
+            title="Total Balance"
+            value="₹1,25,000"
+            change="+10% from last month"
+            changeType="positive"
+            icon={DollarSign}
+            iconBgColor="bg-fintech-dashboard-accent-blue/20"
+            valueColor="text-fintech-dashboard-accent-blue"
+          />
+          <OverviewCard
+            title="Income"
+            value="₹45,000"
+            change="+5% from last month"
+            changeType="positive"
+            icon={TrendingUp}
+            iconBgColor="bg-fintech-dashboard-accent-green/20"
+            valueColor="text-fintech-dashboard-accent-green"
+          />
+          <OverviewCard
+            title="Expenses"
+            value="₹20,000"
+            change="-2% from last month"
+            changeType="negative"
+            icon={TrendingDown}
+            iconBgColor="bg-fintech-dashboard-accent-red/20"
+            valueColor="text-fintech-dashboard-accent-red"
+          />
+        </div>
+
+        {/* Main Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Spending Chart */}
+          <div className="lg:col-span-2">
+            <SpendingChart />
+          </div>
+
+          {/* Quick Transfer */}
+          <div>
+            <QuickTransfer />
+          </div>
+        </div>
+
+        {/* Bottom Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* Recent Transactions */}
+          <div>
+            <RecentTransactions />
+          </div>
+
+          {/* Goals Progress */}
+          <div>
+            <GoalsProgress />
+          </div>
+        </div>
+      </div>
+    </DashboardLayout>
+  );
+};
+
+export default DashboardPage;

@@ -9,11 +9,12 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { showSuccess, showError } from '@/utils/toast';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,8 +24,7 @@ const LoginPage = () => {
 
     if (email && password) {
       showSuccess("Login successful!");
-      // Redirect to a dashboard or home page after successful login
-      // navigate('/'); // You would use useNavigate hook here
+      navigate('/dashboard'); // Redirect to the new dashboard page
     } else {
       showError("Please enter both email and password.");
     }

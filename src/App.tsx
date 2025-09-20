@@ -14,6 +14,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import LoginPage from "./pages/LoginPage"; // Import the new LoginPage
 import SignupPage from "./pages/SignupPage"; // Import the new SignupPage
 import ApplyLoanPage from "./pages/ApplyLoanPage"; // Import the new ApplyLoanPage
+import DashboardPage from "./pages/DashboardPage"; // Import the new DashboardPage
 import AiChatbot from "./components/AiChatbot";
 
 const queryClient = new QueryClient();
@@ -35,6 +36,7 @@ const App = () => (
           <Route path="/login" element={<LoginPage />} /> {/* Add the Login route */}
           <Route path="/signup" element={<SignupPage />} /> {/* Add the Signup route */}
           <Route path="/apply-loan" element={<ApplyLoanPage />} /> {/* Add the Apply Loan route */}
+          <Route path="/dashboard" element={<DashboardPage />} /> {/* Add the Dashboard route */}
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

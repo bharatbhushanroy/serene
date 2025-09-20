@@ -127,6 +127,25 @@ export default {
           'card-chip-light': '#E0E0E0', // Light gray for chip reflection
           'dot-pattern': '#33334D', // Color for the dots in the background
           'scroll-indicator-bg': '#3B82F6', // Blue for scroll indicator
+          // New dashboard colors
+          dashboard: {
+            'bg': '#0F172A', // Slate-900
+            'sidebar-bg': '#1E293B', // Slate-800
+            'card-bg': '#1E293B', // Slate-800
+            'text-primary': '#F8FAFC', // Slate-50
+            'text-secondary': '#94A3B8', // Slate-400
+            'accent-blue': '#3B82F6', // Blue-500
+            'accent-green': '#22C55E', // Green-500
+            'accent-red': '#EF4444', // Red-500
+            'border': '#334155', // Slate-700
+            'input-bg': '#334155', // Slate-700
+            'chart-bar-1': '#3B82F6', // Blue-500
+            'chart-bar-2': '#22C55E', // Green-500
+            'progress-bg': '#475569', // Slate-600
+            'progress-fill': '#3B82F6', // Blue-500
+            'logout-button-bg': '#EF4444', // Red-500
+            'logout-button-hover': '#DC2626', // Red-600
+          },
         }
       },
       borderRadius: {
