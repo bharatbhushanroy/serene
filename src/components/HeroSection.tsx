@@ -4,6 +4,7 @@ import { ArrowRight, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AnimatedBackgroundShapes from './AnimatedBackgroundShapes';
 import CreditCardMockup from './CreditCardMockup'; // Import the new CreditCardMockup component
+import { motion } from 'framer-motion'; // Import motion from framer-motion
 
 const HeroSection = () => {
   const [showCookieBanner, setShowCookieBanner] = useState(true);
