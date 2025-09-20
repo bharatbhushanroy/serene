@@ -23,7 +23,7 @@ const HeroSection = () => {
       <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between w-full max-w-7xl gap-12">
         {/* Left Content Area */}
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-2xl">
-          <div className="flex items-center bg-fintech-blue-soft/20 text-fintech-blue-accent px-3 py-1 rounded-full text-sm font-medium mb-4">
+          <div className="flex items-center bg-gray-800 text-fintech-blue-accent px-3 py-1 rounded-full text-sm font-medium mb-4"> {/* Changed background to bg-gray-800 */}
             <span className="relative flex h-2 w-2 mr-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-fintech-blue-accent opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-fintech-blue-accent"></span>
@@ -62,31 +62,37 @@ const HeroSection = () => {
 
         {/* Right Content Area: Credit Card Mockups */}
         <div className="relative w-full max-w-md h-96 flex items-center justify-center lg:justify-end">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          {/* Purple Card - Top Right */}
+          <div className="absolute top-1/4 right-1/4 -translate-x-1/2 -translate-y-1/2 lg:top-1/4 lg:right-0 lg:translate-x-0 lg:-translate-y-1/2">
             <CreditCardMockup
               colorClass="bg-fintech-card-mockup-purple"
               animationDelay="delay-100"
               animationClass="animate-card-float-1"
               cardNumber="**** **** **** 1234"
               cardHolder="JOHN DOE"
+              rotation="rotate-6" // Added rotation
             />
           </div>
-          <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2">
+          {/* Blue Card - Middle Left */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:top-1/2 lg:left-1/4 lg:-translate-x-1/2 lg:-translate-y-1/2">
             <CreditCardMockup
               colorClass="bg-fintech-card-mockup-blue"
               animationDelay="delay-200"
               animationClass="animate-card-float-2"
               cardNumber="**** **** **** 1234"
               cardHolder="JOHN DOE"
+              rotation="-rotate-3" // Added rotation
             />
           </div>
-          <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2">
+          {/* Pink Card - Bottom Right */}
+          <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 lg:bottom-1/4 lg:right-1/4 lg:translate-x-0 lg:translate-y-0">
             <CreditCardMockup
               colorClass="bg-fintech-card-mockup-pink"
               animationDelay="delay-300"
               animationClass="animate-card-float-3"
               cardNumber="**** **** **** 1234"
               cardHolder="JOHN DOE"
+              rotation="rotate-2" // Added rotation
             />
           </div>
         </div>
@@ -95,7 +101,7 @@ const HeroSection = () => {
       {/* Scroll to explore indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center text-gray-400 text-sm">
         <p className="mb-2">Scroll to explore</p>
-        <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex items-center justify-center">
+        <div className="w-6 h-10 border-2 border-gray-700 rounded-full flex items-center justify-center"> {/* Changed border color */}
           <motion.div
             className="w-2 h-2 bg-fintech-scroll-indicator-bg rounded-full"
             animate={{ y: [0, 8, 0] }}

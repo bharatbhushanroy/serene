@@ -10,6 +10,7 @@ interface CreditCardMockupProps {
   animationClass: string; // Tailwind class for animation, e.g., 'animate-card-float-1'
   cardNumber: string;
   cardHolder: string;
+  rotation?: string; // New prop for rotation, e.g., 'rotate-3'
 }
 
 const CreditCardMockup: React.FC<CreditCardMockupProps> = ({
@@ -18,6 +19,7 @@ const CreditCardMockup: React.FC<CreditCardMockupProps> = ({
   animationClass,
   cardNumber,
   cardHolder,
+  rotation = 'rotate-0', // Default to no rotation
 }) => {
   return (
     <motion.div
@@ -25,7 +27,8 @@ const CreditCardMockup: React.FC<CreditCardMockupProps> = ({
         "relative w-64 h-40 rounded-xl shadow-lg p-5 flex flex-col justify-between text-white",
         colorClass,
         animationClass,
-        animationDelay
+        animationDelay,
+        rotation // Apply rotation class
       )}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}

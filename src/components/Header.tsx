@@ -1,9 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom'; // Import useLocation
 import { Button } from '@/components/ui/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { ChevronDown, Home, LayoutGrid, Settings, BookOpen, Info, Phone, LogIn, UserPlus, Sun, Moon, ArrowRight } from 'lucide-react';
 import QickyLogo from './QickyLogo'; // Import the new QickyLogo component
+import { cn } from '@/lib/utils'; // Import cn for conditional classes
 
 // Placeholder for theme toggle functionality
 const ThemeToggle = () => {
@@ -23,6 +24,8 @@ const ThemeToggle = () => {
 };
 
 const Header = () => {
+  const location = useLocation(); // Use useLocation hook
+
   return (
     <header className="sticky top-0 z-50 w-full bg-fintech-header-bg/80 backdrop-blur-sm py-4 px-6 md:px-12 lg:px-24 flex items-center justify-between border-b border-gray-800">
       <div className="flex items-center">
@@ -31,7 +34,13 @@ const Header = () => {
         </Link>
       </div>
       <nav className="hidden lg:flex items-center space-x-6">
-        <Link to="/" className="flex items-center text-fintech-header-text hover:text-fintech-blue-accent transition-colors">
+        <Link
+          to="/"
+          className={cn(
+            "flex items-center text-fintech-header-text hover:text-fintech-blue-accent transition-colors px-3 py-2 rounded-full", // Added padding and rounded-full
+            location.pathname === '/' && "bg-gray-700 text-white" // Conditional class for active Home link
+          )}
+        >
           <Home className="h-4 w-4 mr-1" /> Home
         </Link>
         <DropdownMenu>
