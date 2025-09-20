@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Search, Bell, Settings, HelpCircle } from 'lucide-react';
+import { Search, Bell, Settings, HelpCircle, LogOut } from 'lucide-react'; // Added LogOut import
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';

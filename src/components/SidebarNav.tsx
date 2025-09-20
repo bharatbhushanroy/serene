@@ -3,7 +3,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-import { LayoutDashboard, Wallet, Repeat, BarChart, Target, Settings, LogOut, User } from 'lucide-react';
+import { LayoutDashboard, Wallet, Repeat, BarChart, Target, Settings, LogOut, User } from 'lucide-react'; // Added LogOut import
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import QickyLogo from './QickyLogo';
