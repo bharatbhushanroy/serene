@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
-import { ChevronDown, Home, LayoutGrid, Settings, BookOpen, Info, Phone, LogIn, UserPlus, Sun, Moon } from 'lucide-react';
+import { ChevronDown, Home, LayoutGrid, Settings, BookOpen, Info, Phone, LogIn, UserPlus, Sun, Moon, ArrowRight } from 'lucide-react';
 import QickyLogo from './QickyLogo'; // Import the new QickyLogo component
 
 // Placeholder for theme toggle functionality
