@@ -32,7 +32,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="min-h-screen bg-fintech-background-light text-fintech-text-dark hero-background">
+    <div className="min-h-screen bg-fintech-dark-bg text-white">
       <Header />
       <main className="relative z-10 py-20 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
         <h1 className="text-5xl md:text-6xl font-extrabold text-center leading-tight mb-8">
@@ -44,9 +44,9 @@ const ContactUs = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <Card className="bg-gradient-card-light border border-fintech-border-light p-8 rounded-xl shadow-lg">
+          <Card className="bg-fintech-simulator-card-bg border border-fintech-border-light p-8 rounded-xl shadow-lg">
             <CardHeader>
-              <CardTitle className="text-3xl font-bold text-fintech-text-dark mb-6">Send Us a Message</CardTitle>
+              <CardTitle className="text-3xl font-bold text-white mb-6">Send Us a Message</CardTitle>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -58,7 +58,7 @@ const ContactUs = () => {
                     placeholder="John Doe"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="bg-fintech-background-offwhite border-fintech-border-light text-fintech-text-dark focus:border-fintech-blue-accent"
+                    className="bg-gray-800 border-gray-700 text-white focus:border-fintech-blue-accent"
                   />
                 </div>
                 <div>
@@ -69,7 +69,7 @@ const ContactUs = () => {
                     placeholder="john.doe@example.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="bg-fintech-background-offwhite border-fintech-border-light text-fintech-text-dark focus:border-fintech-blue-accent"
+                    className="bg-gray-800 border-gray-700 text-white focus:border-fintech-blue-accent"
                   />
                 </div>
                 <div>
@@ -79,12 +79,12 @@ const ContactUs = () => {
                     placeholder="Type your message here..."
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    className="bg-fintech-background-offwhite border-fintech-border-light text-fintech-text-dark focus:border-fintech-blue-accent min-h-[120px]"
+                    className="bg-gray-800 border-gray-700 text-white focus:border-fintech-blue-accent min-h-[120px]"
                   />
                 </div>
                 <Button
                   type="submit"
-                  className="w-full bg-gradient-button-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity"
+                  className="w-full bg-gradient-to-r from-fintech-blue-accent to-fintech-gradient-purple-start text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity"
                 >
                   Send Message
                 </Button>
@@ -94,8 +94,8 @@ const ContactUs = () => {
 
           {/* Contact Information */}
           <div className="space-y-8">
-            <Card className="bg-gradient-card-light border border-fintech-border-light p-8 rounded-xl shadow-lg">
-              <h3 className="text-2xl font-bold text-fintech-text-dark mb-4">Contact Details</h3>
+            <Card className="bg-fintech-simulator-card-bg border border-fintech-border-light p-8 rounded-xl shadow-lg">
+              <h3 className="text-2xl font-bold text-white mb-4">Contact Details</h3>
               <div className="space-y-4 text-fintech-text-muted">
                 <div className="flex items-center">
                   <Mail className="h-6 w-6 text-fintech-blue-accent mr-3" />
@@ -113,7 +113,7 @@ const ContactUs = () => {
             </Card>
 
             {/* Optional: Map Placeholder */}
-            <Card className="bg-gradient-card-light border border-fintech-border-light p-8 rounded-xl shadow-lg h-64 flex items-center justify-center">
+            <Card className="bg-fintech-simulator-card-bg border border-fintech-border-light p-8 rounded-xl shadow-lg h-64 flex items-center justify-center">
               <p className="text-fintech-text-muted text-lg">Map Placeholder</p>
             </Card>
           </div>
