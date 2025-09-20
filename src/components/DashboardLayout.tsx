@@ -8,11 +8,11 @@ interface DashboardLayoutProps {
 
 const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
   return (
-    <div className="flex min-h-screen bg-fintech-dashboard-bg border-2 border-red-500"> {/* Added red border */}
+    <div className="flex min-h-screen bg-fintech-dashboard-bg">
       <SidebarNav />
-      <div className="flex flex-col flex-1 border-2 border-blue-500"> {/* Added blue border */}
+      <div className="flex flex-col flex-1">
         <DashboardHeader />
-        <main className="flex-1 p-6 overflow-y-auto border-2 border-green-500"> {/* Added green border */}
+        <main className="flex-1 p-6 overflow-y-auto">
           {children}
         </main>
       </div>
