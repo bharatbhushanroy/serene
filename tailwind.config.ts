@@ -116,6 +116,17 @@ export default {
           'button-gradient-start': 'hsl(var(--fintech-button-gradient-start))',
           'button-gradient-end': 'hsl(var(--fintech-button-gradient-end))',
           'dark-bg-lighter': 'hsl(var(--fintech-dark-bg-lighter))',
+          // New colors for Hero Section and Header
+          'header-bg': '#1A1A2E', // Dark background for header
+          'header-text': '#E0E0E0', // Light text for header
+          'hero-dark-bg': '#1A1A2E', // Dark background for hero section
+          'card-mockup-purple': '#8A2BE2', // Blue Violet
+          'card-mockup-blue': '#4169E1', // Royal Blue
+          'card-mockup-pink': '#FF1493', // Deep Pink
+          'card-chip-yellow': '#FFD700', // Gold
+          'card-chip-light': '#E0E0E0', // Light gray for chip reflection
+          'dot-pattern': '#33334D', // Color for the dots in the background
+          'scroll-indicator-bg': '#3B82F6', // Blue for scroll indicator
         }
       },
       borderRadius: {
@@ -166,6 +177,21 @@ export default {
           '50%': { transform: 'translateX(0px) translateY(-5px) scale(0.95)' },
           '75%': { transform: 'translateX(10px) translateY(5px) scale(1.05)' },
         },
+        'card-float-1': {
+          '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+          '33%': { transform: 'translateY(-10px) rotate(2deg)' },
+          '66%': { transform: 'translateY(5px) rotate(-1deg)' },
+        },
+        'card-float-2': {
+          '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+          '33%': { transform: 'translateY(10px) rotate(-2deg)' },
+          '66%': { transform: 'translateY(-5px) rotate(1deg)' },
+        },
+        'card-float-3': {
+          '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+          '33%': { transform: 'translateY(-8px) rotate(1deg)' },
+          '66%': { transform: 'translateY(7px) rotate(-2deg)' },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -173,11 +199,9 @@ export default {
         blob: "blob 7s infinite",
         'float-up-down': 'float-up-down 15s ease-in-out infinite',
         'float-left-right': 'float-left-right 18s ease-in-out infinite',
-      },
-      backgroundImage: {
-        'gradient-button-primary': 'linear-gradient(90deg, #3B82F6 0%, #60A5FA 100%)', // Blue gradient for primary buttons
-        'gradient-card-light': 'linear-gradient(180deg, #FFFFFF 0%, #F9FAFB 100%)', // Subtle gradient for cards
-        'gradient-button-purple': 'linear-gradient(90deg, var(--fintech-button-gradient-start) 0%, var(--fintech-button-gradient-end) 100%)',
+        'card-float-1': 'card-float-1 10s ease-in-out infinite',
+        'card-float-2': 'card-float-2 12s ease-in-out infinite',
+        'card-float-3': 'card-float-3 11s ease-in-out infinite',
       }
     },
   },

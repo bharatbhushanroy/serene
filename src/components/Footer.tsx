@@ -6,63 +6,63 @@ import QickyLogo from './QickyLogo'; // Import the new QickyLogo component
 
 const Footer = () => {
   return (
-    <footer className="relative z-10 w-full bg-fintech-background-light text-fintech-text-dark py-12 px-6 md:px-12 lg:px-24 border-t border-fintech-border-light">
+    <footer className="relative z-10 w-full bg-fintech-header-bg text-fintech-header-text py-12 px-6 md:px-12 lg:px-24 border-t border-gray-800">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-8">
         {/* Logo and Description */}
         <div className="col-span-full lg:col-span-1 flex flex-col items-center md:items-start text-center md:text-left">
           <Link to="/" className="flex items-center mb-4">
             <QickyLogo size="md" /> {/* Use the new QickyLogo component */}
           </Link>
-          <p className="text-sm text-fintech-text-muted max-w-xs">
+          <p className="text-sm text-gray-400 max-w-xs">
             Your trusted partner for quick and flexible personal loans.
           </p>
         </div>
 
         {/* Navigation Links */}
         <div className="col-span-1 flex flex-col items-center md:items-start">
-          <h4 className="text-lg font-semibold mb-4 text-fintech-text-dark">Company</h4>
+          <h4 className="text-lg font-semibold mb-4 text-fintech-header-text">Company</h4>
           <ul className="space-y-2 text-center md:text-left">
-            <li><Link to="/" className="text-fintech-text-muted hover:text-fintech-text-dark transition-colors">Home</Link></li>
-            <li><Link to="/about" className="text-fintech-text-muted hover:text-fintech-text-dark transition-colors">About Us</Link></li>
-            <li><Link to="/blog" className="text-fintech-text-muted hover:text-fintech-text-dark transition-colors">Blog</Link></li>
-            <li><Link to="/contact" className="text-fintech-text-muted hover:text-fintech-text-dark transition-colors">Contact Us</Link></li>
+            <li><Link to="/" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">Home</Link></li>
+            <li><Link to="/about" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">About Us</Link></li>
+            <li><Link to="/blog" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">Blog</Link></li>
+            <li><Link to="/contact" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">Contact Us</Link></li>
           </ul>
         </div>
 
         {/* Tools & Resources */}
         <div className="col-span-1 flex flex-col items-center md:items-start">
-          <h4 className="text-lg font-semibold mb-4 text-fintech-text-dark">Resources</h4>
+          <h4 className="text-lg font-semibold mb-4 text-fintech-header-text">Resources</h4>
           <ul className="space-y-2 text-center md:text-left">
-            <li><Link to="/faqs" className="text-fintech-text-muted hover:text-fintech-text-dark transition-colors">FAQs</Link></li>
-            <li><Link to="/loan-calculator" className="text-fintech-text-muted hover:text-fintech-text-dark transition-colors">Loan Calculator</Link></li>
-            <li><Link to="/blog" className="text-fintech-text-muted hover:text-fintech-text-dark transition-colors">Blog Posts</Link></li>
+            <li><Link to="/faqs" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">FAQs</Link></li>
+            <li><Link to="/loan-calculator" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">Loan Calculator</Link></li>
+            <li><Link to="/blog" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">Blog Posts</Link></li>
           </ul>
         </div>
 
         {/* Legal Links */}
         <div className="col-span-1 flex flex-col items-center md:items-start">
-          <h4 className="text-lg font-semibold mb-4 text-fintech-text-dark">Legal</h4>
+          <h4 className="text-lg font-semibold mb-4 text-fintech-header-text">Legal</h4>
           <ul className="space-y-2 text-center md:text-left">
-            <li><Link to="/privacy" className="text-fintech-text-muted hover:text-fintech-text-dark transition-colors">Privacy Policy</Link></li>
-            <li><Link to="/terms" className="text-fintech-text-muted hover:text-fintech-text-dark transition-colors">Terms of Service</Link></li>
-            <li><Link to="/cookies" className="text-fintech-text-muted hover:text-fintech-text-dark transition-colors">Cookie Policy</Link></li>
+            <li><Link to="/privacy" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">Privacy Policy</Link></li>
+            <li><Link to="/terms" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">Terms of Service</Link></li>
+            <li><Link to="/cookies" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">Cookie Policy</Link></li>
           </ul>
         </div>
 
         {/* Social Media */}
         <div className="col-span-full md:col-span-4 lg:col-span-1 flex flex-col items-center md:items-end lg:items-start">
-          <h4 className="text-lg font-semibold mb-4 text-fintech-text-dark">Follow Us</h4>
+          <h4 className="text-lg font-semibold mb-4 text-fintech-header-text">Follow Us</h4>
           <div className="flex space-x-4">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-fintech-text-muted hover:text-fintech-blue-accent transition-colors">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">
               <Facebook className="h-6 w-6" />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-fintech-text-muted hover:text-fintech-blue-accent transition-colors">
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">
               <Twitter className="h-6 w-6" />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-fintech-text-muted hover:text-fintech-blue-accent transition-colors">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">
               <Linkedin className="h-6 w-6" />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-fintech-text-muted hover:text-fintech-blue-accent transition-colors">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">
               <Instagram className="h-6 w-6" />
             </a>
           </div>
@@ -70,7 +70,7 @@ const Footer = () => {
       </div>
 
       {/* Copyright */}
-      <div className="mt-12 pt-8 border-t border-fintech-border-light/50 text-center text-sm text-fintech-text-muted">
+      <div className="mt-12 pt-8 border-t border-gray-800/50 text-center text-sm text-gray-400">
         &copy; {new Date().getFullYear()} Qicky. All rights reserved.
       </div>
     </footer>

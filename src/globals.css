@@ -92,6 +92,18 @@
     --fintech-button-gradient-start: 240 70% 60%; /* Purple */
     --fintech-button-gradient-end: 280 70% 70%; /* Lighter purple/pink */
     --fintech-dark-bg-lighter: 240 10% 8%; /* Slightly lighter dark background for CTA */
+
+    /* New colors for Hero Section and Header */
+    --fintech-header-bg: 240 10% 8%; /* Dark background for header */
+    --fintech-header-text: 210 40% 98%; /* Light text for header */
+    --fintech-hero-dark-bg: 240 10% 3.9%; /* Dark background for hero section */
+    --fintech-card-mockup-purple: 270 70% 50%; /* Purple */
+    --fintech-card-mockup-blue: 220 70% 50%; /* Blue */
+    --fintech-card-mockup-pink: 330 70% 50%; /* Pink */
+    --fintech-card-chip-yellow: 40 90% 60%; /* Gold */
+    --fintech-card-chip-light: 210 40% 98%; /* Light gray for chip reflection */
+    --fintech-dot-pattern: 240 10% 20%; /* Color for the dots in the background */
+    --fintech-scroll-indicator-bg: 217.2 91.2% 59.8%; /* Blue for scroll indicator */
   }
 
   .dark {
@@ -139,21 +151,20 @@
   }
 
   body {
-    /* Using the new light background and dark text */
-    @apply bg-fintech-background-light text-fintech-text-dark;
+    /* Using the new dark background and dot pattern */
+    @apply bg-fintech-hero-dark-bg text-fintech-header-text;
     background-image: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.05) 0%, transparent 40%),
-                      radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.02) 1px, transparent 0);
-    background-size: 100% 100%, 15px 15px;
+                      radial-gradient(circle at 1px 1px, hsl(var(--fintech-dot-pattern)) 1px, transparent 0);
+    background-size: 100% 100%, 20px 20px; /* Adjust dot size */
+    background-position: center, center;
+    background-repeat: no-repeat, repeat;
   }
 }
 
-/* Custom background for the hero section with dots */
+/* Remove the old hero-background class as it's no longer needed */
 .hero-background {
-  background-image: radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.05) 1px, transparent 0),
-                    linear-gradient(180deg, #FFFFFF 0%, #F9FAFB 100%);
-  background-size: 15px 15px, cover; /* Smaller size for denser dots */
-  background-position: center, center;
-  background-repeat: repeat, no-repeat;
+  background-image: none;
+  background-color: transparent;
 }
 
 /* Animation for background blobs */
