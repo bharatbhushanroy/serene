@@ -32,9 +32,9 @@ const InsurancePhoneMockup = () => {
             See plans <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
 
-          {/* Why Freo Insurance? Card */}
+          {/* Why Qicky Insurance? Card */}
           <Card className="bg-white rounded-xl p-4 text-black mt-6 mb-6">
-            <p className="font-semibold text-lg mb-3">Why Freo Insurance?</p>
+            <p className="font-semibold text-lg mb-3">Why Qicky Insurance?</p>
             <ul className="space-y-2 text-sm text-gray-700">
               <li className="flex items-center">
                 <DollarSign className="h-4 w-4 text-fintech-blue-accent mr-2" /> Value for money plans
@@ -43,7 +43,7 @@ const InsurancePhoneMockup = () => {
                 <Zap className="h-4 w-4 text-fintech-blue-accent mr-2" /> Book in <span className="font-bold text-fintech-blue-accent ml-1">27 secs</span>
               </li>
               <li className="flex items-center">
-                <Info className="h-4 w-4 text-fintech-blue-accent mr-2" /> Plans only available on Freo
+                <Info className="h-4 w-4 text-fintech-blue-accent mr-2" /> Plans only available on Qicky
               </li>
             </ul>
           </Card>
