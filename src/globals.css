@@ -136,6 +136,9 @@
     --fintech-phone-bg: 220 10% 10%; /* Phone frame background */
     --fintech-phone-border: 220 10% 25%; /* Phone frame border */
     --fintech-phone-text: 220 10% 10%; /* Text inside phone */
+
+    /* New color for India map section */
+    --fintech-india-white: 0 0% 100%; /* Pure white for the middle stripe */
   }
 
   .dark {

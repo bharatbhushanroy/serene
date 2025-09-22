@@ -15,6 +15,7 @@ import FinancialFreedomSection from "@/components/FinancialFreedomSection";
 import LoanComparisonCalculator from "@/components/LoanComparisonCalculator";
 import CheckEligibilitySection from "@/components/CheckEligibilitySection";
 import InsuranceSection from "@/components/InsuranceSection";
+import MadeForIndiansSection from "@/components/MadeForIndiansSection"; // Import the new component
 
 const Index = () => {
   return (
@@ -22,7 +23,7 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
-        <MoneyForEverythingSection /> {/* Add the new component here */}
+        <MoneyForEverythingSection />
         <ApplyStepsSection />
         <InstantLoansSection />
         <CheckEligibilitySection />
@@ -35,6 +36,7 @@ const Index = () => {
         <FinancialFreedomSection />
         <MemberTestimonialsSection />
         <CtaSection />
+        <MadeForIndiansSection /> {/* Add the new component here, above Footer */}
       </main>
       <Footer />
       <MadeWithDyad />

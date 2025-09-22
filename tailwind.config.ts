@@ -158,6 +158,8 @@ export default {
           'phone-bg': 'hsl(220 10% 10%)', // Phone frame background
           'phone-border': 'hsl(220 10% 25%)', // Phone frame border
           'phone-text': 'hsl(220 10% 10%)', // Text inside phone
+          // New color for India map section
+          'india-white': 'hsl(0 0% 100%)', // Pure white for the middle stripe
         }
       },
       borderRadius: {
