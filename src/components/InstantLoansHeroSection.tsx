@@ -52,9 +52,9 @@ const InstantLoansHeroSection = () => {
           <div className="absolute top-[0%] -right-[15%] w-[150px] h-[150px] bg-[#FFEDD5] p-6 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark rotate-3 z-10
                       lg:top-[10%] lg:-right-[10%] lg:w-[200px] lg:h-[200px]">
             <Percent className="h-8 w-8 text-fintech-orange-accent mb-2" />
-            <p className="text-sm text-gray-700">Pay</p>
-            <p className="text-2xl font-bold text-fintech-orange-accent">Interest</p>
-            <p className="text-sm text-gray-700">Only On What You Use</p>
+            <p className="text-sm text-gray-700">Rate starting from</p>
+            <p className="text-2xl font-bold text-fintech-orange-accent">0.88%</p>
+            <p className="text-sm text-gray-700">per month</p>
           </div>
           <div className="absolute bottom-[0%] -left-[15%] w-[150px] h-[150px] bg-[#FFEDD5] p-6 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark rotate-3 z-10
                       lg:bottom-[10%] lg:-left-[10%] lg:w-[200px] lg:h-[200px]">
