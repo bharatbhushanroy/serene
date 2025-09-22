@@ -73,7 +73,7 @@ const PhoneSimulatorMockup = () => {
 
 const MoneyForEverythingSection = () => {
   return (
-    <section className="relative w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-simulator-card-bg text-white overflow-hidden">
+    <section className="relative w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-main-bg text-white overflow-hidden">
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
           Money for <span className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-transparent bg-clip-text">everything</span> you need
