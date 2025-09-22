@@ -86,7 +86,6 @@ const TripleMobileMockup = () => {
             <div className="bg-gray-800 rounded-xl p-3 relative overflow-hidden">
               <p className="text-sm font-semibold">Invest in FD</p>
               <p className="text-sm text-gray-400 mb-2">with 9% p.a.</p>
-              <img src="/public/coins.svg" alt="Coins" className="absolute bottom-0 right-0 w-16 h-16 opacity-50" />
             </div>
           </div>
 
