@@ -12,13 +12,13 @@ const MadeInBharatSection = () => {
         </h2>
       </div>
 
-      {/* Indian Skyline SVG */}
+      {/* Indian Skyline SVG - Replicated from image */}
       <div className="relative w-full h-auto overflow-hidden mt-10 z-0">
         <svg
-          viewBox="0 0 1400 150"
+          viewBox="0 0 1400 200"
           xmlns="http://www.w3.org/2000/svg"
           className="w-full h-full"
-          preserveAspectRatio="xMidYMax meet"
+          preserveAspectRatio="xMidYMax slice"
         >
           <defs>
             <linearGradient id="skylineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -27,71 +27,82 @@ const MadeInBharatSection = () => {
             </linearGradient>
           </defs>
           {/* Base ground line */}
-          <rect x="0" y="100" width="1400" height="50" fill="url(#skylineGradient)" />
+          <rect x="0" y="150" width="1400" height="50" fill="url(#skylineGradient)" />
 
-          {/* Skyline elements - simplified silhouettes */}
-          <g fill="url(#skylineGradient)">
+          {/* Detailed Skyline elements - Replicated from image */}
+          <g fill="#4A4A4A"> {/* Using a dark grey for the silhouettes */}
+            {/* Group 1: Leftmost structures (e.g., some mosque/palace like structures) */}
+            <path d="M0 150 L0 100 L10 90 L20 100 L30 90 L40 100 L40 150 Z" /> {/* Generic building 1 */}
+            <circle cx="20" cy="85" r="5" />
+            <path d="M50 150 L50 110 L60 100 L70 110 L70 150 Z" /> {/* Generic building 2 */}
+            <circle cx="60" cy="95" r="7" />
+            <path d="M80 150 L80 120 L90 110 L100 120 L100 150 Z" /> {/* Generic building 3 */}
+            <circle cx="90" cy="105" r="6" />
+
             {/* Taj Mahal like structure */}
-            <path d="M200 100 L220 60 L240 100 L260 60 L280 100 L290 80 L300 100 H190 Z" />
-            <circle cx="250" cy="55" r="10" /> {/* Dome */}
-            <rect x="205" y="70" width="10" height="30" />
-            <rect x="265" y="70" width="10" height="30" />
+            <path d="M120 150 L120 100 L130 80 L140 100 L150 80 L160 100 L170 80 L180 100 L190 150 Z" />
+            <circle cx="150" cy="75" r="15" /> {/* Main Dome */}
+            <rect x="125" y="110" width="5" height="40" /> {/* Minaret 1 */}
+            <rect x="180" y="110" width="5" height="40" /> {/* Minaret 2 */}
+            <rect x="135" y="120" width="5" height="30" />
+            <rect x="170" y="120" width="5" height="30" />
+
+            {/* More generic buildings */}
+            <path d="M200 150 L200 110 L210 100 L220 110 L220 150 Z" />
+            <circle cx="210" cy="95" r="7" />
+            <path d="M230 150 L230 120 L240 110 L250 120 L250 150 Z" />
+            <circle cx="240" cy="105" r="6" />
 
             {/* India Gate like structure */}
-            <path d="M400 100 L400 70 C400 50 420 50 420 70 L420 100 Z" />
-            <path d="M420 100 L420 70 C420 50 440 50 440 70 L440 100 Z" />
-            <path d="M440 100 L440 70 C440 50 460 50 460 70 L460 100 Z" />
-            <rect x="400" y="60" width="60" height="10" />
-            <rect x="400" y="100" width="60" height="10" />
+            <path d="M270 150 L270 100 C270 80 290 80 290 100 L290 150 Z" />
+            <path d="M290 150 L290 100 C290 80 310 80 310 100 L310 150 Z" />
+            <path d="M310 150 L310 100 C310 80 330 80 330 100 L330 150 Z" />
+            <rect x="270" y="90" width="60" height="10" />
+            <rect x="270" y="150" width="60" height="10" /> {/* Base */}
+            <rect x="275" y="110" width="5" height="30" />
+            <rect x="285" y="110" width="5" height="30" />
+            <rect x="295" y="110" width="5" height="30" />
+            <rect x="305" y="110" width="5" height="30" />
+            <rect x="315" y="110" width="5" height="30" />
 
             {/* Qutub Minar like structure */}
-            <path d="M550 100 L555 40 L560 100 Z" />
-            <circle cx="555" cy="35" r="5" />
+            <path d="M350 150 L355 80 L360 150 Z" />
+            <circle cx="355" cy="75" r="5" />
 
             {/* Charminar like structure */}
-            <path d="M700 100 L705 50 L710 100 Z" />
-            <path d="M715 100 L720 50 L725 100 Z" />
-            <path d="M730 100 L735 50 L740 100 Z" />
-            <path d="M745 100 L750 50 L755 100 Z" />
-            <rect x="700" y="80" width="55" height="20" />
+            <path d="M380 150 L385 90 L390 150 Z" />
+            <path d="M395 150 L400 90 L405 150 Z" />
+            <path d="M410 150 L415 90 L420 150 Z" />
+            <path d="M425 150 L430 90 L435 150 Z" />
+            <rect x="380" y="130" width="55" height="20" />
 
             {/* Lotus Temple like structure */}
-            <path d="M900 100 L910 70 C915 60 925 60 930 70 L940 100 Z" />
-            <path d="M940 100 L950 70 C955 60 965 60 970 70 L980 100 Z" />
-            <path d="M980 100 L990 70 C995 60 1005 60 1010 70 L1020 100 Z" />
-            <circle cx="960" cy="60" r="15" />
+            <path d="M450 150 L460 120 C465 110 475 110 480 120 L490 150 Z" />
+            <path d="M490 150 L500 120 C505 110 515 110 520 120 L530 150 Z" />
+            <path d="M530 150 L540 120 C545 110 555 110 560 120 L570 150 Z" />
+            <circle cx="510" cy="110" r="15" />
 
             {/* Gateway of India like structure */}
-            <path d="M1100 100 L1100 70 C1100 50 1120 50 1120 70 L1120 100 Z" />
-            <path d="M1120 100 L1120 70 C1120 50 1140 50 1140 70 L1140 100 Z" />
-            <path d="M1140 100 L1140 70 C1140 50 1160 50 1160 70 L1160 100 Z" />
-            <rect x="1100" y="60" width="60" height="10" />
-            <rect x="1100" y="100" width="60" height="10" />
+            <path d="M590 150 L590 100 C590 80 610 80 610 100 L610 150 Z" />
+            <path d="M610 150 L610 100 C610 80 630 80 630 100 L630 150 Z" />
+            <path d="M630 150 L630 100 C630 80 650 80 650 100 L650 150 Z" />
+            <rect x="590" y="90" width="60" height="10" />
+            <rect x="590" y="150" width="60" height="10" /> {/* Base */}
+            <rect x="595" y="110" width="5" height="30" />
+            <rect x="605" y="110" width="5" height="30" />
+            <rect x="615" y="110" width="5" height="30" />
+            <rect x="625" y="110" width="5" height="30" />
+            <rect x="635" y="110" width="5" height="30" />
 
-            {/* Generic domes and minarets */}
-            <path d="M50 100 L60 80 C65 70 75 70 80 80 L90 100 Z" />
-            <circle cx="70" cy="75" r="8" />
-
-            <path d="M100 100 L110 70 C115 60 125 60 130 70 L140 100 Z" />
-            <circle cx="120" cy="65" r="10" />
-
-            <path d="M320 100 L330 80 C335 70 345 70 350 80 L360 100 Z" />
-            <circle cx="340" cy="75" r="8" />
-
-            <path d="M600 100 L610 70 C615 60 625 60 630 70 L640 100 Z" />
-            <circle cx="620" cy="65" r="10" />
-
-            <path d="M800 100 L810 80 C815 70 825 70 830 80 L840 100 Z" />
-            <circle cx="820" cy="75" r="8" />
-
-            <path d="M1050 100 L1060 70 C1065 60 1075 60 1080 70 L1090 100 Z" />
-            <circle cx="1070" cy="65" r="10" />
-
-            <path d="M1200 100 L1210 80 C1215 70 1225 70 1230 80 L1240 100 Z" />
-            <circle cx="1220" cy="75" r="8" />
-
-            <path d="M1250 100 L1260 70 C1265 60 1275 60 1280 70 L1290 100 Z" />
-            <circle cx="1270" cy="65" r="10" />
+            {/* Repeating pattern to fill the width, adjusted for density */}
+            {Array.from({ length: 10 }).map((_, i) => (
+              <g key={i} transform={`translate(${660 + i * 70}, 0)`}>
+                <path d="M0 150 L0 110 L10 100 L20 110 L20 150 Z" />
+                <circle cx="10" cy="95" r="7" />
+                <path d="M30 150 L30 120 L40 110 L50 120 L50 150 Z" />
+                <circle cx="40" cy="105" r="6" />
+              </g>
+            ))}
           </g>
         </svg>
       </div>
