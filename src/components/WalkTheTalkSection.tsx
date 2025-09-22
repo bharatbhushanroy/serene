@@ -152,7 +152,7 @@ const WalkTheTalkSection = () => {
           </motion.svg>
         </div>
 
-        {/* Right: Text Content and Badge */}
+        {/* Right: Text Content */}
         <div className="text-center lg:text-left">
           <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
             Go for a walk while we <span className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-transparent bg-clip-text">walk the talk</span>
@@ -160,13 +160,6 @@ const WalkTheTalkSection = () => {
           <p className="text-lg text-fintech-text-muted mb-8 max-w-xl mx-auto lg:mx-0">
             Leave the complexities to us and enjoy a stress-free experience, knowing that we are dedicated to meeting your business needs with efficiency and excellence.
           </p>
-          {/* Placeholder for "Great Place To Work" badge */}
-          <div className="inline-block bg-white p-4 rounded-lg shadow-md text-fintech-text-dark text-center">
-            <p className="text-sm font-bold text-red-600">Great Place To Work.</p>
-            <p className="text-xs text-blue-800 font-semibold">Certified</p>
-            <p className="text-[10px] text-gray-600">FEB 2025-FEB 2026</p>
-            <p className="text-[10px] text-gray-600">INDIA</p>
-          </div>
         </div>
       </div>
     </section>
