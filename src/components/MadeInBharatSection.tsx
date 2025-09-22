@@ -10,6 +10,33 @@ const MadeInBharatSection = () => {
         <h2 className="text-5xl md:text-7xl font-extrabold leading-tight mb-4 text-gray-600">
           Made In <span className="text-fintech-orange-accent">Bharat</span>
         </h2>
+
+        {/* Indian Flag */}
+        <div className="flex justify-center mb-10">
+          <svg width="120" height="80" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="shadow-lg rounded-md">
+            {/* Saffron Stripe */}
+            <rect x="0" y="0" width="120" height="26.67" fill="#FF9933"/>
+            {/* White Stripe */}
+            <rect x="0" y="26.67" width="120" height="26.66" fill="#FFFFFF"/>
+            {/* Green Stripe */}
+            <rect x="0" y="53.33" width="120" height="26.67" fill="#138808"/>
+
+            {/* Ashoka Chakra */}
+            <circle cx="60" cy="40" r="10" fill="#000080"/>
+            {/* Spokes of Ashoka Chakra */}
+            {[...Array(24)].map((_, i) => (
+              <line
+                key={i}
+                x1="60"
+                y1="40"
+                x2={60 + 10 * Math.cos((i * 15 * Math.PI) / 180)}
+                y2={40 + 10 * Math.sin((i * 15 * Math.PI) / 180)}
+                stroke="#000080"
+                strokeWidth="0.5"
+              />
+            ))}
+          </svg>
+        </div>
       </div>
 
       {/* Indian Skyline SVG - Replicated from image */}
