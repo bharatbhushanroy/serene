@@ -55,7 +55,7 @@ const FreeCreditScorePage = () => {
                 Gain insights into your financial health with a free, instant credit score check. No hidden charges, no impact on your score.
               </motion.p>
               <motion.div variants={itemVariants} className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-8">
-                <Link to="/products/free-credit-score">
+                <Link to="/apply-loan"> {/* Changed link to /apply-loan */}
                   <Button className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-all duration-300 group">
                     Check Now <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
