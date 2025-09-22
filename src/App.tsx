@@ -16,7 +16,6 @@ import SignupPage from "./pages/SignupPage";
 import ApplyLoanPage from "./pages/ApplyLoanPage";
 import DashboardPage from "./pages/DashboardPage";
 import AiChatbot from "./components/AiChatbot";
-import TestComponent from "./components/TestComponent"; // Import the new TestComponent
 
 const queryClient = new QueryClient();
 
@@ -43,7 +42,6 @@ const App = () => (
         </Routes>
       </BrowserRouter>
       <AiChatbot />
-      <TestComponent /> {/* Temporarily render TestComponent here */}
     </TooltipProvider>
   </QueryClientProvider>
 );
