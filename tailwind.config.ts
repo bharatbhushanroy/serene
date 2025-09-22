@@ -166,6 +166,14 @@ export default {
           'dot-pattern-new': 'hsl(var(--fintech-dot-pattern-new))',
           'button-primary-gradient-start': 'hsl(var(--fintech-button-primary-gradient-start))',
           'button-primary-gradient-end': 'hsl(var(--fintech-button-primary-gradient-end))',
+
+          // New colors for Newsletter Section
+          'newsletter-orange-bg': 'hsl(var(--fintech-newsletter-orange-bg))',
+          'newsletter-bird-yellow': 'hsl(var(--fintech-newsletter-bird-yellow))',
+          'newsletter-bird-black': 'hsl(var(--fintech-newsletter-bird-black))',
+          'newsletter-envelope-blue': 'hsl(var(--fintech-newsletter-envelope-blue))',
+          'newsletter-cloud-white': 'hsl(var(--fintech-newsletter-cloud-white))',
+          'newsletter-cloud-lightblue': 'hsl(var(--fintech-newsletter-cloud-lightblue))',
         }
       },
       borderRadius: {

@@ -5,6 +5,7 @@ import { MadeWithDyad } from '@/components/made-with-dyad';
 import { Card } from '@/components/ui/card';
 import { Calendar, Tag } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import NewsletterSection from '@/components/NewsletterSection'; // New import
 
 const blogPosts = [
   {
@@ -45,7 +46,7 @@ const Blog = () => {
           Stay informed with the latest insights, tips, and news on personal finance, loans, and the fintech industry.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {blogPosts.map((post) => (
             <Card key={post.id} className="bg-fintech-simulator-card-bg border border-fintech-border-light rounded-xl shadow-lg overflow-hidden">
               <img src={post.imageUrl} alt={post.title} className="w-full h-48 object-cover" />
@@ -69,6 +70,10 @@ const Blog = () => {
             </Card>
           ))}
         </div>
+
+        {/* Newsletter Section */}
+        <NewsletterSection />
+
       </main>
       <Footer />
       <MadeWithDyad />

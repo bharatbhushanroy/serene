@@ -147,6 +147,14 @@
 
     /* New color for India map section */
     --fintech-india-white: 0 0% 100%; /* Pure white for the middle stripe */
+
+    /* New colors for Newsletter Section */
+    --fintech-newsletter-orange-bg: 30 100% 50%; /* #FF7F00 */
+    --fintech-newsletter-bird-yellow: 45 100% 50%; /* #FFD700 */
+    --fintech-newsletter-bird-black: 220 10% 10%; /* #1A1A1A */
+    --fintech-newsletter-envelope-blue: 217 91% 59%; /* #3B82F6 */
+    --fintech-newsletter-cloud-white: 0 0% 100%; /* #FFFFFF */
+    --fintech-newsletter-cloud-lightblue: 217 91% 85%; /* #BFDBFE */
   }
 
   .dark {
