@@ -1,6 +1,6 @@
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
+import { TooltipProvider } from "@tanstack/react-query";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
@@ -15,7 +15,13 @@ import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import ApplyLoanPage from "./pages/ApplyLoanPage";
 import DashboardPage from "./pages/DashboardPage";
-import RootLayout from "./components/RootLayout"; // New import
+import RootLayout from "./components/RootLayout";
+import PersonalLoanPage from "./pages/products/PersonalLoanPage"; // New import
+import BusinessLoanPage from "./pages/products/BusinessLoanPage"; // New import
+import HomeLoanPage from "./pages/products/HomeLoanPage"; // New import
+import FreeCreditScorePage from "./pages/products/FreeCreditScorePage"; // New import
+import CreditCardsPage from "./pages/products/CreditCardsPage"; // New import
+import PersonalFinancePage from "./pages/products/PersonalFinancePage"; // New import
 
 const queryClient = new QueryClient();
 
@@ -26,7 +32,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route element={<RootLayout />}> {/* Wrap all main routes with RootLayout */}
+          <Route element={<RootLayout />}>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/blog" element={<Blog />} />
@@ -38,8 +44,14 @@ const App = () => (
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/apply-loan" element={<ApplyLoanPage />} />
             <Route path="/dashboard" element={<DashboardPage />} />
+            {/* New Product Routes */}
+            <Route path="/products/personal-loan" element={<PersonalLoanPage />} />
+            <Route path="/products/business-loan" element={<BusinessLoanPage />} />
+            <Route path="/products/home-loan" element={<HomeLoanPage />} />
+            <Route path="/products/free-credit-score" element={<FreeCreditScorePage />} />
+            <Route path="/products/credit-cards" element={<CreditCardsPage />} />
+            <Route path="/products/personal-finance" element={<PersonalFinancePage />} />
           </Route>
-          {/* The NotFound route should typically be outside the main layout if it doesn't share the same global components */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

@@ -4,7 +4,7 @@ import React from 'react';
 import { Card } from '@/components/ui/card';
 import { DollarSign, Briefcase, Home, Gauge, CreditCard, BarChart } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion'; // Import motion for animations
+import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
 const products = [
@@ -12,48 +12,48 @@ const products = [
     icon: DollarSign,
     title: "Personal Loan",
     description: "Quick funds for personal needs.",
-    link: "/apply-loan",
+    link: "/products/personal-loan", // Updated link
   },
   {
     icon: Briefcase,
     title: "Business Loan",
     description: "Fuel your business growth.",
-    link: "/apply-loan",
+    link: "/products/business-loan", // Updated link
   },
   {
     icon: Home,
     title: "Home Loan",
     description: "Achieve your dream home.",
-    link: "/apply-loan",
+    link: "/products/home-loan", // Updated link
   },
   {
     icon: Gauge,
     title: "Free Credit Score",
     description: "Check your credit health.",
-    link: "/check-eligibility", // Assuming a route for eligibility check
+    link: "/products/free-credit-score", // Updated link
   },
   {
     icon: CreditCard,
     title: "Credit Cards",
     description: "Explore best credit card offers.",
-    link: "/credit-cards", // Placeholder route
+    link: "/products/credit-cards", // Updated link
   },
   {
     icon: BarChart,
     title: "Personal Finance",
     description: "Manage your finances wisely.",
-    link: "/personal-finance", // Placeholder route
+    link: "/products/personal-finance", // Updated link
   },
 ];
 
 const ProductsSection = () => {
   return (
-    <section className="relative z-10 w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-main-bg text-white"> {/* Changed background to new main-bg */}
+    <section className="relative z-10 w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-main-bg text-white">
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
-          Bringing you the <span className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-transparent bg-clip-text">Best Products</span> from {/* Adjusted gradient */}
+          Bringing you the <span className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-transparent bg-clip-text">Best Products</span> from
         </h2>
-        <p className="text-4xl md:text-5xl font-extrabold leading-tight mb-12 text-white"> {/* Ensured text is white */}
+        <p className="text-4xl md:text-5xl font-extrabold leading-tight mb-12 text-white">
           Top Banks & Financial Institutions
         </p>
 
@@ -64,14 +64,14 @@ const ProductsSection = () => {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.1 }} // Staggered animation
+                transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.1 }}
               >
-                <Card className="bg-fintech-simulator-card-bg border border-fintech-border-light p-8 rounded-xl shadow-lg text-white flex flex-col items-center text-center transition-all duration-300 transform hover:-translate-y-2 hover:shadow-glow-blue"> {/* Dark card styling */}
-                  <div className="p-4 bg-fintech-blue-accent/20 rounded-full mb-6 backdrop-blur-sm"> {/* Darker icon background */}
-                    <product.icon className="h-8 w-8 text-fintech-blue-accent" /> {/* Blue accent for icons */}
+                <Card className="bg-fintech-simulator-card-bg border border-fintech-border-light p-8 rounded-xl shadow-lg text-white flex flex-col items-center text-center transition-all duration-300 transform hover:-translate-y-2 hover:shadow-glow-blue">
+                  <div className="p-4 bg-fintech-blue-accent/20 rounded-full mb-6 backdrop-blur-sm">
+                    <product.icon className="h-8 w-8 text-fintech-blue-accent" />
                   </div>
                   <h3 className="text-2xl font-bold mb-2 text-white">{product.title}</h3>
-                  <p className="text-base text-fintech-text-muted"> {/* Muted text for description */}
+                  <p className="text-base text-fintech-text-muted">
                     {product.description}
                   </p>
                 </Card>
