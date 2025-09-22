@@ -16,6 +16,7 @@ import SignupPage from "./pages/SignupPage";
 import ApplyLoanPage from "./pages/ApplyLoanPage";
 import DashboardPage from "./pages/DashboardPage";
 import AiChatbot from "./components/AiChatbot";
+import ApplyNowSidebarButton from "./components/ApplyNowSidebarButton"; // New import
 
 const queryClient = new QueryClient();
 
@@ -42,6 +43,7 @@ const App = () => (
         </Routes>
       </BrowserRouter>
       <AiChatbot />
+      <ApplyNowSidebarButton /> {/* Added the sidebar button here */}
     </TooltipProvider>
   </QueryClientProvider>
 );

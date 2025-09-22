@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { MessageSquare, Bot, X, Send, Sparkles } from 'lucide-react'; // Added Sparkles icon
+import { MessageSquare, Bot, X, Send, User } from 'lucide-react'; // Changed Sparkles to User
 import { cn } from '@/lib/utils';
 
 interface Message {
@@ -26,7 +26,7 @@ const AiChatbot = () => {
       setMessages([
         {
           id: 1,
-          text: "Hello! I'm Qicky's AI assistant. I'm here to help you navigate our loan options and answer your financial questions. How can I assist you today?",
+          text: "Hello! I'm Nivi, your personal assistant. I'm here to help you navigate our loan options and answer your financial questions. How can I assist you today?",
           sender: 'bot',
         },
       ]);
@@ -187,6 +187,61 @@ const AiChatbot = () => {
 
   return (
     <>
+      {/* Nivi Avatar and Speech Bubble */}
+      <motion.div
+        className="fixed bottom-4 right-4 z-50 cursor-pointer"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        {/* Speech Bubble */}
+        <AnimatePresence>
+          {!isOpen && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, y: 10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.8, y: 10 }}
+              transition={{ duration: 0.2 }}
+              className="absolute bottom-24 right-20 bg-fintech-blue-accent text-white px-4 py-2 rounded-xl rounded-br-none shadow-lg text-sm whitespace-nowrap"
+            >
+              Hi, I am Nivi, Your Personal Assistant.
+              <div className="absolute bottom-0 right-0 w-4 h-4 bg-fintech-blue-accent transform translate-x-2 translate-y-2 rotate-45 rounded-br-none"></div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Nivi Avatar (Placeholder SVG) */}
+        <div className="relative w-24 h-24">
+          {/* Replace this SVG with your actual Nivi illustration */}
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+            <defs>
+              <linearGradient id="niviGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#F97316" /> {/* Orange */}
+                <stop offset="100%" stopColor="#FBBF24" /> {/* Amber */}
+              </linearGradient>
+            </defs>
+            {/* Body */}
+            <circle cx="50" cy="75" r="20" fill="url(#niviGradient)" />
+            {/* Head */}
+            <circle cx="50" cy="40" r="25" fill="#FFDAB9" /> {/* Skin tone */}
+            {/* Hair */}
+            <path d="M25 40 C20 10 80 10 75 40 L75 50 C70 70 30 70 25 50 Z" fill="#4A2C2A" /> {/* Dark brown hair */}
+            {/* Eyes */}
+            <circle cx="40" cy="35" r="3" fill="black" />
+            <circle cx="60" cy="35" r="3" fill="black" />
+            {/* Mouth */}
+            <path d="M45 50 Q50 55 55 50" stroke="black" strokeWidth="1" fill="none" />
+            {/* Arm 1 */}
+            <rect x="25" y="60" width="10" height="30" rx="5" fill="url(#niviGradient)" transform="rotate(-15 25 60)" />
+            {/* Arm 2 (waving) */}
+            <rect x="65" y="55" width="10" height="30" rx="5" fill="url(#niviGradient)" transform="rotate(15 65 55)" />
+          </svg>
+          {/* You can replace the SVG above with an <img> tag pointing to your Nivi illustration */}
+          {/* <img src="/path/to/nivi-illustration.png" alt="Nivi AI Assistant" className="w-full h-full object-contain" /> */}
+        </div>
+      </motion.div>
+
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -198,9 +253,9 @@ const AiChatbot = () => {
           >
             <header className="flex items-center justify-between p-4 border-b border-fintech-border-light">
               <div className="flex items-center space-x-3">
-                <Sparkles className="h-7 w-7 text-fintech-blue-accent" /> {/* Changed Bot to Sparkles */}
+                <User className="h-7 w-7 text-fintech-blue-accent" /> {/* Changed Sparkles to User */}
                 <div>
-                  <h3 className="font-bold text-fintech-text-dark text-lg">Qicky AI Assistant</h3>
+                  <h3 className="font-bold text-fintech-text-dark text-lg">Nivi, Your Personal Assistant</h3>
                   <p className="text-xs text-fintech-green-success flex items-center">
                     <span className="relative flex h-2 w-2 mr-2">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-fintech-green-success opacity-75"></span>
@@ -227,7 +282,7 @@ const AiChatbot = () => {
                       message.sender === 'user' ? 'justify-end' : 'justify-start'
                     )}
                   >
-                    {message.sender === 'bot' && <Sparkles className="h-6 w-6 text-fintech-blue-accent flex-shrink-0" />} {/* Changed Bot to Sparkles */}
+                    {message.sender === 'bot' && <User className="h-6 w-6 text-fintech-blue-accent flex-shrink-0" />} {/* Changed Sparkles to User */}
                     <div
                       className={cn(
                         "max-w-xs rounded-2xl px-4 py-2 text-sm",
@@ -264,31 +319,6 @@ const AiChatbot = () => {
           </motion.div>
         )}
       </AnimatePresence>
-
-      <motion.div
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 0.4, delay: 0.5, type: 'spring' }}
-        className="fixed bottom-4 right-4 z-50"
-      >
-        <Button
-          size="icon"
-          onClick={() => setIsOpen(!isOpen)}
-          className="w-16 h-16 rounded-full bg-gradient-to-r from-fintech-blue-accent to-fintech-blue-soft text-white shadow-2xl shadow-fintech-blue-accent/40"
-        >
-          <AnimatePresence initial={false} mode="wait">
-            <motion.div
-              key={isOpen ? 'x' : 'msg'}
-              initial={{ y: -20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 20, opacity: 0 }}
-              transition={{ duration: 0.2 }}
-            >
-              {isOpen ? <X className="h-8 w-8" /> : <MessageSquare className="h-8 w-8" />}
-            </motion.div>
-          </AnimatePresence>
-        </Button>
-      </motion.div>
     </>
   );
 };
