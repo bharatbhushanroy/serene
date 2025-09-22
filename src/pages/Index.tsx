@@ -15,7 +15,6 @@ import FinancialFreedomSection from "@/components/FinancialFreedomSection";
 import LoanComparisonCalculator from "@/components/LoanComparisonCalculator";
 import CheckEligibilitySection from "@/components/CheckEligibilitySection";
 import InsuranceSection from "@/components/InsuranceSection";
-import IndiaMapSection from "@/components/IndiaMapSection"; // Updated import path
 
 const Index = () => {
   return (
@@ -36,7 +35,6 @@ const Index = () => {
         <FinancialFreedomSection />
         <MemberTestimonialsSection />
         <CtaSection />
-        <IndiaMapSection /> {/* Updated component name */}
       </main>
       <Footer />
       <MadeWithDyad />
