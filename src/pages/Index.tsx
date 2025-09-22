@@ -27,7 +27,6 @@ const Index = () => {
       <main>
         <InstantLoansHeroSection />
         <ProductsSection />
-        <MoneyForEverythingSection />
         <ApplyStepsSection />
         <QuickLoansFeaturesSection />
         {/* <CheckEligibilitySection /> Removed the component */}
@@ -38,6 +37,7 @@ const Index = () => {
         <LoanProductsSection />
         <HowItWorksSection />
         <LoanComparisonCalculator />
+        <MoneyForEverythingSection /> {/* Moved this section here */}
         <FinancialFreedomSection />
         <MemberTestimonialsSection />
         <CtaSection />
