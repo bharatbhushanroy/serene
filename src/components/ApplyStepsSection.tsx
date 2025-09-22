@@ -2,6 +2,7 @@ import React from 'react';
 import { CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion'; // Import motion for animations
 
 const steps = [
   {
@@ -41,8 +42,19 @@ const ApplyStepsSection = () => {
             <div className="absolute -left-10 top-1/2 -translate-y-1/2 w-64 h-64 bg-fintech-orange-accent/20 rounded-full blur-3xl opacity-70 rotate-45 transform -skew-y-12"></div>
             <div className="absolute -right-10 bottom-1/4 w-80 h-80 bg-fintech-orange-accent/10 rounded-full blur-3xl opacity-60 -rotate-12 transform skew-y-6"></div>
 
-            {/* Phone Mockup */}
-            <div className="relative z-10 w-64 h-[450px] bg-black rounded-[2.5rem] shadow-2xl flex items-center justify-center p-1.5">
+            {/* Phone Mockup with 3D effect */}
+            <motion.div
+              initial={{ opacity: 0, rotateY: 20, rotateX: 10, y: 50 }}
+              whileInView={{ opacity: 1, rotateY: 0, rotateX: 0, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="relative z-10 w-64 h-[450px] bg-black rounded-[2.5rem] shadow-2xl flex items-center justify-center p-1.5"
+              style={{
+                transformStyle: 'preserve-3d',
+                transformOrigin: 'center center',
+                boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 30px rgba(249, 115, 22, 0.3)' // Enhanced shadow
+              }}
+            >
               {/* Phone Screen */}
               <div className="relative w-full h-full bg-white rounded-[2rem] overflow-hidden flex flex-col items-center justify-center p-6">
                 {/* Notch */}
@@ -57,7 +69,7 @@ const ApplyStepsSection = () => {
                   </Button>
                 </Link>
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* Right Side: Steps */}
