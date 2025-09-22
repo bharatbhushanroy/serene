@@ -23,6 +23,10 @@ const CreditCardMockup: React.FC<CreditCardMockupProps> = ({
 }) => {
   return (
     <motion.div
+      initial={{ opacity: 0, y: 50, scale: 0.9, rotateY: 15 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1, rotateY: 0 }}
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
       className={cn(
         "relative w-64 h-40 rounded-xl shadow-lg p-5 flex flex-col justify-between text-white",
         colorClass,
@@ -30,9 +34,11 @@ const CreditCardMockup: React.FC<CreditCardMockupProps> = ({
         animationDelay,
         rotation // Apply rotation class
       )}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      style={{
+        transformStyle: 'preserve-3d',
+        transformOrigin: 'center center',
+        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 30px rgba(249, 115, 22, 0.3)' // Enhanced shadow with orange glow
+      }}
     >
       {/* Chip */}
       <div className="w-10 h-8 bg-fintech-card-chip-yellow rounded-md shadow-inner relative overflow-hidden">

@@ -8,11 +8,16 @@ import QickyLogo from './QickyLogo'; // Import the new QickyLogo component
 const LoanApprovedMockup = () => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50, scale: 0.9 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      initial={{ opacity: 0, y: 50, scale: 0.9, rotateY: 15 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1, rotateY: 0 }}
       viewport={{ once: true, amount: 0.5 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
       className="relative z-10 w-full max-w-xs mx-auto bg-fintech-simulator-card-bg/80 backdrop-blur-lg border border-fintech-border-light rounded-3xl p-6 shadow-2xl shadow-fintech-blue-accent/20"
+      style={{
+        transformStyle: 'preserve-3d',
+        transformOrigin: 'center center',
+        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 30px rgba(59, 130, 246, 0.3)' // Enhanced shadow with blue glow
+      }}
     >
       <div className="flex flex-col items-center text-center">
         <QickyLogo size="md" /> {/* Use the new QickyLogo component */}
