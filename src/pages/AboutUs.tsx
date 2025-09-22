@@ -6,8 +6,9 @@ import { Card } from '@/components/ui/card';
 import { Users, Lightbulb } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import EthosSection from '@/components/EthosSection'; // New import
-import TeamSection from '@/components/TeamSection';   // New import
+import EthosSection from '@/components/EthosSection';
+import TeamSection from '@/components/TeamSection';
+import GrowthStorySection from '@/components/GrowthStorySection'; // New import
 
 const AboutUs = () => {
   return (
@@ -60,7 +61,10 @@ const AboutUs = () => {
         {/* New Team Section */}
         <TeamSection />
 
-        <div className="text-center mt-20"> {/* Added mt-20 for spacing */}
+        {/* New Growth Story Section */}
+        <GrowthStorySection />
+
+        <div className="text-center mt-20">
           <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
             Join the <span className="bg-gradient-to-r from-fintech-blue-accent to-fintech-blue-soft text-transparent bg-clip-text">Qicky Family</span>
           </h2>
