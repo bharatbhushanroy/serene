@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { User, Gift, QrCode, Smartphone, Bank, ArrowRight, Home, Grid, Repeat, Receipt, PlayCircle, Shield, Wallet, CreditCard, TrendingUp, BarChart, ArrowLeft } from 'lucide-react';
+import { User, Gift, QrCode, Smartphone, Landmark, ArrowRight, Home, Grid, Repeat, Receipt, PlayCircle, Shield, Wallet, CreditCard, TrendingUp, BarChart, ArrowLeft } from 'lucide-react';
 
 const TripleMobileMockup = () => {
   const PhoneFrame = ({ children, className = "" }) => (
@@ -47,11 +47,11 @@ const TripleMobileMockup = () => {
               <span>Pay to mobile</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="bg-gray-800 p-2 rounded-lg mb-1"><Bank className="h-5 w-5 text-gray-400" /></div>
+              <div className="bg-gray-800 p-2 rounded-lg mb-1"><Landmark className="h-5 w-5 text-gray-400" /></div>
               <span>Check balance</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="bg-gray-800 p-2 rounded-lg mb-1"><Bank className="h-5 w-5 text-gray-400" /></div>
+              <div className="bg-gray-800 p-2 rounded-lg mb-1"><Landmark className="h-5 w-5 text-gray-400" /></div>
               <span>Add bank account</span>
             </div>
           </div>
@@ -77,11 +77,11 @@ const TripleMobileMockup = () => {
               <span>Link RuPay card to UPI</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="bg-gray-800 p-2 rounded-lg mb-1"><Bank className="h-5 w-5 text-gray-400" /></div>
+              <div className="bg-gray-800 p-2 rounded-lg mb-1"><Landmark className="h-5 w-5 text-gray-400" /></div>
               <span>Bank transfer</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="bg-gray-800 p-2 rounded-lg mb-1"><Bank className="h-5 w-5 text-gray-400" /></div>
+              <div className="bg-gray-800 p-2 rounded-lg mb-1"><Landmark className="h-5 w-5 text-gray-400" /></div>
               <span>Self transfer</span>
             </div>
           </div>
@@ -146,11 +146,11 @@ const TripleMobileMockup = () => {
               <span>Pay to mobile</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="bg-gray-800 p-2 rounded-lg mb-1"><Bank className="h-5 w-5 text-gray-400" /></div>
+              <div className="bg-gray-800 p-2 rounded-lg mb-1"><Landmark className="h-5 w-5 text-gray-400" /></div>
               <span>To bank account</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="bg-gray-800 p-2 rounded-lg mb-1"><Bank className="h-5 w-5 text-gray-400" /></div>
+              <div className="bg-gray-800 p-2 rounded-lg mb-1"><Landmark className="h-5 w-5 text-gray-400" /></div>
               <span>To Self account</span>
             </div>
           </div>
