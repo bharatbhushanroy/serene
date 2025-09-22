@@ -6,7 +6,7 @@ import QickyLogo from './QickyLogo'; // Import the new QickyLogo component
 
 const Footer = () => {
   return (
-    <footer className="relative z-10 w-full bg-fintech-header-bg text-fintech-header-text py-12 px-6 md:px-12 lg:px-24 border-t border-gray-800">
+    <footer className="relative z-10 w-full bg-fintech-main-bg text-fintech-header-text py-12 px-6 md:px-12 lg:px-24 border-t border-gray-800">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-8">
         {/* Logo and Description */}
         <div className="col-span-full lg:col-span-1 flex flex-col items-center md:items-start text-center md:text-left">

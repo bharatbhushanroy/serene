@@ -48,10 +48,10 @@ const products = [
 
 const ProductsSection = () => {
   return (
-    <section className="relative z-10 w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-dark-bg text-white"> {/* Changed background to dark */}
+    <section className="relative z-10 w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-main-bg text-white"> {/* Changed background to new main-bg */}
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
-          Bringing you the <span className="bg-gradient-to-r from-fintech-blue-accent to-fintech-gradient-purple-start text-transparent bg-clip-text">Best Products</span> from {/* Adjusted gradient */}
+          Bringing you the <span className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-transparent bg-clip-text">Best Products</span> from {/* Adjusted gradient */}
         </h2>
         <p className="text-4xl md:text-5xl font-extrabold leading-tight mb-12 text-white"> {/* Ensured text is white */}
           Top Banks & Financial Institutions

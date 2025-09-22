@@ -144,7 +144,7 @@ const InteractiveLoanSimulatorSection = () => {
   const displayedChartData = chartData.slice(0, currentMonth + 1);
 
   return (
-    <section className="relative w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-dark-bg text-white overflow-hidden">
+    <section className="relative w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-main-bg text-white overflow-hidden">
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-12">
           Try Our <span className="bg-gradient-to-r from-fintech-blue-accent to-fintech-blue-soft text-transparent bg-clip-text">Interactive Loan Simulator</span>
@@ -332,7 +332,7 @@ const InteractiveLoanSimulatorSection = () => {
               <Link to="/apply-loan" className="block">
                 <Button
                   size="lg"
-                  className="w-full bg-gradient-button-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-all duration-300 hover:shadow-glow-blue group"
+                  className="w-full bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-all duration-300 hover:shadow-glow-blue group"
                 >
                   Apply for Personal Loan Now <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>

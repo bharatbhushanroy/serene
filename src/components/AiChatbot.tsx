@@ -203,10 +203,10 @@ const AiChatbot = () => {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.8, y: 10 }}
               transition={{ duration: 0.2 }}
-              className="absolute bottom-24 right-20 bg-fintech-blue-accent text-white px-4 py-2 rounded-xl rounded-br-none shadow-lg text-sm whitespace-nowrap"
+              className="absolute bottom-24 right-20 bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-4 py-2 rounded-xl rounded-br-none shadow-lg text-sm whitespace-nowrap"
             >
               Hi, I am Nivi, Your Personal Assistant.
-              <div className="absolute bottom-0 right-0 w-4 h-4 bg-fintech-blue-accent transform translate-x-2 translate-y-2 rotate-45 rounded-br-none"></div>
+              <div className="absolute bottom-0 right-0 w-4 h-4 bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end transform translate-x-2 translate-y-2 rotate-45 rounded-br-none"></div>
             </motion.div>
           )}
         </AnimatePresence>
@@ -217,8 +217,8 @@ const AiChatbot = () => {
           <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
             <defs>
               <linearGradient id="niviGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#F97316" /> {/* Orange */}
-                <stop offset="100%" stopColor="#FBBF24" /> {/* Amber */}
+                <stop offset="0%" stopColor="hsl(var(--fintech-button-primary-gradient-start))" /> {/* Orange */}
+                <stop offset="100%" stopColor="hsl(var(--fintech-button-primary-gradient-end))" /> {/* Amber */}
               </linearGradient>
             </defs>
             {/* Body */}
@@ -249,13 +249,13 @@ const AiChatbot = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 50, scale: 0.9 }}
             transition={{ duration: 0.3, ease: 'easeOut' }}
-            className="fixed bottom-24 right-4 w-full max-w-sm h-[60vh] bg-fintech-card-light border border-fintech-border-light rounded-2xl shadow-2xl shadow-fintech-blue-accent/30 flex flex-col z-50"
+            className="fixed bottom-24 right-4 w-full max-w-sm h-[60vh] bg-fintech-simulator-card-bg border border-fintech-border-light rounded-2xl shadow-2xl shadow-fintech-blue-accent/30 flex flex-col z-50"
           >
             <header className="flex items-center justify-between p-4 border-b border-fintech-border-light">
               <div className="flex items-center space-x-3">
                 <User className="h-7 w-7 text-fintech-blue-accent" /> {/* Changed Sparkles to User */}
                 <div>
-                  <h3 className="font-bold text-fintech-text-dark text-lg">Nivi, Your Personal Assistant</h3>
+                  <h3 className="font-bold text-white text-lg">Nivi, Your Personal Assistant</h3>
                   <p className="text-xs text-fintech-green-success flex items-center">
                     <span className="relative flex h-2 w-2 mr-2">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-fintech-green-success opacity-75"></span>
@@ -265,7 +265,7 @@ const AiChatbot = () => {
                   </p>
                 </div>
               </div>
-              <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="text-fintech-text-muted hover:text-fintech-text-dark">
+              <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="text-fintech-text-muted hover:text-white">
                 <X className="h-5 w-5" />
               </Button>
             </header>
@@ -287,8 +287,8 @@ const AiChatbot = () => {
                       className={cn(
                         "max-w-xs rounded-2xl px-4 py-2 text-sm",
                         message.sender === 'user'
-                          ? 'bg-fintech-blue-accent text-white rounded-br-none'
-                          : 'bg-fintech-background-offwhite border border-fintech-border-light text-fintech-text-dark rounded-bl-none'
+                          ? 'bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white rounded-br-none'
+                          : 'bg-fintech-dark-bg-lighter border border-fintech-border-light text-white rounded-bl-none'
                       )}
                     >
                       {message.text}
@@ -305,12 +305,12 @@ const AiChatbot = () => {
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-                  className="bg-fintech-background-offwhite border-fintech-border-light text-fintech-text-dark focus:border-fintech-blue-accent"
+                  className="bg-fintech-dark-bg-lighter border-fintech-border-light text-white focus:border-fintech-blue-accent"
                 />
                 <Button
                   size="icon"
                   onClick={handleSendMessage}
-                  className="bg-gradient-button-primary text-white flex-shrink-0"
+                  className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white flex-shrink-0"
                 >
                   <Send className="h-5 w-5" />
                 </Button>

@@ -81,7 +81,7 @@ const CheckEligibilitySection = () => {
   };
 
   return (
-    <section className="relative w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-dark-bg text-white overflow-hidden">
+    <section className="relative w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-main-bg text-white overflow-hidden">
       {/* Animated Background Elements */}
       {[...Array(5)].map((_, i) => (
         <motion.span
@@ -218,7 +218,7 @@ const CheckEligibilitySection = () => {
 
             <Button
               onClick={handleCheckEligibility}
-              className="w-full bg-gradient-button-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity group"
+              className="w-full bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity group"
             >
               Check Eligibility <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>

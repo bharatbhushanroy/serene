@@ -31,7 +31,7 @@ const mockCreditData = [
 
 const CreditCardUtilizationChart = () => {
   return (
-    <Card className="bg-fintech-dashboard-card-bg border border-fintech-dashboard-border text-fintech-dashboard-text-primary rounded-xl shadow-md h-full">
+    <Card className="bg-fintech-simulator-card-bg border border-fintech-dashboard-border text-fintech-dashboard-text-primary rounded-xl shadow-md h-full">
       <CardHeader>
         <CardTitle className="text-lg font-semibold text-fintech-dashboard-text-primary flex items-center">
           <CreditCard className="h-5 w-5 mr-2 text-fintech-dashboard-accent-blue" /> Credit Card Utilization

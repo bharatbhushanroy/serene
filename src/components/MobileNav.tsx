@@ -33,7 +33,7 @@ const MobileNav = () => {
           <Menu className="h-6 w-6" />
         </Button>
       </SheetTrigger>
-      <SheetContent side="left" className="w-[300px] sm:w-[350px] bg-fintech-header-bg border-r border-gray-800 flex flex-col">
+      <SheetContent side="left" className="w-[300px] sm:w-[350px] bg-fintech-main-bg border-r border-gray-800 flex flex-col">
         <SheetHeader className="flex flex-row items-center justify-between px-4 py-2 border-b border-gray-800">
           <SheetTitle>
             <Link to="/" className="flex items-center" onClick={closeSheet}>
@@ -110,7 +110,7 @@ const MobileNav = () => {
             </Button>
           </Link>
           <Link to="/apply-loan" onClick={closeSheet}>
-            <Button className="w-full bg-gradient-button-primary text-white px-6 py-2 rounded-full hover:opacity-90 transition-opacity flex items-center justify-center group">
+            <Button className="w-full bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-6 py-2 rounded-full hover:opacity-90 transition-opacity flex items-center justify-center group">
               Apply Now <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </Link>

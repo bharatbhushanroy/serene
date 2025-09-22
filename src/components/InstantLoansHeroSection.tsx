@@ -9,7 +9,7 @@ import AnimatedBackgroundShapes from './AnimatedBackgroundShapes';
 
 const InstantLoansHeroSection = () => {
   return (
-    <section className="relative w-full min-h-[calc(100vh-80px)] flex items-center justify-center py-16 px-6 md:px-12 lg:px-24 overflow-hidden bg-fintech-hero-dark-bg text-white">
+    <section className="relative w-full min-h-[calc(100vh-80px)] flex items-center justify-center py-16 px-6 md:px-12 lg:px-24 overflow-hidden bg-fintech-main-bg text-white">
       {/* Animated Background Shapes */}
       <AnimatedBackgroundShapes />
 
@@ -27,7 +27,7 @@ const InstantLoansHeroSection = () => {
           </p>
           <div className="flex justify-center lg:justify-start space-x-4">
             <Link to="/apply-loan">
-              <Button className="bg-fintech-orange-accent hover:bg-orange-600 text-white px-8 py-3 rounded-full text-lg font-semibold">
+              <Button className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-8 py-3 rounded-full text-lg font-semibold">
                 Apply Now
               </Button>
             </Link>

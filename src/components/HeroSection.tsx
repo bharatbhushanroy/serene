@@ -31,7 +31,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative w-full min-h-[calc(100vh-80px)] flex items-center justify-center py-16 px-6 md:px-12 lg:px-24 overflow-hidden bg-fintech-hero-dark-bg text-white">
+    <section className="relative w-full min-h-[calc(100vh-80px)] flex items-center justify-center py-16 px-6 md:px-12 lg:px-24 overflow-hidden bg-fintech-main-bg text-white">
       {/* Animated Background Shapes */}
       <AnimatedBackgroundShapes />
 
@@ -51,14 +51,14 @@ const HeroSection = () => {
             Instant Approvals Available
           </motion.div>
           <motion.h1 variants={itemVariants} className="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-4">
-            Quick Loans for <span className="bg-gradient-to-r from-fintech-blue-accent to-fintech-blue-soft text-transparent bg-clip-text">Every Need</span>
+            Quick Loans for <span className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-transparent bg-clip-text">Every Need</span>
           </motion.h1>
           <motion.p variants={itemVariants} className="text-lg text-gray-300 mb-8 max-w-xl">
             Get instant access to personal loans with flexible repayment options, competitive interest rates, and a seamless digital experience.
           </motion.p>
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-8">
             <Link to="/apply-loan">
-              <Button className="bg-gradient-button-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-all duration-300 hover:shadow-glow-blue group">
+              <Button className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-all duration-300 hover:shadow-glow-blue group">
                 Apply Now <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
@@ -109,7 +109,7 @@ const HeroSection = () => {
           </div>
           <div className="flex space-x-2">
             <Button variant="outline" className="border-gray-700 text-gray-200 hover:bg-gray-800" onClick={() => setShowCookieBanner(false)}>Decline</Button>
-            <Button className="bg-gradient-button-primary text-white hover:opacity-90" onClick={() => setShowCookieBanner(false)}>Accept All</Button>
+            <Button className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white hover:opacity-90" onClick={() => setShowCookieBanner(false)}>Accept All</Button>
           </div>
         </div>
       )}

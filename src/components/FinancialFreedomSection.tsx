@@ -40,7 +40,7 @@ const FinancialFreedomSection = () => {
   };
 
   return (
-    <section className="relative w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-dark-bg text-white overflow-hidden">
+    <section className="relative w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-main-bg text-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Top Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
@@ -156,7 +156,7 @@ const FinancialFreedomSection = () => {
             <Link to="/apply-loan">
               <Button
                 size="lg"
-                className="bg-gradient-button-purple text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-all duration-300 group"
+                className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-all duration-300 group"
               >
                 Apply Now <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>

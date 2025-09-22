@@ -50,6 +50,14 @@
 
     --sidebar-ring: 217.2 91.2% 59.8%;
 
+    /* New main background color from image */
+    --fintech-main-bg: 260 60% 12%; /* Deep purple from image */
+    --fintech-dot-pattern-new: 260 30% 20%; /* Slightly lighter purple for dots */
+
+    /* New button gradient for primary actions */
+    --fintech-button-primary-gradient-start: 260 70% 60%; /* Purple */
+    --fintech-button-primary-gradient-end: 330 80% 60%; /* Pink */
+
     /* New colors for the "Apply Loan in Simple Steps" section */
     --fintech-peach-background: 30 100% 96%; /* A light peach/orange */
     --fintech-orange-accent: 36 100% 50%; /* A vibrant orange */
@@ -187,10 +195,10 @@
 
   body {
     /* Using the new dark background and dot pattern */
-    @apply bg-fintech-dashboard-bg text-fintech-header-text;
+    @apply bg-fintech-main-bg text-fintech-header-text; /* Use the new main background */
     background-image: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.05) 0%, transparent 40%),
-                      radial-gradient(circle at 1px 1px, hsl(var(--fintech-dot-pattern)) 1px, transparent 0);
-    background-size: 100% 100%, 20px 20px; /* Adjust dot size */
+                      radial-gradient(circle at 1px 1px, hsl(var(--fintech-dot-pattern-new)) 1px, transparent 0); /* Use new dot pattern color */
+    background-size: 100% 100%, 20px 20px;
     background-position: center, center;
     background-repeat: no-repeat, repeat;
   }
@@ -209,7 +217,7 @@
 
 /* Custom grid pattern for the phone simulator card */
 .bg-grid-pattern {
-  background-image: linear-gradient(to right, hsl(var(--fintech-dot-pattern)) 1px, transparent 1px),
-                    linear-gradient(to bottom, hsl(var(--fintech-dot-pattern)) 1px, transparent 1px);
+  background-image: linear-gradient(to right, hsl(var(--fintech-dot-pattern-new)) 1px, transparent 1px),
+                    linear-gradient(to bottom, hsl(var(--fintech-dot-pattern-new)) 1px, transparent 1px);
   background-size: 20px 20px;
 }

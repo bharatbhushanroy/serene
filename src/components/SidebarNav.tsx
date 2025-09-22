@@ -45,7 +45,7 @@ const SidebarNav = () => {
   const location = useLocation();
 
   return (
-    <aside className="w-64 bg-fintech-dashboard-sidebar-bg text-fintech-dashboard-text-primary h-screen flex flex-col p-6 border-r border-fintech-dashboard-border shadow-lg">
+    <aside className="w-64 bg-fintech-main-bg text-fintech-dashboard-text-primary h-screen flex flex-col p-6 border-r border-fintech-dashboard-border shadow-lg">
       <div className="mb-10 flex items-center justify-center">
         <QickyLogo size="lg" className="text-fintech-dashboard-text-primary" />
       </div>

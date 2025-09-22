@@ -16,7 +16,7 @@ const AiBalanceTransferSuggestions = () => {
   };
 
   return (
-    <Card className="bg-fintech-dashboard-card-bg border border-fintech-dashboard-border text-fintech-dashboard-text-primary rounded-xl shadow-md h-full">
+    <Card className="bg-fintech-simulator-card-bg border border-fintech-dashboard-border text-fintech-dashboard-text-primary rounded-xl shadow-md h-full">
       <CardHeader>
         <CardTitle className="text-lg font-semibold text-fintech-dashboard-text-primary flex items-center">
           <Lightbulb className="h-5 w-5 mr-2 text-fintech-dashboard-accent-blue" /> AI Suggestions
@@ -43,7 +43,7 @@ const AiBalanceTransferSuggestions = () => {
 
         <Button
           onClick={handleSuggestBalanceTransfer}
-          className="w-full bg-gradient-to-r from-fintech-dashboard-accent-blue to-blue-600 text-white px-6 py-3 rounded-lg text-base font-semibold hover:opacity-90 transition-opacity flex items-center justify-center group"
+          className="w-full bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-6 py-3 rounded-lg text-base font-semibold hover:opacity-90 transition-opacity flex items-center justify-center group"
         >
           Explore Balance Transfer <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
         </Button>

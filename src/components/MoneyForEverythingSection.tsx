@@ -58,7 +58,7 @@ const PhoneSimulatorMockup = () => {
             </Button>
           ))}
         </div>
-        <Button className="w-full bg-fintech-icon-orange text-white py-2 rounded-full text-base font-semibold hover:opacity-90">
+        <Button className="w-full bg-fintech-orange-accent text-white py-2 rounded-full text-base font-semibold hover:opacity-90">
           APPLY
         </Button>
       </div>
@@ -68,10 +68,10 @@ const PhoneSimulatorMockup = () => {
 
 const MoneyForEverythingSection = () => {
   return (
-    <section className="relative w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-dark-bg text-white overflow-hidden">
+    <section className="relative w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-main-bg text-white overflow-hidden">
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
-          Money for <span className="bg-gradient-to-r from-fintech-blue-accent to-fintech-gradient-purple-start text-transparent bg-clip-text">everything</span> you need
+          Money for <span className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-transparent bg-clip-text">everything</span> you need
         </h2>
         <p className="text-lg text-fintech-text-muted mb-16 max-w-3xl mx-auto">
           Get up to ₹ 20,000 quickly for your small expenses
@@ -120,7 +120,7 @@ const MoneyForEverythingSection = () => {
             <Link to="/signup">
               <Button
                 size="lg"
-                className="bg-white text-fintech-dark-bg px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-200 transition-colors group"
+                className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-colors group"
               >
                 Sign Up Now <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>

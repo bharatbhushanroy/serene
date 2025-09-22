@@ -31,12 +31,12 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-fintech-background-light text-fintech-text-dark hero-background">
+    <div className="min-h-screen bg-fintech-main-bg text-fintech-text-dark hero-background">
       <Header />
       <main className="relative z-10 py-20 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto flex items-center justify-center">
-        <Card className="bg-gradient-card-light border border-fintech-border-light p-8 rounded-xl shadow-lg max-w-md w-full">
+        <Card className="bg-fintech-simulator-card-bg border border-fintech-border-light p-8 rounded-xl shadow-lg max-w-md w-full">
           <CardHeader className="text-center">
-            <CardTitle className="text-4xl font-extrabold text-fintech-text-dark mb-4">
+            <CardTitle className="text-4xl font-extrabold text-white mb-4">
               Welcome <span className="bg-gradient-to-r from-fintech-blue-accent to-fintech-blue-soft text-transparent bg-clip-text">Back</span>
             </CardTitle>
             <p className="text-fintech-text-muted text-lg">Sign in to your Qicky account</p>
@@ -51,7 +51,7 @@ const LoginPage = () => {
                   placeholder="your@example.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="bg-fintech-background-offwhite border-fintech-border-light text-fintech-text-dark focus:border-fintech-blue-accent"
+                  className="bg-gray-800 border-gray-700 text-white focus:border-fintech-blue-accent"
                 />
               </div>
               <div>
@@ -62,12 +62,12 @@ const LoginPage = () => {
                   placeholder="••••••••"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="bg-fintech-background-offwhite border-fintech-border-light text-fintech-text-dark focus:border-fintech-blue-accent"
+                  className="bg-gray-800 border-gray-700 text-white focus:border-fintech-blue-accent"
                 />
               </div>
               <Button
                 type="submit"
-                className="w-full bg-gradient-button-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity"
+                className="w-full bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity"
               >
                 Login
               </Button>

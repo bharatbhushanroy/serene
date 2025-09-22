@@ -28,7 +28,7 @@ const Header = () => {
   const location = useLocation(); // Use useLocation hook
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-fintech-header-bg/80 backdrop-blur-sm py-4 px-6 md:px-12 lg:px-24 flex items-center justify-between border-b border-gray-800">
+    <header className="sticky top-0 z-50 w-full bg-fintech-main-bg/80 backdrop-blur-sm py-4 px-6 md:px-12 lg:px-24 flex items-center justify-between border-b border-gray-800">
       <div className="flex items-center">
         <Link to="/" className="flex items-center">
           <QickyLogo size="md" />
@@ -48,7 +48,7 @@ const Header = () => {
           <DropdownMenuTrigger className="flex items-center text-fintech-header-text hover:text-fintech-blue-accent transition-colors focus:outline-none">
             <LayoutGrid className="h-4 w-4 mr-1" /> Products <ChevronDown className="ml-1 h-4 w-4" />
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="bg-fintech-header-bg border-gray-700 text-fintech-header-text">
+          <DropdownMenuContent className="bg-fintech-main-bg border-gray-700 text-fintech-header-text">
             <Link to="/apply-loan"><DropdownMenuItem className="hover:bg-gray-700">Personal Loans</DropdownMenuItem></Link>
             <DropdownMenuItem className="hover:bg-gray-700">Business Loans</DropdownMenuItem>
             <DropdownMenuItem className="hover:bg-gray-700">Home Loans</DropdownMenuItem>
@@ -58,7 +58,7 @@ const Header = () => {
           <DropdownMenuTrigger className="flex items-center text-fintech-header-text hover:text-fintech-blue-accent transition-colors focus:outline-none">
             <Settings className="h-4 w-4 mr-1" /> Tools <ChevronDown className="ml-1 h-4 w-4" />
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="bg-fintech-header-bg border-gray-700 text-fintech-header-text">
+          <DropdownMenuContent className="bg-fintech-main-bg border-gray-700 text-fintech-header-text">
             <Link to="/loan-calculator"><DropdownMenuItem className="hover:bg-gray-700">Loan Calculator</DropdownMenuItem></Link>
             <DropdownMenuItem className="hover:bg-gray-700">EMI Calculator</DropdownMenuItem>
           </DropdownMenuContent>
@@ -67,7 +67,7 @@ const Header = () => {
           <DropdownMenuTrigger className="flex items-center text-fintech-header-text hover:text-fintech-blue-accent transition-colors focus:outline-none">
             <BookOpen className="h-4 w-4 mr-1" /> Resources <ChevronDown className="ml-1 h-4 w-4" />
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="bg-fintech-header-bg border-gray-700 text-fintech-header-text">
+          <DropdownMenuContent className="bg-fintech-main-bg border-gray-700 text-fintech-header-text">
             <Link to="/blog"><DropdownMenuItem className="hover:bg-gray-700">Blog Posts</DropdownMenuItem></Link>
             <Link to="/faqs"><DropdownMenuItem className="hover:bg-gray-700">FAQs</DropdownMenuItem></Link>
             <Link to="/privacy"><DropdownMenuItem className="hover:bg-gray-700">Privacy Policy</DropdownMenuItem></Link>
@@ -86,7 +86,7 @@ const Header = () => {
           <LogIn className="h-4 w-4 mr-2" /> Login
         </Button></Link>
         <Link to="/apply-loan">
-          <Button className="bg-gradient-button-primary text-white px-6 py-2 rounded-full hover:opacity-90 transition-opacity flex items-center group">
+          <Button className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-6 py-2 rounded-full hover:opacity-90 transition-opacity flex items-center group">
             Apply Now <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </Button>
         </Link>

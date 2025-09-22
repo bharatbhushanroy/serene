@@ -117,19 +117,19 @@ export default {
           'button-gradient-end': 'hsl(var(--fintech-button-gradient-end))',
           'dark-bg-lighter': 'hsl(var(--fintech-dark-bg-lighter))',
           // New colors for Hero Section and Header
-          'header-bg': '#1A1A2E', // Dark background for header
+          'header-bg': 'hsl(var(--fintech-main-bg))', // Updated to use main-bg
           'header-text': '#E0E0E0', // Light text for header
-          'hero-dark-bg': '#1A1A2E', // Dark background for hero section
+          'hero-dark-bg': 'hsl(var(--fintech-main-bg))', // Updated to use main-bg
           'card-mockup-purple': '#8A2BE2', // Blue Violet
           'card-mockup-blue': '#4169E1', // Royal Blue
           'card-mockup-pink': '#FF1493', // Deep Pink
           'card-chip-yellow': '#FFD700', // Gold
           'card-chip-light': '#E0E0E0', // Light gray for chip reflection
-          'dot-pattern': '#33334D', // Color for the dots in the background
+          'dot-pattern': 'hsl(var(--fintech-dot-pattern-new))', // Updated to use new dot pattern
           'scroll-indicator-bg': '#3B82F6', // Blue for scroll indicator
           // New dashboard colors
           dashboard: {
-            'bg': '#0F172A', // Slate-900
+            'bg': '#0F172A', // Slate-900 (keeping separate for dashboard)
             'sidebar-bg': '#1E293B', // Slate-800
             'card-bg': '#1E293B', // Slate-800
             'text-primary': '#F8FAFC', // Slate-50
@@ -160,6 +160,12 @@ export default {
           'phone-text': 'hsl(220 10% 10%)', // Text inside phone
           // New color for India map section
           'india-white': 'hsl(0 0% 100%)', // Pure white for the middle stripe
+
+          // New main background and button gradient
+          'main-bg': 'hsl(var(--fintech-main-bg))',
+          'dot-pattern-new': 'hsl(var(--fintech-dot-pattern-new))',
+          'button-primary-gradient-start': 'hsl(var(--fintech-button-primary-gradient-start))',
+          'button-primary-gradient-end': 'hsl(var(--fintech-button-primary-gradient-end))',
         }
       },
       borderRadius: {

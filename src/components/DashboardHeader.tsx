@@ -9,7 +9,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 
 const DashboardHeader = () => {
   return (
-    <header className="flex items-center justify-between p-6 bg-fintech-dashboard-bg border-b border-fintech-dashboard-border">
+    <header className="flex items-center justify-between p-6 bg-fintech-main-bg border-b border-fintech-dashboard-border">
       <div className="relative w-1/3">
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-fintech-dashboard-text-secondary" />
         <Input

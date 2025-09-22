@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 const AboutUs = () => {
   return (
-    <div className="min-h-screen bg-fintech-dark-bg text-white">
+    <div className="min-h-screen bg-fintech-main-bg text-white">
       <Header />
       <main className="relative z-10 py-20 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
         <h1 className="text-5xl md:text-6xl font-extrabold text-center leading-tight mb-8">
@@ -60,7 +60,7 @@ const AboutUs = () => {
             Whether you're looking for a quick loan or a long-term financial partner, Qicky is here to support you every step of the way. Experience the future of lending today.
           </p>
           <Link to="/apply-loan">
-            <Button className="bg-gradient-button-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity">
+            <Button className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity">
               Apply for a Loan
             </Button>
           </Link>

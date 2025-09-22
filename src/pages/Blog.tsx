@@ -35,10 +35,10 @@ const blogPosts = [
 
 const Blog = () => {
   return (
-    <div className="min-h-screen bg-fintech-background-light text-fintech-text-dark hero-background">
+    <div className="min-h-screen bg-fintech-main-bg text-fintech-text-dark hero-background">
       <Header />
       <main className="relative z-10 py-20 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
-        <h1 className="text-5xl md:text-6xl font-extrabold text-center leading-tight mb-8">
+        <h1 className="text-5xl md:text-6xl font-extrabold text-center leading-tight mb-8 text-white">
           Our <span className="bg-gradient-to-r from-fintech-blue-accent to-fintech-blue-soft text-transparent bg-clip-text">Blog</span>
         </h1>
         <p className="text-lg text-fintech-text-muted text-center mb-16 max-w-3xl mx-auto">
@@ -47,10 +47,10 @@ const Blog = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map((post) => (
-            <Card key={post.id} className="bg-gradient-card-light border border-fintech-border-light rounded-xl shadow-lg overflow-hidden">
+            <Card key={post.id} className="bg-fintech-simulator-card-bg border border-fintech-border-light rounded-xl shadow-lg overflow-hidden">
               <img src={post.imageUrl} alt={post.title} className="w-full h-48 object-cover" />
               <div className="p-6">
-                <h3 className="text-2xl font-bold text-fintech-text-dark mb-3">{post.title}</h3>
+                <h3 className="text-2xl font-bold text-white mb-3">{post.title}</h3>
                 <div className="flex items-center text-fintech-text-muted text-sm mb-4 space-x-4">
                   <div className="flex items-center">
                     <Calendar className="h-4 w-4 mr-2" />

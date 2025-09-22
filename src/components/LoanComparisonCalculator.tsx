@@ -101,7 +101,7 @@ const LoanComparisonCalculator = () => {
   ];
 
   return (
-    <section className="relative z-10 w-full py-20 px-6 md:px-12 lg:px-24 text-fintech-text-dark bg-fintech-dark-bg"> {/* Changed background to dark */}
+    <section className="relative z-10 w-full py-20 px-6 md:px-12 lg:px-24 text-fintech-text-dark bg-fintech-main-bg"> {/* Changed background to dark */}
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-12 text-center text-white"> {/* Changed text to white */}
           Compare Your <span className="bg-gradient-to-r from-fintech-blue-accent to-fintech-blue-soft text-transparent bg-clip-text">Loan Options</span>

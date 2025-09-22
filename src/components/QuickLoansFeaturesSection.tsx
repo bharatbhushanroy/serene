@@ -30,7 +30,7 @@ const QuickLoansFeaturesSection = () => {
   };
 
   return (
-    <section className="relative w-full flex items-center justify-center py-20 px-6 md:px-12 lg:px-24 overflow-hidden bg-fintech-hero-dark-bg text-white">
+    <section className="relative w-full flex items-center justify-center py-20 px-6 md:px-12 lg:px-24 overflow-hidden bg-fintech-main-bg text-white">
       <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between w-full max-w-7xl gap-12">
         {/* Left Content Area */}
         <motion.div
@@ -55,7 +55,7 @@ const QuickLoansFeaturesSection = () => {
           </motion.p>
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-8">
             <Link to="/apply-loan">
-              <Button className="bg-gradient-button-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-all duration-300 hover:shadow-glow-blue group">
+              <Button className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-all duration-300 hover:shadow-glow-blue group">
                 Apply Now <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>

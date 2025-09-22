@@ -28,9 +28,9 @@ const features = [
 
 const FeaturesSection = () => {
   return (
-    <section className="relative z-10 w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-background-light text-fintech-text-dark">
+    <section className="relative z-10 w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-main-bg text-fintech-text-dark">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
+        <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4 text-white">
           Why Choose <span className="bg-gradient-to-r from-fintech-blue-accent to-fintech-blue-soft text-transparent bg-clip-text">Qicky?</span>
         </h2>
         <p className="text-lg text-fintech-text-muted mb-12 max-w-3xl mx-auto">

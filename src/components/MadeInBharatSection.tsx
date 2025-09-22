@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 const MadeInBharatSection = () => {
   return (
     <section className="relative w-full py-8 text-white overflow-hidden
-                    bg-gradient-to-br from-gray-900 to-indigo-950"> {/* Vibrant dark gradient background */}
+                    bg-fintech-main-bg"> {/* Vibrant dark gradient background */}
       <div className="max-w-7xl mx-auto text-center relative z-10">
         <h2 className="text-2xl md:text-3xl font-extrabold leading-tight mb-2 text-white"> {/* White text for "Made In" */}
           Made In <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-yellow-300">Bharat</span> {/* Vibrant gradient for "Bharat" */}

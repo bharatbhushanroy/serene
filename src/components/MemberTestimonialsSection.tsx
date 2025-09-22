@@ -77,39 +77,39 @@ const MemberTestimonialsSection = () => {
       icon: Heart,
       title: "Happy Users",
       value: "10,000+",
-      iconColor: "bg-fintech-blue-accent/20",
       valueColor: "text-fintech-blue-accent",
+      iconColor: "bg-fintech-blue-accent/20",
     },
     {
       icon: Star,
       title: "Avg. Rating",
       value: "4.8/5",
-      iconColor: "bg-fintech-gradient-purple-start/20",
       valueColor: "text-fintech-gradient-pink-start",
+      iconColor: "bg-fintech-gradient-purple-start/20",
     },
     {
       icon: Scale, // Using Scale for loan volume
       title: "Loan Volume",
       value: "₹500Cr+",
-      iconColor: "bg-fintech-gradient-pink-start/20",
       valueColor: "text-fintech-gradient-pink-start",
+      iconColor: "bg-fintech-gradient-pink-start/20",
     },
     {
       icon: Clock,
       title: "Avg. Approval Time",
       value: "5 mins",
-      iconColor: "bg-fintech-blue-accent/20",
       valueColor: "text-fintech-blue-accent",
+      iconColor: "bg-fintech-blue-accent/20",
     },
   ];
 
   return (
-    <section className="relative z-10 w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-dark-bg text-white overflow-hidden">
+    <section className="relative z-10 w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-main-bg text-white overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Left Column: Testimonial Carousel */}
         <div className="flex flex-col justify-center text-center lg:text-left">
           <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
-            What Our <span className="bg-gradient-to-r from-fintech-blue-accent to-fintech-gradient-pink-start text-transparent bg-clip-text">Members</span> Say
+            What Our <span className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-transparent bg-clip-text">Members</span> Say
           </h2>
           <p className="text-lg text-fintech-text-muted mb-12 max-w-xl lg:max-w-none mx-auto lg:mx-0">
             Hear from real customers about their experience with Qicky's instant loan services. Their stories inspire us to keep improving.

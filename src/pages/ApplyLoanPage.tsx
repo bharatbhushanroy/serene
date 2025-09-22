@@ -39,7 +39,7 @@ const ApplyLoanPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-fintech-dark-bg text-white hero-background">
+    <div className="min-h-screen bg-fintech-main-bg text-white hero-background">
       <Header />
       <main className="relative z-10 py-20 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto flex flex-col items-center justify-center">
         <h1 className="text-5xl md:text-6xl font-extrabold text-center leading-tight mb-4">
@@ -126,7 +126,7 @@ const ApplyLoanPage = () => {
               </div>
               <Button
                 type="submit"
-                className="w-full bg-gradient-to-r from-fintech-blue-accent to-fintech-gradient-purple-start text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity group"
+                className="w-full bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity group"
               >
                 Submit Application <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>

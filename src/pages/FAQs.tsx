@@ -38,10 +38,10 @@ const faqs = [
 
 const FAQs = () => {
   return (
-    <div className="min-h-screen bg-fintech-background-light text-fintech-text-dark hero-background">
+    <div className="min-h-screen bg-fintech-main-bg text-fintech-text-dark hero-background">
       <Header />
       <main className="relative z-10 py-20 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
-        <h1 className="text-5xl md:text-6xl font-extrabold text-center leading-tight mb-8">
+        <h1 className="text-5xl md:text-6xl font-extrabold text-center leading-tight mb-8 text-white">
           Frequently Asked <span className="bg-gradient-to-r from-fintech-blue-accent to-fintech-blue-soft text-transparent bg-clip-text">Questions</span>
         </h1>
         <p className="text-lg text-fintech-text-muted text-center mb-16 max-w-3xl mx-auto">
@@ -52,7 +52,7 @@ const FAQs = () => {
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, index) => (
               <AccordionItem key={index} value={`item-${index}`} className="border-b border-fintech-border-light">
-                <AccordionTrigger className="text-lg font-semibold text-fintech-text-dark hover:no-underline hover:text-fintech-blue-accent transition-colors py-4">
+                <AccordionTrigger className="text-lg font-semibold text-white hover:no-underline hover:text-fintech-blue-accent transition-colors py-4">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-fintech-text-muted text-base pb-4">

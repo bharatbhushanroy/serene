@@ -32,7 +32,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="min-h-screen bg-fintech-dark-bg text-white">
+    <div className="min-h-screen bg-fintech-main-bg text-white">
       <Header />
       <main className="relative z-10 py-20 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
         <h1 className="text-5xl md:text-6xl font-extrabold text-center leading-tight mb-8">
@@ -84,7 +84,7 @@ const ContactUs = () => {
                 </div>
                 <Button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-fintech-blue-accent to-fintech-gradient-purple-start text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity"
+                  className="w-full bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity"
                 >
                   Send Message
                 </Button>

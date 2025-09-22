@@ -35,8 +35,8 @@ const QickyLogo: React.FC<QickyLogoProps> = ({ className, size = 'md' }) => {
         <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="blobGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="hsl(var(--fintech-gradient-purple-start))" />
-              <stop offset="100%" stopColor="hsl(var(--fintech-gradient-pink-start))" />
+              <stop offset="0%" stopColor="hsl(var(--fintech-button-primary-gradient-start))" />
+              <stop offset="100%" stopColor="hsl(var(--fintech-button-primary-gradient-end))" />
             </linearGradient>
           </defs>
           {/* This path creates the organic blob shape */}

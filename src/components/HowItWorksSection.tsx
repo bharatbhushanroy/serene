@@ -11,9 +11,9 @@ const steps = [
 
 const HowItWorksSection = () => {
   return (
-    <section className="relative z-10 w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-background-offwhite text-fintech-text-dark">
+    <section className="relative z-10 w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-main-bg text-fintech-text-dark">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
+        <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4 text-white">
           Our Simple <span className="bg-gradient-to-r from-fintech-blue-accent to-fintech-blue-soft text-transparent bg-clip-text">Process</span>
         </h2>
         <p className="text-lg text-fintech-text-muted mb-16 max-w-3xl mx-auto">
@@ -30,11 +30,11 @@ const HowItWorksSection = () => {
 
           {steps.map((step, index) => (
             <div key={index} className="relative z-10">
-              <Card className="bg-fintech-card-light backdrop-blur-lg border border-fintech-border-light p-6 rounded-xl shadow-lg flex flex-col items-center text-center h-full transition-all duration-300 hover:border-fintech-blue-accent hover:bg-fintech-background-offwhite">
+              <Card className="bg-fintech-simulator-card-bg backdrop-blur-lg border border-fintech-border-light p-6 rounded-xl shadow-lg flex flex-col items-center text-center h-full transition-all duration-300 hover:border-fintech-blue-accent hover:bg-fintech-dark-bg-lighter">
                 <div className="p-4 bg-fintech-blue-soft/20 rounded-full mb-4 ring-2 ring-fintech-blue-accent/50">
                   <step.icon className="h-7 w-7 text-fintech-blue-accent" />
                 </div>
-                <h3 className="text-xl font-bold mb-2 text-fintech-text-dark">{step.title}</h3>
+                <h3 className="text-xl font-bold mb-2 text-white">{step.title}</h3>
                 <p className="text-base text-fintech-text-muted">
                   {step.description}
                 </p>

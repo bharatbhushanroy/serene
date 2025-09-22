@@ -28,9 +28,9 @@ const steps = [
 
 const ApplyStepsSection = () => {
   return (
-    <section className="relative w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-peach-background text-fintech-text-dark overflow-hidden">
+    <section className="relative w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-main-bg text-fintech-text-dark overflow-hidden">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-16">
+        <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-16 text-white">
           Apply Loan in Simple Steps with <span className="text-fintech-orange-accent">Qicky</span>
         </h2>
 
@@ -68,11 +68,11 @@ const ApplyStepsSection = () => {
             {steps.map((step, index) => (
               <div key={index} className="relative flex items-start space-x-6">
                 {/* Step number circle */}
-                <div className="relative z-10 flex-shrink-0 w-10 h-10 rounded-full bg-fintech-orange-accent text-white flex items-center justify-center font-bold text-sm ring-4 ring-fintech-peach-background">
+                <div className="relative z-10 flex-shrink-0 w-10 h-10 rounded-full bg-fintech-orange-accent text-white flex items-center justify-center font-bold text-sm ring-4 ring-fintech-main-bg">
                   {step.number}
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-fintech-text-dark mb-1">{step.title}</h3>
+                  <h3 className="text-xl font-bold text-white mb-1">{step.title}</h3>
                   <p className="text-fintech-text-muted text-base">{step.description}</p>
                 </div>
               </div>

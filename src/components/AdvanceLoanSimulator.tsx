@@ -51,12 +51,12 @@ const AdvanceLoanSimulator = () => {
   return (
     <section className="relative z-10 w-full py-20 px-6 md:px-12 lg:px-24 text-fintech-text-dark">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-12 text-center">
+        <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-12 text-center text-white">
           Advance <span className="bg-gradient-to-r from-fintech-blue-accent to-fintech-blue-soft text-transparent bg-clip-text">Loan Simulator</span>
         </h2>
-        <Card className="bg-gradient-card-light border border-fintech-border-light p-6 rounded-xl shadow-lg max-w-2xl mx-auto">
+        <Card className="bg-fintech-simulator-card-bg border border-fintech-border-light p-6 rounded-xl shadow-lg max-w-2xl mx-auto">
           <CardHeader>
-            <CardTitle className="text-2xl font-bold text-fintech-text-dark mb-4">Calculate Your EMI</CardTitle>
+            <CardTitle className="text-2xl font-bold text-white mb-4">Calculate Your EMI</CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
             <div>
@@ -67,7 +67,7 @@ const AdvanceLoanSimulator = () => {
                 placeholder="e.g., 500000"
                 value={loanAmount}
                 onChange={(e) => setLoanAmount(e.target.value)}
-                className="bg-fintech-background-offwhite border-fintech-border-light text-fintech-text-dark focus:border-fintech-blue-accent"
+                className="bg-gray-800 border-gray-700 text-white focus:border-fintech-blue-accent"
               />
             </div>
             <div>
@@ -78,7 +78,7 @@ const AdvanceLoanSimulator = () => {
                 placeholder="e.g., 10"
                 value={interestRate}
                 onChange={(e) => setInterestRate(e.target.value)}
-                className="bg-fintech-background-offwhite border-fintech-border-light text-fintech-text-dark focus:border-fintech-blue-accent"
+                className="bg-gray-800 border-gray-700 text-white focus:border-fintech-blue-accent"
               />
             </div>
             <div>
@@ -89,18 +89,18 @@ const AdvanceLoanSimulator = () => {
                 placeholder="e.g., 5"
                 value={loanTenure}
                 onChange={(e) => setLoanTenure(e.target.value)}
-                className="bg-fintech-background-offwhite border-fintech-border-light text-fintech-text-dark focus:border-fintech-blue-accent"
+                className="bg-gray-800 border-gray-700 text-white focus:border-fintech-blue-accent"
               />
             </div>
             <Button
               onClick={calculateEmi}
-              className="w-full bg-gradient-button-primary text-white px-6 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity"
+              className="w-full bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-6 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity"
             >
               Calculate EMI
             </Button>
 
             {emi !== null && (
-              <div className="mt-8 space-y-4 text-fintech-text-dark">
+              <div className="mt-8 space-y-4 text-white">
                 <h3 className="text-xl font-bold">Calculation Results:</h3>
                 <div className="flex justify-between items-center border-b border-fintech-border-light pb-2">
                   <p className="text-fintech-text-muted">Monthly EMI:</p>

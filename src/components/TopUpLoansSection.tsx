@@ -6,7 +6,7 @@ import TripleMobileMockup from './TripleMobileMockup'; // Import the new TripleM
 
 const TopUpLoansSection = () => {
   return (
-    <section className="relative py-20 bg-gradient-to-br from-gray-900 to-black text-white overflow-hidden">
+    <section className="relative py-20 bg-fintech-main-bg text-white overflow-hidden">
       <div className="container mx-auto px-6 flex flex-col lg:flex-row items-center justify-between">
         {/* Left content */}
         <div className="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0 z-10">
@@ -20,7 +20,7 @@ const TopUpLoansSection = () => {
             Need more funds? Get additional loans quickly and easily with our seamless top-up process.
           </p>
           <div className="flex justify-center lg:justify-start space-x-4">
-            <Button className="bg-purple-500 hover:bg-purple-600 text-white px-8 py-3 rounded-full text-lg font-semibold">
+            <Button className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-8 py-3 rounded-full text-lg font-semibold">
               Check Eligibility
             </Button>
             <Button variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-800 px-8 py-3 rounded-full text-lg font-semibold">

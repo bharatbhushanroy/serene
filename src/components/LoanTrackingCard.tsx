@@ -75,7 +75,7 @@ const LoanTrackingCard = () => {
   };
 
   return (
-    <Card className="bg-fintech-dashboard-card-bg border border-fintech-dashboard-border text-fintech-dashboard-text-primary rounded-xl shadow-md h-full">
+    <Card className="bg-fintech-simulator-card-bg border border-fintech-dashboard-border text-fintech-dashboard-text-primary rounded-xl shadow-md h-full">
       <CardHeader>
         <CardTitle className="text-lg font-semibold text-fintech-dashboard-text-primary">My Loans</CardTitle>
       </CardHeader>
