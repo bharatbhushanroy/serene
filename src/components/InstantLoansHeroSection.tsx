@@ -40,27 +40,27 @@ const InstantLoansHeroSection = () => {
         </div>
 
         {/* Right content - Phone Mockup with floating cards */}
-        <div className="relative lg:w-1/2 flex justify-center items-center z-10 min-h-[700px] scale-90 md:scale-100">
+        <div className="relative lg:w-1/2 flex justify-center items-center z-10 min-h-[700px]"> {/* Removed scale-90/100 from here */}
           {/* Floating Cards */}
-          <div className="absolute top-[10%] left-[5%] bg-[#FFEDD5] p-6 rounded-xl shadow-lg text-center w-[180px] h-[180px] flex flex-col items-center justify-center text-fintech-text-dark">
+          <div className="absolute top-[8%] left-[0%] bg-[#FFEDD5] p-6 rounded-xl shadow-lg text-center w-[200px] h-[200px] flex flex-col items-center justify-center text-fintech-text-dark -rotate-3">
             <Banknote className="h-8 w-8 text-fintech-orange-accent mb-2" />
             <p className="text-sm text-gray-700">Get Up To</p>
             <p className="text-2xl font-bold text-fintech-orange-accent">₹5 Lakhs</p>
             <p className="text-sm text-gray-700">Loan</p>
           </div>
-          <div className="absolute top-[10%] right-[5%] bg-[#FFEDD5] p-6 rounded-xl shadow-lg text-center w-[180px] h-[180px] flex flex-col items-center justify-center text-fintech-text-dark">
+          <div className="absolute top-[8%] right-[0%] bg-[#FFEDD5] p-6 rounded-xl shadow-lg text-center w-[200px] h-[200px] flex flex-col items-center justify-center text-fintech-text-dark rotate-3">
             <Percent className="h-8 w-8 text-fintech-orange-accent mb-2" />
             <p className="text-sm text-gray-700">Pay</p>
             <p className="text-2xl font-bold text-fintech-orange-accent">Interest</p>
             <p className="text-sm text-gray-700">Only On What You Use</p>
           </div>
-          <div className="absolute bottom-[10%] left-[5%] bg-[#FFEDD5] p-6 rounded-xl shadow-lg text-center w-[180px] h-[180px] flex flex-col items-center justify-center text-fintech-text-dark">
+          <div className="absolute bottom-[8%] left-[0%] bg-[#FFEDD5] p-6 rounded-xl shadow-lg text-center w-[200px] h-[200px] flex flex-col items-center justify-center text-fintech-text-dark rotate-3">
             <Landmark className="h-8 w-8 text-fintech-orange-accent mb-2" />
             <p className="text-sm text-gray-700">Transfer to</p>
             <p className="text-2xl font-bold text-fintech-orange-accent">Your Bank</p>
             <p className="text-sm text-gray-700">In Seconds</p>
           </div>
-          <div className="absolute bottom-[10%] right-[5%] bg-[#FFEDD5] p-6 rounded-xl shadow-lg text-center w-[180px] h-[180px] flex flex-col items-center justify-center text-fintech-text-dark">
+          <div className="absolute bottom-[8%] right-[0%] bg-[#FFEDD5] p-6 rounded-xl shadow-lg text-center w-[200px] h-[200px] flex flex-col items-center justify-center text-fintech-text-dark -rotate-3">
             <CalendarCheck className="h-8 w-8 text-fintech-orange-accent mb-2" />
             <p className="text-sm text-gray-700">Repay EMI in</p>
             <p className="text-2xl font-bold text-fintech-orange-accent">3 to 36</p>
@@ -71,6 +71,9 @@ const InstantLoansHeroSection = () => {
           <MobileMockup />
         </div>
       </div>
+
+      {/* Scroll to explore indicator (removed from this section as it's now the main hero) */}
+      {/* Cookie Consent Banner (removed from this section as it's now the main hero) */}
     </section>
   );
 };
