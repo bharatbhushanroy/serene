@@ -8,7 +8,7 @@ import MultiStepLoanForm from '@/components/MultiStepLoanForm'; // New import
 
 const ApplyLoanPage = () => {
   return (
-    <div className="min-h-screen bg-fintech-main-bg text-white hero-background">
+    <div className="min-h-screen bg-fintech-main-bg text-white"> {/* Removed hero-background */}
       <Header />
       <main className="relative z-10 py-20 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto flex flex-col items-center justify-center">
         <h1 className="text-5xl md:text-6xl font-extrabold text-center leading-tight mb-4">
