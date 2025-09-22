@@ -10,8 +10,10 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { Calendar } from '@/components/ui/calendar';
 import { format } from 'date-fns';
 import { cn } from '@/lib/utils';
-import { User, Home, Briefcase, CreditCard, CalendarIcon, HelpCircle, ArrowRight } from 'lucide-react';
+import { User, Home, Briefcase, CreditCard, CalendarIcon, HelpCircle, ArrowRight, ArrowLeft } from 'lucide-react';
 import { showSuccess, showError } from '@/utils/toast';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Textarea } from '@/components/ui/textarea';
 
 const MultiStepLoanForm = () => {
   const [currentStep, setCurrentStep] = useState('personal');
@@ -23,16 +25,70 @@ const MultiStepLoanForm = () => {
   const [dateOfBirth, setDateOfBirth] = useState<Date | undefined>(undefined);
   const [panNumber, setPanNumber] = useState('');
 
+  // Address Information State
+  const [addressLine1, setAddressLine1] = useState('');
+  const [addressLine2, setAddressLine2] = useState('');
+  const [city, setCity] = useState('');
+  const [state, setState] = useState('');
+  const [zipCode, setZipCode] = useState('');
+
+  // Employment Information State
+  const [employmentStatus, setEmploymentStatus] = useState('');
+  const [companyName, setCompanyName] = useState('');
+  const [monthlySalary, setMonthlySalary] = useState<number | string>('');
+  const [yearsOfExperience, setYearsOfExperience] = useState<number | string>('');
+
+  // Loan Information State
+  const [desiredLoanAmount, setDesiredLoanAmount] = useState<number | string>('');
+  const [loanPurpose, setLoanPurpose] = useState('');
+  const [repaymentTenure, setRepaymentTenure] = useState('');
+
   const handleNextStep = () => {
     if (currentStep === 'personal') {
       if (!fullName || !email || !phoneNumber || !dateOfBirth || !panNumber) {
         showError("Please fill in all personal information fields.");
         return;
       }
-      // In a real app, you'd validate data and potentially save it
       setCurrentStep('address');
+    } else if (currentStep === 'address') {
+      if (!addressLine1 || !city || !state || !zipCode) {
+        showError("Please fill in all address information fields.");
+        return;
+      }
+      setCurrentStep('employment');
+    } else if (currentStep === 'employment') {
+      if (!employmentStatus || !companyName || !monthlySalary || !yearsOfExperience) {
+        showError("Please fill in all employment details.");
+        return;
+      }
+      setCurrentStep('loan');
     }
-    // Add logic for other steps here
+  };
+
+  const handlePreviousStep = () => {
+    if (currentStep === 'address') {
+      setCurrentStep('personal');
+    } else if (currentStep === 'employment') {
+      setCurrentStep('address');
+    } else if (currentStep === 'loan') {
+      setCurrentStep('employment');
+    }
+  };
+
+  const handleSubmitApplication = () => {
+    if (!desiredLoanAmount || !loanPurpose || !repaymentTenure) {
+      showError("Please fill in all loan details.");
+      return;
+    }
+    // In a real application, you would send all collected data to a backend.
+    console.log({
+      fullName, email, phoneNumber, dateOfBirth, panNumber,
+      addressLine1, addressLine2, city, state, zipCode,
+      employmentStatus, companyName, monthlySalary, yearsOfExperience,
+      desiredLoanAmount, loanPurpose, repaymentTenure,
+    });
+    showSuccess("Your loan application has been submitted successfully!");
+    // Optionally reset form or redirect
   };
 
   return (
@@ -183,15 +239,245 @@ const MultiStepLoanForm = () => {
               </div>
             </form>
           </TabsContent>
-          {/* Placeholder for other tabs */}
+
           <TabsContent value="address">
-            <div className="text-white text-center py-10">Address Information (Coming Soon)</div>
+            <div className="flex items-center text-white text-xl font-semibold mb-6">
+              <Home className="h-6 w-6 mr-2 text-fintech-blue-accent" /> Address Information
+            </div>
+            <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="md:col-span-2">
+                <Label htmlFor="addressLine1" className="text-fintech-text-muted mb-2 flex items-center">
+                  Address Line 1 <HelpCircle className="h-4 w-4 ml-1 text-gray-500 cursor-help" title="Street address, P.O. box, company name, c/o" />
+                </Label>
+                <Input
+                  id="addressLine1"
+                  type="text"
+                  placeholder="Enter address line 1"
+                  value={addressLine1}
+                  onChange={(e) => setAddressLine1(e.target.value)}
+                  className="bg-gray-800 border-gray-700 text-white focus:border-fintech-blue-accent"
+                />
+              </div>
+              <div className="md:col-span-2">
+                <Label htmlFor="addressLine2" className="text-fintech-text-muted mb-2 flex items-center">
+                  Address Line 2 <HelpCircle className="h-4 w-4 ml-1 text-gray-500 cursor-help" title="Apartment, suite, unit, building, floor, etc." />
+                </Label>
+                <Input
+                  id="addressLine2"
+                  type="text"
+                  placeholder="Enter address line 2 (optional)"
+                  value={addressLine2}
+                  onChange={(e) => setAddressLine2(e.target.value)}
+                  className="bg-gray-800 border-gray-700 text-white focus:border-fintech-blue-accent"
+                />
+              </div>
+              <div>
+                <Label htmlFor="city" className="text-fintech-text-muted mb-2 flex items-center">
+                  City <HelpCircle className="h-4 w-4 ml-1 text-gray-500 cursor-help" title="Enter your city" />
+                </Label>
+                <Input
+                  id="city"
+                  type="text"
+                  placeholder="Enter city"
+                  value={city}
+                  onChange={(e) => setCity(e.target.value)}
+                  className="bg-gray-800 border-gray-700 text-white focus:border-fintech-blue-accent"
+                />
+              </div>
+              <div>
+                <Label htmlFor="state" className="text-fintech-text-muted mb-2 flex items-center">
+                  State <HelpCircle className="h-4 w-4 ml-1 text-gray-500 cursor-help" title="Enter your state" />
+                </Label>
+                <Input
+                  id="state"
+                  type="text"
+                  placeholder="Enter state"
+                  value={state}
+                  onChange={(e) => setState(e.target.value)}
+                  className="bg-gray-800 border-gray-700 text-white focus:border-fintech-blue-accent"
+                />
+              </div>
+              <div className="md:col-span-2">
+                <Label htmlFor="zipCode" className="text-fintech-text-muted mb-2 flex items-center">
+                  Zip Code <HelpCircle className="h-4 w-4 ml-1 text-gray-500 cursor-help" title="Enter your postal/zip code" />
+                </Label>
+                <Input
+                  id="zipCode"
+                  type="text"
+                  placeholder="Enter zip code"
+                  value={zipCode}
+                  onChange={(e) => setZipCode(e.target.value)}
+                  className="bg-gray-800 border-gray-700 text-white focus:border-fintech-blue-accent"
+                />
+              </div>
+              <div className="md:col-span-2 flex justify-between mt-6">
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={handlePreviousStep}
+                  className="bg-gray-800 border-gray-700 text-fintech-text-muted hover:bg-gray-700 group"
+                >
+                  <ArrowLeft className="mr-2 h-5 w-5 group-hover:-translate-x-1 transition-transform" /> Previous
+                </Button>
+                <Button
+                  type="button"
+                  onClick={handleNextStep}
+                  className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity group"
+                >
+                  Next Step <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </div>
+            </form>
           </TabsContent>
+
           <TabsContent value="employment">
-            <div className="text-white text-center py-10">Employment Details (Coming Soon)</div>
+            <div className="flex items-center text-white text-xl font-semibold mb-6">
+              <Briefcase className="h-6 w-6 mr-2 text-fintech-blue-accent" /> Employment Details
+            </div>
+            <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <Label htmlFor="employmentStatus" className="text-fintech-text-muted mb-2 flex items-center">
+                  Employment Status <HelpCircle className="h-4 w-4 ml-1 text-gray-500 cursor-help" title="Your current employment status" />
+                </Label>
+                <Select value={employmentStatus} onValueChange={setEmploymentStatus}>
+                  <SelectTrigger className="w-full bg-gray-800 border-gray-700 text-white focus:border-fintech-blue-accent">
+                    <SelectValue placeholder="Select employment status" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-gray-800 border-gray-700 text-white">
+                    <SelectItem value="salaried">Salaried</SelectItem>
+                    <SelectItem value="self-employed">Self-Employed</SelectItem>
+                    <SelectItem value="student">Student</SelectItem>
+                    <SelectItem value="unemployed">Unemployed</SelectItem>
+                    <SelectItem value="retired">Retired</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <div>
+                <Label htmlFor="companyName" className="text-fintech-text-muted mb-2 flex items-center">
+                  Company Name <HelpCircle className="h-4 w-4 ml-1 text-gray-500 cursor-help" title="Your employer's name or business name" />
+                </Label>
+                <Input
+                  id="companyName"
+                  type="text"
+                  placeholder="Enter company name"
+                  value={companyName}
+                  onChange={(e) => setCompanyName(e.target.value)}
+                  className="bg-gray-800 border-gray-700 text-white focus:border-fintech-blue-accent"
+                />
+              </div>
+              <div>
+                <Label htmlFor="monthlySalary" className="text-fintech-text-muted mb-2 flex items-center">
+                  Monthly Salary (₹) <HelpCircle className="h-4 w-4 ml-1 text-gray-500 cursor-help" title="Your gross monthly income" />
+                </Label>
+                <Input
+                  id="monthlySalary"
+                  type="number"
+                  placeholder="Enter monthly salary"
+                  value={monthlySalary}
+                  onChange={(e) => setMonthlySalary(e.target.value)}
+                  className="bg-gray-800 border-gray-700 text-white focus:border-fintech-blue-accent"
+                />
+              </div>
+              <div>
+                <Label htmlFor="yearsOfExperience" className="text-fintech-text-muted mb-2 flex items-center">
+                  Years of Experience <HelpCircle className="h-4 w-4 ml-1 text-gray-500 cursor-help" title="Total years in current employment" />
+                </Label>
+                <Input
+                  id="yearsOfExperience"
+                  type="number"
+                  placeholder="Enter years of experience"
+                  value={yearsOfExperience}
+                  onChange={(e) => setYearsOfExperience(e.target.value)}
+                  className="bg-gray-800 border-gray-700 text-white focus:border-fintech-blue-accent"
+                />
+              </div>
+              <div className="md:col-span-2 flex justify-between mt-6">
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={handlePreviousStep}
+                  className="bg-gray-800 border-gray-700 text-fintech-text-muted hover:bg-gray-700 group"
+                >
+                  <ArrowLeft className="mr-2 h-5 w-5 group-hover:-translate-x-1 transition-transform" /> Previous
+                </Button>
+                <Button
+                  type="button"
+                  onClick={handleNextStep}
+                  className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity group"
+                >
+                  Next Step <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </div>
+            </form>
           </TabsContent>
+
           <TabsContent value="loan">
-            <div className="text-white text-center py-10">Loan Details (Coming Soon)</div>
+            <div className="flex items-center text-white text-xl font-semibold mb-6">
+              <CreditCard className="h-6 w-6 mr-2 text-fintech-blue-accent" /> Loan Details
+            </div>
+            <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="md:col-span-2">
+                <Label htmlFor="desiredLoanAmount" className="text-fintech-text-muted mb-2 flex items-center">
+                  Desired Loan Amount (₹) <HelpCircle className="h-4 w-4 ml-1 text-gray-500 cursor-help" title="The amount you wish to borrow" />
+                </Label>
+                <Input
+                  id="desiredLoanAmount"
+                  type="number"
+                  placeholder="e.g., 100000"
+                  value={desiredLoanAmount}
+                  onChange={(e) => setDesiredLoanAmount(e.target.value)}
+                  className="bg-gray-800 border-gray-700 text-white focus:border-fintech-blue-accent"
+                />
+              </div>
+              <div className="md:col-span-2">
+                <Label htmlFor="loanPurpose" className="text-fintech-text-muted mb-2 flex items-center">
+                  Purpose of Loan <HelpCircle className="h-4 w-4 ml-1 text-gray-500 cursor-help" title="Briefly explain why you need the loan" />
+                </Label>
+                <Textarea
+                  id="loanPurpose"
+                  placeholder="e.g., Home renovation, medical emergency, debt consolidation"
+                  value={loanPurpose}
+                  onChange={(e) => setLoanPurpose(e.target.value)}
+                  className="bg-gray-800 border-gray-700 text-white focus:border-fintech-blue-accent min-h-[100px]"
+                />
+              </div>
+              <div>
+                <Label htmlFor="repaymentTenure" className="text-fintech-text-muted mb-2 flex items-center">
+                  Repayment Tenure (Months) <HelpCircle className="h-4 w-4 ml-1 text-gray-500 cursor-help" title="How many months you need to repay the loan" />
+                </Label>
+                <Select value={repaymentTenure} onValueChange={setRepaymentTenure}>
+                  <SelectTrigger className="w-full bg-gray-800 border-gray-700 text-white focus:border-fintech-blue-accent">
+                    <SelectValue placeholder="Select tenure" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-gray-800 border-gray-700 text-white">
+                    <SelectItem value="6">6 Months</SelectItem>
+                    <SelectItem value="12">12 Months</SelectItem>
+                    <SelectItem value="18">18 Months</SelectItem>
+                    <SelectItem value="24">24 Months</SelectItem>
+                    <SelectItem value="36">36 Months</SelectItem>
+                    <SelectItem value="48">48 Months</SelectItem>
+                    <SelectItem value="60">60 Months</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="md:col-span-2 flex justify-between mt-6">
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={handlePreviousStep}
+                  className="bg-gray-800 border-gray-700 text-fintech-text-muted hover:bg-gray-700 group"
+                >
+                  <ArrowLeft className="mr-2 h-5 w-5 group-hover:-translate-x-1 transition-transform" /> Previous
+                </Button>
+                <Button
+                  type="button"
+                  onClick={handleSubmitApplication}
+                  className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity group"
+                >
+                  Submit Application <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </div>
+            </form>
           </TabsContent>
         </Tabs>
       </CardContent>
