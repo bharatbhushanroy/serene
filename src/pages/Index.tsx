@@ -15,7 +15,7 @@ import FinancialFreedomSection from "@/components/FinancialFreedomSection";
 import LoanComparisonCalculator from "@/components/LoanComparisonCalculator";
 import CheckEligibilitySection from "@/components/CheckEligibilitySection";
 import InsuranceSection from "@/components/InsuranceSection";
-import MadeInBharatSection from "@/components/MadeInBharatSection"; // New import
+import MadeInBharatSection from "@/components/MadeInBharatSection";
 
 const Index = () => {
   return (
@@ -36,9 +36,9 @@ const Index = () => {
         <FinancialFreedomSection />
         <MemberTestimonialsSection />
         <CtaSection />
-        <MadeInBharatSection /> {/* Added the new section here */}
       </main>
       <Footer />
+      <MadeInBharatSection /> {/* Moved this section below the Footer */}
       <MadeWithDyad />
     </div>
   );

@@ -5,15 +5,15 @@ import { motion } from 'framer-motion';
 
 const MadeInBharatSection = () => {
   return (
-    <section className="relative w-full py-20 bg-fintech-dark-bg text-white overflow-hidden">
+    <section className="relative w-full py-8 bg-fintech-dark-bg text-white overflow-hidden">
       <div className="max-w-7xl mx-auto text-center relative z-10">
-        <h2 className="text-5xl md:text-7xl font-extrabold leading-tight mb-4 text-gray-600">
+        <h2 className="text-2xl md:text-3xl font-extrabold leading-tight mb-2 text-gray-600">
           Made In <span className="text-fintech-orange-accent">Bharat</span>
         </h2>
 
         {/* Indian Flag */}
-        <div className="flex justify-center mb-10">
-          <svg width="120" height="80" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="shadow-lg rounded-md">
+        <div className="flex justify-center mb-4">
+          <svg width="60" height="40" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="shadow-lg rounded-md">
             {/* Saffron Stripe */}
             <rect x="0" y="0" width="120" height="26.67" fill="#FF9933"/>
             {/* White Stripe */}
@@ -40,11 +40,11 @@ const MadeInBharatSection = () => {
       </div>
 
       {/* Indian Skyline SVG - Replicated from image */}
-      <div className="relative w-full h-auto overflow-hidden mt-10 z-0">
+      <div className="relative w-full h-auto overflow-hidden mt-4 z-0">
         <svg
           viewBox="0 0 1400 200"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-full"
+          className="w-full h-full max-h-[100px]" // Reduced max height for skyline
           preserveAspectRatio="xMidYMax slice"
         >
           <defs>
