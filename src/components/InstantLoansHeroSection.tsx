@@ -40,7 +40,7 @@ const InstantLoansHeroSection = () => {
         </div>
 
         {/* Right content - Phone Mockup with floating cards */}
-        <div className="relative lg:w-1/2 flex justify-center items-center z-10 min-h-[700px]">
+        <div className="relative lg:w-1/2 flex justify-center items-center z-10 min-h-[500px] lg:min-h-[700px]"> {/* Made min-h responsive */}
           {/* Central Phone Mockup (now contains its own floating cards) */}
           <MobileMockup className="scale-90" />
         </div>
