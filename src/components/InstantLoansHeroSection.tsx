@@ -42,25 +42,25 @@ const InstantLoansHeroSection = () => {
         {/* Right content - Phone Mockup with floating cards */}
         <div className="relative lg:w-1/2 flex justify-center items-center z-10 min-h-[700px]">
           {/* Floating Cards */}
-          <div className="absolute top-[10%] -left-[10%] bg-[#FFEDD5] p-6 rounded-xl shadow-lg text-center w-[200px] h-[200px] flex flex-col items-center justify-center text-fintech-text-dark -rotate-3 z-10">
+          <div className="absolute top-[5%] left-[0%] w-[150px] h-[150px] lg:top-[10%] lg:-left-[10%] lg:w-[200px] lg:h-[200px] bg-[#FFEDD5] p-6 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark -rotate-3 z-10">
             <Banknote className="h-8 w-8 text-fintech-orange-accent mb-2" />
             <p className="text-sm text-gray-700">Get Up To</p>
             <p className="text-2xl font-bold text-fintech-orange-accent">₹5 Lakhs</p>
             <p className="text-sm text-gray-700">Loan</p>
           </div>
-          <div className="absolute top-[10%] -right-[10%] bg-[#FFEDD5] p-6 rounded-xl shadow-lg text-center w-[200px] h-[200px] flex flex-col items-center justify-center text-fintech-text-dark rotate-3 z-10">
+          <div className="absolute top-[5%] right-[0%] w-[150px] h-[150px] lg:top-[10%] lg:-right-[10%] lg:w-[200px] lg:h-[200px] bg-[#FFEDD5] p-6 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark rotate-3 z-10">
             <Percent className="h-8 w-8 text-fintech-orange-accent mb-2" />
             <p className="text-sm text-gray-700">Pay</p>
             <p className="text-2xl font-bold text-fintech-orange-accent">Interest</p>
             <p className="text-sm text-gray-700">Only On What You Use</p>
           </div>
-          <div className="absolute bottom-[10%] -left-[10%] bg-[#FFEDD5] p-6 rounded-xl shadow-lg text-center w-[200px] h-[200px] flex flex-col items-center justify-center text-fintech-text-dark rotate-3 z-10">
+          <div className="absolute bottom-[5%] left-[0%] w-[150px] h-[150px] lg:bottom-[10%] lg:-left-[10%] lg:w-[200px] lg:h-[200px] bg-[#FFEDD5] p-6 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark rotate-3 z-10">
             <Landmark className="h-8 w-8 text-fintech-orange-accent mb-2" />
             <p className="text-sm text-gray-700">Transfer to</p>
             <p className="text-2xl font-bold text-fintech-orange-accent">Your Bank</p>
             <p className="text-sm text-gray-700">In Seconds</p>
           </div>
-          <div className="absolute bottom-[10%] -right-[10%] bg-[#FFEDD5] p-6 rounded-xl shadow-lg text-center w-[200px] h-[200px] flex flex-col items-center justify-center text-fintech-text-dark -rotate-3 z-10">
+          <div className="absolute bottom-[5%] right-[0%] w-[150px] h-[150px] lg:bottom-[10%] lg:-right-[10%] lg:w-[200px] lg:h-[200px] bg-[#FFEDD5] p-6 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark -rotate-3 z-10">
             <CalendarCheck className="h-8 w-8 text-fintech-orange-accent mb-2" />
             <p className="text-sm text-gray-700">Repay EMI in</p>
             <p className="text-2xl font-bold text-fintech-orange-accent">3 to 36</p>
@@ -68,7 +68,7 @@ const InstantLoansHeroSection = () => {
           </div>
 
           {/* Central Phone Mockup */}
-          <MobileMockup className="scale-90" /> {/* Apply scale directly to MobileMockup */}
+          <MobileMockup className="scale-90" />
         </div>
       </div>
     </section>
