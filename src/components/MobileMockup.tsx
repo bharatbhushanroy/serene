@@ -15,8 +15,8 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className }) => {
       {/* Floating Cards */}
       {/* Top-Left Card */}
       <motion.div
-        className="absolute top-[5%] left-[0%] w-[140px] h-[140px] bg-fintech-peach-background p-4 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark -rotate-3 z-10
-                      lg:top-[15%] lg:-left-[15%] lg:w-[160px] lg:h-[160px] animate-card-float-1 animation-delay-2000" // Adjusted mobile positioning and size
+        className="absolute top-[5%] left-[-10%] w-[150px] h-[150px] bg-fintech-peach-background p-4 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark -rotate-3 z-10
+                      lg:top-[15%] lg:-left-[20%] lg:w-[160px] lg:h-[160px] animate-card-float-1 animation-delay-2000" // Adjusted mobile positioning and size
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
@@ -28,8 +28,8 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className }) => {
       </motion.div>
       {/* Top-Right Card */}
       <motion.div
-        className="absolute top-[5%] right-[0%] w-[140px] h-[140px] bg-fintech-peach-background p-4 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark rotate-3 z-10
-                      lg:top-[15%] lg:-right-[15%] lg:w-[160px] lg:h-[160px] animate-card-float-2 animation-delay-3000" // Adjusted mobile positioning and size
+        className="absolute top-[5%] right-[-10%] w-[150px] h-[150px] bg-fintech-peach-background p-4 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark rotate-3 z-10
+                      lg:top-[15%] lg:-right-[20%] lg:w-[160px] lg:h-[160px] animate-card-float-2 animation-delay-3000" // Adjusted mobile positioning and size
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.4 }}
@@ -41,8 +41,8 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className }) => {
       </motion.div>
       {/* Bottom-Left Card */}
       <motion.div
-        className="absolute bottom-[5%] left-[0%] w-[140px] h-[140px] bg-fintech-peach-background p-4 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark rotate-3 z-10
-                      lg:bottom-[15%] lg:-left-[15%] lg:w-[160px] lg:h-[160px] animate-card-float-3 animation-delay-4000" // Adjusted mobile positioning and size
+        className="absolute bottom-[5%] left-[-10%] w-[150px] h-[150px] bg-fintech-peach-background p-4 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark rotate-3 z-10
+                      lg:bottom-[15%] lg:-left-[20%] lg:w-[160px] lg:h-[160px] animate-card-float-3 animation-delay-4000" // Adjusted mobile positioning and size
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.6 }}
@@ -54,8 +54,8 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className }) => {
       </motion.div>
       {/* Bottom-Right Card */}
       <motion.div
-        className="absolute bottom-[5%] right-[0%] w-[140px] h-[140px] bg-fintech-peach-background p-4 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark -rotate-3 z-10
-                      lg:bottom-[15%] lg:-right-[15%] lg:w-[160px] lg:h-[160px] animate-card-float-1 animation-delay-5000" // Adjusted mobile positioning and size
+        className="absolute bottom-[5%] right-[-10%] w-[150px] h-[150px] bg-fintech-peach-background p-4 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark -rotate-3 z-10
+                      lg:bottom-[15%] lg:-right-[20%] lg:w-[160px] lg:h-[160px] animate-card-float-1 animation-delay-5000" // Adjusted mobile positioning and size
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.8 }}
