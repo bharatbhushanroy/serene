@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/card';
 import { MapPin, IndianRupee } from 'lucide-react'; // Using IndianRupee for currency
 
-const MadeForIndiansSection = () => {
+const IndiaMapSection = () => {
   const dotVariants = {
     initial: { scale: 0, opacity: 0 },
     animate: (i: number) => ({
@@ -120,4 +120,4 @@ const MadeForIndiansSection = () => {
   );
 };
 
-export default MadeForIndiansSection;
+export default IndiaMapSection;

@@ -1,7 +1,7 @@
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import MoneyForEverythingSection from "@/components/MoneyForEverythingSection"; // Import the new component
+import MoneyForEverythingSection from "@/components/MoneyForEverythingSection";
 import ApplyStepsSection from "@/components/ApplyStepsSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
@@ -15,7 +15,7 @@ import FinancialFreedomSection from "@/components/FinancialFreedomSection";
 import LoanComparisonCalculator from "@/components/LoanComparisonCalculator";
 import CheckEligibilitySection from "@/components/CheckEligibilitySection";
 import InsuranceSection from "@/components/InsuranceSection";
-import MadeForIndiansSection from "@/components/MadeForIndiansSection"; // Import the new component
+import IndiaMapSection from "@/components/IndiaMapSection"; // Updated import path
 
 const Index = () => {
   return (
@@ -36,7 +36,7 @@ const Index = () => {
         <FinancialFreedomSection />
         <MemberTestimonialsSection />
         <CtaSection />
-        <MadeForIndiansSection /> {/* Add the new component here, above Footer */}
+        <IndiaMapSection /> {/* Updated component name */}
       </main>
       <Footer />
       <MadeWithDyad />
