@@ -5,6 +5,9 @@ import SpendingChart from '@/components/SpendingChart';
 import RecentTransactions from '@/components/RecentTransactions';
 import GoalsProgress from '@/components/GoalsProgress';
 import QuickTransfer from '@/components/QuickTransfer';
+import LoanTrackingCard from '@/components/LoanTrackingCard'; // New import
+import AiBalanceTransferSuggestions from '@/components/AiBalanceTransferSuggestions'; // New import
+import CreditCardUtilizationChart from '@/components/CreditCardUtilizationChart'; // New import
 import { DollarSign, TrendingUp, TrendingDown } from 'lucide-react';
 
 const DashboardPage = () => {
@@ -55,16 +58,34 @@ const DashboardPage = () => {
           </div>
         </div>
 
-        {/* Bottom Content Grid */}
+        {/* New Row for Loan Tracking and AI Suggestions */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Recent Transactions */}
+          {/* Loan Tracking Card */}
           <div>
+            <LoanTrackingCard />
+          </div>
+
+          {/* AI Balance Transfer Suggestions */}
+          <div>
+            <AiBalanceTransferSuggestions />
+          </div>
+        </div>
+
+        {/* Bottom Content Grid (Existing + New Credit Card Utilization) */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Recent Transactions */}
+          <div className="lg:col-span-1">
             <RecentTransactions />
           </div>
 
           {/* Goals Progress */}
-          <div>
+          <div className="lg:col-span-1">
             <GoalsProgress />
+          </div>
+
+          {/* Credit Card Utilization Chart */}
+          <div className="lg:col-span-1">
+            <CreditCardUtilizationChart />
           </div>
         </div>
       </div>
