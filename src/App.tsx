@@ -11,11 +11,12 @@ import ContactUs from "./pages/ContactUs";
 import FAQs from "./pages/FAQs";
 import LoanCalculatorPage from "./pages/LoanCalculatorPage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
-import LoginPage from "./pages/LoginPage"; // Import the new LoginPage
-import SignupPage from "./pages/SignupPage"; // Import the new SignupPage
-import ApplyLoanPage from "./pages/ApplyLoanPage"; // Import the new ApplyLoanPage
-import DashboardPage from "./pages/DashboardPage"; // Import the new DashboardPage
+import LoginPage from "./pages/LoginPage";
+import SignupPage from "./pages/SignupPage";
+import ApplyLoanPage from "./pages/ApplyLoanPage";
+import DashboardPage from "./pages/DashboardPage";
 import AiChatbot from "./components/AiChatbot";
+import TestComponent from "./components/TestComponent"; // Import the new TestComponent
 
 const queryClient = new QueryClient();
 
@@ -33,15 +34,16 @@ const App = () => (
           <Route path="/faqs" element={<FAQs />} />
           <Route path="/loan-calculator" element={<LoanCalculatorPage />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
-          <Route path="/login" element={<LoginPage />} /> {/* Add the Login route */}
-          <Route path="/signup" element={<SignupPage />} /> {/* Add the Signup route */}
-          <Route path="/apply-loan" element={<ApplyLoanPage />} /> {/* Add the Apply Loan route */}
-          <Route path="/dashboard" element={<DashboardPage />} /> {/* Add the Dashboard route */}
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
+          <Route path="/apply-loan" element={<ApplyLoanPage />} />
+          <Route path="/dashboard" element={<DashboardPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
       <AiChatbot />
+      <TestComponent /> {/* Temporarily render TestComponent here */}
     </TooltipProvider>
   </QueryClientProvider>
 );
