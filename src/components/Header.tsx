@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom'; // Import useLocation
+import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { ChevronDown, Home, LayoutGrid, Settings, BookOpen, Info, Phone, LogIn, UserPlus, Sun, Moon, ArrowRight } from 'lucide-react';
 import QickyLogo from './QickyLogo'; // Import the new QickyLogo component
 import { cn } from '@/lib/utils'; // Import cn for conditional classes
+import MobileNav from './MobileNav'; // Import the new MobileNav component
 
 // Placeholder for theme toggle functionality
 const ThemeToggle = () => {
@@ -90,7 +91,11 @@ const Header = () => {
           </Button>
         </Link>
       </div>
-      {/* Mobile menu toggle would go here */}
+      {/* Mobile menu toggle */}
+      <div className="lg:hidden flex items-center space-x-2">
+        <ThemeToggle />
+        <MobileNav />
+      </div>
     </header>
   );
 };
