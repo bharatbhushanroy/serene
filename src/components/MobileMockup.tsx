@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { User, Gift, Banknote, ArrowRight, Home, Grid, LayoutGrid, Repeat, Receipt, Percent, Bank, CalendarCheck } from 'lucide-react';
+import { User, Gift, Banknote, ArrowRight, Home, Grid, LayoutGrid, Repeat, Receipt, Percent, Landmark, CalendarCheck } from 'lucide-react';
 
 const MobileMockup = () => {
   return (
@@ -20,7 +20,7 @@ const MobileMockup = () => {
         <p className="text-sm text-gray-700">Only On What You Use</p>
       </div>
       <div className="absolute bottom-[10%] left-[5%] bg-[#FFEDD5] p-6 rounded-xl shadow-lg text-center w-[180px] h-[180px] flex flex-col items-center justify-center">
-        <Bank className="h-8 w-8 text-[#F97316] mb-2" />
+        <Landmark className="h-8 w-8 text-[#F97316] mb-2" /> {/* Changed from Bank to Landmark */}
         <p className="text-sm text-gray-700">Transfer to</p>
         <p className="text-2xl font-bold text-[#F97316]">Your Bank</p>
         <p className="text-sm text-gray-700">In Seconds</p>
