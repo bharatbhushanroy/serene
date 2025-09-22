@@ -155,6 +155,21 @@
     --fintech-newsletter-envelope-blue: 217 91% 59%; /* #3B82F6 */
     --fintech-newsletter-cloud-white: 0 0% 100%; /* #FFFFFF */
     --fintech-newsletter-cloud-lightblue: 217 91% 85%; /* #BFDBFE */
+
+    /* New colors for LoanProductsSection */
+    --fintech-loan-card-purple: 260 60% 25%; /* Darker purple for Personal Loan card */
+    --fintech-loan-card-purple-darker: 260 60% 20%; /* Even darker for button */
+    --fintech-loan-card-purple-darkest: 260 60% 15%; /* Darkest for button hover */
+
+    --fintech-loan-card-blue: 220 60% 25%; /* Dark blue for Home Loan card */
+    --fintech-loan-card-blue-darker: 220 60% 20%; /* Even darker for button */
+    --fintech-loan-card-blue-darkest: 220 60% 15%; /* Darkest for button hover */
+
+    --fintech-loan-card-green: 140 40% 25%; /* Dark green for Education Loan card */
+    --fintech-loan-card-green-darker: 140 40% 20%; /* Even darker for button */
+    --fintech-loan-card-green-darkest: 140 40% 15%; /* Darkest for button hover */
+
+    --fintech-popular-badge-bg: 36 100% 50%; /* Vibrant orange for POPULAR badge */
   }
 
   .dark {

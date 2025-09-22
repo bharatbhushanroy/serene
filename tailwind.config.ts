@@ -174,6 +174,18 @@ export default {
           'newsletter-envelope-blue': 'hsl(var(--fintech-newsletter-envelope-blue))',
           'newsletter-cloud-white': 'hsl(var(--fintech-newsletter-cloud-white))',
           'newsletter-cloud-lightblue': 'hsl(var(--fintech-newsletter-cloud-lightblue))',
+
+          // New colors for LoanProductsSection
+          'loan-card-purple': 'hsl(var(--fintech-loan-card-purple))',
+          'loan-card-purple-darker': 'hsl(var(--fintech-loan-card-purple-darker))',
+          'loan-card-purple-darkest': 'hsl(var(--fintech-loan-card-purple-darkest))',
+          'loan-card-blue': 'hsl(var(--fintech-loan-card-blue))',
+          'loan-card-blue-darker': 'hsl(var(--fintech-loan-card-blue-darker))',
+          'loan-card-blue-darkest': 'hsl(var(--fintech-loan-card-blue-darkest))',
+          'loan-card-green': 'hsl(var(--fintech-loan-card-green))',
+          'loan-card-green-darker': 'hsl(var(--fintech-loan-card-green-darker))',
+          'loan-card-green-darkest': 'hsl(var(--fintech-loan-card-green-darkest))',
+          'popular-badge-bg': 'hsl(var(--fintech-popular-badge-bg))',
         }
       },
       borderRadius: {

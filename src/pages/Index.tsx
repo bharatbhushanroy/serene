@@ -17,7 +17,8 @@ import CheckEligibilitySection from "@/components/CheckEligibilitySection";
 import InsuranceSection from "@/components/InsuranceSection";
 import MadeInBharatSection from "@/components/MadeInBharatSection";
 import ProductsSection from "@/components/ProductsSection";
-import WalkTheTalkSection from "@/components/WalkTheTalkSection"; // New import
+import WalkTheTalkSection from "@/components/WalkTheTalkSection";
+import LoanProductsSection from "@/components/LoanProductsSection"; // New import
 
 const Index = () => {
   return (
@@ -34,12 +35,13 @@ const Index = () => {
         <TopUpLoansSection />
         <InteractiveLoanSimulatorSection />
         <InsuranceSection />
+        <LoanProductsSection /> {/* Added the new LoanProductsSection here */}
         <HowItWorksSection />
         <LoanComparisonCalculator />
         <FinancialFreedomSection />
         <MemberTestimonialsSection />
         <CtaSection />
-        <WalkTheTalkSection /> {/* Added the new WalkTheTalkSection here */}
+        <WalkTheTalkSection />
       </main>
       <Footer />
       <MadeInBharatSection />
