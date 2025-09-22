@@ -8,8 +8,9 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, CreditCard, Percent, Gift } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import CreditCardMockup from '@/components/CreditCardMockup'; // Reusing existing mockup
+import CreditCardMockup from '@/components/CreditCardMockup';
 import CtaSection from '@/components/CtaSection';
+import IndianBankCreditCardComparison from '@/components/IndianBankCreditCardComparison'; // New import
 
 const CreditCardsPage = () => {
   const features = [
@@ -88,7 +89,7 @@ const CreditCardsPage = () => {
           </div>
         </section>
 
-        {/* Credit Card Comparison/Features Section (Placeholder) */}
+        {/* Credit Card Comparison/Features Section */}
         <section className="relative z-10 w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-main-bg text-white">
           <div className="max-w-7xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-12">
@@ -98,9 +99,7 @@ const CreditCardsPage = () => {
               <p className="text-lg text-fintech-text-muted mb-6">
                 Discover a wide range of credit cards from leading banks. Filter by rewards, annual fees, interest rates, and more to find your perfect match.
               </p>
-              <div className="h-64 flex items-center justify-center bg-gray-800 rounded-lg border border-gray-700">
-                <p className="text-fintech-text-muted text-xl">Credit Card Comparison Tool Coming Soon!</p>
-              </div>
+              <IndianBankCreditCardComparison /> {/* New component added here */}
               <Button className="mt-8 bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity">
                 View All Cards
               </Button>
