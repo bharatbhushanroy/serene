@@ -1,13 +1,13 @@
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import Header from "@/components/Header";
-import HeroSection from "@/components/HeroSection";
+import InstantLoansHeroSection from "@/components/InstantLoansHeroSection"; // New hero section
 import MoneyForEverythingSection from "@/components/MoneyForEverythingSection";
 import ApplyStepsSection from "@/components/ApplyStepsSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import MemberTestimonialsSection from "@/components/MemberTestimonialsSection";
 import Footer from "@/components/Footer";
-import InstantLoansSection from "@/components/InstantLoansSection";
+import QuickLoansFeaturesSection from "@/components/QuickLoansFeaturesSection"; // Old hero section, now a feature section
 import CtaSection from "@/components/CtaSection";
 import TopUpLoansSection from "@/components/TopUpLoansSection";
 import InteractiveLoanSimulatorSection from "@/components/InteractiveLoanSimulatorSection";
@@ -22,10 +22,10 @@ const Index = () => {
     <div className="min-h-screen bg-fintech-background-light text-fintech-text-dark">
       <Header />
       <main>
-        <HeroSection />
+        <InstantLoansHeroSection /> {/* This is now the main hero */}
         <MoneyForEverythingSection />
         <ApplyStepsSection />
-        <InstantLoansSection />
+        <QuickLoansFeaturesSection /> {/* This is now the old hero content */}
         <CheckEligibilitySection />
         <FeaturesSection />
         <TopUpLoansSection />
@@ -38,7 +38,7 @@ const Index = () => {
         <CtaSection />
       </main>
       <Footer />
-      <MadeInBharatSection /> {/* Moved this section below the Footer */}
+      <MadeInBharatSection />
       <MadeWithDyad />
     </div>
   );
