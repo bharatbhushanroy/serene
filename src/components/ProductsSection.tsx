@@ -4,6 +4,7 @@ import React from 'react';
 import { Card } from '@/components/ui/card';
 import { DollarSign, Briefcase, Home, Gauge, CreditCard, BarChart } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion'; // Import motion for animations
 import { cn } from '@/lib/utils';
 
 const products = [
@@ -47,27 +48,34 @@ const products = [
 
 const ProductsSection = () => {
   return (
-    <section className="relative z-10 w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-background-light text-fintech-text-dark">
+    <section className="relative z-10 w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-dark-bg text-white"> {/* Changed background to dark */}
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
-          Bringing you the <span className="bg-gradient-to-r from-fintech-orange-accent to-fintech-peach-background text-transparent bg-clip-text">Best Products</span> from
+          Bringing you the <span className="bg-gradient-to-r from-fintech-blue-accent to-fintech-gradient-purple-start text-transparent bg-clip-text">Best Products</span> from {/* Adjusted gradient */}
         </h2>
-        <p className="text-4xl md:text-5xl font-extrabold leading-tight mb-12">
+        <p className="text-4xl md:text-5xl font-extrabold leading-tight mb-12 text-white"> {/* Ensured text is white */}
           Top Banks & Financial Institutions
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product, index) => (
             <Link to={product.link} key={index}>
-              <Card className="bg-gradient-to-br from-orange-200 to-orange-400 p-8 rounded-xl shadow-lg text-fintech-text-dark flex flex-col items-center text-center transition-all duration-300 transform hover:-translate-y-2 hover:shadow-glow-orange">
-                <div className="p-4 bg-white/30 rounded-full mb-6 backdrop-blur-sm">
-                  <product.icon className="h-8 w-8 text-orange-700" />
-                </div>
-                <h3 className="text-2xl font-bold mb-2">{product.title}</h3>
-                <p className="text-base opacity-90">
-                  {product.description}
-                </p>
-              </Card>
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.1 }} // Staggered animation
+              >
+                <Card className="bg-fintech-simulator-card-bg border border-fintech-border-light p-8 rounded-xl shadow-lg text-white flex flex-col items-center text-center transition-all duration-300 transform hover:-translate-y-2 hover:shadow-glow-blue"> {/* Dark card styling */}
+                  <div className="p-4 bg-fintech-blue-accent/20 rounded-full mb-6 backdrop-blur-sm"> {/* Darker icon background */}
+                    <product.icon className="h-8 w-8 text-fintech-blue-accent" /> {/* Blue accent for icons */}
+                  </div>
+                  <h3 className="text-2xl font-bold mb-2 text-white">{product.title}</h3>
+                  <p className="text-base text-fintech-text-muted"> {/* Muted text for description */}
+                    {product.description}
+                  </p>
+                </Card>
+              </motion.div>
             </Link>
           ))}
         </div>
