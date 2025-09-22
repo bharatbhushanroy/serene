@@ -42,33 +42,33 @@ const InstantLoansHeroSection = () => {
         {/* Right content - Phone Mockup with floating cards */}
         <div className="relative lg:w-1/2 flex justify-center items-center z-10 min-h-[700px]">
           {/* Floating Cards */}
-          <div className="absolute top-[0%] -left-[15%] w-[150px] h-[150px] bg-[#FFEDD5] p-6 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark -rotate-3 z-10
-                      lg:top-[10%] lg:-left-[10%] lg:w-[200px] lg:h-[200px]">
-            <Banknote className="h-8 w-8 text-fintech-orange-accent mb-2" />
-            <p className="text-sm text-gray-700">Get Up To</p>
-            <p className="text-2xl font-bold text-fintech-orange-accent">₹5 Lakhs</p>
-            <p className="text-sm text-gray-700">Loan</p>
+          <div className="absolute top-[5%] -left-[20%] w-[120px] h-[120px] bg-[#FFEDD5] p-4 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark -rotate-3 z-10
+                      lg:top-[15%] lg:-left-[15%] lg:w-[160px] lg:h-[160px]">
+            <Banknote className="h-6 w-6 text-fintech-orange-accent mb-1" />
+            <p className="text-xs text-gray-700">Get Up To</p>
+            <p className="text-xl font-bold text-fintech-orange-accent">₹5 Lakhs</p>
+            <p className="text-xs text-gray-700">Loan</p>
           </div>
-          <div className="absolute top-[0%] -right-[15%] w-[150px] h-[150px] bg-[#FFEDD5] p-6 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark rotate-3 z-10
-                      lg:top-[10%] lg:-right-[10%] lg:w-[200px] lg:h-[200px]">
-            <Percent className="h-8 w-8 text-fintech-orange-accent mb-2" />
-            <p className="text-sm text-gray-700">Rate starting from</p>
-            <p className="text-2xl font-bold text-fintech-orange-accent">0.88%</p>
-            <p className="text-sm text-gray-700">per month</p>
+          <div className="absolute top-[5%] -right-[20%] w-[120px] h-[120px] bg-[#FFEDD5] p-4 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark rotate-3 z-10
+                      lg:top-[15%] lg:-right-[15%] lg:w-[160px] lg:h-[160px]">
+            <Percent className="h-6 w-6 text-fintech-orange-accent mb-1" />
+            <p className="text-xs text-gray-700">Rate starting from</p>
+            <p className="text-xl font-bold text-fintech-orange-accent">0.88%</p>
+            <p className="text-xs text-gray-700">per month</p>
           </div>
-          <div className="absolute bottom-[0%] -left-[15%] w-[150px] h-[150px] bg-[#FFEDD5] p-6 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark rotate-3 z-10
-                      lg:bottom-[10%] lg:-left-[10%] lg:w-[200px] lg:h-[200px]">
-            <Landmark className="h-8 w-8 text-fintech-orange-accent mb-2" />
-            <p className="text-sm text-gray-700">Transfer to</p>
-            <p className="text-2xl font-bold text-fintech-orange-accent">Your Bank</p>
-            <p className="text-sm text-gray-700">In Seconds</p>
+          <div className="absolute bottom-[5%] -left-[20%] w-[120px] h-[120px] bg-[#FFEDD5] p-4 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark rotate-3 z-10
+                      lg:bottom-[15%] lg:-left-[15%] lg:w-[160px] lg:h-[160px]">
+            <Landmark className="h-6 w-6 text-fintech-orange-accent mb-1" />
+            <p className="text-xs text-gray-700">Transfer to</p>
+            <p className="text-xl font-bold text-fintech-orange-accent">Your Bank</p>
+            <p className="text-xs text-gray-700">In Seconds</p>
           </div>
-          <div className="absolute bottom-[0%] -right-[15%] w-[150px] h-[150px] bg-[#FFEDD5] p-6 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark -rotate-3 z-10
-                      lg:bottom-[10%] lg:-right-[10%] lg:w-[200px] lg:h-[200px]">
-            <CalendarCheck className="h-8 w-8 text-fintech-orange-accent mb-2" />
-            <p className="text-sm text-gray-700">Repay EMI in</p>
-            <p className="text-2xl font-bold text-fintech-orange-accent">3 to 36</p>
-            <p className="text-sm text-gray-700">Months</p>
+          <div className="absolute bottom-[5%] -right-[20%] w-[120px] h-[120px] bg-[#FFEDD5] p-4 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark -rotate-3 z-10
+                      lg:bottom-[15%] lg:-right-[15%] lg:w-[160px] lg:h-[160px]">
+            <CalendarCheck className="h-6 w-6 text-fintech-orange-accent mb-1" />
+            <p className="text-xs text-gray-700">Repay EMI in</p>
+            <p className="text-xl font-bold text-fintech-orange-accent">3 to 36</p>
+            <p className="text-xs text-gray-700">Months</p>
           </div>
 
           {/* Central Phone Mockup */}
