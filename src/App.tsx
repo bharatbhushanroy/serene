@@ -15,8 +15,7 @@ import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import ApplyLoanPage from "./pages/ApplyLoanPage";
 import DashboardPage from "./pages/DashboardPage";
-import AiChatbot from "./components/AiChatbot";
-import ApplyNowSidebarButton from "./components/ApplyNowSidebarButton"; // New import
+import RootLayout from "./components/RootLayout"; // New import
 
 const queryClient = new QueryClient();
 
@@ -27,23 +26,23 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/contact" element={<ContactUs />} />
-          <Route path="/faqs" element={<FAQs />} />
-          <Route path="/loan-calculator" element={<LoanCalculatorPage />} />
-          <Route path="/privacy" element={<PrivacyPolicy />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/signup" element={<SignupPage />} />
-          <Route path="/apply-loan" element={<ApplyLoanPage />} />
-          <Route path="/dashboard" element={<DashboardPage />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route element={<RootLayout />}> {/* Wrap all main routes with RootLayout */}
+            <Route path="/" element={<Index />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/contact" element={<ContactUs />} />
+            <Route path="/faqs" element={<FAQs />} />
+            <Route path="/loan-calculator" element={<LoanCalculatorPage />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/signup" element={<SignupPage />} />
+            <Route path="/apply-loan" element={<ApplyLoanPage />} />
+            <Route path="/dashboard" element={<DashboardPage />} />
+          </Route>
+          {/* The NotFound route should typically be outside the main layout if it doesn't share the same global components */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
-      <AiChatbot />
-      <ApplyNowSidebarButton /> {/* Added the sidebar button here */}
     </TooltipProvider>
   </QueryClientProvider>
 );
