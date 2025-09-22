@@ -82,7 +82,6 @@ const TripleMobileMockup = () => {
               <button className="bg-gray-700 text-white text-xs px-3 py-1 rounded-full flex items-center mt-2">
                 Buy now <ArrowRight className="ml-1 h-3 w-3" />
               </button>
-              <img src="/public/gold-bars.svg" alt="Gold bars" className="absolute bottom-0 right-0 w-16 h-16 opacity-50" />
             </div>
             <div className="bg-gray-800 rounded-xl p-3 relative overflow-hidden">
               <p className="text-sm font-semibold">Invest in FD</p>
