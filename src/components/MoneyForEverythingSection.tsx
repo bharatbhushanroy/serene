@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
-import { Basket, Book, Fuel, ShoppingBag, ShoppingCart, Glasses, Wallet, Plane, Banknote, ArrowRight } from 'lucide-react';
+import { ShoppingBag, Book, Fuel, ShoppingCart, Glasses, Wallet, Plane, Banknote, ArrowRight } from 'lucide-react'; // Changed Basket to ShoppingBag
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
@@ -98,7 +98,7 @@ const MoneyForEverythingSection = () => {
           </motion.div>
 
           {/* Daily Groceries */}
-          <IconCard icon={Basket} text="Daily Groceries" className="col-span-1" />
+          <IconCard icon={ShoppingBag} text="Daily Groceries" className="col-span-1" />
 
           {/* Books */}
           <IconCard icon={Book} text="Books" className="col-span-1 bg-fintech-dark-card-bg-secondary" iconColor="text-fintech-icon-orange" />
@@ -182,7 +182,7 @@ const MoneyForEverythingSection = () => {
           </motion.div>
 
           {/* Daily Groceries (bottom right) */}
-          <IconCard icon={Basket} text="Daily Groceries" className="col-span-1" />
+          <IconCard icon={ShoppingBag} text="Daily Groceries" className="col-span-1" />
         </div>
       </div>
     </section>
