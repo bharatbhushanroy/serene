@@ -2,34 +2,47 @@
 
 import React from 'react';
 import { User, Gift, Banknote, ArrowRight, Home, Grid, LayoutGrid, Repeat, Receipt, Percent, Landmark, CalendarCheck } from 'lucide-react';
+import { cn } from '@/lib/utils'; // Import cn for conditional classes
 
-const MobileMockup = () => {
+interface MobileMockupProps {
+  className?: string;
+}
+
+const MobileMockup: React.FC<MobileMockupProps> = ({ className }) => {
   return (
-    <div className="relative flex items-center justify-center w-full h-full min-h-[700px] scale-90 md:scale-100">
+    <div className={cn("relative flex items-center justify-center w-full h-full min-h-[700px]", className)}>
       {/* Floating Cards */}
-      <div className="absolute top-[10%] left-[5%] bg-[#FFEDD5] p-6 rounded-xl shadow-lg text-center w-[180px] h-[180px] flex flex-col items-center justify-center">
-        <Banknote className="h-8 w-8 text-[#F97316] mb-2" />
-        <p className="text-sm text-gray-700">Get Up To</p>
-        <p className="text-2xl font-bold text-[#F97316]">₹5 Lakhs</p>
-        <p className="text-sm text-gray-700">Loan</p>
+      {/* Top-Left Card */}
+      <div className="absolute top-[10%] left-[5%] w-[120px] h-[120px] bg-[#FFEDD5] p-4 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark -rotate-3 z-10
+                      lg:top-[15%] lg:-left-[15%] lg:w-[160px] lg:h-[160px]">
+        <Banknote className="h-6 w-6 text-fintech-orange-accent mb-1" />
+        <p className="text-xs text-gray-700">Get Up To</p>
+        <p className="text-xl font-bold text-fintech-orange-accent">₹5 Lakhs</p>
+        <p className="text-xs text-gray-700">Loan</p>
       </div>
-      <div className="absolute top-[10%] right-[5%] bg-[#FFEDD5] p-6 rounded-xl shadow-lg text-center w-[180px] h-[180px] flex flex-col items-center justify-center">
-        <Percent className="h-8 w-8 text-[#F97316] mb-2" />
-        <p className="text-sm text-gray-700">Pay</p>
-        <p className="text-2xl font-bold text-[#F97316]">Interest</p>
-        <p className="text-sm text-gray-700">Only On What You Use</p>
+      {/* Top-Right Card */}
+      <div className="absolute top-[10%] right-[5%] w-[120px] h-[120px] bg-[#FFEDD5] p-4 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark rotate-3 z-10
+                      lg:top-[15%] lg:-right-[15%] lg:w-[160px] lg:h-[160px]">
+        <Percent className="h-6 w-6 text-fintech-orange-accent mb-1" />
+        <p className="text-xs text-gray-700">Rate starting from</p>
+        <p className="text-xl font-bold text-fintech-orange-accent">0.88%</p>
+        <p className="text-xs text-gray-700">per month</p>
       </div>
-      <div className="absolute bottom-[10%] left-[5%] bg-[#FFEDD5] p-6 rounded-xl shadow-lg text-center w-[180px] h-[180px] flex flex-col items-center justify-center">
-        <Landmark className="h-8 w-8 text-[#F97316] mb-2" /> {/* Changed from Bank to Landmark */}
-        <p className="text-sm text-gray-700">Transfer to</p>
-        <p className="text-2xl font-bold text-[#F97316]">Your Bank</p>
-        <p className="text-sm text-gray-700">In Seconds</p>
+      {/* Bottom-Left Card */}
+      <div className="absolute bottom-[10%] left-[5%] w-[120px] h-[120px] bg-[#FFEDD5] p-4 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark rotate-3 z-10
+                      lg:bottom-[15%] lg:-left-[15%] lg:w-[160px] lg:h-[160px]">
+        <Landmark className="h-6 w-6 text-fintech-orange-accent mb-1" />
+        <p className="text-xs text-gray-700">Transfer to</p>
+        <p className="text-xl font-bold text-fintech-orange-accent">Your Bank</p>
+        <p className="text-xs text-gray-700">In Seconds</p>
       </div>
-      <div className="absolute bottom-[10%] right-[5%] bg-[#FFEDD5] p-6 rounded-xl shadow-lg text-center w-[180px] h-[180px] flex flex-col items-center justify-center">
-        <CalendarCheck className="h-8 w-8 text-[#F97316] mb-2" />
-        <p className="text-sm text-gray-700">Repay EMI in</p>
-        <p className="text-2xl font-bold text-[#F97316]">3 to 36</p>
-        <p className="text-sm text-gray-700">Months</p>
+      {/* Bottom-Right Card */}
+      <div className="absolute bottom-[10%] right-[5%] w-[120px] h-[120px] bg-[#FFEDD5] p-4 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark -rotate-3 z-10
+                      lg:bottom-[15%] lg:-right-[15%] lg:w-[160px] lg:h-[160px]">
+        <CalendarCheck className="h-6 w-6 text-fintech-orange-accent mb-1" />
+        <p className="text-xs text-gray-700">Repay EMI in</p>
+        <p className="text-xl font-bold text-fintech-orange-accent">3 to 36</p>
+        <p className="text-xs text-gray-700">Months</p>
       </div>
 
       {/* Phone Frame */}
