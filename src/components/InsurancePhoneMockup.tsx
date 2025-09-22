@@ -63,7 +63,6 @@ const InsurancePhoneMockup = () => {
                 <Button variant="ghost" className="text-fintech-blue-accent text-xs p-0 h-auto hover:bg-transparent">
                   Explore <ArrowRight className="ml-1 h-3 w-3" />
                 </Button>
-                <img src="/public/health-shield.svg" alt="Health Shield" className="h-10 w-10" />
               </div>
             </Card>
             <Card className="bg-gray-800 rounded-xl p-4 text-white flex flex-col justify-between">
