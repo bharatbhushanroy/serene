@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@tanstack/react-query";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { TooltipProvider } from "@/components/ui/tooltip"; // Corrected import
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
@@ -16,12 +16,12 @@ import SignupPage from "./pages/SignupPage";
 import ApplyLoanPage from "./pages/ApplyLoanPage";
 import DashboardPage from "./pages/DashboardPage";
 import RootLayout from "./components/RootLayout";
-import PersonalLoanPage from "./pages/products/PersonalLoanPage"; // New import
-import BusinessLoanPage from "./pages/products/BusinessLoanPage"; // New import
-import HomeLoanPage from "./pages/products/HomeLoanPage"; // New import
-import FreeCreditScorePage from "./pages/products/FreeCreditScorePage"; // New import
-import CreditCardsPage from "./pages/products/CreditCardsPage"; // New import
-import PersonalFinancePage from "./pages/products/PersonalFinancePage"; // New import
+import PersonalLoanPage from "./pages/products/PersonalLoanPage";
+import BusinessLoanPage from "./pages/products/BusinessLoanPage";
+import HomeLoanPage from "./pages/products/HomeLoanPage";
+import FreeCreditScorePage from "./pages/products/FreeCreditScorePage";
+import CreditCardsPage from "./pages/products/CreditCardsPage";
+import PersonalFinancePage from "./pages/products/PersonalFinancePage";
 
 const queryClient = new QueryClient();
 
