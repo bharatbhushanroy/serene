@@ -3,6 +3,7 @@
 import React from 'react';
 import { User, Gift, Banknote, ArrowRight, Home, Grid, LayoutGrid, Repeat, Receipt, Percent, Landmark, CalendarCheck } from 'lucide-react';
 import { cn } from '@/lib/utils'; // Import cn for conditional classes
+import { motion } from 'framer-motion'; // Import motion
 
 interface MobileMockupProps {
   className?: string;
@@ -13,37 +14,57 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className }) => {
     <div className={cn("relative flex items-center justify-center w-full h-full min-h-[700px]", className)}>
       {/* Floating Cards */}
       {/* Top-Left Card */}
-      <div className="absolute top-[10%] left-[5%] w-[120px] h-[120px] bg-[#FFEDD5] p-4 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark -rotate-3 z-10
-                      lg:top-[15%] lg:-left-[15%] lg:w-[160px] lg:h-[160px]">
+      <motion.div
+        className="absolute top-[10%] left-[5%] w-[120px] h-[120px] bg-fintech-peach-background p-4 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark -rotate-3 z-10
+                      lg:top-[15%] lg:-left-[15%] lg:w-[160px] lg:h-[160px] animate-card-float-1 animation-delay-2000" // Added animation
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
         <Banknote className="h-6 w-6 text-fintech-orange-accent mb-1" />
         <p className="text-xs text-gray-700">Get Up To</p>
         <p className="text-xl font-bold text-fintech-orange-accent">₹5 Lakhs</p>
         <p className="text-xs text-gray-700">Loan</p>
-      </div>
+      </motion.div>
       {/* Top-Right Card */}
-      <div className="absolute top-[10%] right-[5%] w-[120px] h-[120px] bg-[#FFEDD5] p-4 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark rotate-3 z-10
-                      lg:top-[15%] lg:-right-[15%] lg:w-[160px] lg:h-[160px]">
+      <motion.div
+        className="absolute top-[10%] right-[5%] w-[120px] h-[120px] bg-fintech-peach-background p-4 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark rotate-3 z-10
+                      lg:top-[15%] lg:-right-[15%] lg:w-[160px] lg:h-[160px] animate-card-float-2 animation-delay-3000" // Added animation
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+      >
         <Percent className="h-6 w-6 text-fintech-orange-accent mb-1" />
         <p className="text-xs text-gray-700">Rate starting from</p>
         <p className="text-xl font-bold text-fintech-orange-accent">0.88%</p>
         <p className="text-xs text-gray-700">per month</p>
-      </div>
+      </motion.div>
       {/* Bottom-Left Card */}
-      <div className="absolute bottom-[10%] left-[5%] w-[120px] h-[120px] bg-[#FFEDD5] p-4 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark rotate-3 z-10
-                      lg:bottom-[15%] lg:-left-[15%] lg:w-[160px] lg:h-[160px]">
+      <motion.div
+        className="absolute bottom-[10%] left-[5%] w-[120px] h-[120px] bg-fintech-peach-background p-4 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark rotate-3 z-10
+                      lg:bottom-[15%] lg:-left-[15%] lg:w-[160px] lg:h-[160px] animate-card-float-3 animation-delay-4000" // Added animation
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: 0.6 }}
+      >
         <Landmark className="h-6 w-6 text-fintech-orange-accent mb-1" />
         <p className="text-xs text-gray-700">Transfer to</p>
         <p className="text-xl font-bold text-fintech-orange-accent">Your Bank</p>
         <p className="text-xs text-gray-700">In Seconds</p>
-      </div>
+      </motion.div>
       {/* Bottom-Right Card */}
-      <div className="absolute bottom-[10%] right-[5%] w-[120px] h-[120px] bg-[#FFEDD5] p-4 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark -rotate-3 z-10
-                      lg:bottom-[15%] lg:-right-[15%] lg:w-[160px] lg:h-[160px]">
+      <motion.div
+        className="absolute bottom-[10%] right-[5%] w-[120px] h-[120px] bg-fintech-peach-background p-4 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark -rotate-3 z-10
+                      lg:bottom-[15%] lg:-right-[15%] lg:w-[160px] lg:h-[160px] animate-card-float-1 animation-delay-5000" // Added animation
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: 0.8 }}
+      >
         <CalendarCheck className="h-6 w-6 text-fintech-orange-accent mb-1" />
         <p className="text-xs text-gray-700">Repay EMI in</p>
         <p className="text-xl font-bold text-fintech-orange-accent">3 to 36</p>
         <p className="text-xs text-gray-700">Months</p>
-      </div>
+      </motion.div>
 
       {/* Phone Frame */}
       <div className="relative w-[320px] h-[650px] bg-black rounded-[40px] shadow-2xl flex items-center justify-center p-2 border-[8px] border-gray-800 overflow-hidden z-20">
