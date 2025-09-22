@@ -13,12 +13,12 @@ import TopUpLoansSection from "@/components/TopUpLoansSection";
 import InteractiveLoanSimulatorSection from "@/components/InteractiveLoanSimulatorSection";
 import FinancialFreedomSection from "@/components/FinancialFreedomSection";
 import LoanComparisonCalculator from "@/components/LoanComparisonCalculator";
-import CheckEligibilitySection from "@/components/CheckEligibilitySection";
+// import CheckEligibilitySection from "@/components/CheckEligibilitySection"; // Removed this import
 import InsuranceSection from "@/components/InsuranceSection";
 import MadeInBharatSection from "@/components/MadeInBharatSection";
 import ProductsSection from "@/components/ProductsSection";
 import WalkTheTalkSection from "@/components/WalkTheTalkSection";
-import LoanProductsSection from "@/components/LoanProductsSection"; // New import
+import LoanProductsSection from "@/components/LoanProductsSection";
 
 const Index = () => {
   return (
@@ -30,12 +30,12 @@ const Index = () => {
         <MoneyForEverythingSection />
         <ApplyStepsSection />
         <QuickLoansFeaturesSection />
-        <CheckEligibilitySection />
+        {/* <CheckEligibilitySection /> Removed the component */}
         <FeaturesSection />
         <TopUpLoansSection />
         <InteractiveLoanSimulatorSection />
         <InsuranceSection />
-        <LoanProductsSection /> {/* Added the new LoanProductsSection here */}
+        <LoanProductsSection />
         <HowItWorksSection />
         <LoanComparisonCalculator />
         <FinancialFreedomSection />
