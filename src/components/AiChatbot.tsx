@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { MessageSquare, Bot, X, Send } from 'lucide-react';
+import { MessageSquare, Bot, X, Send, Sparkles } from 'lucide-react'; // Added Sparkles icon
 import { cn } from '@/lib/utils';
 
 interface Message {
@@ -26,7 +26,7 @@ const AiChatbot = () => {
       setMessages([
         {
           id: 1,
-          text: "Hello! I'm Qicky's AI assistant. How can I help you with your loan questions today?",
+          text: "Hello! I'm Qicky's AI assistant. I'm here to help you navigate our loan options and answer your financial questions. How can I assist you today?",
           sender: 'bot',
         },
       ]);
@@ -45,78 +45,113 @@ const AiChatbot = () => {
   const generateBotResponse = (userInput: string): string => {
     const lowerInput = userInput.toLowerCase();
 
+    // Reset topic if a new, unrelated query comes in
+    const resetTopicKeywords = ['new question', 'different topic', 'start over'];
+    if (resetTopicKeywords.some(keyword => lowerInput.includes(keyword))) {
+      setLastBotTopic(null);
+      return "Okay, let's start fresh. What's on your mind now?";
+    }
+
     // Greetings
     if (lowerInput.includes('hello') || lowerInput.includes('hi') || lowerInput.includes('hey')) {
+      setLastBotTopic(null);
       return "Hello there! How can I assist you today?";
     }
     if (lowerInput.includes('how are you')) {
+      setLastBotTopic(null);
       return "I'm just a bot, but I'm ready to help you with your financial queries!";
     }
 
     // Loan Types
-    if (lowerInput.includes('loan') && (lowerInput.includes('type') || lowerInput.includes('kind'))) {
+    if (lowerInput.includes('loan') && (lowerInput.includes('type') || lowerInput.includes('kind') || lowerInput.includes('options'))) {
       setLastBotTopic('loan_types');
-      return "We primarily offer instant personal loans for various needs like medical emergencies, education, or home improvement. We also have options for business and home loans. Which one are you interested in?";
+      return "Qicky offers a variety of loans including Personal Loans, Home Loans, Business Loans, Education Loans, and Vehicle Loans. Which type are you interested in?";
     }
     if (lowerInput.includes('personal loan') || (lastBotTopic === 'loan_types' && (lowerInput.includes('personal') || lowerInput.includes('this one')))) {
       setLastBotTopic('personal_loan');
-      return "Our personal loans are designed for quick access to funds up to ₹5,00,000 with minimal paperwork. They are disbursed within minutes!";
+      return "Our Personal Loans offer quick access to funds up to ₹5,00,000 with minimal paperwork and no collateral. Funds are typically disbursed within minutes! What amount are you looking for?";
     }
-    if (lowerInput.includes('business loan')) {
-      setLastBotTopic('business_loan');
-      return "For business loans, we offer flexible terms to help your venture grow. Eligibility depends on your business's financial health. Would you like to know more about the application process?";
-    }
-    if (lowerInput.includes('home loan')) {
+    if (lowerInput.includes('home loan') || (lastBotTopic === 'loan_types' && lowerInput.includes('home'))) {
       setLastBotTopic('home_loan');
-      return "Our home loans come with competitive interest rates and extended tenures. We aim to make your dream home a reality. What specific details are you looking for?";
+      return "Qicky Home Loans come with competitive interest rates and longer repayment tenures, helping you achieve your dream home. They are secured loans, meaning your property acts as collateral. What's your estimated loan requirement?";
+    }
+    if (lowerInput.includes('business loan') || (lastBotTopic === 'loan_types' && lowerInput.includes('business'))) {
+      setLastBotTopic('business_loan');
+      return "Our Business Loans are designed to fuel your venture's growth, offering flexible terms for working capital or expansion. Eligibility depends on your business's financial health and turnover. Would you like to know more about the application process?";
+    }
+    if (lowerInput.includes('education loan') || (lastBotTopic === 'loan_types' && lowerInput.includes('education'))) {
+      setLastBotTopic('education_loan');
+      return "Education Loans from Qicky cover tuition fees, living expenses, and study materials. They often have longer repayment periods that start after your course completion. What kind of course are you planning to pursue?";
+    }
+    if (lowerInput.includes('vehicle loan') || (lastBotTopic === 'loan_types' && (lowerInput.includes('vehicle') || lowerInput.includes('car') || lowerInput.includes('bike')))) {
+      setLastBotTopic('vehicle_loan');
+      return "Qicky offers Vehicle Loans for both new and used cars/bikes with attractive interest rates. The vehicle itself usually serves as collateral. Are you looking for a new or used vehicle loan?";
     }
 
     // Interest Rates
     if (lowerInput.includes('interest') || lowerInput.includes('rate')) {
       setLastBotTopic('interest_rate');
-      return "Our interest rates are competitive and vary based on your profile and the loan type. You can get a personalized quote by starting an application, which won't affect your credit score.";
+      return "Our interest rates are competitive and depend on several factors like the loan type, your credit score, and the loan tenure. You can get a personalized quote by using our 'Loan Calculator' or starting an application, which won't affect your credit score.";
     }
 
     // How to Apply
     if ((lowerInput.includes('how') && lowerInput.includes('apply')) || lowerInput.includes('application process')) {
       setLastBotTopic('how_to_apply');
-      return "Applying is easy! Just click the 'Apply Now' button on our website, fill out the simple digital form, and submit the required documents. The whole process is 100% digital and takes just a few minutes.";
+      return "Applying for a Qicky loan is 100% digital and very simple! Just click the 'Apply Now' button on our website, fill out the online form, and securely upload the required documents. The entire process takes just a few minutes.";
     }
 
     // Eligibility
-    if (lowerInput.includes('eligibility') || lowerInput.includes('qualify')) {
+    if (lowerInput.includes('eligibility') || lowerInput.includes('qualify') || lowerInput.includes('requirements')) {
       setLastBotTopic('eligibility');
-      return "Eligibility generally includes being over 18, having a stable income, and a good credit history. You can use our 'Check Eligibility' tool on the website for an instant assessment.";
+      return "General eligibility criteria include being over 18, having a stable income, and a good credit history. Specific requirements may vary by loan type. You can use our 'Check Eligibility' tool on the website for an instant assessment.";
     }
 
     // Documents
-    if (lowerInput.includes('documents') || lowerInput.includes('paperwork')) {
+    if (lowerInput.includes('documents') || lowerInput.includes('paperwork') || lowerInput.includes('what do i need')) {
       setLastBotTopic('documents');
-      return "For personal loans, typically you'll need identity proof (PAN, Aadhaar), address proof, and income proof (bank statements, salary slips). The exact requirements will be detailed during the application.";
+      return "Typically, you'll need identity proof (PAN, Aadhaar), address proof, and income proof (bank statements, salary slips). For secured loans like home or vehicle loans, additional property/vehicle documents will be required. The exact list will be provided during application.";
     }
 
     // Repayment
-    if (lowerInput.includes('repay') || lowerInput.includes('emi') || lowerInput.includes('payment')) {
+    if (lowerInput.includes('repay') || lowerInput.includes('emi') || lowerInput.includes('payment') || lowerInput.includes('tenure')) {
       setLastBotTopic('repayment');
-      return "We offer flexible repayment options, including early repayment without penalties. You can use our 'Loan Calculator' to estimate your EMIs.";
+      return "We offer flexible repayment options, including the ability to repay your loan early without any prepayment penalties. You can choose a tenure that suits you, typically ranging from 3 to 60 months for personal loans. Our 'Loan Calculator' can help you estimate your EMIs.";
     }
 
     // Fees
     if (lowerInput.includes('fees') || lowerInput.includes('charges') || lowerInput.includes('hidden')) {
       setLastBotTopic('fees');
-      return "Qicky is committed to transparency. All fees and charges are clearly communicated upfront, with no hidden surprises. You'll see a full breakdown before you commit.";
+      return "Qicky is committed to transparency. All fees and charges, including processing fees, are clearly communicated upfront, with no hidden surprises. You'll see a full breakdown before you commit to any loan.";
+    }
+
+    // Loan Amount Limits
+    if (lowerInput.includes('how much') && lowerInput.includes('loan')) {
+      setLastBotTopic('loan_amount_limits');
+      return "For Personal Loans, you can get up to ₹5,00,000. Home and Business Loans can be significantly higher, depending on your eligibility and collateral. What type of loan are you considering?";
+    }
+
+    // Prepayment
+    if (lowerInput.includes('prepay') || lowerInput.includes('early repayment')) {
+      setLastBotTopic('prepayment');
+      return "Yes, you can repay your loan early with Qicky! We do not charge any prepayment penalties, giving you the flexibility to close your loan whenever you're ready.";
+    }
+
+    // Security/Collateral
+    if (lowerInput.includes('collateral') || lowerInput.includes('security')) {
+      setLastBotTopic('collateral');
+      return "Personal loans are generally unsecured (no collateral needed). However, Home Loans and Vehicle Loans are secured, meaning the property or vehicle acts as collateral. This often allows for larger loan amounts and lower interest rates.";
     }
 
     // Support/Help
     if (lowerInput.includes('help') || lowerInput.includes('support') || lowerInput.includes('contact')) {
       setLastBotTopic('support');
-      return "I can help with general questions. For specific account inquiries or personalized assistance, please visit our 'Contact Us' page to get in touch with our support team directly.";
+      return "I can help with general questions. For specific account inquiries or personalized assistance, please visit our 'Contact Us' page to get in touch with our support team directly. You can also check our FAQs for common questions.";
     }
 
     // General positive/negative
     if (lowerInput.includes('thank you') || lowerInput.includes('thanks')) {
       setLastBotTopic(null);
-      return "You're welcome! Is there anything else I can help you with?";
+      return "You're most welcome! Is there anything else I can help you with today?";
     }
     if (lowerInput.includes('bye') || lowerInput.includes('goodbye')) {
       setLastBotTopic(null);
@@ -125,7 +160,7 @@ const AiChatbot = () => {
 
     // Fallback response
     setLastBotTopic(null); // Reset context for unrecognized queries
-    return "That's a great question! I'm still learning, but I can help with common queries about our loans. For more detailed information, I recommend visiting our FAQs page or contacting our support team through the 'Contact Us' page.";
+    return "I'm still learning, but I can help with common queries about our loans. Could you please rephrase your question or ask about a specific loan type, eligibility, or application process? You might also find answers on our FAQs page.";
   };
 
   const handleSendMessage = () => {
@@ -163,7 +198,7 @@ const AiChatbot = () => {
           >
             <header className="flex items-center justify-between p-4 border-b border-fintech-border-light">
               <div className="flex items-center space-x-3">
-                <Bot className="h-7 w-7 text-fintech-blue-accent" />
+                <Sparkles className="h-7 w-7 text-fintech-blue-accent" /> {/* Changed Bot to Sparkles */}
                 <div>
                   <h3 className="font-bold text-fintech-text-dark text-lg">Qicky AI Assistant</h3>
                   <p className="text-xs text-fintech-green-success flex items-center">
@@ -192,7 +227,7 @@ const AiChatbot = () => {
                       message.sender === 'user' ? 'justify-end' : 'justify-start'
                     )}
                   >
-                    {message.sender === 'bot' && <Bot className="h-6 w-6 text-fintech-blue-accent flex-shrink-0" />}
+                    {message.sender === 'bot' && <Sparkles className="h-6 w-6 text-fintech-blue-accent flex-shrink-0" />} {/* Changed Bot to Sparkles */}
                     <div
                       className={cn(
                         "max-w-xs rounded-2xl px-4 py-2 text-sm",
