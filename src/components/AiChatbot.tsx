@@ -26,7 +26,7 @@ const AiChatbot = () => {
       setMessages([
         {
           id: 1,
-          text: "Hello! I'm Nivi, your personal assistant. I'm here to help you navigate our loan options and answer your financial questions. How can I assist you today?",
+          text: "Hello! I'm Kiki, your personal assistant. I'm here to help you navigate our loan options and answer your financial questions. How can I assist you today?",
           sender: 'bot',
         },
       ]);
@@ -187,7 +187,7 @@ const AiChatbot = () => {
 
   return (
     <>
-      {/* Nivi Avatar and Speech Bubble */}
+      {/* Kiki Avatar and Speech Bubble */}
       <motion.div
         className="fixed bottom-4 right-4 z-50 cursor-pointer"
         initial={{ opacity: 0, y: 50 }}
@@ -205,15 +205,15 @@ const AiChatbot = () => {
               transition={{ duration: 0.2 }}
               className="absolute bottom-24 right-20 bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-4 py-2 rounded-xl rounded-br-none shadow-lg text-sm whitespace-nowrap"
             >
-              Hi, I am Nivi, Your Personal Assistant.
+              Hi, I am Kiki, Your Personal Assistant.
               <div className="absolute bottom-0 right-0 w-4 h-4 bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end transform translate-x-2 translate-y-2 rotate-45 rounded-br-none"></div>
             </motion.div>
           )}
         </AnimatePresence>
 
-        {/* Nivi Avatar (Placeholder SVG) */}
+        {/* Kiki Avatar (Placeholder SVG) */}
         <div className="relative w-24 h-24">
-          {/* Replace this SVG with your actual Nivi illustration */}
+          {/* Replace this SVG with your actual Kiki illustration */}
           <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
             <defs>
               <linearGradient id="niviGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -237,8 +237,8 @@ const AiChatbot = () => {
             {/* Arm 2 (waving) */}
             <rect x="65" y="55" width="10" height="30" rx="5" fill="url(#niviGradient)" transform="rotate(15 65 55)" />
           </svg>
-          {/* You can replace the SVG above with an <img> tag pointing to your Nivi illustration */}
-          {/* <img src="/path/to/nivi-illustration.png" alt="Nivi AI Assistant" className="w-full h-full object-contain" /> */}
+          {/* You can replace the SVG above with an <img> tag pointing to your Kiki illustration */}
+          {/* <img src="/path/to/kiki-illustration.png" alt="Kiki AI Assistant" className="w-full h-full object-contain" /> */}
         </div>
       </motion.div>
 
@@ -255,7 +255,7 @@ const AiChatbot = () => {
               <div className="flex items-center space-x-3">
                 <User className="h-7 w-7 text-fintech-blue-accent" /> {/* Changed Sparkles to User */}
                 <div>
-                  <h3 className="font-bold text-white text-lg">Nivi, Your Personal Assistant</h3>
+                  <h3 className="font-bold text-white text-lg">Kiki, Your Personal Assistant</h3>
                   <p className="text-xs text-fintech-green-success flex items-center">
                     <span className="relative flex h-2 w-2 mr-2">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-fintech-green-success opacity-75"></span>
