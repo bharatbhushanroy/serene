@@ -38,8 +38,14 @@ const MultiStepLoanForm = () => {
   return (
     <Card className="bg-fintech-simulator-card-bg border border-fintech-border-light p-8 rounded-2xl shadow-2xl shadow-fintech-blue-accent/10 max-w-4xl w-full">
       <CardHeader className="text-center">
+        <CardTitle className="text-4xl font-extrabold text-white mb-4">
+          Loan Application
+        </CardTitle>
+        <p className="text-lg text-fintech-text-muted">Fill out the steps below to apply</p>
+      </CardHeader>
+      <CardContent>
         <Tabs value={currentStep} onValueChange={setCurrentStep} className="w-full">
-          <TabsList className="grid w-full grid-cols-4 bg-gray-800 border border-gray-700 rounded-xl p-1">
+          <TabsList className="grid w-full grid-cols-4 bg-gray-800 border border-gray-700 rounded-xl p-1 mb-8">
             <TabsTrigger
               value="personal"
               className={cn(
@@ -81,114 +87,113 @@ const MultiStepLoanForm = () => {
               <span className="hidden sm:inline">Loan</span>
             </TabsTrigger>
           </TabsList>
+
+          <TabsContent value="personal">
+            <div className="flex items-center text-white text-xl font-semibold mb-6">
+              <User className="h-6 w-6 mr-2 text-fintech-blue-accent" /> Personal Information
+            </div>
+            <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <Label htmlFor="fullName" className="text-fintech-text-muted mb-2 flex items-center">
+                  Full Name <HelpCircle className="h-4 w-4 ml-1 text-gray-500 cursor-help" title="Enter your full legal name" />
+                </Label>
+                <Input
+                  id="fullName"
+                  type="text"
+                  placeholder="Enter your full name"
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                  className="bg-gray-800 border-gray-700 text-white focus:border-fintech-blue-accent"
+                />
+              </div>
+              <div>
+                <Label htmlFor="email" className="text-fintech-text-muted mb-2 flex items-center">
+                  Email Address <HelpCircle className="h-4 w-4 ml-1 text-gray-500 cursor-help" title="Enter your active email address" />
+                </Label>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="Enter your email address"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="bg-gray-800 border-gray-700 text-white focus:border-fintech-blue-accent"
+                />
+              </div>
+              <div>
+                <Label htmlFor="phoneNumber" className="text-fintech-text-muted mb-2 flex items-center">
+                  Phone Number <HelpCircle className="h-4 w-4 ml-1 text-gray-500 cursor-help" title="Enter your 10-digit mobile number" />
+                </Label>
+                <Input
+                  id="phoneNumber"
+                  type="tel"
+                  placeholder="Enter your phone number"
+                  value={phoneNumber}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
+                  className="bg-gray-800 border-gray-700 text-white focus:border-fintech-blue-accent"
+                />
+              </div>
+              <div>
+                <Label htmlFor="dateOfBirth" className="text-fintech-text-muted mb-2 flex items-center">
+                  Date of Birth <HelpCircle className="h-4 w-4 ml-1 text-gray-500 cursor-help" title="Your date of birth (DD/MM/YYYY)" />
+                </Label>
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <Button
+                      variant={"outline"}
+                      className={cn(
+                        "w-full justify-start text-left font-normal bg-gray-800 border-gray-700 text-white hover:bg-gray-700",
+                        !dateOfBirth && "text-fintech-text-muted"
+                      )}
+                    >
+                      <CalendarIcon className="mr-2 h-4 w-4" />
+                      {dateOfBirth ? format(dateOfBirth, "PPP") : <span>Select your date of birth</span>}
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-auto p-0 bg-fintech-simulator-card-bg border-fintech-border-light">
+                    <Calendar
+                      mode="single"
+                      selected={dateOfBirth}
+                      onSelect={setDateOfBirth}
+                      initialFocus
+                    />
+                  </PopoverContent>
+                </Popover>
+              </div>
+              <div className="md:col-span-2">
+                <Label htmlFor="panNumber" className="text-fintech-text-muted mb-2 flex items-center">
+                  PAN Number <HelpCircle className="h-4 w-4 ml-1 text-gray-500 cursor-help" title="Your Permanent Account Number" />
+                </Label>
+                <Input
+                  id="panNumber"
+                  type="text"
+                  placeholder="Enter your PAN number"
+                  value={panNumber}
+                  onChange={(e) => setPanNumber(e.target.value.toUpperCase())}
+                  className="bg-gray-800 border-gray-700 text-white focus:border-fintech-blue-accent"
+                />
+              </div>
+              <div className="md:col-span-2 flex justify-end mt-6">
+                <Button
+                  type="button"
+                  onClick={handleNextStep}
+                  className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity group"
+                >
+                  Next Step <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </div>
+            </form>
+          </TabsContent>
+          {/* Placeholder for other tabs */}
+          <TabsContent value="address">
+            <div className="text-white text-center py-10">Address Information (Coming Soon)</div>
+          </TabsContent>
+          <TabsContent value="employment">
+            <div className="text-white text-center py-10">Employment Details (Coming Soon)</div>
+          </TabsContent>
+          <TabsContent value="loan">
+            <div className="text-white text-center py-10">Loan Details (Coming Soon)</div>
+          </TabsContent>
         </Tabs>
-      </CardHeader>
-      <CardContent>
-        <TabsContent value="personal">
-          <div className="flex items-center text-white text-xl font-semibold mb-6">
-            <User className="h-6 w-6 mr-2 text-fintech-blue-accent" /> Personal Information
-          </div>
-          <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <Label htmlFor="fullName" className="text-fintech-text-muted mb-2 flex items-center">
-                Full Name <HelpCircle className="h-4 w-4 ml-1 text-gray-500 cursor-help" title="Enter your full legal name" />
-              </Label>
-              <Input
-                id="fullName"
-                type="text"
-                placeholder="Enter your full name"
-                value={fullName}
-                onChange={(e) => setFullName(e.target.value)}
-                className="bg-gray-800 border-gray-700 text-white focus:border-fintech-blue-accent"
-              />
-            </div>
-            <div>
-              <Label htmlFor="email" className="text-fintech-text-muted mb-2 flex items-center">
-                Email Address <HelpCircle className="h-4 w-4 ml-1 text-gray-500 cursor-help" title="Enter your active email address" />
-              </Label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="Enter your email address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="bg-gray-800 border-gray-700 text-white focus:border-fintech-blue-accent"
-              />
-            </div>
-            <div>
-              <Label htmlFor="phoneNumber" className="text-fintech-text-muted mb-2 flex items-center">
-                Phone Number <HelpCircle className="h-4 w-4 ml-1 text-gray-500 cursor-help" title="Enter your 10-digit mobile number" />
-              </Label>
-              <Input
-                id="phoneNumber"
-                type="tel"
-                placeholder="Enter your phone number"
-                value={phoneNumber}
-                onChange={(e) => setPhoneNumber(e.target.value)}
-                className="bg-gray-800 border-gray-700 text-white focus:border-fintech-blue-accent"
-              />
-            </div>
-            <div>
-              <Label htmlFor="dateOfBirth" className="text-fintech-text-muted mb-2 flex items-center">
-                Date of Birth <HelpCircle className="h-4 w-4 ml-1 text-gray-500 cursor-help" title="Your date of birth (DD/MM/YYYY)" />
-              </Label>
-              <Popover>
-                <PopoverTrigger asChild>
-                  <Button
-                    variant={"outline"}
-                    className={cn(
-                      "w-full justify-start text-left font-normal bg-gray-800 border-gray-700 text-white hover:bg-gray-700",
-                      !dateOfBirth && "text-fintech-text-muted"
-                    )}
-                  >
-                    <CalendarIcon className="mr-2 h-4 w-4" />
-                    {dateOfBirth ? format(dateOfBirth, "PPP") : <span>Select your date of birth</span>}
-                  </Button>
-                </PopoverTrigger>
-                <PopoverContent className="w-auto p-0 bg-fintech-simulator-card-bg border-fintech-border-light">
-                  <Calendar
-                    mode="single"
-                    selected={dateOfBirth}
-                    onSelect={setDateOfBirth}
-                    initialFocus
-                  />
-                </PopoverContent>
-              </Popover>
-            </div>
-            <div className="md:col-span-2">
-              <Label htmlFor="panNumber" className="text-fintech-text-muted mb-2 flex items-center">
-                PAN Number <HelpCircle className="h-4 w-4 ml-1 text-gray-500 cursor-help" title="Your Permanent Account Number" />
-              </Label>
-              <Input
-                id="panNumber"
-                type="text"
-                placeholder="Enter your PAN number"
-                value={panNumber}
-                onChange={(e) => setPanNumber(e.target.value.toUpperCase())}
-                className="bg-gray-800 border-gray-700 text-white focus:border-fintech-blue-accent"
-              />
-            </div>
-            <div className="md:col-span-2 flex justify-end mt-6">
-              <Button
-                type="button"
-                onClick={handleNextStep}
-                className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity group"
-              >
-                Next Step <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </div>
-          </form>
-        </TabsContent>
-        {/* Placeholder for other tabs */}
-        <TabsContent value="address">
-          <div className="text-white text-center py-10">Address Information (Coming Soon)</div>
-        </TabsContent>
-        <TabsContent value="employment">
-          <div className="text-white text-center py-10">Employment Details (Coming Soon)</div>
-        </TabsContent>
-        <TabsContent value="loan">
-          <div className="text-white text-center py-10">Loan Details (Coming Soon)</div>
-        </TabsContent>
       </CardContent>
     </Card>
   );
