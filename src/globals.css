@@ -122,6 +122,9 @@
     --fintech-dashboard-progress-fill: 217 91% 59%;
     --fintech-dashboard-logout-button-bg: 0 84% 60%;
     --fintech-dashboard-logout-button-hover: 0 70% 50%;
+
+    /* New color for Insurance Section floating cards */
+    --fintech-light-blue-card: 210 80% 85%; /* A light blue color */
   }
 
   .dark {

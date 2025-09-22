@@ -146,6 +146,8 @@ export default {
             'logout-button-bg': '#EF4444', // Red-500
             'logout-button-hover': '#DC2626', // Red-600
           },
+          // New color for Insurance Section floating cards
+          'light-blue-card': 'hsl(210 80% 85%)', // A light blue color
         }
       },
       borderRadius: {

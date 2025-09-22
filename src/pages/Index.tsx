@@ -12,7 +12,8 @@ import TopUpLoansSection from "@/components/TopUpLoansSection";
 import InteractiveLoanSimulatorSection from "@/components/InteractiveLoanSimulatorSection";
 import FinancialFreedomSection from "@/components/FinancialFreedomSection";
 import LoanComparisonCalculator from "@/components/LoanComparisonCalculator";
-import CheckEligibilitySection from "@/components/CheckEligibilitySection"; // Import the new component
+import CheckEligibilitySection from "@/components/CheckEligibilitySection";
+import InsuranceSection from "@/components/InsuranceSection"; // Import the new component
 
 const Index = () => {
   return (
@@ -22,10 +23,11 @@ const Index = () => {
         <HeroSection />
         <ApplyStepsSection />
         <InstantLoansSection />
-        <CheckEligibilitySection /> {/* Add the new component here */}
+        <CheckEligibilitySection />
         <FeaturesSection />
         <TopUpLoansSection />
         <InteractiveLoanSimulatorSection />
+        <InsuranceSection /> {/* Add the new component here */}
         <HowItWorksSection />
         <LoanComparisonCalculator />
         <FinancialFreedomSection />
