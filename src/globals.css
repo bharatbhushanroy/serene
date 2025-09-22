@@ -106,25 +106,36 @@
     --fintech-scroll-indicator-bg: 217.2 91.2% 59.8%; /* Blue for scroll indicator */
 
     /* Dashboard Colors */
-    --fintech-dashboard-bg: 222 47% 10%;
-    --fintech-dashboard-sidebar-bg: 220 30% 18%;
-    --fintech-dashboard-card-bg: 220 30% 18%;
-    --fintech-dashboard-text-primary: 210 40% 98%;
-    --fintech-dashboard-text-secondary: 215 16% 65%;
-    --fintech-dashboard-accent-blue: 217 91% 59%;
-    --fintech-dashboard-accent-green: 140 80% 45%;
-    --fintech-dashboard-accent-red: 0 84% 60%;
-    --fintech-dashboard-border: 217 20% 30%;
-    --fintech-dashboard-input-bg: 217 20% 30%;
-    --fintech-dashboard-chart-bar-1: 217 91% 59%;
-    --fintech-dashboard-chart-bar-2: 140 80% 45%;
-    --fintech-dashboard-progress-bg: 217 20% 30%;
-    --fintech-dashboard-progress-fill: 217 91% 59%;
-    --fintech-dashboard-logout-button-bg: 0 84% 60%;
-    --fintech-dashboard-logout-button-hover: 0 70% 50%;
+    --fintech-dashboard-bg: 200 10% 10%; /* Darker background for dashboard */
+    --fintech-dashboard-sidebar-bg: 200 10% 15%; /* Slightly lighter sidebar */
+    --fintech-dashboard-card-bg: 200 10% 15%; /* Card background */
+    --fintech-dashboard-text-primary: 210 40% 98%; /* White text */
+    --fintech-dashboard-text-secondary: 215 16% 65%; /* Muted text */
+    --fintech-dashboard-accent-blue: 217 91% 59%; /* Blue accent */
+    --fintech-dashboard-accent-green: 140 80% 45%; /* Green accent */
+    --fintech-dashboard-accent-red: 0 84% 60%; /* Red accent */
+    --fintech-dashboard-border: 217 20% 30%; /* Border color */
+    --fintech-dashboard-input-bg: 217 20% 30%; /* Input background */
+    --fintech-dashboard-chart-bar-1: 217 91% 59%; /* Chart bar 1 color */
+    --fintech-dashboard-chart-bar-2: 140 80% 45%; /* Chart bar 2 color */
+    --fintech-dashboard-progress-bg: 217 20% 30%; /* Progress bar background */
+    --fintech-dashboard-progress-fill: 217 91% 59%; /* Progress bar fill */
+    --fintech-dashboard-logout-button-bg: 0 84% 60%; /* Logout button background */
+    --fintech-dashboard-logout-button-hover: 0 70% 50%; /* Logout button hover */
 
     /* New color for Insurance Section floating cards */
     --fintech-light-blue-card: 210 80% 85%; /* A light blue color */
+
+    /* New colors for MoneyForEverythingSection */
+    --fintech-dark-card-bg: 220 10% 15%; /* Dark grey for cards */
+    --fintech-dark-card-bg-secondary: 220 10% 18%; /* Slightly lighter dark grey for some cards */
+    --fintech-dark-text-primary: 210 40% 98%; /* White text */
+    --fintech-dark-text-muted: 215 16% 65%; /* Muted text */
+    --fintech-icon-orange: 36 100% 50%; /* Vibrant orange for icons */
+    --fintech-icon-gray-bg: 220 10% 25%; /* Darker grey for specific icon cards */
+    --fintech-phone-bg: 220 10% 10%; /* Phone frame background */
+    --fintech-phone-border: 220 10% 25%; /* Phone frame border */
+    --fintech-phone-text: 220 10% 10%; /* Text inside phone */
   }
 
   .dark {
@@ -191,4 +202,11 @@
 /* Animation for background blobs */
 .animation-delay-2000 {
   animation-delay: 2s;
+}
+
+/* Custom grid pattern for the phone simulator card */
+.bg-grid-pattern {
+  background-image: linear-gradient(to right, hsl(var(--fintech-dot-pattern)) 1px, transparent 1px),
+                    linear-gradient(to bottom, hsl(var(--fintech-dot-pattern)) 1px, transparent 1px);
+  background-size: 20px 20px;
 }

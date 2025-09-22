@@ -148,6 +148,16 @@ export default {
           },
           // New color for Insurance Section floating cards
           'light-blue-card': 'hsl(210 80% 85%)', // A light blue color
+          // New colors for MoneyForEverythingSection
+          'dark-card-bg': 'hsl(220 10% 15%)', // Dark grey for cards
+          'dark-card-bg-secondary': 'hsl(220 10% 18%)', // Slightly lighter dark grey for some cards
+          'dark-text-primary': 'hsl(210 40% 98%)', // White text
+          'dark-text-muted': 'hsl(215 16% 65%)', // Muted text
+          'icon-orange': 'hsl(36 100% 50%)', // Vibrant orange for icons
+          'icon-gray-bg': 'hsl(220 10% 25%)', // Darker grey for specific icon cards
+          'phone-bg': 'hsl(220 10% 10%)', // Phone frame background
+          'phone-border': 'hsl(220 10% 25%)', // Phone frame border
+          'phone-text': 'hsl(220 10% 10%)', // Text inside phone
         }
       },
       borderRadius: {

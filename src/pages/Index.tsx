@@ -1,6 +1,7 @@
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import MoneyForEverythingSection from "@/components/MoneyForEverythingSection"; // Import the new component
 import ApplyStepsSection from "@/components/ApplyStepsSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
@@ -13,7 +14,7 @@ import InteractiveLoanSimulatorSection from "@/components/InteractiveLoanSimulat
 import FinancialFreedomSection from "@/components/FinancialFreedomSection";
 import LoanComparisonCalculator from "@/components/LoanComparisonCalculator";
 import CheckEligibilitySection from "@/components/CheckEligibilitySection";
-import InsuranceSection from "@/components/InsuranceSection"; // Import the new component
+import InsuranceSection from "@/components/InsuranceSection";
 
 const Index = () => {
   return (
@@ -21,13 +22,14 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
+        <MoneyForEverythingSection /> {/* Add the new component here */}
         <ApplyStepsSection />
         <InstantLoansSection />
         <CheckEligibilitySection />
         <FeaturesSection />
         <TopUpLoansSection />
         <InteractiveLoanSimulatorSection />
-        <InsuranceSection /> {/* Add the new component here */}
+        <InsuranceSection />
         <HowItWorksSection />
         <LoanComparisonCalculator />
         <FinancialFreedomSection />
