@@ -5,15 +5,16 @@ import { motion } from 'framer-motion';
 
 const MadeInBharatSection = () => {
   return (
-    <section className="relative w-full py-8 bg-fintech-dark-bg text-white overflow-hidden">
+    <section className="relative w-full py-8 text-white overflow-hidden
+                    bg-gradient-to-br from-gray-900 to-indigo-950"> {/* Vibrant dark gradient background */}
       <div className="max-w-7xl mx-auto text-center relative z-10">
-        <h2 className="text-2xl md:text-3xl font-extrabold leading-tight mb-2 text-gray-600">
-          Made In <span className="text-fintech-orange-accent">Bharat</span>
+        <h2 className="text-2xl md:text-3xl font-extrabold leading-tight mb-2 text-white"> {/* White text for "Made In" */}
+          Made In <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-yellow-300">Bharat</span> {/* Vibrant gradient for "Bharat" */}
         </h2>
 
         {/* Indian Flag */}
         <div className="flex justify-center mb-4">
-          <svg width="60" height="40" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="shadow-lg rounded-md">
+          <svg width="60" height="40" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="shadow-lg rounded-md filter drop-shadow-lg"> {/* Added drop-shadow for flag */}
             {/* Saffron Stripe */}
             <rect x="0" y="0" width="120" height="26.67" fill="#FF9933"/>
             {/* White Stripe */}
@@ -49,15 +50,26 @@ const MadeInBharatSection = () => {
         >
           <defs>
             <linearGradient id="skylineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#333333" />
-              <stop offset="100%" stopColor="#1A1A1A" />
+              <stop offset="0%" stopColor="#555555" /> {/* Lighter gradient for skyline base */}
+              <stop offset="100%" stopColor="#333333" />
             </linearGradient>
+            {/* Filter for a subtle blue glow on the skyline */}
+            <filter id="skylineGlow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur" />
+              <feOffset dx="0" dy="0" result="offsetBlur" />
+              <feFlood floodColor="#ADD8E6" floodOpacity="0.7" result="floodColor" /> {/* Light blue glow */}
+              <feComposite in="floodColor" in2="offsetBlur" operator="in" result="coloredBlur" />
+              <feMerge>
+                <feMergeNode in="coloredBlur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
           </defs>
           {/* Base ground line */}
           <rect x="0" y="150" width="1400" height="50" fill="url(#skylineGradient)" />
 
           {/* Detailed Skyline elements - Replicated from image */}
-          <g fill="#4A4A4A"> {/* Using a dark grey for the silhouettes */}
+          <g fill="#C0C0C0" filter="url(#skylineGlow)"> {/* Brighter fill and apply glow filter */}
             {/* Group 1: Leftmost structures (e.g., some mosque/palace like structures) */}
             <path d="M0 150 L0 100 L10 90 L20 100 L30 90 L40 100 L40 150 Z" /> {/* Generic building 1 */}
             <circle cx="20" cy="85" r="5" />
