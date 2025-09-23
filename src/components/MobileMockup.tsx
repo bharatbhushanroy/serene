@@ -76,7 +76,7 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className }) => {
         style={{
           transformStyle: 'preserve-3d',
           transformOrigin: 'center center',
-          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 30px rgba(249, 115, 22, 0.3)' // Enhanced shadow
+          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 30px rgba(59, 130, 246, 0.3)' // Enhanced shadow with blue glow
         }}
       >
         {/* Notch */}
