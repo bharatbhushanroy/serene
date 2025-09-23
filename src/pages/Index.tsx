@@ -1,6 +1,6 @@
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import Header from "@/components/Header";
-import InstantLoansHeroSection from "@/components/InstantLoansHeroSection";
+import HeroCarousel from "@/components/HeroCarousel"; // Changed import from InstantLoansHeroSection
 import MoneyForEverythingSection from "@/components/MoneyForEverythingSection";
 import ApplyStepsSection from "@/components/ApplyStepsSection";
 import FeaturesSection from "@/components/FeaturesSection";
@@ -25,7 +25,7 @@ const Index = () => {
     <div className="min-h-screen bg-fintech-background-light text-fintech-text-dark">
       <Header />
       <main>
-        <InstantLoansHeroSection />
+        <HeroCarousel /> {/* Render the new HeroCarousel */}
         <ProductsSection />
         <ApplyStepsSection />
         <QuickLoansFeaturesSection />
