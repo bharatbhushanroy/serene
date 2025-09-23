@@ -59,15 +59,53 @@ const products = [
 ];
 
 const ProductsSection = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  };
+
   return (
-    <section className="relative z-10 w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-main-bg text-white">
-      <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
-          Bringing you the <span className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-transparent bg-clip-text">Best Products</span> from
-        </h2>
-        <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-12">
-          <span className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-transparent bg-clip-text">Top Banks & Financial Institutions</span>
-        </h2>
+    <section className="relative z-10 w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-main-bg text-white overflow-hidden">
+      {/* Animated Background Element */}
+      <motion.div
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 0.1 }}
+        transition={{ duration: 10, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+        className="absolute inset-0 bg-gradient-to-br from-fintech-blue-accent/10 to-fintech-gradient-purple-start/10 rounded-full blur-3xl opacity-0"
+        style={{ width: '80%', height: '80%', top: '10%', left: '10%' }}
+      />
+
+      <div className="max-w-7xl mx-auto text-center relative z-20">
+        <motion.h2
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="text-4xl md:text-5xl font-extrabold leading-tight mb-4"
+        >
+          <motion.span variants={itemVariants}>Bringing you the </motion.span>
+          <motion.span variants={itemVariants} className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-transparent bg-clip-text">Best Products</motion.span>
+          <motion.span variants={itemVariants}> from</motion.span>
+        </motion.h2>
+        <motion.h2
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="text-4xl md:text-5xl font-extrabold leading-tight mb-12"
+        >
+          <motion.span variants={itemVariants} className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-transparent bg-clip-text">Top Banks & Financial Institutions</motion.span>
+        </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product, index) => (
@@ -77,14 +115,14 @@ const ProductsSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.1 }}
-                className="transform hover:scale-[1.02] transition-transform duration-300" // Added hover scale
+                className="transform hover:scale-[1.03] transition-transform duration-300 hover:shadow-glow-blue" // Enhanced hover scale and glow
               >
-                <Card className={cn("p-8 rounded-xl shadow-lg text-white flex flex-col items-center text-center h-full hover:shadow-glow-blue", product.cardGradient)}>
+                <Card className={cn("p-8 rounded-xl shadow-lg text-white flex flex-col items-center text-center h-full", product.cardGradient)}>
                   <div className={cn("p-4 rounded-full mb-6 backdrop-blur-sm", product.iconBgClass)}>
-                    <product.icon className="h-8 w-8 text-white" /> {/* Icons are white on the colored background */}
+                    <product.icon className="h-8 w-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold mb-2 text-white">{product.title}</h3>
-                  <p className="text-base text-gray-200"> {/* Adjusted text color for better contrast on gradients */}
+                  <p className="text-base text-gray-200">
                     {product.description}
                   </p>
                 </Card>
