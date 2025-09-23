@@ -50,14 +50,14 @@ const MadeInBharatSection = () => {
         >
           <defs>
             <linearGradient id="skylineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#555555" /> {/* Lighter gradient for skyline base */}
-              <stop offset="100%" stopColor="#333333" />
+              <stop offset="0%" stopColor="hsl(var(--fintech-dark-bg-lighter))" /> {/* Darker gradient for skyline base */}
+              <stop offset="100%" stopColor="hsl(var(--fintech-main-bg))" />
             </linearGradient>
             {/* Filter for a subtle blue glow on the skyline */}
             <filter id="skylineGlow" x="-50%" y="-50%" width="200%" height="200%">
               <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur" />
               <feOffset dx="0" dy="0" result="offsetBlur" />
-              <feFlood floodColor="#ADD8E6" floodOpacity="0.7" result="floodColor" /> {/* Light blue glow */}
+              <feFlood floodColor="hsl(var(--fintech-blue-accent))" floodOpacity="0.7" result="floodColor" /> {/* Light blue glow */}
               <feComposite in="floodColor" in2="offsetBlur" operator="in" result="coloredBlur" />
               <feMerge>
                 <feMergeNode in="coloredBlur" />
@@ -69,7 +69,7 @@ const MadeInBharatSection = () => {
           <rect x="0" y="150" width="1400" height="50" fill="url(#skylineGradient)" />
 
           {/* Detailed Skyline elements - Replicated from image */}
-          <g fill="#C0C0C0" filter="url(#skylineGlow)"> {/* Brighter fill and apply glow filter */}
+          <g fill="hsl(var(--fintech-text-dark))" filter="url(#skylineGlow)"> {/* Brighter fill and apply glow filter */}
             {/* Group 1: Leftmost structures (e.g., some mosque/palace like structures) */}
             <path d="M0 150 L0 100 L10 90 L20 100 L30 90 L40 100 L40 150 Z" /> {/* Generic building 1 */}
             <circle cx="20" cy="85" r="5" />
