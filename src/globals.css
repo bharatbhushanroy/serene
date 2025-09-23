@@ -72,7 +72,7 @@
     --fintech-gradient-cyan-end: 190 70% 55%;
 
     /* Specific Sections */
-    --fintech-peach-background: 30 80% 20%; /* Darker, muted orange/brown for contrast */
+    --fintech-peach-background: 40 90% 60%; /* Brighter, golden orange for floating cards */
     --fintech-dark-bg: 220 15% 8%; /* Same as main-bg */
     --fintech-topup-line: 210 80% 55%; /* Electric Blue */
     --fintech-topup-gradient-start: 210 80% 55%;
@@ -155,6 +155,11 @@
     --fintech-loan-card-green-darkest: 140 25% 10%;
 
     --fintech-popular-badge-bg: 30 90% 50%; /* Energetic Orange */
+
+    /* Kiki Avatar Specific Gradient */
+    --fintech-kiki-body-gradient-start: 30 90% 50%; /* Energetic Orange */
+    --fintech-kiki-body-gradient-end: 20 80% 40%; /* Darker Orange/Brown */
+    --fintech-kiki-head-color: 30 80% 30%; /* Darker peach/brown for head */
   }
 
   /* Removed the old .dark block as the new theme will be the default */

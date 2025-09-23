@@ -15,55 +15,55 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className }) => {
       {/* Floating Cards */}
       {/* Top-Left Card */}
       <motion.div
-        className="absolute top-[10%] left-[-35%] w-[110px] h-[110px] bg-fintech-peach-background p-3 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark -rotate-3 z-10
+        className="absolute top-[10%] left-[-35%] w-[110px] h-[110px] bg-fintech-peach-background p-3 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-gray-800 -rotate-3 z-10
                       lg:top-[15%] lg:-left-[20%] lg:w-[160px] lg:h-[160px] animate-card-float-1 animation-delay-2000" // Adjusted mobile positioning and size
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
         <Banknote className="h-5 w-5 text-fintech-orange-accent mb-1" />
-        <p className="text-xs text-gray-700">Get Up To</p>
+        <p className="text-xs text-gray-800">Get Up To</p>
         <p className="text-lg font-bold text-fintech-orange-accent">₹5 Lakhs</p>
-        <p className="text-xs text-gray-700">Loan</p>
+        <p className="text-xs text-gray-800">Loan</p>
       </motion.div>
       {/* Top-Right Card */}
       <motion.div
-        className="absolute top-[10%] right-[-35%] w-[110px] h-[110px] bg-fintech-peach-background p-3 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark rotate-3 z-10
+        className="absolute top-[10%] right-[-35%] w-[110px] h-[110px] bg-fintech-peach-background p-3 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-gray-800 rotate-3 z-10
                       lg:top-[15%] lg:-right-[20%] lg:w-[160px] lg:h-[160px] animate-card-float-2 animation-delay-3000" // Adjusted mobile positioning and size
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.4 }}
       >
         <Percent className="h-5 w-5 text-fintech-orange-accent mb-1" />
-        <p className="text-xs text-gray-700">Rate starting from</p>
+        <p className="text-xs text-gray-800">Rate starting from</p>
         <p className="text-lg font-bold text-fintech-orange-accent">0.88%</p>
-        <p className="text-xs text-gray-700">per month</p>
+        <p className="text-xs text-gray-800">per month</p>
       </motion.div>
       {/* Bottom-Left Card */}
       <motion.div
-        className="absolute bottom-[10%] left-[-35%] w-[110px] h-[110px] bg-fintech-peach-background p-3 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark rotate-3 z-10
+        className="absolute bottom-[10%] left-[-35%] w-[110px] h-[110px] bg-fintech-peach-background p-3 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-gray-800 rotate-3 z-10
                       lg:bottom-[15%] lg:-left-[20%] lg:w-[160px] lg:h-[160px] animate-card-float-3 animation-delay-4000" // Adjusted mobile positioning and size
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.6 }}
       >
         <Landmark className="h-5 w-5 text-fintech-orange-accent mb-1" />
-        <p className="text-xs text-gray-700">Transfer to</p>
+        <p className="text-xs text-gray-800">Transfer to</p>
         <p className="text-lg font-bold text-fintech-orange-accent">Your Bank</p>
-        <p className="text-xs text-gray-700">In Seconds</p>
+        <p className="text-xs text-gray-800">In Seconds</p>
       </motion.div>
       {/* Bottom-Right Card */}
       <motion.div
-        className="absolute bottom-[10%] right-[-35%] w-[110px] h-[110px] bg-fintech-peach-background p-3 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-fintech-text-dark -rotate-3 z-10
+        className="absolute bottom-[10%] right-[-35%] w-[110px] h-[110px] bg-fintech-peach-background p-3 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-gray-800 -rotate-3 z-10
                       lg:bottom-[15%] lg:-right-[20%] lg:w-[160px] lg:h-[160px] animate-card-float-1 animation-delay-5000" // Adjusted mobile positioning and size
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.8 }}
       >
         <CalendarCheck className="h-5 w-5 text-fintech-orange-accent mb-1" />
-        <p className="text-xs text-gray-700">Repay EMI in</p>
+        <p className="text-xs text-gray-800">Repay EMI in</p>
         <p className="text-lg font-bold text-fintech-orange-accent">3 to 36</p>
-        <p className="text-xs text-gray-700">Months</p>
+        <p className="text-xs text-gray-800">Months</p>
       </motion.div>
 
       {/* Phone Frame */}
@@ -114,7 +114,7 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className }) => {
               <p className="text-sm text-gray-600 mb-4">Select the amount you want to check it's EMI and interest</p>
               <div className="flex space-x-2">
                 <div className="flex-1 bg-gray-100 rounded-lg p-3 text-center">
-                  <p className="text-sm text-gray-500">Repay in upto</p>
+                  <p className="text-sm text-white">Repay in upto</p>
                   <p className="text-2xl font-bold text-[#F97316]">36 <span className="text-sm">MONTHS</span></p>
                 </div>
                 <div className="flex-1 bg-gray-100 rounded-lg p-3 text-center">

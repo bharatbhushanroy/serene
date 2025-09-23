@@ -217,14 +217,14 @@ const AiChatbot = () => {
           <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
             <defs>
               <linearGradient id="niviGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="hsl(var(--fintech-button-primary-gradient-start))" /> {/* Orange */}
-                <stop offset="100%" stopColor="hsl(var(--fintech-button-primary-gradient-end))" /> {/* Amber */}
+                <stop offset="0%" stopColor="hsl(var(--fintech-kiki-body-gradient-start))" />
+                <stop offset="100%" stopColor="hsl(var(--fintech-kiki-body-gradient-end))" />
               </linearGradient>
             </defs>
             {/* Body */}
             <circle cx="50" cy="75" r="20" fill="url(#niviGradient)" />
             {/* Head */}
-            <circle cx="50" cy="40" r="25" fill="#FFDAB9" /> {/* Skin tone */}
+            <circle cx="50" cy="40" r="25" fill="hsl(var(--fintech-kiki-head-color))" /> {/* Skin tone */}
             {/* Hair */}
             <path d="M25 40 C20 10 80 10 75 40 L75 50 C70 70 30 70 25 50 Z" fill="#4A2C2A" /> {/* Dark brown hair */}
             {/* Eyes */}
