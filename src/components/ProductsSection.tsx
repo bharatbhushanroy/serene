@@ -12,37 +12,49 @@ const products = [
     icon: DollarSign,
     title: "Personal Loan",
     description: "Quick funds for personal needs.",
-    link: "/products/personal-loan", // Updated link
+    link: "/products/personal-loan",
+    cardGradient: "bg-gradient-to-br from-fintech-gradient-blue-start to-fintech-gradient-blue-end",
+    iconBgClass: "bg-white/20 ring-2 ring-white/50",
   },
   {
     icon: Briefcase,
     title: "Business Loan",
     description: "Fuel your business growth.",
-    link: "/products/business-loan", // Updated link
+    link: "/products/business-loan",
+    cardGradient: "bg-gradient-to-br from-fintech-gradient-purple-start to-fintech-gradient-purple-end",
+    iconBgClass: "bg-white/20 ring-2 ring-white/50",
   },
   {
     icon: Home,
     title: "Home Loan",
     description: "Achieve your dream home.",
-    link: "/products/home-loan", // Updated link
+    link: "/products/home-loan",
+    cardGradient: "bg-gradient-to-br from-fintech-gradient-cyan-start to-fintech-gradient-cyan-end",
+    iconBgClass: "bg-white/20 ring-2 ring-white/50",
   },
   {
     icon: Gauge,
     title: "Free Credit Score",
     description: "Check your credit health.",
-    link: "/products/free-credit-score", // Updated link
+    link: "/products/free-credit-score",
+    cardGradient: "bg-gradient-to-br from-fintech-gradient-pink-start to-fintech-gradient-pink-end",
+    iconBgClass: "bg-white/20 ring-2 ring-white/50",
   },
   {
     icon: CreditCard,
     title: "Credit Cards",
     description: "Explore best credit card offers.",
-    link: "/products/credit-cards", // Updated link
+    link: "/products/credit-cards",
+    cardGradient: "bg-gradient-to-br from-fintech-blue-accent to-fintech-gradient-purple-start",
+    iconBgClass: "bg-white/20 ring-2 ring-white/50",
   },
   {
     icon: BarChart,
     title: "Personal Finance",
     description: "Manage your finances wisely.",
-    link: "/products/personal-finance", // Updated link
+    link: "/products/personal-finance",
+    cardGradient: "bg-gradient-to-br from-fintech-green-success to-fintech-cyan-light",
+    iconBgClass: "bg-white/20 ring-2 ring-white/50",
   },
 ];
 
@@ -53,9 +65,9 @@ const ProductsSection = () => {
         <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
           Bringing you the <span className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-transparent bg-clip-text">Best Products</span> from
         </h2>
-        <p className="text-4xl md:text-5xl font-extrabold leading-tight mb-12 text-white">
-          Top Banks & Financial Institutions
-        </p>
+        <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-12">
+          <span className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-transparent bg-clip-text">Top Banks & Financial Institutions</span>
+        </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product, index) => (
@@ -65,13 +77,14 @@ const ProductsSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.1 }}
+                className="transform hover:scale-[1.02] transition-transform duration-300" // Added hover scale
               >
-                <Card className="bg-fintech-simulator-card-bg border border-fintech-border-light p-8 rounded-xl shadow-lg text-white flex flex-col items-center text-center transition-all duration-300 transform hover:-translate-y-2 hover:shadow-glow-blue">
-                  <div className="p-4 bg-fintech-blue-accent/20 rounded-full mb-6 backdrop-blur-sm">
-                    <product.icon className="h-8 w-8 text-fintech-blue-accent" />
+                <Card className={cn("p-8 rounded-xl shadow-lg text-white flex flex-col items-center text-center h-full hover:shadow-glow-blue", product.cardGradient)}>
+                  <div className={cn("p-4 rounded-full mb-6 backdrop-blur-sm", product.iconBgClass)}>
+                    <product.icon className="h-8 w-8 text-white" /> {/* Icons are white on the colored background */}
                   </div>
                   <h3 className="text-2xl font-bold mb-2 text-white">{product.title}</h3>
-                  <p className="text-base text-fintech-text-muted">
+                  <p className="text-base text-gray-200"> {/* Adjusted text color for better contrast on gradients */}
                     {product.description}
                   </p>
                 </Card>
