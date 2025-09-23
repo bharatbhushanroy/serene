@@ -4,211 +4,170 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Base Shadcn/UI colors - adjusted for dark theme compatibility */
+    --background: 220 20% 8%; /* Deep dark blue */
+    --foreground: 210 40% 98%; /* Off-white */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 15% 12%; /* Slightly lighter dark for cards */
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 15% 12%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 210 40% 98%; /* Primary elements (e.g., text on dark buttons) */
+    --primary-foreground: 220 20% 8%; /* Text on primary elements */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220 15% 18%; /* Secondary elements */
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 15% 18%;
+    --muted-foreground: 215 16% 65%; /* Light grey */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 220 15% 18%;
+    --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84.2% 60.2%; /* Vibrant Red */
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 15% 25%; /* Subtle dark border */
+    --input: 220 15% 25%;
+    --ring: 210 90% 60%; /* Electric Blue for focus rings */
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Sidebar colors (adjusted for dark theme) */
+    --sidebar-background: 220 15% 12%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 210 90% 60%; /* Electric Blue */
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 220 15% 18%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 220 15% 25%;
+    --sidebar-ring: 210 90% 60%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* New vibrant dark fintech theme colors */
+    --fintech-main-bg: 220 20% 8%; /* Deep dark blue */
+    --fintech-dot-pattern-new: 220 15% 12%; /* Slightly lighter dark blue for dots */
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* Primary button gradient (Vibrant Purple to Pink) */
+    --fintech-button-primary-gradient-start: 260 70% 60%;
+    --fintech-button-primary-gradient-end: 330 80% 60%;
 
-    --sidebar-primary-foreground: 0 0% 98%;
+    /* General Accents */
+    --fintech-blue-accent: 210 90% 60%; /* Electric Blue */
+    --fintech-blue-soft: 210 70% 40%; /* Muted Electric Blue */
+    --fintech-cyan-light: 180 80% 60%; /* Vibrant Cyan */
+    --fintech-green-success: 140 80% 50%; /* Bright Green */
+    --fintech-orange-accent: 36 100% 50%; /* Vibrant Orange */
+    --fintech-star-yellow: 40 90% 60%; /* Amber Yellow */
 
-    --sidebar-accent: 240 4.8% 95.9%;
+    /* Text & UI Elements */
+    --fintech-background-light: 220 20% 8%; /* Now the main dark background */
+    --fintech-background-offwhite: 220 15% 12%; /* Slightly lighter dark for subtle contrast */
+    --fintech-text-dark: 210 40% 98%; /* Off-white for main text */
+    --fintech-text-muted: 215 16% 65%; /* Light grey for secondary text */
+    --fintech-border-light: 220 15% 25%; /* Subtle dark border */
+    --fintech-card-light: 220 15% 12%; /* Card background, slightly lighter than main bg */
+    --fintech-simulator-card-bg: 220 15% 12%; /* Same as card-light for consistency */
+    --fintech-dark-bg-lighter: 220 15% 18%; /* Even lighter dark for specific elements */
 
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-
-    /* New main background color from image */
-    --fintech-main-bg: 260 60% 12%; /* Deep purple from image */
-    --fintech-dot-pattern-new: 260 30% 20%; /* Slightly lighter purple for dots */
-
-    /* New button gradient for primary actions */
-    --fintech-button-primary-gradient-start: 260 70% 60%; /* Purple */
-    --fintech-button-primary-gradient-end: 330 80% 60%; /* Pink */
-
-    /* New colors for the "Apply Loan in Simple Steps" section */
-    --fintech-peach-background: 30 100% 96%; /* A light peach/orange */
-    --fintech-orange-accent: 36 100% 50%; /* A vibrant orange */
-
-    /* New colors for the Instant Personal Loans section */
-    --fintech-dark-bg: 240 10% 3.9%; /* A very dark blue/purple */
-    --fintech-gradient-blue-start: 235 69% 61%;
-    --fintech-gradient-blue-end: 235 69% 71%;
+    /* Gradients (re-evaluated for vibrancy) */
+    --fintech-gradient-blue-start: 210 90% 60%;
+    --fintech-gradient-blue-end: 210 90% 70%;
     --fintech-gradient-purple-start: 260 70% 60%;
     --fintech-gradient-purple-end: 260 70% 70%;
     --fintech-gradient-pink-start: 330 80% 60%;
     --fintech-gradient-pink-end: 330 80% 70%;
     --fintech-gradient-cyan-start: 190 80% 50%;
     --fintech-gradient-cyan-end: 190 80% 60%;
-    --fintech-star-yellow: 40 90% 60%;
 
-    /* New colors for the Top-Up Loans section */
-    --fintech-dark-purple-bg: 240 10% 3.9%; /* Very dark purple/black */
-    --fintech-topup-line: 260 70% 70%; /* Light purple for the line */
-    --fintech-topup-gradient-start: 260 70% 60%; /* Purple for title gradient start */
-    --fintech-topup-gradient-end: 330 80% 60%; /* Pink for title gradient end */
+    /* Specific Sections */
+    --fintech-peach-background: 30 80% 20%; /* Darker, muted orange/brown for contrast */
+    --fintech-dark-bg: 220 20% 8%; /* Same as main-bg */
+    --fintech-topup-line: 210 90% 60%; /* Electric Blue */
+    --fintech-topup-gradient-start: 260 70% 60%;
+    --fintech-topup-gradient-end: 330 80% 60%;
     --fintech-card-pink-start: 330 80% 60%;
     --fintech-card-pink-end: 330 80% 70%;
     --fintech-card-purple-start: 260 70% 60%;
     --fintech-card-purple-end: 260 70% 70%;
-    --fintech-card-blue-start: 235 69% 61%;
-    --fintech-card-blue-end: 235 69% 71%;
+    --fintech-card-blue-start: 210 90% 60%;
+    --fintech-card-blue-end: 210 90% 70%;
     --fintech-card-darkblue-start: 220 80% 40%;
     --fintech-card-darkblue-end: 220 80% 50%;
-    --fintech-phone-bg-blue: 210 80% 40%; /* Blue background inside phone */
-    --fintech-phone-text-blue: 210 40% 98%; /* White text inside phone */
-    --fintech-phone-star-yellow: 40 90% 60%; /* Yellow stars inside phone */
-
-    /* New color for Interactive Loan Simulator */
-    --fintech-simulator-card-bg: 220 10% 15%; /* Dark grey/blue for simulator card */
-
-    /* New colors for Financial Freedom Section */
-    --fintech-card-dark-purple: 250 30% 15%; /* Dark purple */
-    --fintech-card-dark-red-purple: 330 30% 15%; /* Dark reddish-purple */
-    --fintech-button-gradient-start: 240 70% 60%; /* Purple */
-    --fintech-button-gradient-end: 280 70% 70%; /* Lighter purple/pink */
-    --fintech-dark-bg-lighter: 240 10% 8%; /* Slightly lighter dark background for CTA */
-
-    /* New colors for Hero Section and Header */
-    --fintech-header-bg: 240 10% 8%; /* Dark background for header */
-    --fintech-header-text: 210 40% 98%; /* Light text for header */
-    --fintech-hero-dark-bg: 240 10% 3.9%; /* Dark background for hero section */
-    --fintech-card-mockup-purple: 270 70% 50%; /* Purple */
-    --fintech-card-mockup-blue: 220 70% 50%; /* Blue */
-    --fintech-card-mockup-pink: 330 70% 50%; /* Pink */
+    --fintech-phone-bg-blue: 210 90% 30%; /* Darker electric blue */
+    --fintech-phone-text-blue: 210 40% 98%; /* White text */
+    --fintech-phone-star-yellow: 40 90% 60%; /* Amber Yellow */
+    --fintech-card-dark-purple: 260 30% 15%; /* Deep purple */
+    --fintech-card-dark-red-purple: 330 30% 15%; /* Deep reddish-purple */
+    --fintech-button-gradient-start: 260 70% 60%; /* Purple */
+    --fintech-button-gradient-end: 330 80% 60%; /* Pink */
+    --fintech-header-bg: 220 20% 8%; /* Same as main-bg */
+    --fintech-header-text: 210 40% 98%; /* Off-white */
+    --fintech-hero-dark-bg: 220 20% 8%; /* Same as main-bg */
+    --fintech-card-mockup-purple: 270 70% 50%; /* Vibrant purple */
+    --fintech-card-mockup-blue: 220 70% 50%; /* Vibrant blue */
+    --fintech-card-mockup-pink: 330 70% 50%; /* Vibrant pink */
     --fintech-card-chip-yellow: 40 90% 60%; /* Gold */
-    --fintech-card-chip-light: 210 40% 98%; /* Light gray for chip reflection */
-    --fintech-dot-pattern: 240 10% 20%; /* Color for the dots in the background */
-    --fintech-scroll-indicator-bg: 217.2 91.2% 59.8%; /* Blue for scroll indicator */
+    --fintech-card-chip-light: 210 40% 98%; /* Off-white */
+    --fintech-scroll-indicator-bg: 210 90% 60%; /* Electric Blue */
 
     /* Dashboard Colors */
-    --fintech-dashboard-bg: 200 10% 10%; /* Darker background for dashboard */
-    --fintech-dashboard-sidebar-bg: 200 10% 15%; /* Slightly lighter sidebar */
-    --fintech-dashboard-card-bg: 200 10% 15%; /* Card background */
-    --fintech-dashboard-text-primary: 210 40% 98%; /* White text */
-    --fintech-dashboard-text-secondary: 215 16% 65%; /* Muted text */
-    --fintech-dashboard-accent-blue: 217 91% 59%; /* Blue accent */
-    --fintech-dashboard-accent-green: 140 80% 45%; /* Green accent */
-    --fintech-dashboard-accent-red: 0 84% 60%; /* Red accent */
-    --fintech-dashboard-border: 217 20% 30%; /* Border color */
-    --fintech-dashboard-input-bg: 217 20% 30%; /* Input background */
-    --fintech-dashboard-chart-bar-1: 217 91% 59%; /* Chart bar 1 color */
-    --fintech-dashboard-chart-bar-2: 140 80% 45%; /* Chart bar 2 color */
-    --fintech-dashboard-progress-bg: 217 20% 30%; /* Progress bar background */
-    --fintech-dashboard-progress-fill: 217 91% 59%; /* Progress bar fill */
-    --fintech-dashboard-logout-button-bg: 0 84% 60%; /* Logout button background */
-    --fintech-dashboard-logout-button-hover: 0 70% 50%; /* Logout button hover */
+    --fintech-dashboard-bg: 220 20% 8%;
+    --fintech-dashboard-sidebar-bg: 220 15% 12%;
+    --fintech-dashboard-card-bg: 220 15% 12%;
+    --fintech-dashboard-text-primary: 210 40% 98%;
+    --fintech-dashboard-text-secondary: 215 16% 65%;
+    --fintech-dashboard-accent-blue: 210 90% 60%;
+    --fintech-dashboard-accent-green: 140 80% 50%;
+    --fintech-dashboard-accent-red: 0 84% 60%;
+    --fintech-dashboard-border: 220 15% 25%;
+    --fintech-dashboard-input-bg: 220 15% 25%;
+    --fintech-dashboard-chart-bar-1: 210 90% 60%;
+    --fintech-dashboard-chart-bar-2: 140 80% 50%;
+    --fintech-dashboard-progress-bg: 220 15% 25%;
+    --fintech-dashboard-progress-fill: 210 90% 60%;
+    --fintech-dashboard-logout-button-bg: 0 84% 60%;
+    --fintech-dashboard-logout-button-hover: 0 70% 50%;
 
-    /* New color for Insurance Section floating cards */
-    --fintech-light-blue-card: 210 80% 85%; /* A light blue color */
-
-    /* New colors for MoneyForEverythingSection */
-    --fintech-dark-card-bg: 220 10% 15%; /* Dark grey for cards */
-    --fintech-dark-card-bg-secondary: 220 10% 18%; /* Slightly lighter dark grey for some cards */
-    --fintech-dark-text-primary: 210 40% 98%; /* White text */
-    --fintech-dark-text-muted: 215 16% 65%; /* Muted text */
-    --fintech-icon-orange: 36 100% 50%; /* Vibrant orange for icons */
-    --fintech-icon-gray-bg: 220 10% 25%; /* Darker grey for specific icon cards */
-    --fintech-phone-bg: 220 10% 10%; /* Phone frame background */
-    --fintech-phone-border: 220 10% 25%; /* Phone frame border */
-    --fintech-phone-text: 220 10% 10%; /* Text inside phone */
-
-    /* New color for India map section */
+    /* Other specific colors */
+    --fintech-light-blue-card: 210 50% 20%; /* Darker blue for card */
+    --fintech-dark-card-bg: 220 15% 12%;
+    --fintech-dark-card-bg-secondary: 220 15% 18%;
+    --fintech-dark-text-primary: 210 40% 98%;
+    --fintech-dark-text-muted: 215 16% 65%;
+    --fintech-icon-orange: 36 100% 50%;
+    --fintech-icon-gray-bg: 220 15% 25%;
+    --fintech-phone-bg: 220 15% 10%;
+    --fintech-phone-border: 220 15% 20%;
+    --fintech-phone-text: 210 40% 98%; /* White text inside phone */
     --fintech-india-white: 0 0% 100%; /* Pure white for the middle stripe */
 
-    /* New colors for Newsletter Section */
-    --fintech-newsletter-orange-bg: 30 100% 50%; /* #FF7F00 */
-    --fintech-newsletter-bird-yellow: 45 100% 50%; /* #FFD700 */
-    --fintech-newsletter-bird-black: 220 10% 10%; /* #1A1A1A */
-    --fintech-newsletter-envelope-blue: 217 91% 59%; /* #3B82F6 */
-    --fintech-newsletter-cloud-white: 0 0% 100%; /* #FFFFFF */
-    --fintech-newsletter-cloud-lightblue: 217 91% 85%; /* #BFDBFE */
+    /* Newsletter Section */
+    --fintech-newsletter-orange-bg: 30 80% 25%; /* Darker orange background */
+    --fintech-newsletter-bird-yellow: 45 100% 50%;
+    --fintech-newsletter-bird-black: 220 10% 10%;
+    --fintech-newsletter-envelope-blue: 210 90% 60%;
+    --fintech-newsletter-cloud-white: 210 40% 98%; /* Off-white cloud */
+    --fintech-newsletter-cloud-lightblue: 210 70% 40%; /* Muted electric blue cloud */
 
-    /* New colors for LoanProductsSection */
-    --fintech-loan-card-purple: 260 60% 25%; /* Darker purple for Personal Loan card */
-    --fintech-loan-card-purple-darker: 260 60% 20%; /* Even darker for button */
-    --fintech-loan-card-purple-darkest: 260 60% 15%; /* Darkest for button hover */
+    /* Loan Products Section */
+    --fintech-loan-card-purple: 260 40% 20%; /* Darker, muted purple */
+    --fintech-loan-card-purple-darker: 260 40% 15%;
+    --fintech-loan-card-purple-darkest: 260 40% 10%;
 
-    --fintech-loan-card-blue: 220 60% 25%; /* Dark blue for Home Loan card */
-    --fintech-loan-card-blue-darker: 220 60% 20%; /* Even darker for button */
-    --fintech-loan-card-blue-darkest: 220 60% 15%; /* Darkest for button hover */
+    --fintech-loan-card-blue: 210 40% 20%; /* Darker, muted blue */
+    --fintech-loan-card-blue-darker: 210 40% 15%;
+    --fintech-loan-card-blue-darkest: 210 40% 10%;
 
-    --fintech-loan-card-green: 140 40% 25%; /* Dark green for Education Loan card */
-    --fintech-loan-card-green-darker: 140 40% 20%; /* Even darker for button */
-    --fintech-loan-card-green-darkest: 140 40% 15%; /* Darkest for button hover */
+    --fintech-loan-card-green: 140 30% 20%; /* Darker, muted green */
+    --fintech-loan-card-green-darker: 140 30% 15%;
+    --fintech-loan-card-green-darkest: 140 30% 10%;
 
-    --fintech-popular-badge-bg: 36 100% 50%; /* Vibrant orange for POPULAR badge */
+    --fintech-popular-badge-bg: 36 100% 50%; /* Vibrant Orange */
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
+  /* Removed the old .dark block as the new theme will be the default */
 }
 
 @layer base {
