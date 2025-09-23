@@ -12,15 +12,15 @@ import { cn } from '@/lib/utils';
 interface IconCardProps {
   icon: React.ElementType;
   text: string;
-  bgColor?: string;
+  backgroundClass?: string; // Changed from bgColor to be more generic for gradients
   textColor?: string;
   iconColor?: string;
   className?: string;
 }
 
-const IconCard: React.FC<IconCardProps> = ({ icon: Icon, text, bgColor = 'bg-fintech-dark-card-bg', textColor = 'text-fintech-dark-text-primary', iconColor = 'text-fintech-icon-orange', className }) => (
+const IconCard: React.FC<IconCardProps> = ({ icon: Icon, text, backgroundClass = 'bg-fintech-dark-card-bg', textColor = 'text-fintech-dark-text-primary', iconColor = 'text-fintech-icon-orange', className }) => (
   <motion.div
-    className={cn("p-6 rounded-2xl flex flex-col items-center justify-center text-center h-full", bgColor, className)}
+    className={cn("p-6 rounded-2xl flex flex-col items-center justify-center text-center h-full", backgroundClass, className)}
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, amount: 0.3 }}
@@ -73,7 +73,7 @@ const PhoneSimulatorMockup = () => {
 
 const MoneyForEverythingSection = () => {
   return (
-    <section className="relative w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-main-bg text-white overflow-hidden">
+    <section className="relative w-full py-20 px-6 md:px-12 lg:px-24 bg-gradient-to-br from-fintech-main-bg to-fintech-dark-bg-lighter text-white overflow-hidden">
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
           Money for <span className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-transparent bg-clip-text">everything</span> you need
@@ -85,31 +85,31 @@ const MoneyForEverythingSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {/* Prominent "What can I use this money for?" card */}
           <motion.div
-            className="md:col-span-2 lg:col-span-1 p-8 rounded-2xl flex flex-col items-start justify-center text-left bg-fintech-dark-card-bg min-h-[200px]"
+            className="md:col-span-2 lg:col-span-1 p-8 rounded-2xl flex flex-col items-start justify-center text-left bg-gradient-to-br from-fintech-gradient-blue-start to-fintech-gradient-purple-end min-h-[200px] text-white"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <h3 className="text-3xl font-bold text-fintech-dark-text-primary leading-tight mb-4">
+            <h3 className="text-3xl font-bold text-white leading-tight mb-4">
               What can I use this <span className="text-fintech-icon-orange">money</span> for?
             </h3>
-            <p className="text-fintech-dark-text-muted text-base">
+            <p className="text-gray-200 text-base">
               From daily essentials to unexpected expenses, Qicky provides quick funds for all your immediate needs.
             </p>
           </motion.div>
 
           {/* Grid of smaller Icon Cards */}
-          <IconCard icon={ShoppingBag} text="Daily Groceries" />
-          <IconCard icon={Book} text="Books & Education" />
-          <IconCard icon={Fuel} text="Fuel & Transport" />
-          <IconCard icon={Home} text="House Rent" />
-          <IconCard icon={Plane} text="Travel Expenses" />
-          <IconCard icon={Banknote} text="Get up to ₹ 20,000" iconColor="text-white" bgColor="bg-fintech-icon-gray-bg" textColor="text-white" />
+          <IconCard icon={ShoppingBag} text="Daily Groceries" backgroundClass="bg-gradient-to-br from-fintech-gradient-purple-start to-fintech-gradient-pink-end" iconColor="text-white" textColor="text-white" />
+          <IconCard icon={Book} text="Books & Education" backgroundClass="bg-gradient-to-br from-fintech-gradient-cyan-start to-fintech-gradient-blue-end" iconColor="text-white" textColor="text-white" />
+          <IconCard icon={Fuel} text="Fuel & Transport" backgroundClass="bg-gradient-to-br from-fintech-gradient-pink-start to-fintech-gradient-cyan-end" iconColor="text-white" textColor="text-white" />
+          <IconCard icon={Home} text="House Rent" backgroundClass="bg-gradient-to-br from-fintech-gradient-blue-start to-fintech-gradient-purple-end" iconColor="text-white" textColor="text-white" />
+          <IconCard icon={Plane} text="Travel Expenses" backgroundClass="bg-gradient-to-br from-fintech-gradient-purple-start to-fintech-gradient-cyan-end" iconColor="text-white" textColor="text-white" />
+          <IconCard icon={Banknote} text="Get up to ₹ 20,000" iconColor="text-white" backgroundClass="bg-gradient-to-br from-fintech-orange-accent to-fintech-gradient-pink-start" textColor="text-white" />
         </div>
 
         {/* Phone Simulator Mockup with CTA */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-fintech-dark-card-bg rounded-2xl p-8 shadow-2xl relative overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-gradient-to-br from-fintech-gradient-blue-start to-fintech-gradient-purple-end rounded-2xl p-8 shadow-2xl relative overflow-hidden">
           {/* Background grid pattern */}
           <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
           <div className="relative z-10 flex justify-center lg:justify-end">
@@ -119,7 +119,7 @@ const MoneyForEverythingSection = () => {
             <h3 className="text-4xl font-bold text-white mb-4 leading-tight">
               Pay nominal interest only on what you use.
             </h3>
-            <p className="text-lg text-fintech-text-muted mb-8">
+            <p className="text-gray-200 mb-8">
               Experience financial flexibility with Qicky. Only pay interest on the amount you actually borrow, not the entire approved limit.
             </p>
             <Link to="/signup">
@@ -130,7 +130,7 @@ const MoneyForEverythingSection = () => {
                 Sign Up Now <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
-            <p className="text-xs text-fintech-text-muted mt-2">*Terms & Conditions Apply</p>
+            <p className="text-xs text-gray-300 mt-2">*Terms & Conditions Apply</p>
           </div>
         </div>
       </div>
