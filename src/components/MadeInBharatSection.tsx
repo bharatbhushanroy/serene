@@ -4,17 +4,73 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const MadeInBharatSection = () => {
+  const textVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+
+  const flagVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+        delay: 0.3,
+      },
+    },
+    animate: {
+      y: [0, -5, 0], // Subtle float up and down
+      rotate: [0, 1, 0, -1, 0], // Gentle sway
+      transition: {
+        y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+        rotate: { duration: 6, repeat: Infinity, ease: "easeInOut" },
+      },
+    },
+  };
+
+  const backgroundGlowVariants = {
+    animate: {
+      scale: [1, 1.05, 1],
+      opacity: [0.05, 0.1, 0.05],
+      transition: {
+        duration: 10,
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
-    <section className="relative w-full py-8 text-white overflow-hidden
-                    bg-fintech-main-bg"> {/* Vibrant dark gradient background */}
+    <motion.section
+      className="relative w-full py-8 text-white overflow-hidden bg-fintech-main-bg"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.5 }}
+    >
+      {/* Subtle background glow */}
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-r from-fintech-orange-accent/10 to-yellow-300/10 rounded-full blur-3xl"
+        variants={backgroundGlowVariants}
+        animate="animate"
+      />
+
       <div className="max-w-7xl mx-auto text-center relative z-10">
-        <h2 className="text-2xl md:text-3xl font-extrabold leading-tight mb-2 text-white"> {/* White text for "Made In" */}
-          Made In <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-yellow-300">Bharat</span> {/* Vibrant gradient for "Bharat" */}
-        </h2>
+        <motion.h2
+          variants={textVariants}
+          className="text-2xl md:text-3xl font-extrabold leading-tight mb-2 text-white"
+        >
+          Made In <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-yellow-300">Bharat</span>
+        </motion.h2>
 
         {/* Indian Flag */}
-        <div className="flex justify-center mb-4">
-          <svg width="60" height="40" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="shadow-lg rounded-md filter drop-shadow-lg"> {/* Added drop-shadow for flag */}
+        <motion.div
+          variants={flagVariants}
+          animate="animate"
+          className="flex justify-center mb-4"
+        >
+          <svg width="60" height="40" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="shadow-lg rounded-md filter drop-shadow-lg">
             {/* Saffron Stripe */}
             <rect x="0" y="0" width="120" height="26.67" fill="#FF9933"/>
             {/* White Stripe */}
@@ -37,11 +93,9 @@ const MadeInBharatSection = () => {
               />
             ))}
           </svg>
-        </div>
+        </motion.div>
       </div>
-
-      {/* Removed the entire SVG block for the skyline structures */}
-    </section>
+    </motion.section>
   );
 };
 
