@@ -25,7 +25,7 @@ const InstantLoansHeroSection = () => {
   };
 
   return (
-    <section className="relative w-full min-h-[calc(100vh-80px)] flex items-center justify-center py-16 px-6 md:px-12 lg:px-24 overflow-hidden bg-fintech-main-bg text-white">
+    <section className="relative w-full min-h-[calc(100vh-80px)] flex items-center justify-center py-16 px-6 md:px-12 lg:px-24 overflow-hidden bg-gradient-to-br from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white">
       {/* Animated Background Shapes (Global) */}
       <AnimatedBackgroundShapes />
 
