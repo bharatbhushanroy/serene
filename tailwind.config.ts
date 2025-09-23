@@ -19,8 +19,8 @@ export default {
     },
     extend: {
       boxShadow: {
-        'glow-blue': '0 0 20px 0 hsl(var(--fintech-blue-accent) / 0.3)', // Soft blue glow
-        'glow-orange': '0 0 20px 0 hsl(var(--fintech-orange-accent) / 0.3)', // Soft orange glow
+        'glow-blue': '0 0 20px 0 hsl(var(--fintech-blue-accent) / 0.3)', // Soft desaturated blue glow
+        'glow-orange': '0 0 20px 0 hsl(var(--fintech-orange-accent) / 0.3)', // Soft dark orange glow
       },
       colors: {
         border: "hsl(var(--border))",
