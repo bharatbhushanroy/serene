@@ -39,9 +39,9 @@
     --fintech-main-bg: 220 15% 8%; /* Deep, rich dark blue-grey */
     --fintech-dot-pattern-new: 220 15% 15%; /* Slightly lighter dark blue for dots */
 
-    /* Primary button gradient (Modern Blue to Purple) */
+    /* Primary button gradient (Modern Blue to Blue) */
     --fintech-button-primary-gradient-start: 210 80% 55%; /* Electric Blue */
-    --fintech-button-primary-gradient-end: 260 70% 50%; /* Deep Purple */
+    --fintech-button-primary-gradient-end: 210 80% 65%; /* Lighter Electric Blue */
 
     /* General Accents - more cohesive */
     --fintech-blue-accent: 210 80% 55%; /* Electric Blue */
@@ -100,6 +100,7 @@
     --fintech-card-mockup-pink: 330 60% 40%; /* Muted vibrant pink */
     --fintech-card-chip-yellow: 40 90% 55%; /* Gold */
     --fintech-card-chip-light: 210 20% 98%; /* Near-white */
+    --fintech-dot-pattern: 220 15% 15%; /* Slightly lighter dark blue for dots */
     --fintech-scroll-indicator-bg: 210 80% 55%; /* Electric Blue */
 
     /* Dashboard Colors - refined for consistency */
