@@ -64,8 +64,6 @@ const HeroSlide: React.FC<HeroSlideProps> = ({
       transition: {
         duration: 0.8,
         ease: "easeOut",
-        // Animate gradient position for a subtle "flow" effect
-        backgroundPosition: ['0% 50%', '100% 50%'],
       },
     },
   };
@@ -121,7 +119,7 @@ const HeroSlide: React.FC<HeroSlideProps> = ({
             <motion.span variants={itemVariants}>{titlePart1}</motion.span>{' '}
             <motion.span
               variants={gradientTextVariants}
-              className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-transparent bg-clip-text bg-[length:200%_auto]"
+              className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-transparent bg-clip-text bg-[length:200%_auto] animate-gradient-flow"
             >
               {gradientWord1}
             </motion.span>{' '}
@@ -129,7 +127,7 @@ const HeroSlide: React.FC<HeroSlideProps> = ({
             <motion.span variants={itemVariants}>{titlePart2}</motion.span>{' '}
             <motion.span
               variants={gradientTextVariants}
-              className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-transparent bg-clip-text bg-[length:200%_auto]"
+              className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-transparent bg-clip-text bg-[length:200%_auto] animate-gradient-flow"
             >
               {gradientWord2}
             </motion.span>

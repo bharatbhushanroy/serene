@@ -235,6 +235,11 @@ export default {
           '33%': { transform: 'translateY(-8px) rotate(1deg)' },
           '66%': { transform: 'translateY(7px) rotate(-2deg)' },
         },
+        'gradient-flow': {
+          '0%': { 'background-position': '0% 50%' },
+          '50%': { 'background-position': '100% 50%' },
+          '100%': { 'background-position': '0% 50%' },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -245,6 +250,7 @@ export default {
         'card-float-1': 'card-float-1 10s ease-in-out infinite',
         'card-float-2': 'card-float-2 12s ease-in-out infinite',
         'card-float-3': 'card-float-3 11s ease-in-out infinite',
+        'gradient-flow': 'gradient-flow 3s ease-in-out infinite',
       }
     },
   },
