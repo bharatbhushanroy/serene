@@ -5,158 +5,159 @@
 @layer base {
   :root {
     /* Base Shadcn/UI colors - refined for a premium dark theme */
-    --background: 0 0% 5%; /* Deep black */
-    --foreground: 0 0% 98%; /* Near-white for primary text */
+    --background: 220 15% 8%; /* Deep, rich dark blue-grey */
+    --foreground: 210 20% 98%; /* Near-white for primary text */
 
-    --card: 0 0% 8%; /* Slightly lighter black for cards, subtle depth */
-    --card-foreground: 0 0% 98%;
+    --card: 220 15% 12%; /* Slightly lighter dark for cards, subtle depth */
+    --card-foreground: 210 20% 98%;
 
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 220 15% 12%;
+    --popover-foreground: 210 20% 98%;
 
-    --primary: 0 0% 98%; /* Primary elements (e.g., text on dark buttons) */
-    --primary-foreground: 0 0% 5%; /* Text on primary elements */
+    --primary: 210 20% 98%; /* Primary elements (e.g., text on dark buttons) */
+    --primary-foreground: 220 15% 8%; /* Text on primary elements */
 
-    --secondary: 0 0% 15%; /* Secondary elements, subtle contrast */
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 220 15% 18%; /* Secondary elements, subtle contrast */
+    --secondary-foreground: 210 20% 98%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%; /* Soft grey for secondary text */
+    --muted: 220 15% 18%;
+    --muted-foreground: 215 10% 65%; /* Soft grey for secondary text */
 
-    --accent: 0 0% 15%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 220 15% 18%;
+    --accent-foreground: 210 20% 98%;
 
     --destructive: 0 80% 60%; /* Clear, strong red for errors */
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 210 20% 98%;
 
-    --border: 0 0% 20%; /* Subtle dark border */
-    --input: 0 0% 20%;
-    --ring: 30 80% 40%; /* Darker, rich orange for focus rings */
+    --border: 220 15% 25%; /* Subtle dark border */
+    --input: 220 15% 25%;
+    --ring: 210 80% 55%; /* Vibrant Electric Blue for focus rings */
 
     --radius: 0.5rem;
 
     /* New vibrant dark fintech theme colors - refined */
-    --fintech-main-bg: 0 0% 5%; /* Deep black */
-    --fintech-dot-pattern-new: 0 0% 12%; /* Slightly lighter black for dots */
+    --fintech-main-bg: 220 15% 8%; /* Deep, rich dark blue-grey */
+    --fintech-dot-pattern-new: 220 15% 15%; /* Slightly lighter dark blue for dots */
 
-    /* Primary button gradient (Dark Orange to Darker Orange) */
-    --fintech-button-primary-gradient-start: 30 80% 40%; /* Dark Orange */
-    --fintech-button-primary-gradient-end: 20 70% 35%; /* Darker Orange */
+    /* Primary button gradient (Modern Blue to Purple) */
+    --fintech-button-primary-gradient-start: 210 80% 55%; /* Electric Blue */
+    --fintech-button-primary-gradient-end: 260 70% 50%; /* Deep Purple */
 
     /* General Accents - more cohesive */
-    --fintech-blue-accent: 210 10% 30%; /* Desaturated dark blue for subtle contrast */
-    --fintech-blue-soft: 210 10% 25%; /* Even more desaturated dark blue */
-    --fintech-cyan-light: 180 10% 20%; /* Desaturated dark cyan */
+    --fintech-blue-accent: 210 80% 55%; /* Electric Blue */
+    --fintech-blue-soft: 210 60% 40%; /* Muted Electric Blue */
+    --fintech-cyan-light: 180 70% 50%; /* Modern Cyan */
     --fintech-green-success: 140 70% 45%; /* Balanced Green for success */
-    --fintech-orange-accent: 30 80% 40%; /* Dark Orange */
-    --fintech-star-yellow: 40 90% 50%; /* Golden Yellow */
+    --fintech-orange-accent: 30 90% 50%; /* Energetic Orange */
+    --fintech-star-yellow: 40 90% 55%; /* Golden Yellow */
 
     /* Text & UI Elements - refined for readability */
-    --fintech-background-light: 0 0% 5%; /* Main dark background */
-    --fintech-background-offwhite: 0 0% 8%; /* Subtle lighter dark for contrast */
-    --fintech-text-dark: 0 0% 98%; /* Near-white for main text */
-    --fintech-text-muted: 0 0% 65%; /* Soft grey for secondary text */
-    --fintech-border-light: 0 0% 20%; /* Subtle dark border */
-    --fintech-card-light: 0 0% 8%; /* Card background */
-    --fintech-simulator-card-bg: 0 0% 8%; /* Same as card-light */
-    --fintech-dark-bg-lighter: 0 0% 15%; /* Even lighter dark for specific elements */
+    --fintech-background-light: 220 15% 8%; /* Main dark background */
+    --fintech-background-offwhite: 220 15% 12%; /* Subtle lighter dark for contrast */
+    --fintech-text-dark: 210 20% 98%; /* Near-white for main text */
+    --fintech-text-muted: 215 10% 65%; /* Soft grey for secondary text */
+    --fintech-border-light: 220 15% 25%; /* Subtle dark border */
+    --fintech-card-light: 220 15% 12%; /* Card background */
+    --fintech-simulator-card-bg: 220 15% 12%; /* Same as card-light */
+    --fintech-dark-bg-lighter: 220 15% 18%; /* Even lighter dark for specific elements */
 
     /* Gradients (re-evaluated for vibrancy and harmony) */
-    --fintech-gradient-blue-start: 210 10% 30%;
-    --fintech-gradient-blue-end: 210 10% 35%;
-    --fintech-gradient-purple-start: 260 10% 25%;
-    --fintech-gradient-purple-end: 260 10% 30%;
-    --fintech-gradient-pink-start: 330 10% 25%;
-    --fintech-gradient-pink-end: 330 10% 30%;
-    --fintech-gradient-cyan-start: 190 10% 20%;
-    --fintech-gradient-cyan-end: 190 10% 25%;
+    --fintech-gradient-blue-start: 210 80% 55%;
+    --fintech-gradient-blue-end: 210 80% 65%;
+    --fintech-gradient-purple-start: 260 70% 50%;
+    --fintech-gradient-purple-end: 260 70% 60%;
+    --fintech-gradient-pink-start: 330 70% 50%;
+    --fintech-gradient-pink-end: 330 70% 60%;
+    --fintech-gradient-cyan-start: 190 70% 45%;
+    --fintech-gradient-cyan-end: 190 70% 55%;
 
     /* Specific Sections */
-    --fintech-peach-background: 30 50% 15%; /* Darker, muted orange/brown for contrast */
-    --fintech-dark-bg: 0 0% 5%; /* Same as main-bg */
-    --fintech-topup-line: 30 80% 40%; /* Dark Orange */
-    --fintech-topup-gradient-start: 30 80% 40%;
-    --fintech-topup-gradient-end: 20 70% 35%;
-    --fintech-card-pink-start: 330 10% 25%;
-    --fintech-card-pink-end: 330 10% 30%;
-    --fintech-card-purple-start: 260 10% 25%;
-    --fintech-card-purple-end: 260 10% 30%;
-    --fintech-card-blue-start: 210 10% 30%;
-    --fintech-card-blue-end: 210 10% 35%;
-    --fintech-card-darkblue-start: 220 10% 20%; /* Darker blue for card */
-    --fintech-card-darkblue-end: 220 10% 25%;
-    --fintech-phone-bg-blue: 210 10% 15%; /* Darker desaturated blue */
-    --fintech-phone-text-blue: 0 0% 98%; /* White text */
-    --fintech-phone-star-yellow: 40 90% 50%; /* Golden Yellow */
-    --fintech-card-dark-purple: 260 10% 10%; /* Deep desaturated purple */
-    --fintech-card-dark-red-purple: 330 10% 10%; /* Deep desaturated reddish-purple */
-    --fintech-button-gradient-start: 30 80% 40%; /* Dark Orange */
-    --fintech-button-gradient-end: 20 70% 35%; /* Darker Orange */
-    --fintech-dark-bg-lighter: 0 0% 15%;
-    --fintech-header-bg: 0 0% 5%; /* Same as main-bg */
-    --fintech-header-text: 0 0% 98%; /* Near-white */
-    --fintech-hero-dark-bg: 0 0% 5%; /* Same as main-bg */
-    --fintech-card-mockup-purple: 270 10% 20%; /* Muted desaturated purple */
-    --fintech-card-mockup-blue: 220 10% 20%; /* Muted desaturated blue */
-    --fintech-card-mockup-pink: 330 10% 20%; /* Muted desaturated pink */
-    --fintech-card-chip-yellow: 40 90% 50%; /* Gold */
-    --fintech-card-chip-light: 0 0% 98%; /* Near-white */
-    --fintech-scroll-indicator-bg: 30 80% 40%; /* Dark Orange */
+    --fintech-peach-background: 30 80% 20%; /* Darker, muted orange/brown for contrast */
+    --fintech-dark-bg: 220 15% 8%; /* Same as main-bg */
+    --fintech-topup-line: 210 80% 55%; /* Electric Blue */
+    --fintech-topup-gradient-start: 210 80% 55%;
+    --fintech-topup-gradient-end: 260 70% 50%;
+    --fintech-card-pink-start: 330 70% 50%;
+    --fintech-card-pink-end: 330 70% 60%;
+    --fintech-card-purple-start: 260 70% 50%;
+    --fintech-card-purple-end: 260 70% 60%;
+    --fintech-card-blue-start: 210 80% 55%;
+    --fintech-card-blue-end: 210 80% 65%;
+    --fintech-card-darkblue-start: 220 70% 30%; /* Darker blue for card */
+    --fintech-card-darkblue-end: 220 70% 40%;
+    --fintech-phone-bg-blue: 210 70% 20%; /* Darker electric blue */
+    --fintech-phone-text-blue: 210 20% 98%; /* White text */
+    --fintech-phone-star-yellow: 40 90% 55%; /* Golden Yellow */
+    --fintech-card-dark-purple: 260 25% 15%; /* Deep purple */
+    --fintech-card-dark-red-purple: 330 25% 15%; /* Deep reddish-purple */
+    --fintech-button-gradient-start: 210 80% 55%; /* Electric Blue */
+    --fintech-button-gradient-end: 260 70% 50%; /* Deep Purple */
+    --fintech-header-bg: 220 15% 8%; /* Same as main-bg */
+    --fintech-header-text: 210 20% 98%; /* Near-white */
+    --fintech-hero-dark-bg: 220 15% 8%; /* Same as main-bg */
+    --fintech-card-mockup-purple: 270 60% 40%; /* Muted vibrant purple */
+    --fintech-card-mockup-blue: 220 60% 40%; /* Muted vibrant blue */
+    --fintech-card-mockup-pink: 330 60% 40%; /* Muted vibrant pink */
+    --fintech-card-chip-yellow: 40 90% 55%; /* Gold */
+    --fintech-card-chip-light: 210 20% 98%; /* Near-white */
+    --fintech-scroll-indicator-bg: 210 80% 55%; /* Electric Blue */
 
     /* Dashboard Colors - refined for consistency */
-    --fintech-dashboard-bg: 0 0% 5%;
-    --fintech-dashboard-sidebar-bg: 0 0% 8%;
-    --fintech-dashboard-card-bg: 0 0% 8%;
-    --fintech-dashboard-text-primary: 0 0% 98%;
-    --fintech-dashboard-text-secondary: 0 0% 65%;
-    --fintech-dashboard-accent-blue: 210 10% 30%;
+    --fintech-dashboard-bg: 220 15% 8%;
+    --fintech-dashboard-sidebar-bg: 220 15% 12%;
+    --fintech-dashboard-card-bg: 220 15% 12%;
+    --fintech-dashboard-text-primary: 210 20% 98%;
+    --fintech-dashboard-text-secondary: 215 10% 65%;
+    --fintech-dashboard-accent-blue: 210 80% 55%;
     --fintech-dashboard-accent-green: 140 70% 45%;
     --fintech-dashboard-accent-red: 0 80% 60%;
-    --fintech-dashboard-border: 0 0% 20%;
-    --fintech-dashboard-input-bg: 0 0% 20%;
-    --fintech-dashboard-chart-bar-1: 30 80% 40%; /* Dark Orange */
-    --fintech-dashboard-chart-bar-2: 140 70% 45%; /* Green */
-    --fintech-dashboard-progress-bg: 0 0% 20%;
-    --fintech-dashboard-progress-fill: 30 80% 40%; /* Dark Orange */
+    --fintech-dashboard-border: 220 15% 25%;
+    --fintech-dashboard-input-bg: 220 15% 25%;
+    --fintech-dashboard-chart-bar-1: 210 80% 55%;
+    --fintech-dashboard-chart-bar-2: 140 70% 45%;
+    --fintech-dashboard-progress-bg: 220 15% 25%;
+    --fintech-dashboard-progress-fill: 210 80% 55%;
     --fintech-dashboard-logout-button-bg: 0 80% 60%;
     --fintech-dashboard-logout-button-hover: 0 70% 50%;
 
     /* Other specific colors - refined */
-    --fintech-light-blue-card: 210 10% 15%; /* Darker desaturated blue for card */
-    --fintech-dark-card-bg: 0 0% 8%;
-    --fintech-dark-card-bg-secondary: 0 0% 15%;
-    --fintech-dark-text-primary: 0 0% 98%;
-    --fintech-dark-text-muted: 0 0% 65%;
-    --fintech-icon-orange: 30 80% 40%;
-    --fintech-icon-gray-bg: 0 0% 20%;
-    --fintech-phone-bg: 0 0% 8%;
-    --fintech-phone-border: 0 0% 15%;
-    --fintech-phone-text: 0 0% 98%; /* White text inside phone */
+    --fintech-light-blue-card: 210 40% 20%; /* Darker blue for card */
+    --fintech-dark-card-bg: 220 15% 12%;
+    --fintech-dark-card-bg-secondary: 220 15% 18%;
+    --fintech-dark-text-primary: 210 20% 98%;
+    --fintech-dark-text-muted: 215 10% 65%;
+    --fintech-icon-orange: 30 90% 50%;
+    --fintech-icon-gray-bg: 220 15% 25%;
+    --fintech-phone-bg: 220 15% 10%;
+    --fintech-phone-border: 220 15% 20%;
+    --fintech-phone-text: 210 20% 98%; /* White text inside phone */
     --fintech-india-white: 0 0% 100%; /* Pure white for the middle stripe */
 
     /* Newsletter Section - refined */
-    --fintech-newsletter-orange-bg: 30 70% 20%; /* Darker, richer orange background */
+    --fintech-newsletter-orange-bg: 30 70% 25%; /* Darker, richer orange background */
     --fintech-newsletter-bird-yellow: 45 90% 50%;
-    --fintech-newsletter-bird-black: 0 0% 10%;
-    --fintech-newsletter-envelope-blue: 210 10% 30%;
-    --fintech-newsletter-cloud-white: 0 0% 98%; /* Near-white cloud */
-    --fintech-newsletter-cloud-lightblue: 210 10% 25%; /* Muted desaturated blue cloud */
+    --fintech-newsletter-bird-black: 220 10% 10%;
+    --fintech-newsletter-envelope-blue: 210 80% 55%;
+    --fintech-newsletter-cloud-white: 210 20% 98%; /* Near-white cloud */
+    --fintech-newsletter-cloud-lightblue: 210 60% 40%; /* Muted electric blue cloud */
 
     /* Loan Products Section - refined */
-    --fintech-loan-card-purple: 260 10% 15%; /* Darker, muted desaturated purple */
-    --fintech-loan-card-purple-darker: 260 10% 10%;
-    --fintech-loan-card-purple-darkest: 260 10% 5%;
+    --fintech-loan-card-purple: 260 30% 20%; /* Darker, muted purple */
+    --fintech-loan-card-purple-darker: 260 30% 15%;
+    --fintech-loan-card-purple-darkest: 260 30% 10%;
 
-    --fintech-loan-card-blue: 210 10% 15%; /* Darker, muted desaturated blue */
-    --fintech-loan-card-blue-darker: 210 10% 10%;
-    --fintech-loan-card-blue-darkest: 210 10% 5%;
+    --fintech-loan-card-blue: 210 30% 20%; /* Darker, muted blue */
+    --fintech-loan-card-blue-darker: 210 30% 15%;
+    --fintech-loan-card-blue-darkest: 210 30% 10%;
 
-    --fintech-loan-card-green: 140 10% 15%; /* Darker, muted desaturated green */
-    --fintech-loan-card-green-darker: 140 10% 10%;
-    --fintech-loan-card-green-darkest: 140 10% 5%;
+    --fintech-loan-card-green: 140 25% 20%; /* Darker, muted green */
+    --fintech-loan-card-green-darker: 140 25% 15%;
+    --fintech-loan-card-green-darkest: 140 25% 10%;
 
-    --fintech-popular-badge-bg: 30 80% 40%; /* Dark Orange */
+    --fintech-popular-badge-bg: 30 90% 50%; /* Energetic Orange */
   }
+
+  /* Removed the old .dark block as the new theme will be the default */
 }
 
 @layer base {
@@ -167,7 +168,7 @@
   body {
     /* Using the new dark background and dot pattern */
     @apply bg-fintech-main-bg text-fintech-header-text; /* Use the new main background */
-    background-image: radial-gradient(circle at 50% 0%, hsl(var(--fintech-orange-accent) / 0.05) 0%, transparent 40%),
+    background-image: radial-gradient(circle at 50% 0%, hsl(var(--fintech-blue-accent) / 0.05) 0%, transparent 40%),
                       radial-gradient(circle at 1px 1px, hsl(var(--fintech-dot-pattern-new)) 1px, transparent 0); /* Use new dot pattern color */
     background-size: 100% 100%, 20px 20px;
     background-position: center, center;
