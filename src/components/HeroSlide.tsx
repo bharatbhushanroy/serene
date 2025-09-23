@@ -92,7 +92,7 @@ const HeroSlide: React.FC<HeroSlideProps> = ({
   };
 
   return (
-    <div className="relative w-full min-h-[calc(100vh-80px)] flex items-center justify-center py-16 px-6 md:px-12 lg:px-24 overflow-hidden bg-gradient-to-br from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white">
+    <div className="relative w-full min-h-[calc(100vh-80px)] flex items-center justify-center py-16 px-6 md:px-12 lg:px-24 overflow-hidden bg-fintech-main-bg text-white">
       {/* Local Animated Shapes for this section */}
       <motion.div
         initial={{ opacity: 0, scale: 0.5, x: -200, y: -100 }}
