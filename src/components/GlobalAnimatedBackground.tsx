@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const GlobalAnimatedBackground = () => {
   return (
-    <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+    <div className="fixed inset-0 overflow-hidden pointer-events-none z-0"> {/* z-index: 0 ensures it's above the video (z-index: -2) */}
       {/* Large, subtle circle 1 */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8, x: -100, y: -100 }}
