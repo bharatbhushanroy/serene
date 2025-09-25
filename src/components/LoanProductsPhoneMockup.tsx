@@ -4,34 +4,36 @@ import React from 'react';
 import { User, Gift, ArrowRight, DollarSign, Home, Gem, CreditCard, BarChart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-// import { motion } from 'framer-motion'; // Import motion
+import { motion } from 'framer-motion'; // Import motion
 
 const LoanProductsPhoneMockup = () => {
-  // const phoneVariants = {
-  //   initial: { opacity: 0, scale: 0.8, rotateY: 15 },
-  //   animate: { opacity: 1, scale: 1, rotateY: 0, transition: { duration: 0.8, ease: "easeOut" } },
-  //   float: {
-  //     y: [0, -10, 0, 10, 0],
-  //     rotate: [0, 1, 0, -1, 0],
-  //     transition: {
-  //       duration: 15,
-  //       repeat: Infinity,
-  //       ease: "easeInOut",
-  //     },
-  //   },
-  // };
+  const phoneVariants = {
+    initial: { opacity: 0, scale: 0.8, rotateY: 15 },
+    animate: { opacity: 1, scale: 1, rotateY: 0, transition: { duration: 0.8, ease: "easeOut" } },
+    float: {
+      y: [0, -10, 0, 10, 0],
+      rotate: [0, 1, 0, -1, 0],
+      transition: {
+        duration: 15,
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
+    },
+  };
 
   return (
-    <div
+    <motion.div // UNCOMMENTED motion.div
       className="relative w-[320px] h-[650px] bg-black rounded-[40px] shadow-2xl flex items-center justify-center p-2 border-[8px] border-gray-800 overflow-hidden z-10"
       style={{
         transformStyle: 'preserve-3d',
         transformOrigin: 'center center',
         boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 30px rgba(59, 130, 246, 0.3)' // Blue glow
       }}
-      // variants={phoneVariants}
-      // initial="initial"
-      // animate={["animate", "float"]}
+      variants={phoneVariants} // UNCOMMENTED variants
+      initial="initial" // UNCOMMENTED initial
+      animate={["animate", "float"]} // UNCOMMENTED animate
+      whileInView="animate" // ADDED THIS
+      viewport={{ once: true, amount: 0.5 }} // ADDED THIS
     >
       {/* Notch */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/5 h-6 bg-black rounded-b-xl z-10"></div>
@@ -117,7 +119,7 @@ const LoanProductsPhoneMockup = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div> // UNCOMMENTED motion.div
   );
 };
 

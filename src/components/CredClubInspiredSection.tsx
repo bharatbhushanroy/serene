@@ -21,13 +21,14 @@ const AnimatedSphere = ({ size, x, y, delay, duration, colorClass, innerColorCla
         transformOrigin: 'center center',
       }}
       initial={{ opacity: 0, scale: 0.5, rotate: 0 }}
-      animate={{
+      whileInView={{ // ADDED THIS
         opacity: [0.3, 0.6, 0.3], // Increased opacity for better visibility
         scale: [0.8, 1.1, 0.9, 1],
         x: [x, x + 40, x - 20, x], // More pronounced movement
         y: [y, y - 30, y + 20, y], // More pronounced movement
         rotate: [0, rotation, 0],
       }}
+      viewport={{ once: true, amount: 0.5 }} // ADDED THIS
       transition={{
         duration: duration,
         repeat: Infinity,

@@ -61,6 +61,8 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className }) => {
         initial="initial"
         animate={["animate", "float"]}
         custom={0}
+        whileInView="animate" // ADDED THIS
+        viewport={{ once: true, amount: 0.5 }} // ADDED THIS
       >
         <Banknote className="h-5 w-5 text-white mb-1" />
         <p className="text-xs text-white">Get Up To</p>
@@ -75,6 +77,8 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className }) => {
         initial="initial"
         animate={["animate", "float"]}
         custom={1}
+        whileInView="animate" // ADDED THIS
+        viewport={{ once: true, amount: 0.5 }} // ADDED THIS
       >
         <Percent className="h-5 w-5 text-white mb-1" />
         <p className="text-xs text-white">Rate starting from</p>
@@ -89,6 +93,8 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className }) => {
         initial="initial"
         animate={["animate", "float"]}
         custom={2}
+        whileInView="animate" // ADDED THIS
+        viewport={{ once: true, amount: 0.5 }} // ADDED THIS
       >
         <Landmark className="h-5 w-5 text-white mb-1" />
         <p className="text-xs text-white">Transfer to</p>
@@ -103,6 +109,8 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className }) => {
         initial="initial"
         animate={["animate", "float"]}
         custom={3}
+        whileInView="animate" // ADDED THIS
+        viewport={{ once: true, amount: 0.5 }} // ADDED THIS
       >
         <CalendarCheck className="h-5 w-5 text-white mb-1" />
         <p className="text-xs text-white">Repay EMI in</p>
@@ -121,6 +129,8 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className }) => {
         variants={phoneVariants}
         initial="initial"
         animate={["animate", "float"]}
+        whileInView="animate" // ADDED THIS
+        viewport={{ once: true, amount: 0.5 }} // ADDED THIS
       >
         {/* Notch */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/5 h-6 bg-black rounded-b-xl z-10"></div>
