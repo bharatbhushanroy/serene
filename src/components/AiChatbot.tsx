@@ -229,7 +229,7 @@ const AiChatbot = () => {
 
   return (
     <>
-      {/* Kiki Avatar and Speech Bubble */}
+      {/* Kiki Avatar */}
       <motion.div
         className="fixed bottom-4 right-4 z-50 cursor-pointer"
         initial={{ opacity: 0, y: 50 }}
@@ -237,22 +237,6 @@ const AiChatbot = () => {
         transition={{ duration: 0.5, delay: 0.5 }}
         onClick={() => setIsOpen(!isOpen)}
       >
-        {/* Speech Bubble */}
-        <AnimatePresence>
-          {!isOpen && (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8, y: 10 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.8, y: 10 }}
-              transition={{ duration: 0.2 }}
-              className="absolute bottom-24 right-20 bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-4 py-2 rounded-xl rounded-br-none shadow-lg text-sm whitespace-nowrap"
-            >
-              Hi, I am Kiki, Your Personal Assistant.
-              <div className="absolute bottom-0 right-0 w-4 h-4 bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end transform translate-x-2 translate-y-2 rotate-45 rounded-br-none"></div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
         <KikiAvatar />
       </motion.div>
 
