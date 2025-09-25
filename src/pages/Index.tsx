@@ -20,7 +20,7 @@ import WalkTheTalkSection from "@/components/WalkTheTalkSection";
 import LoanProductsSection from "@/components/LoanProductsSection";
 import LoanProductsShowcaseSection from "@/components/LoanProductsShowcaseSection";
 import CredClubInspiredSection from "@/components/CredClubInspiredSection";
-import DataSecuritySection from "@/components/DataSecuritySection"; // New import - UNCOMMENTED
+// import DataSecuritySection from "@/components/DataSecuritySection"; // New import - UNCOMMENTED
 
 const Index = () => {
   return (

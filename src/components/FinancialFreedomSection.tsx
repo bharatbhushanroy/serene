@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { DollarSign, ArrowRight } from 'lucide-react'; // Added ArrowRight
-import DataSecuritySection from './DataSecuritySection'; // Import the new DataSecuritySection
+// import DataSecuritySection from './DataSecuritySection'; // Import the new DataSecuritySection
 
 const FinancialFreedomSection = () => {
   const dollarSignVariants = {
@@ -33,7 +33,6 @@ const FinancialFreedomSection = () => {
       transition: {
         duration: 12 + i * 3,
         repeat: Infinity,
-        repeatType: "reverse",
         ease: "linear",
         delay: i * 0.7,
       },
@@ -139,8 +138,20 @@ const FinancialFreedomSection = () => {
           </motion.div>
         </div>
 
-        {/* Data Security Section (Replaced old CTA) */}
-        <DataSecuritySection />
+        {/* Original CTA Section */}
+        <div className="text-center mt-20">
+          <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+            Ready to take the <span className="bg-gradient-to-r from-fintech-blue-accent to-fintech-blue-soft text-transparent bg-clip-text">next step?</span>
+          </h2>
+          <p className="text-lg text-fintech-text-muted mb-8 max-w-3xl mx-auto">
+            Join thousands of satisfied customers and take the first step towards your financial goals. Apply now for a quick and easy loan.
+          </p>
+          <Link to="/apply-loan">
+            <Button className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity">
+              Apply for a Loan
+            </Button>
+          </Link>
+        </div>
       </div>
     </section>
   );
