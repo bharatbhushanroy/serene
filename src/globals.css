@@ -174,11 +174,7 @@
   body {
     /* Using the new dark background and dot pattern */
     @apply bg-fintech-main-bg text-fintech-header-text; /* Use the new main background */
-    background-image: radial-gradient(circle at 50% 0%, hsl(var(--fintech-blue-accent) / 0.05) 0%, transparent 40%),
-                      radial-gradient(circle at 1px 1px, hsl(var(--fintech-dot-pattern-new)) 1px, transparent 0); /* Use new dot pattern color */
-    background-size: 100% 100%, 20px 20px;
-    background-position: center, center;
-    background-repeat: no-repeat, repeat;
+    /* Removed conflicting background-image properties */
   }
 }
 
