@@ -22,60 +22,60 @@ const InsuranceSection = () => {
           Protect what matters most with our comprehensive insurance solutions. From health to home, we've got you covered.
         </p>
 
-        <div className="relative flex items-center justify-center w-full h-[700px] lg:h-[800px]">
+        <div className="relative flex items-center justify-center w-full h-[650px] md:h-[700px] lg:h-[800px]">
           {/* Floating Cards */}
           {/* Top-Left Card */}
           <motion.div
-            className="absolute top-[10%] left-[5%] lg:left-[15%] bg-white p-6 rounded-xl shadow-2xl text-center w-[180px] h-[180px] flex flex-col items-center justify-center text-gray-800 z-20"
+            className="absolute top-[5%] left-[2%] p-4 rounded-xl shadow-2xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-gray-800 z-20 bg-white"
             variants={cardVariants}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true, amount: 0.5 }}
           >
-            <ShieldCheck className="h-8 w-8 text-fintech-orange-accent mb-2" />
-            <p className="text-lg font-semibold">Health Insurance</p>
-            <p className="text-sm text-gray-600">Stay protected</p>
+            <ShieldCheck className="h-6 w-6 md:h-8 md:w-8 text-fintech-orange-accent mb-1" />
+            <p className="text-base md:text-lg font-semibold">Health Insurance</p>
+            <p className="text-xs md:text-sm text-gray-600">Stay protected</p>
           </motion.div>
           {/* Top-Right Card */}
           <motion.div
-            className="absolute top-[10%] right-[5%] lg:right-[15%] bg-white p-6 rounded-xl shadow-2xl text-center w-[180px] h-[180px] flex flex-col items-center justify-center text-gray-800 z-20"
+            className="absolute top-[5%] right-[2%] p-4 rounded-xl shadow-2xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-gray-800 z-20 bg-white"
             variants={cardVariants}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true, amount: 0.5 }}
           >
-            <Car className="h-8 w-8 text-fintech-orange-accent mb-2" />
-            <p className="text-lg font-semibold">Car Insurance</p>
-            <p className="text-sm text-gray-600">Drive worry-free</p>
+            <Car className="h-6 w-6 md:h-8 md:w-8 text-fintech-orange-accent mb-1" />
+            <p className="text-base md:text-lg font-semibold">Car Insurance</p>
+            <p className="text-xs md:text-sm text-gray-600">Drive worry-free</p>
           </motion.div>
           {/* Bottom-Left Card */}
           <motion.div
-            className="absolute bottom-[10%] left-[5%] lg:left-[15%] bg-white p-6 rounded-xl shadow-2xl text-center w-[180px] h-[180px] flex flex-col items-center justify-center text-gray-800 z-20"
+            className="absolute bottom-[5%] left-[2%] p-4 rounded-xl shadow-2xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-gray-800 z-20 bg-white"
             variants={cardVariants}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true, amount: 0.5 }}
           >
-            <Home className="h-8 w-8 text-fintech-orange-accent mb-2" />
-            <p className="text-lg font-semibold">Home Insurance</p>
-            <p className="text-sm text-gray-600">Secure your abode</p>
+            <Home className="h-6 w-6 md:h-8 md:w-8 text-fintech-orange-accent mb-1" />
+            <p className="text-base md:text-lg font-semibold">Home Insurance</p>
+            <p className="text-xs md:text-sm text-gray-600">Secure your abode</p>
           </motion.div>
           {/* Bottom-Right Card */}
           <motion.div
-            className="absolute bottom-[10%] right-[5%] lg:right-[15%] bg-white p-6 rounded-xl shadow-2xl text-center w-[180px] h-[180px] flex flex-col items-center justify-center text-gray-800 z-20"
+            className="absolute bottom-[5%] right-[2%] p-4 rounded-xl shadow-2xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-gray-800 z-20 bg-white"
             variants={cardVariants}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true, amount: 0.5 }}
           >
-            <Heart className="h-8 w-8 text-fintech-orange-accent mb-2" />
-            <p className="text-lg font-semibold">Life Insurance</p>
-            <p className="text-sm text-gray-600">For your loved ones</p>
+            <Heart className="h-6 w-6 md:h-8 md:w-8 text-fintech-orange-accent mb-1" />
+            <p className="text-base md:text-lg font-semibold">Life Insurance</p>
+            <p className="text-xs md:text-sm text-gray-600">For your loved ones</p>
           </motion.div>
 
           {/* Central Phone Mockup */}
           <motion.div
-            className="relative w-[300px] h-[600px] md:w-[350px] md:h-[700px] bg-black rounded-[40px] shadow-2xl flex items-center justify-center p-2 border-[8px] border-gray-800 overflow-hidden z-10"
+            className="relative w-[280px] h-[550px] md:w-[300px] md:h-[600px] lg:w-[350px] lg:h-[700px] bg-black rounded-[40px] shadow-2xl flex items-center justify-center p-2 border-[8px] border-gray-800 overflow-hidden z-10"
             initial={{ opacity: 0, scale: 0.8, rotateY: 15 }}
             whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
             viewport={{ once: true, amount: 0.5 }}
