@@ -11,7 +11,7 @@ import QuickLoansFeaturesSection from "@/components/QuickLoansFeaturesSection";
 import CtaSection from "@/components/CtaSection"; // Re-added CtaSection import
 import TopUpLoansSection from "@/components/TopUpLoansSection";
 import InteractiveLoanSimulatorSection from "@/components/InteractiveLoanSimulatorSection";
-import FinancialFreedomSection from "@/components/FinancialFreedomSection";
+// import FinancialFreedomSection from "@/components/FinancialFreedomSection"; // Removed FinancialFreedomSection import
 import LoanComparisonCalculator from "@/components/LoanComparisonCalculator";
 import InsuranceSection from "@/components/InsuranceSection";
 import MadeInBharatSection from "@/components/MadeInBharatSection";
@@ -42,7 +42,7 @@ const Index = () => {
         <HowItWorksSection />
         <LoanComparisonCalculator />
         <MoneyForEverythingSection /> {/* Moved this section here */}
-        <FinancialFreedomSection />
+        {/* <FinancialFreedomSection /> Removed the FinancialFreedomSection component */}
         {/* DataSecuritySection is now part of FinancialFreedomSection */}
         <MemberTestimonialsSection />
         <CtaSection /> {/* Re-added the CtaSection component */}
