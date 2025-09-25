@@ -19,7 +19,8 @@ import ProductsSection from "@/components/ProductsSection";
 import WalkTheTalkSection from "@/components/WalkTheTalkSection";
 import LoanProductsSection from "@/components/LoanProductsSection";
 import LoanProductsShowcaseSection from "@/components/LoanProductsShowcaseSection";
-import CredClubInspiredSection from "@/components/CredClubInspiredSection"; // New import
+import CredClubInspiredSection from "@/components/CredClubInspiredSection";
+import DataSecuritySection from "@/components/DataSecuritySection"; // New import
 
 const Index = () => {
   return (
@@ -42,6 +43,7 @@ const Index = () => {
         <LoanComparisonCalculator />
         <MoneyForEverythingSection /> {/* Moved this section here */}
         <FinancialFreedomSection />
+        <DataSecuritySection /> {/* Added the new section here */}
         <MemberTestimonialsSection />
         <CtaSection />
         <WalkTheTalkSection />
