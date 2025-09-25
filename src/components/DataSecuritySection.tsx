@@ -153,7 +153,7 @@ const DataSecuritySection = () => {
             viewport={{ once: true, amount: 0.5 }}
             className="absolute"
           >
-            <Lock className="h-10 w-10 text-black" />
+            <Lock className="h-10 w-10 text-fintech-gradient-purple-start" /> {/* Changed lock color */}
           </motion.div>
         </motion.div>
 
@@ -163,7 +163,7 @@ const DataSecuritySection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
-          className="text-fintech-text-dark text-xl md:text-2xl font-bold uppercase tracking-wide mb-16"
+          className="text-fintech-orange-accent text-xl md:text-2xl font-bold uppercase tracking-wide mb-16" {/* Changed tagline color */}
         >
           YOUR DATA ISN'T OUR BUSINESS. KEEPING IT SAFE IS.
         </motion.p>
@@ -174,10 +174,10 @@ const DataSecuritySection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
-          className="text-fintech-text-muted text-4xl md:text-6xl font-extrabold leading-tight space-y-2"
+          className="text-4xl md:text-6xl font-extrabold leading-tight space-y-2"
         >
           {mainTextLines.map((line, index) => (
-            <motion.p key={index} variants={itemVariants}>
+            <motion.p key={index} variants={itemVariants} className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-transparent bg-clip-text"> {/* Applied gradient to text */}
               {line}
             </motion.p>
           ))}
