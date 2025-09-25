@@ -28,7 +28,7 @@ const LoanProductsShowcaseSection = () => {
           {/* Top-Left Card: Loan against Mutual Fund */}
           <motion.div
             className={cn(
-              "absolute top-[10%] left-[5%] lg:left-[15%] bg-white p-6 rounded-xl text-center w-[180px] h-[180px] flex flex-col items-center justify-center text-gray-800 z-20",
+              "absolute top-[10%] left-[5%] bg-white p-4 rounded-xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-gray-800 z-20",
               "lg:shadow-2xl lg:shadow-fintech-blue-accent/20 lg:border" // Apply shadow and border only on large screens
             )}
             variants={cardVariants}
@@ -36,14 +36,14 @@ const LoanProductsShowcaseSection = () => {
             whileInView="animate"
             viewport={{ once: true, amount: 0.5 }}
           >
-            <BarChart className="h-8 w-8 text-fintech-orange-accent mb-2" />
-            <p className="text-lg font-semibold">Mutual Fund Loan</p>
-            <p className="text-sm text-gray-600">Leverage investments</p>
+            <BarChart className="h-7 w-7 md:h-8 md:w-8 text-fintech-orange-accent mb-1" />
+            <p className="text-base md:text-lg font-semibold">Mutual Fund Loan</p>
+            <p className="text-xs md:text-sm text-gray-600">Leverage investments</p>
           </motion.div>
           {/* Top-Right Card: Home Loan */}
           <motion.div
             className={cn(
-              "absolute top-[10%] right-[5%] lg:right-[15%] bg-white p-6 rounded-xl text-center w-[180px] h-[180px] flex flex-col items-center justify-center text-gray-800 z-20",
+              "absolute top-[10%] right-[5%] bg-white p-4 rounded-xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-gray-800 z-20",
               "lg:shadow-2xl lg:shadow-fintech-blue-accent/20 lg:border" // Apply shadow and border only on large screens
             )}
             variants={cardVariants}
@@ -51,14 +51,14 @@ const LoanProductsShowcaseSection = () => {
             whileInView="animate"
             viewport={{ once: true, amount: 0.5 }}
           >
-            <Home className="h-8 w-8 text-fintech-orange-accent mb-2" />
-            <p className="text-lg font-semibold">Home Loan</p>
-            <p className="text-sm text-gray-600">Your dream home</p>
+            <Home className="h-7 w-7 md:h-8 md:w-8 text-fintech-orange-accent mb-1" />
+            <p className="text-base md:text-lg font-semibold">Home Loan</p>
+            <p className="text-xs md:text-sm text-gray-600">Your dream home</p>
           </motion.div>
           {/* Bottom-Left Card: Gold Loan */}
           <motion.div
             className={cn(
-              "absolute bottom-[10%] left-[5%] lg:left-[15%] bg-white p-6 rounded-xl text-center w-[180px] h-[180px] flex flex-col items-center justify-center text-gray-800 z-20",
+              "absolute bottom-[10%] left-[5%] bg-white p-4 rounded-xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-gray-800 z-20",
               "lg:shadow-2xl lg:shadow-fintech-blue-accent/20 lg:border" // Apply shadow and border only on large screens
             )}
             variants={cardVariants}
@@ -66,14 +66,14 @@ const LoanProductsShowcaseSection = () => {
             whileInView="animate"
             viewport={{ once: true, amount: 0.5 }}
           >
-            <Gem className="h-8 w-8 text-fintech-orange-accent mb-2" />
-            <p className="text-lg font-semibold">Gold Loan</p>
-            <p className="text-sm text-gray-600">Quick funds against gold</p>
+            <Gem className="h-7 w-7 md:h-8 md:w-8 text-fintech-orange-accent mb-1" />
+            <p className="text-base md:text-lg font-semibold">Gold Loan</p>
+            <p className="text-xs md:text-sm text-gray-600">Quick funds against gold</p>
           </motion.div>
           {/* Bottom-Right Card: Credit Cards */}
           <motion.div
             className={cn(
-              "absolute bottom-[10%] right-[5%] lg:right-[15%] bg-white p-6 rounded-xl text-center w-[180px] h-[180px] flex flex-col items-center justify-center text-gray-800 z-20",
+              "absolute bottom-[10%] right-[5%] bg-white p-4 rounded-xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-gray-800 z-20",
               "lg:shadow-2xl lg:shadow-fintech-blue-accent/20 lg:border" // Apply shadow and border only on large screens
             )}
             variants={cardVariants}
@@ -81,9 +81,9 @@ const LoanProductsShowcaseSection = () => {
             whileInView="animate"
             viewport={{ once: true, amount: 0.5 }}
           >
-            <CreditCard className="h-8 w-8 text-fintech-orange-accent mb-2" />
-            <p className="text-lg font-semibold">Credit Cards</p>
-            <p className="text-sm text-gray-600">Exclusive offers</p>
+            <CreditCard className="h-7 w-7 md:h-8 md:w-8 text-fintech-orange-accent mb-1" />
+            <p className="text-base md:text-lg font-semibold">Credit Cards</p>
+            <p className="text-xs md:text-sm text-gray-600">Exclusive offers</p>
           </motion.div>
 
           {/* Central Phone Mockup */}
