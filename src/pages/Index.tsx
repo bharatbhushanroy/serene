@@ -8,7 +8,7 @@ import HowItWorksSection from "@/components/HowItWorksSection";
 import MemberTestimonialsSection from "@/components/MemberTestimonialsSection";
 import Footer from "@/components/Footer";
 import QuickLoansFeaturesSection from "@/components/QuickLoansFeaturesSection";
-// import CtaSection from "@/components/CtaSection"; // Removed CtaSection import
+import CtaSection from "@/components/CtaSection"; // Re-added CtaSection import
 import TopUpLoansSection from "@/components/TopUpLoansSection";
 import InteractiveLoanSimulatorSection from "@/components/InteractiveLoanSimulatorSection";
 import FinancialFreedomSection from "@/components/FinancialFreedomSection";
@@ -45,7 +45,7 @@ const Index = () => {
         <FinancialFreedomSection />
         {/* DataSecuritySection is now part of FinancialFreedomSection */}
         <MemberTestimonialsSection />
-        {/* <CtaSection /> Removed the CtaSection component */}
+        <CtaSection /> {/* Re-added the CtaSection component */}
         <WalkTheTalkSection />
       </main>
       <Footer />
