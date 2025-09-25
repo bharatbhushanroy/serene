@@ -183,10 +183,10 @@
 }
 
 /* Remove the old hero-background class as it's no longer needed */
-/* .hero-background {
+.hero-background {
   background-image: none;
   background-color: transparent;
-} */
+}
 
 /* Animation for background blobs */
 .animation-delay-2000 {

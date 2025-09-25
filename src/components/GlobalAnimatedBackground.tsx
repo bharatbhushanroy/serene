@@ -2,16 +2,8 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useIsMobile } from '@/hooks/use-mobile'; // Import the useIsMobile hook
 
 const GlobalAnimatedBackground = () => {
-  const isMobile = useIsMobile(); // Check if the device is mobile
-
-  if (isMobile) {
-    // On mobile, do not render complex animated shapes for performance
-    return null;
-  }
-
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none z-0"> {/* z-index: 0 ensures it's above the video (z-index: -2) */}
       {/* Large, subtle circle 1 */}
