@@ -27,7 +27,10 @@ const LoanProductsShowcaseSection = () => {
           {/* Floating Cards */}
           {/* Top-Left Card: Loan against Mutual Fund */}
           <motion.div
-            className="absolute top-[10%] left-[5%] lg:left-[15%] bg-white p-6 rounded-xl shadow-2xl text-center w-[180px] h-[180px] flex flex-col items-center justify-center text-gray-800 z-20"
+            className={cn(
+              "absolute top-[10%] left-[5%] lg:left-[15%] bg-white p-6 rounded-xl text-center w-[180px] h-[180px] flex flex-col items-center justify-center text-gray-800 z-20",
+              "lg:shadow-2xl lg:shadow-fintech-blue-accent/20 lg:border" // Apply shadow and border only on large screens
+            )}
             variants={cardVariants}
             initial="initial"
             whileInView="animate"
@@ -39,7 +42,10 @@ const LoanProductsShowcaseSection = () => {
           </motion.div>
           {/* Top-Right Card: Home Loan */}
           <motion.div
-            className="absolute top-[10%] right-[5%] lg:right-[15%] bg-white p-6 rounded-xl shadow-2xl text-center w-[180px] h-[180px] flex flex-col items-center justify-center text-gray-800 z-20"
+            className={cn(
+              "absolute top-[10%] right-[5%] lg:right-[15%] bg-white p-6 rounded-xl text-center w-[180px] h-[180px] flex flex-col items-center justify-center text-gray-800 z-20",
+              "lg:shadow-2xl lg:shadow-fintech-blue-accent/20 lg:border" // Apply shadow and border only on large screens
+            )}
             variants={cardVariants}
             initial="initial"
             whileInView="animate"
@@ -51,7 +57,10 @@ const LoanProductsShowcaseSection = () => {
           </motion.div>
           {/* Bottom-Left Card: Gold Loan */}
           <motion.div
-            className="absolute bottom-[10%] left-[5%] lg:left-[15%] bg-white p-6 rounded-xl shadow-2xl text-center w-[180px] h-[180px] flex flex-col items-center justify-center text-gray-800 z-20"
+            className={cn(
+              "absolute bottom-[10%] left-[5%] lg:left-[15%] bg-white p-6 rounded-xl text-center w-[180px] h-[180px] flex flex-col items-center justify-center text-gray-800 z-20",
+              "lg:shadow-2xl lg:shadow-fintech-blue-accent/20 lg:border" // Apply shadow and border only on large screens
+            )}
             variants={cardVariants}
             initial="initial"
             whileInView="animate"
@@ -63,7 +72,10 @@ const LoanProductsShowcaseSection = () => {
           </motion.div>
           {/* Bottom-Right Card: Credit Cards */}
           <motion.div
-            className="absolute bottom-[10%] right-[5%] lg:right-[15%] bg-white p-6 rounded-xl shadow-2xl text-center w-[180px] h-[180px] flex flex-col items-center justify-center text-gray-800 z-20"
+            className={cn(
+              "absolute bottom-[10%] right-[5%] lg:right-[15%] bg-white p-6 rounded-xl text-center w-[180px] h-[180px] flex flex-col items-center justify-center text-gray-800 z-20",
+              "lg:shadow-2xl lg:shadow-fintech-blue-accent/20 lg:border" // Apply shadow and border only on large screens
+            )}
             variants={cardVariants}
             initial="initial"
             whileInView="animate"
