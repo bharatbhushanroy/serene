@@ -16,17 +16,21 @@ const LoginPage = () => {
   const [password, setPassword] = useState('');
   const navigate = useNavigate(); // Initialize useNavigate
 
+  // Dummy credentials for demonstration
+  const DUMMY_EMAIL = 'test@example.com';
+  const DUMMY_PASSWORD = 'password123';
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // In a real application, you would send these credentials to an authentication service.
     // For now, we'll just log them and show a toast notification.
     console.log({ email, password });
 
-    if (email && password) {
+    if (email === DUMMY_EMAIL && password === DUMMY_PASSWORD) {
       showSuccess("Login successful!");
       navigate('/dashboard'); // Redirect to the new dashboard page
     } else {
-      showError("Please enter both email and password.");
+      showError("Invalid email or password. Please use the dummy credentials.");
     }
   };
 
@@ -48,7 +52,7 @@ const LoginPage = () => {
                 <Input
                   id="email"
                   type="email"
-                  placeholder="your@example.com"
+                  placeholder={DUMMY_EMAIL} // Display dummy email
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="bg-gray-800 border-gray-700 text-white focus:border-fintech-blue-accent"
@@ -59,7 +63,7 @@ const LoginPage = () => {
                 <Input
                   id="password"
                   type="password"
-                  placeholder="••••••••"
+                  placeholder={DUMMY_PASSWORD} // Display dummy password
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="bg-gray-800 border-gray-700 text-white focus:border-fintech-blue-accent"
