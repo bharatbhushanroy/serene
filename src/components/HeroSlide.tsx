@@ -132,7 +132,7 @@ const HeroSlide: React.FC<HeroSlideProps> = ({
               {gradientWord2}
             </motion.span>
           </motion.h1>
-          <motion.p variants={itemVariants} initial="hidden" animate="visible" className="text-lg text-gray-300 mb-8 max-w-md mx-auto lg:mx-0">
+          <motion.p variants={itemVariants} initial="hidden" animate="visible" className="text-lg text-white mb-8 max-w-md mx-auto lg:mx-0">
             {subtitle}
           </motion.p>
           <motion.div variants={itemVariants} initial="hidden" animate="visible" className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-8">
@@ -149,7 +149,7 @@ const HeroSlide: React.FC<HeroSlideProps> = ({
           </motion.div>
           <motion.ul variants={containerVariants} initial="hidden" animate="visible" className="space-y-3 text-left w-full max-w-md">
             {features.map((feature, index) => (
-              <motion.li key={index} variants={itemVariants} className="flex items-center text-lg text-gray-200">
+              <motion.li key={index} variants={itemVariants} className="flex items-center text-lg text-white">
                 <CheckCircle className="h-6 w-6 text-fintech-blue-accent mr-3 flex-shrink-0" />
                 {feature}
               </motion.li>
