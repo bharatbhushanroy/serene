@@ -12,10 +12,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx", // Crucial for React JSX transformation
-    "paths": {
-      "@/*": ["./src/*"]
-    },
+    "jsx": "react-jsx", /* Crucial for JSX processing */
 
     /* Linting */
     "strict": true,
