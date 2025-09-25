@@ -5,13 +5,17 @@ import { User, Gift, QrCode, Smartphone, Landmark, ArrowRight, Home, Grid, Repea
 import { motion } from 'framer-motion'; // Import motion
 
 const TripleMobileMockup = () => {
-  const PhoneFrame = ({ children, className = "" }) => (
+  const PhoneFrame = ({ children, className = "", animationDelay = 0, rotation = 0, offsetX = 0, offsetY = 0 }) => (
     <motion.div
-      className={`relative w-[320px] h-[650px] bg-black rounded-[40px] shadow-2xl flex items-center justify-center p-2 border-[8px] border-gray-800 overflow-hidden z-20 ${className}`}
-      initial={{ opacity: 0, scale: 0.8, rotateY: 15 }}
-      whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
+      className={`absolute w-[280px] h-[580px] bg-black rounded-[40px] shadow-2xl flex items-center justify-center p-2 border-[8px] border-gray-800 overflow-hidden z-20 ${className}`}
+      initial={{ opacity: 0, scale: 0.8, rotateY: 15, x: offsetX, y: offsetY }}
+      whileInView={{ opacity: 1, scale: 1, rotateY: 0, x: offsetX, y: offsetY }}
       viewport={{ once: true, amount: 0.5 }}
-      transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+      transition={{ duration: 0.8, ease: "easeOut", delay: animationDelay }}
+      animate={{
+        y: [offsetY, offsetY - 10, offsetY, offsetY + 10, offsetY],
+        rotate: [rotation, rotation + 0.5, rotation, rotation - 0.5, rotation],
+      }}
       style={{
         transformStyle: 'preserve-3d',
         transformOrigin: 'center center',
@@ -28,9 +32,31 @@ const TripleMobileMockup = () => {
   );
 
   return (
-    <div className="relative flex items-center justify-center w-full h-full min-h-[600px]">
-      {/* Phone 2 (Middle) - Now the only phone */}
-      <PhoneFrame>
+    <div className="relative flex items-center justify-center w-full h-full min-h-[650px]">
+      {/* Phone 1 (Left, slightly behind) */}
+      <PhoneFrame className="z-10" animationDelay={0.1} rotation={-5} offsetX={-100} offsetY={-20}>
+        <div className="flex items-center justify-between p-3 bg-[#1A1A1A] text-white">
+          <User className="h-4 w-4 text-gray-400" />
+          <span className="text-sm font-semibold">Rewards</span>
+          <Gift className="h-4 w-4 text-purple-400" />
+        </div>
+        <div className="flex-1 bg-[#1A1A1A] p-3 overflow-y-auto text-white text-center">
+          <h3 className="text-xl font-bold mb-2">Your Points</h3>
+          <p className="text-4xl font-bold text-fintech-orange-accent mb-4">12,500</p>
+          <p className="text-sm text-gray-400 mb-4">Redeem for exclusive offers!</p>
+          <div className="bg-gray-800 rounded-xl p-3 mb-3">
+            <p className="text-sm font-semibold">Cashback Offer</p>
+            <p className="text-xs text-gray-400">Get 10% back on groceries</p>
+          </div>
+          <div className="bg-gray-800 rounded-xl p-3">
+            <p className="text-sm font-semibold">Travel Vouchers</p>
+            <p className="text-xs text-gray-400">Save on your next trip</p>
+          </div>
+        </div>
+      </PhoneFrame>
+
+      {/* Phone 2 (Middle, front) */}
+      <PhoneFrame className="z-30" animationDelay={0.3} rotation={0} offsetX={0} offsetY={0}>
         {/* Top Bar */}
         <div className="flex items-center justify-between p-3 bg-[#1A1A1A] text-white">
           <User className="h-4 w-4 text-gray-400" />
@@ -107,6 +133,28 @@ const TripleMobileMockup = () => {
               <p className="text-xs text-gray-400">Check now</p>
             </div>
             <img src="/public/credit-score.svg" alt="Credit score" className="h-8 w-8" />
+          </div>
+        </div>
+      </PhoneFrame>
+
+      {/* Phone 3 (Right, slightly behind) */}
+      <PhoneFrame className="z-10" animationDelay={0.2} rotation={5} offsetX={100} offsetY={20}>
+        <div className="flex items-center justify-between p-3 bg-[#1A1A1A] text-white">
+          <User className="h-4 w-4 text-gray-400" />
+          <span className="text-sm font-semibold">Insights</span>
+          <BarChart className="h-4 w-4 text-green-400" />
+        </div>
+        <div className="flex-1 bg-[#1A1A1A] p-3 overflow-y-auto text-white text-center">
+          <h3 className="text-xl font-bold mb-2">Spending Analysis</h3>
+          <p className="text-4xl font-bold text-fintech-green-success mb-4">₹25,000</p>
+          <p className="text-sm text-gray-400 mb-4">This month's expenses</p>
+          <div className="bg-gray-800 rounded-xl p-3 mb-3">
+            <p className="text-sm font-semibold">Food & Dining</p>
+            <p className="text-xs text-gray-400">₹8,000</p>
+          </div>
+          <div className="bg-gray-800 rounded-xl p-3">
+            <p className="text-sm font-semibold">Shopping</p>
+            <p className="text-xs text-gray-400">₹6,000</p>
           </div>
         </div>
       </PhoneFrame>
