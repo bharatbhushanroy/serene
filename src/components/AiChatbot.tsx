@@ -185,6 +185,48 @@ const AiChatbot = () => {
     }, 1200);
   };
 
+  const KikiAvatar = () => (
+    <motion.div
+      className="relative w-24 h-24"
+      whileHover={{ scale: 1.05 }}
+      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+    >
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+        <defs>
+          <linearGradient id="kikiBodyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="hsl(var(--fintech-kiki-body-gradient-start))" />
+            <stop offset="100%" stopColor="hsl(var(--fintech-kiki-body-gradient-end))" />
+          </linearGradient>
+        </defs>
+        {/* Body */}
+        <circle cx="50" cy="75" r="20" fill="url(#kikiBodyGradient)" />
+        {/* Head */}
+        <circle cx="50" cy="40" r="25" fill="hsl(var(--fintech-kiki-head-color))" /> {/* Skin tone */}
+        {/* Hair */}
+        <path d="M25 40 C20 10 80 10 75 40 L75 50 C70 70 30 70 25 50 Z" fill="#4A2C2A" /> {/* Dark brown hair */}
+        {/* Eyes */}
+        <circle cx="40" cy="35" r="3" fill="black" />
+        <circle cx="60" cy="35" r="3" fill="black" />
+        {/* Mouth */}
+        <path d="M45 50 Q50 55 55 50" stroke="black" strokeWidth="1" fill="none" />
+        {/* Arm 1 */}
+        <rect x="25" y="60" width="10" height="30" rx="5" fill="url(#kikiBodyGradient)" transform="rotate(-15 25 60)" />
+        {/* Arm 2 (waving) */}
+        <motion.rect
+          x="65"
+          y="55"
+          width="10"
+          height="30"
+          rx="5"
+          fill="url(#kikiBodyGradient)"
+          transform="rotate(15 65 55)"
+          animate={{ rotate: [15, 25, 15, 5, 15] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+        />
+      </svg>
+    </motion.div>
+  );
+
   return (
     <>
       {/* Kiki Avatar and Speech Bubble */}
@@ -211,35 +253,7 @@ const AiChatbot = () => {
           )}
         </AnimatePresence>
 
-        {/* Kiki Avatar (Placeholder SVG) */}
-        <div className="relative w-24 h-24">
-          {/* Replace this SVG with your actual Kiki illustration */}
-          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-            <defs>
-              <linearGradient id="niviGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="hsl(var(--fintech-kiki-body-gradient-start))" />
-                <stop offset="100%" stopColor="hsl(var(--fintech-kiki-body-gradient-end))" />
-              </linearGradient>
-            </defs>
-            {/* Body */}
-            <circle cx="50" cy="75" r="20" fill="url(#niviGradient)" />
-            {/* Head */}
-            <circle cx="50" cy="40" r="25" fill="hsl(var(--fintech-kiki-head-color))" /> {/* Skin tone */}
-            {/* Hair */}
-            <path d="M25 40 C20 10 80 10 75 40 L75 50 C70 70 30 70 25 50 Z" fill="#4A2C2A" /> {/* Dark brown hair */}
-            {/* Eyes */}
-            <circle cx="40" cy="35" r="3" fill="black" />
-            <circle cx="60" cy="35" r="3" fill="black" />
-            {/* Mouth */}
-            <path d="M45 50 Q50 55 55 50" stroke="black" strokeWidth="1" fill="none" />
-            {/* Arm 1 */}
-            <rect x="25" y="60" width="10" height="30" rx="5" fill="url(#niviGradient)" transform="rotate(-15 25 60)" />
-            {/* Arm 2 (waving) */}
-            <rect x="65" y="55" width="10" height="30" rx="5" fill="url(#niviGradient)" transform="rotate(15 65 55)" />
-          </svg>
-          {/* You can replace the SVG above with an <img> tag pointing to your Kiki illustration */}
-          {/* <img src="/path/to/kiki-illustration.png" alt="Kiki AI Assistant" className="w-full h-full object-contain" /> */}
-        </div>
+        <KikiAvatar />
       </motion.div>
 
       <AnimatePresence>
@@ -253,7 +267,7 @@ const AiChatbot = () => {
           >
             <header className="flex items-center justify-between p-4 border-b border-fintech-border-light">
               <div className="flex items-center space-x-3">
-                <User className="h-7 w-7 text-fintech-blue-accent" /> {/* Changed Sparkles to User */}
+                <User className="h-7 w-7 text-fintech-blue-accent" />
                 <div>
                   <h3 className="font-bold text-white text-lg">Kiki, Your Personal Assistant</h3>
                   <p className="text-xs text-fintech-green-success flex items-center">
@@ -282,10 +296,10 @@ const AiChatbot = () => {
                       message.sender === 'user' ? 'justify-end' : 'justify-start'
                     )}
                   >
-                    {message.sender === 'bot' && <User className="h-6 w-6 text-fintech-blue-accent flex-shrink-0" />} {/* Changed Sparkles to User */}
+                    {message.sender === 'bot' && <User className="h-6 w-6 text-fintech-blue-accent flex-shrink-0" />}
                     <div
                       className={cn(
-                        "max-w-xs rounded-2xl px-4 py-2 text-sm",
+                        "max-w-xs rounded-2xl px-4 py-2 text-sm relative",
                         message.sender === 'user'
                           ? 'bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white rounded-br-none'
                           : 'bg-fintech-dark-bg-lighter border border-fintech-border-light text-white rounded-bl-none'
@@ -310,7 +324,7 @@ const AiChatbot = () => {
                 <Button
                   size="icon"
                   onClick={handleSendMessage}
-                  className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white flex-shrink-0"
+                  className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white flex-shrink-0 hover:opacity-90 transition-opacity"
                 >
                   <Send className="h-5 w-5" />
                 </Button>
