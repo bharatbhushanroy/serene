@@ -102,7 +102,7 @@ const CredClubInspiredSection = () => {
           initial="hidden"
           animate="visible"
         >
-          feel the odds fall in your favor
+          Feel the odds fall in your favor
         </motion.h1>
         <motion.p
           className="text-lg md:text-xl text-gray-300 mb-12 max-w-2xl"
