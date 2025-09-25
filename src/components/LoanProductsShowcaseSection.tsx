@@ -17,7 +17,7 @@ const LoanProductsShowcaseSection = () => {
     <section className="relative w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-main-bg text-white overflow-hidden">
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
-          Explore Our <span className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-transparent bg-clip-text">Financial Products</span>
+          Explore Our <span className="text-white lg:bg-gradient-to-r lg:from-fintech-button-primary-gradient-start lg:to-fintech-button-primary-gradient-end lg:text-transparent lg:bg-clip-text">Financial Products</span>
         </h2>
         <p className="text-lg text-fintech-text-muted mb-12 max-w-2xl mx-auto">
           Discover a wide range of loan options and credit solutions tailored to your needs.
