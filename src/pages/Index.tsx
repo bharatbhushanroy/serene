@@ -18,7 +18,8 @@ import MadeInBharatSection from "@/components/MadeInBharatSection";
 import ProductsSection from "@/components/ProductsSection";
 import WalkTheTalkSection from "@/components/WalkTheTalkSection";
 import LoanProductsSection from "@/components/LoanProductsSection";
-import LoanProductsShowcaseSection from "@/components/LoanProductsShowcaseSection"; // New import
+import LoanProductsShowcaseSection from "@/components/LoanProductsShowcaseSection";
+import CredClubInspiredSection from "@/components/CredClubInspiredSection"; // New import
 
 const Index = () => {
   return (
@@ -26,6 +27,7 @@ const Index = () => {
       <Header />
       <main>
         <HeroCarousel /> {/* Render the new HeroCarousel */}
+        <CredClubInspiredSection /> {/* Added the new CredClubInspiredSection here */}
         <ProductsSection />
         <ApplyStepsSection />
         <QuickLoansFeaturesSection />
