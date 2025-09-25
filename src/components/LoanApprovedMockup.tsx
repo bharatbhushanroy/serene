@@ -3,16 +3,34 @@
 import React from 'react';
 import { CheckCircle } from 'lucide-react';
 import QickyLogo from './QickyLogo'; // Import the new QickyLogo component
+import { motion } from 'framer-motion'; // Import motion
 
 const LoanApprovedMockup = () => {
+  const mockupVariants = {
+    initial: { opacity: 0, scale: 0.8, rotateY: 15 },
+    animate: { opacity: 1, scale: 1, rotateY: 0, transition: { duration: 0.8, ease: "easeOut" } },
+    float: {
+      y: [0, -10, 0, 10, 0],
+      rotate: [0, 1, 0, -1, 0],
+      transition: {
+        duration: 15,
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
-    <div
+    <motion.div
       className="relative z-10 w-full max-w-xs mx-auto bg-fintech-simulator-card-bg/80 backdrop-blur-lg border border-fintech-border-light rounded-3xl p-6 shadow-2xl shadow-fintech-blue-accent/20"
       style={{
         transformStyle: 'preserve-3d',
         transformOrigin: 'center center',
         boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 30px rgba(59, 130, 246, 0.3)' // Enhanced shadow with blue glow
       }}
+      variants={mockupVariants}
+      initial="initial"
+      animate={["animate", "float"]}
     >
       <div className="flex flex-col items-center text-center">
         <QickyLogo size="md" /> {/* Use the new QickyLogo component */}
@@ -30,7 +48,7 @@ const LoanApprovedMockup = () => {
           </p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -4,16 +4,34 @@ import React from 'react';
 import { User, Gift, Zap, DollarSign, Info, ArrowRight, Umbrella, Plus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { motion } from 'framer-motion'; // Import motion
 
 const InsurancePhoneMockup = () => {
+  const phoneVariants = {
+    initial: { opacity: 0, scale: 0.8, rotateY: 15 },
+    animate: { opacity: 1, scale: 1, rotateY: 0, transition: { duration: 0.8, ease: "easeOut" } },
+    float: {
+      y: [0, -10, 0, 10, 0],
+      rotate: [0, 1, 0, -1, 0],
+      transition: {
+        duration: 15,
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
-    <div
+    <motion.div
       className="relative w-[320px] h-[650px] bg-black rounded-[40px] shadow-2xl flex items-center justify-center p-2 border-[8px] border-gray-800 overflow-hidden z-20"
       style={{
         transformStyle: 'preserve-3d',
         transformOrigin: 'center center',
         boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 30px rgba(59, 130, 246, 0.3)' // Enhanced shadow with blue glow
       }}
+      variants={phoneVariants}
+      initial="initial"
+      animate={["animate", "float"]}
     >
       {/* Notch */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/5 h-6 bg-black rounded-b-xl z-10"></div>
@@ -88,7 +106,7 @@ const InsurancePhoneMockup = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

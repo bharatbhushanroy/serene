@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { DollarSign, ArrowRight } from 'lucide-react'; // Added ArrowRight
+import DataSecuritySection from './DataSecuritySection'; // Import the new DataSecuritySection
 
 const FinancialFreedomSection = () => {
   const dollarSignVariants = {
@@ -138,40 +139,8 @@ const FinancialFreedomSection = () => {
           </motion.div>
         </div>
 
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 }}
-          className="p-12 rounded-2xl text-center bg-fintech-dark-bg-lighter shadow-2xl shadow-fintech-blue-accent/10"
-        >
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-4">
-            Ready to take the next step?
-          </h2>
-          <p className="text-white/80 mb-8 max-w-2xl mx-auto text-lg">
-            Our financial experts are ready to guide you through every step of the loan process.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <Link to="/apply-loan">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-all duration-300 group"
-              >
-                Apply Now <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
-            <Link to="/about">
-              <Button
-                variant="outline"
-                size="lg"
-                className="bg-transparent border-gray-700 text-gray-200 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-800 hover:border-fintech-blue-accent transition-colors"
-              >
-                Learn More
-              </Button>
-            </Link>
-          </div>
-        </motion.div>
+        {/* Data Security Section (Replaced old CTA) */}
+        <DataSecuritySection />
       </div>
     </section>
   );

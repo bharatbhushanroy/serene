@@ -9,8 +9,29 @@ import LoanProductsPhoneMockup from './LoanProductsPhoneMockup'; // Import the n
 
 const LoanProductsShowcaseSection = () => {
   const cardVariants = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    initial: { opacity: 0, y: 50, scale: 0.8, rotate: 0 },
+    animate: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      rotate: i % 2 === 0 ? -5 : 5, // Alternate rotation
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+        delay: i * 0.1,
+      },
+    }),
+    float: (i: number) => ({
+      y: [0, 15, 0, -15, 0],
+      x: [0, i * 5, 0, -i * 5, 0],
+      rotate: [i % 2 === 0 ? -5 : 5, i % 2 === 0 ? -7 : 7, i % 2 === 0 ? -5 : 5, i % 2 === 0 ? -3 : 3, i % 2 === 0 ? -5 : 5],
+      transition: {
+        duration: 10 + i * 2,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: i * 0.5,
+      },
+    }),
   };
 
   return (
@@ -33,8 +54,9 @@ const LoanProductsShowcaseSection = () => {
             )}
             variants={cardVariants}
             initial="initial"
-            whileInView="animate"
+            whileInView={["animate", "float"]}
             viewport={{ once: true, amount: 0.5 }}
+            custom={0}
           >
             <BarChart className="h-7 w-7 md:h-8 md:w-8 text-fintech-orange-accent mb-1" />
             <p className="text-base md:text-lg font-semibold">Mutual Fund Loan</p>
@@ -48,8 +70,9 @@ const LoanProductsShowcaseSection = () => {
             )}
             variants={cardVariants}
             initial="initial"
-            whileInView="animate"
+            whileInView={["animate", "float"]}
             viewport={{ once: true, amount: 0.5 }}
+            custom={1}
           >
             <Home className="h-7 w-7 md:h-8 md:w-8 text-fintech-orange-accent mb-1" />
             <p className="text-base md:text-lg font-semibold">Home Loan</p>
@@ -63,8 +86,9 @@ const LoanProductsShowcaseSection = () => {
             )}
             variants={cardVariants}
             initial="initial"
-            whileInView="animate"
+            whileInView={["animate", "float"]}
             viewport={{ once: true, amount: 0.5 }}
+            custom={2}
           >
             <Gem className="h-7 w-7 md:h-8 md:w-8 text-fintech-orange-accent mb-1" />
             <p className="text-base md:text-lg font-semibold">Gold Loan</p>
@@ -78,8 +102,9 @@ const LoanProductsShowcaseSection = () => {
             )}
             variants={cardVariants}
             initial="initial"
-            whileInView="animate"
+            whileInView={["animate", "float"]}
             viewport={{ once: true, amount: 0.5 }}
+            custom={3}
           >
             <CreditCard className="h-7 w-7 md:h-8 md:w-8 text-fintech-orange-accent mb-1" />
             <p className="text-base md:text-lg font-semibold">Credit Cards</p>

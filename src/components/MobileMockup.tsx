@@ -3,64 +3,124 @@
 import React from 'react';
 import { User, Gift, Banknote, ArrowRight, Home, Grid, LayoutGrid, Repeat, Receipt, Percent, Landmark, CalendarCheck } from 'lucide-react';
 import { cn } from '@/lib/utils'; // Import cn for conditional classes
+import { motion } from 'framer-motion'; // Import motion
 
 interface MobileMockupProps {
   className?: string;
 }
 
 const MobileMockup: React.FC<MobileMockupProps> = ({ className }) => {
+  const cardVariants = {
+    initial: { opacity: 0, y: 50, rotate: 0, scale: 0.8 },
+    animate: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      rotate: i % 2 === 0 ? -3 : 3, // Alternate rotation
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+        delay: i * 0.1,
+      },
+    }),
+    float: (i: number) => ({
+      y: [0, 10, 0, -10, 0],
+      x: [0, i * 5, 0, -i * 5, 0],
+      rotate: [i % 2 === 0 ? -3 : 3, i % 2 === 0 ? -5 : 5, i % 2 === 0 ? -3 : 3, i % 2 === 0 ? -1 : 1, i % 2 === 0 ? -3 : 3],
+      transition: {
+        duration: 10 + i * 2,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: i * 0.5,
+      },
+    }),
+  };
+
+  const phoneVariants = {
+    initial: { opacity: 0, scale: 0.8, rotateY: 15 },
+    animate: { opacity: 1, scale: 1, rotateY: 0, transition: { duration: 0.8, ease: "easeOut" } },
+    float: {
+      y: [0, -10, 0, 10, 0],
+      rotate: [0, 1, 0, -1, 0],
+      transition: {
+        duration: 15,
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
     <div className={cn("relative flex items-center justify-center w-full h-full min-h-[700px]", className)}>
       {/* Floating Cards */}
       {/* Top-Left Card */}
-      <div
-        className="absolute top-[10%] left-[-35%] w-[110px] h-[110px] bg-fintech-peach-background p-3 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-gray-800 -rotate-3 z-10
+      <motion.div
+        className="absolute top-[10%] left-[-35%] w-[110px] h-[110px] bg-fintech-peach-background p-3 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-gray-800 z-10
                       lg:top-[15%] lg:-left-[20%] lg:w-[160px] lg:h-[160px]" // Adjusted mobile positioning and size
+        variants={cardVariants}
+        initial="initial"
+        animate={["animate", "float"]}
+        custom={0}
       >
         <Banknote className="h-5 w-5 text-fintech-orange-accent mb-1" />
         <p className="text-xs text-gray-800">Get Up To</p>
         <p className="text-lg font-bold text-fintech-orange-accent">₹5 Lakhs</p>
         <p className="text-xs text-gray-800">Loan</p>
-      </div>
+      </motion.div>
       {/* Top-Right Card */}
-      <div
-        className="absolute top-[10%] right-[-35%] w-[110px] h-[110px] bg-fintech-peach-background p-3 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-gray-800 rotate-3 z-10
+      <motion.div
+        className="absolute top-[10%] right-[-35%] w-[110px] h-[110px] bg-fintech-peach-background p-3 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-gray-800 z-10
                       lg:top-[15%] lg:-right-[20%] lg:w-[160px] lg:h-[160px]" // Adjusted mobile positioning and size
+        variants={cardVariants}
+        initial="initial"
+        animate={["animate", "float"]}
+        custom={1}
       >
         <Percent className="h-5 w-5 text-fintech-orange-accent mb-1" />
         <p className="text-xs text-gray-800">Rate starting from</p>
         <p className="text-lg font-bold text-fintech-orange-accent">0.88%</p>
         <p className="text-xs text-gray-800">per month</p>
-      </div>
+      </motion.div>
       {/* Bottom-Left Card */}
-      <div
-        className="absolute bottom-[10%] left-[-35%] w-[110px] h-[110px] bg-fintech-peach-background p-3 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-gray-800 rotate-3 z-10
+      <motion.div
+        className="absolute bottom-[10%] left-[-35%] w-[110px] h-[110px] bg-fintech-peach-background p-3 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-gray-800 z-10
                       lg:bottom-[15%] lg:-left-[20%] lg:w-[160px] lg:h-[160px]" // Adjusted mobile positioning and size
+        variants={cardVariants}
+        initial="initial"
+        animate={["animate", "float"]}
+        custom={2}
       >
         <Landmark className="h-5 w-5 text-fintech-orange-accent mb-1" />
         <p className="text-xs text-gray-800">Transfer to</p>
         <p className="text-lg font-bold text-fintech-orange-accent">Your Bank</p>
         <p className="text-xs text-gray-800">In Seconds</p>
-      </div>
+      </motion.div>
       {/* Bottom-Right Card */}
-      <div
-        className="absolute bottom-[10%] right-[-35%] w-[110px] h-[110px] bg-fintech-peach-background p-3 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-gray-800 -rotate-3 z-10
+      <motion.div
+        className="absolute bottom-[10%] right-[-35%] w-[110px] h-[110px] bg-fintech-peach-background p-3 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-gray-800 z-10
                       lg:bottom-[15%] lg:-right-[20%] lg:w-[160px] lg:h-[160px]" // Adjusted mobile positioning and size
+        variants={cardVariants}
+        initial="initial"
+        animate={["animate", "float"]}
+        custom={3}
       >
         <CalendarCheck className="h-5 w-5 text-fintech-orange-accent mb-1" />
         <p className="text-xs text-gray-800">Repay EMI in</p>
         <p className="text-lg font-bold text-fintech-orange-accent">3 to 36</p>
         <p className="text-xs text-gray-800">Months</p>
-      </div>
+      </motion.div>
 
       {/* Phone Frame */}
-      <div
+      <motion.div
         className="relative w-[320px] h-[650px] bg-black rounded-[40px] shadow-2xl flex items-center justify-center p-2 border-[8px] border-gray-800 overflow-hidden z-20"
         style={{
           transformStyle: 'preserve-3d',
           transformOrigin: 'center center',
           boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 30px rgba(59, 130, 246, 0.3)' // Enhanced shadow with blue glow
         }}
+        variants={phoneVariants}
+        initial="initial"
+        animate={["animate", "float"]}
       >
         {/* Notch */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/5 h-6 bg-black rounded-b-xl z-10"></div>
@@ -136,7 +196,7 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className }) => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

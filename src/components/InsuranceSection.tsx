@@ -8,8 +8,43 @@ import { cn } from '@/lib/utils';
 
 const InsuranceSection = () => {
   const cardVariants = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    initial: { opacity: 0, y: 50, scale: 0.8, rotate: 0 },
+    animate: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      rotate: i % 2 === 0 ? -5 : 5, // Alternate rotation
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+        delay: i * 0.1,
+      },
+    }),
+    float: (i: number) => ({
+      y: [0, 15, 0, -15, 0],
+      x: [0, i * 5, 0, -i * 5, 0],
+      rotate: [i % 2 === 0 ? -5 : 5, i % 2 === 0 ? -7 : 7, i % 2 === 0 ? -5 : 5, i % 2 === 0 ? -3 : 3, i % 2 === 0 ? -5 : 5],
+      transition: {
+        duration: 10 + i * 2,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: i * 0.5,
+      },
+    }),
+  };
+
+  const phoneVariants = {
+    initial: { opacity: 0, scale: 0.8, rotateY: 15 },
+    animate: { opacity: 1, scale: 1, rotateY: 0, transition: { duration: 0.8, ease: "easeOut" } },
+    float: {
+      y: [0, -10, 0, 10, 0],
+      rotate: [0, 1, 0, -1, 0],
+      transition: {
+        duration: 15,
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
+    },
   };
 
   return (
@@ -29,8 +64,9 @@ const InsuranceSection = () => {
             className="absolute top-[5%] left-[2%] p-4 rounded-xl shadow-2xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-gray-800 z-20 bg-white"
             variants={cardVariants}
             initial="initial"
-            whileInView="animate"
+            whileInView={["animate", "float"]}
             viewport={{ once: true, amount: 0.5 }}
+            custom={0}
           >
             <ShieldCheck className="h-6 w-6 md:h-8 md:w-8 text-fintech-orange-accent mb-1" />
             <p className="text-base md:text-lg font-semibold">Health Insurance</p>
@@ -41,8 +77,9 @@ const InsuranceSection = () => {
             className="absolute top-[5%] right-[2%] p-4 rounded-xl shadow-2xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-gray-800 z-20 bg-white"
             variants={cardVariants}
             initial="initial"
-            whileInView="animate"
+            whileInView={["animate", "float"]}
             viewport={{ once: true, amount: 0.5 }}
+            custom={1}
           >
             <Car className="h-6 w-6 md:h-8 md:w-8 text-fintech-orange-accent mb-1" />
             <p className="text-base md:text-lg font-semibold">Car Insurance</p>
@@ -53,8 +90,9 @@ const InsuranceSection = () => {
             className="absolute bottom-[5%] left-[2%] p-4 rounded-xl shadow-2xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-gray-800 z-20 bg-white"
             variants={cardVariants}
             initial="initial"
-            whileInView="animate"
+            whileInView={["animate", "float"]}
             viewport={{ once: true, amount: 0.5 }}
+            custom={2}
           >
             <Home className="h-6 w-6 md:h-8 md:w-8 text-fintech-orange-accent mb-1" />
             <p className="text-base md:text-lg font-semibold">Home Insurance</p>
@@ -65,8 +103,9 @@ const InsuranceSection = () => {
             className="absolute bottom-[5%] right-[2%] p-4 rounded-xl shadow-2xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-gray-800 z-20 bg-white"
             variants={cardVariants}
             initial="initial"
-            whileInView="animate"
+            whileInView={["animate", "float"]}
             viewport={{ once: true, amount: 0.5 }}
+            custom={3}
           >
             <Heart className="h-6 w-6 md:h-8 md:w-8 text-fintech-orange-accent mb-1" />
             <p className="text-base md:text-lg font-semibold">Life Insurance</p>
@@ -76,10 +115,10 @@ const InsuranceSection = () => {
           {/* Central Phone Mockup */}
           <motion.div
             className="relative w-[280px] h-[550px] md:w-[300px] md:h-[600px] lg:w-[350px] lg:h-[700px] bg-black rounded-[40px] shadow-2xl flex items-center justify-center p-2 border-[8px] border-gray-800 overflow-hidden z-10"
-            initial={{ opacity: 0, scale: 0.8, rotateY: 15 }}
-            whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
+            initial="initial"
+            whileInView={["animate", "float"]}
             viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            variants={phoneVariants}
             style={{
               transformStyle: 'preserve-3d',
               transformOrigin: 'center center',

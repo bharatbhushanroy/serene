@@ -34,14 +34,31 @@ const IconCard: React.FC<IconCardProps> = ({ icon: Icon, text, backgroundClass =
 
 // Custom Phone Mockup for this section
 const PhoneSimulatorMockup = () => {
+  const phoneVariants = {
+    initial: { opacity: 0, scale: 0.8, rotateY: 15 },
+    animate: { opacity: 1, scale: 1, rotateY: 0, transition: { duration: 0.8, ease: "easeOut" } },
+    float: {
+      y: [0, -10, 0, 10, 0],
+      rotate: [0, 1, 0, -1, 0],
+      transition: {
+        duration: 15,
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
-    <div
+    <motion.div
       className="relative w-[220px] h-[400px] bg-fintech-phone-bg rounded-[30px] shadow-2xl flex items-center justify-center p-1.5 border-[6px] border-fintech-phone-border overflow-hidden"
       style={{
         transformStyle: 'preserve-3d',
         transformOrigin: 'center center',
         boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 30px rgba(249, 115, 22, 0.3)' // Enhanced shadow
       }}
+      variants={phoneVariants}
+      initial="initial"
+      animate={["animate", "float"]}
     >
       {/* Notch */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-4 bg-black rounded-b-md z-10"></div>
@@ -64,7 +81,7 @@ const PhoneSimulatorMockup = () => {
           APPLY
         </Button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

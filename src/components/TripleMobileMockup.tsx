@@ -5,24 +5,55 @@ import { User, Gift, QrCode, Smartphone, Landmark, ArrowRight, Home, Grid, Repea
 import { motion } from 'framer-motion'; // Import motion
 
 const TripleMobileMockup = () => {
-  const PhoneFrame = ({ children, className = "", animationDelay = 0, rotation = 0, offsetX = 0, offsetY = 0 }) => (
-    <div
-      className={`absolute w-[280px] h-[580px] bg-black rounded-[40px] shadow-2xl flex items-center justify-center p-2 border-[8px] border-gray-800 overflow-hidden z-20 ${className}`}
-      style={{
-        transformStyle: 'preserve-3d',
-        transformOrigin: 'center center',
-        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 30px rgba(249, 115, 22, 0.3)', // Enhanced shadow
-        transform: `translate(${offsetX}px, ${offsetY}px) rotate(${rotation}deg)`
-      }}
-    >
-      {/* Notch */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/5 h-6 bg-black rounded-b-xl z-10"></div>
-      {/* Screen Content */}
-      <div className="relative w-full h-full bg-[#1A1A1A] rounded-[30px] overflow-hidden flex flex-col">
-        {children}
-      </div>
-    </div>
-  );
+  const PhoneFrame = ({ children, className = "", animationDelay = 0, rotation = 0, offsetX = 0, offsetY = 0 }) => {
+    const phoneVariants = {
+      initial: { opacity: 0, scale: 0.8, rotateY: 15, x: offsetX, y: offsetY, rotate: rotation },
+      animate: {
+        opacity: 1,
+        scale: 1,
+        rotateY: 0,
+        x: offsetX,
+        y: offsetY,
+        rotate: rotation,
+        transition: {
+          duration: 0.8,
+          ease: "easeOut",
+          delay: animationDelay,
+        },
+      },
+      float: {
+        y: [offsetY, offsetY - 15, offsetY, offsetY + 15, offsetY],
+        x: [offsetX, offsetX + 10, offsetX - 10, offsetX + 10, offsetX],
+        rotate: [rotation, rotation + 1, rotation - 1, rotation + 1, rotation],
+        transition: {
+          duration: 15 + animationDelay * 10,
+          repeat: Infinity,
+          ease: "easeInOut",
+        },
+      },
+    };
+
+    return (
+      <motion.div
+        className={`absolute w-[280px] h-[580px] bg-black rounded-[40px] shadow-2xl flex items-center justify-center p-2 border-[8px] border-gray-800 overflow-hidden z-20 ${className}`}
+        style={{
+          transformStyle: 'preserve-3d',
+          transformOrigin: 'center center',
+          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 30px rgba(249, 115, 22, 0.3)', // Enhanced shadow
+        }}
+        variants={phoneVariants}
+        initial="initial"
+        animate={["animate", "float"]}
+      >
+        {/* Notch */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/5 h-6 bg-black rounded-b-xl z-10"></div>
+        {/* Screen Content */}
+        <div className="relative w-full h-full bg-[#1A1A1A] rounded-[30px] overflow-hidden flex flex-col">
+          {children}
+        </div>
+      </motion.div>
+    );
+  };
 
   return (
     <div className="relative flex items-center justify-center w-full h-full min-h-[650px]">
