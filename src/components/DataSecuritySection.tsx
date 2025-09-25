@@ -31,7 +31,9 @@ const AnimatedBackgroundSphere = ({ size, x, y, delay, duration, colorClass, blu
         ease: "easeInOut",
         delay: delay,
       }}
-    />
+    >
+      {/* Removed innerColorClass rendering as it's not provided in the data */}
+    </motion.div>
   );
 };
 
