@@ -6,20 +6,13 @@ import { motion } from 'framer-motion'; // Import motion
 
 const TripleMobileMockup = () => {
   const PhoneFrame = ({ children, className = "", animationDelay = 0, rotation = 0, offsetX = 0, offsetY = 0 }) => (
-    <motion.div
+    <div
       className={`absolute w-[280px] h-[580px] bg-black rounded-[40px] shadow-2xl flex items-center justify-center p-2 border-[8px] border-gray-800 overflow-hidden z-20 ${className}`}
-      initial={{ opacity: 0, scale: 0.8, rotateY: 15, x: offsetX, y: offsetY }}
-      whileInView={{ opacity: 1, scale: 1, rotateY: 0, x: offsetX, y: offsetY }}
-      viewport={{ once: true, amount: 0.5 }}
-      transition={{ duration: 0.8, ease: "easeOut", delay: animationDelay }}
-      animate={{
-        y: [offsetY, offsetY - 10, offsetY, offsetY + 10, offsetY],
-        rotate: [rotation, rotation + 0.5, rotation, rotation - 0.5, rotation],
-      }}
       style={{
         transformStyle: 'preserve-3d',
         transformOrigin: 'center center',
-        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 30px rgba(249, 115, 22, 0.3)' // Enhanced shadow
+        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 30px rgba(249, 115, 22, 0.3)', // Enhanced shadow
+        transform: `translate(${offsetX}px, ${offsetY}px) rotate(${rotation}deg)`
       }}
     >
       {/* Notch */}
@@ -28,7 +21,7 @@ const TripleMobileMockup = () => {
       <div className="relative w-full h-full bg-[#1A1A1A] rounded-[30px] overflow-hidden flex flex-col">
         {children}
       </div>
-    </motion.div>
+    </div>
   );
 
   return (

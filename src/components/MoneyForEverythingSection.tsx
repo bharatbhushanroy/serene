@@ -35,13 +35,8 @@ const IconCard: React.FC<IconCardProps> = ({ icon: Icon, text, backgroundClass =
 // Custom Phone Mockup for this section
 const PhoneSimulatorMockup = () => {
   return (
-    <motion.div
+    <div
       className="relative w-[220px] h-[400px] bg-fintech-phone-bg rounded-[30px] shadow-2xl flex items-center justify-center p-1.5 border-[6px] border-fintech-phone-border overflow-hidden"
-      initial={{ opacity: 0, scale: 0.8, rotateY: 15 }}
-      whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
-      viewport={{ once: true, amount: 0.5 }}
-      transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-      animate={{ y: [0, -5, 0], rotate: [0, 0.5, 0, -0.5, 0] }} // Continuous subtle float and rotate
       style={{
         transformStyle: 'preserve-3d',
         transformOrigin: 'center center',
@@ -69,7 +64,7 @@ const PhoneSimulatorMockup = () => {
           APPLY
         </Button>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

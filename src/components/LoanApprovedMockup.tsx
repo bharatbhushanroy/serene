@@ -1,17 +1,12 @@
 "use client";
 
 import React from 'react';
-import { motion } from 'framer-motion';
 import { CheckCircle } from 'lucide-react';
 import QickyLogo from './QickyLogo'; // Import the new QickyLogo component
 
 const LoanApprovedMockup = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 50, scale: 0.9, rotateY: 15 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1, rotateY: 0 }}
-      viewport={{ once: true, amount: 0.5 }}
-      transition={{ duration: 0.8, ease: 'easeOut' }}
+    <div
       className="relative z-10 w-full max-w-xs mx-auto bg-fintech-simulator-card-bg/80 backdrop-blur-lg border border-fintech-border-light rounded-3xl p-6 shadow-2xl shadow-fintech-blue-accent/20"
       style={{
         transformStyle: 'preserve-3d',
@@ -21,15 +16,11 @@ const LoanApprovedMockup = () => {
     >
       <div className="flex flex-col items-center text-center">
         <QickyLogo size="md" /> {/* Use the new QickyLogo component */}
-        <motion.div
-          initial={{ scale: 0 }}
-          whileInView={{ scale: 1 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.5, delay: 0.5, type: 'spring', stiffness: 150 }}
+        <div
           className="mt-8 mb-4"
         >
           <CheckCircle className="w-20 h-20 text-fintech-green-success" />
-        </motion.div>
+        </div>
         <h2 className="text-2xl font-semibold text-white">Loan Approved!</h2>
         <p className="text-fintech-text-muted mt-2">Your funds are on the way</p>
         <div className="mt-8 w-full bg-fintech-dark-bg-lighter rounded-xl p-4">
@@ -39,7 +30,7 @@ const LoanApprovedMockup = () => {
           </p>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

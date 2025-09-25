@@ -4,15 +4,10 @@ import React from 'react';
 import { User, Gift, ArrowRight, DollarSign, Home, Gem, CreditCard, BarChart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { motion } from 'framer-motion';
 
 const LoanProductsPhoneMockup = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.8, rotateY: 15 }}
-      whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
-      viewport={{ once: true, amount: 0.5 }}
-      transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+    <div
       className="relative w-[320px] h-[650px] bg-black rounded-[40px] shadow-2xl flex items-center justify-center p-2 border-[8px] border-gray-800 overflow-hidden z-10"
       style={{
         transformStyle: 'preserve-3d',
@@ -104,7 +99,7 @@ const LoanProductsPhoneMockup = () => {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

@@ -77,11 +77,7 @@ const PersonalFinancePage = () => {
             </motion.div>
             <div className="relative w-full max-w-md h-96 flex items-center justify-center lg:justify-end">
               {/* Placeholder for a personal finance mockup or animation */}
-              <motion.div
-                initial={{ opacity: 0, y: 50, scale: 0.9, rotateY: 15 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1, rotateY: 0 }}
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.8, ease: 'easeOut' }}
+              <div
                 className="relative z-10 w-full max-w-xs mx-auto bg-fintech-simulator-card-bg/80 backdrop-blur-lg border border-fintech-border-light rounded-3xl p-6 shadow-2xl shadow-fintech-blue-accent/20 flex flex-col items-center text-center"
                 style={{
                   transformStyle: 'preserve-3d',
@@ -98,7 +94,7 @@ const PersonalFinancePage = () => {
                     ₹1,00,000
                   </p>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>

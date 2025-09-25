@@ -1,13 +1,12 @@
 "use client";
 
 import React from 'react';
-import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
 interface CreditCardMockupProps {
   colorClass: string; // Tailwind class for background color, e.g., 'bg-fintech-card-mockup-purple'
-  animationDelay: string; // Tailwind class for animation delay, e.g., 'delay-100'
-  animationClass: string; // Tailwind class for animation, e.g., 'animate-card-float-1'
+  animationDelay?: string; // Tailwind class for animation delay, e.g., 'delay-100'
+  animationClass?: string; // Tailwind class for animation, e.g., 'animate-card-float-1'
   cardNumber: string;
   cardHolder: string;
   rotation?: string; // New prop for rotation, e.g., 'rotate-3'
@@ -15,23 +14,15 @@ interface CreditCardMockupProps {
 
 const CreditCardMockup: React.FC<CreditCardMockupProps> = ({
   colorClass,
-  animationDelay,
-  animationClass,
   cardNumber,
   cardHolder,
   rotation = 'rotate-0', // Default to no rotation
 }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 50, scale: 0.9, rotateY: 15 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1, rotateY: 0 }}
-      viewport={{ once: true, amount: 0.5 }}
-      transition={{ duration: 0.8, ease: 'easeOut' }}
+    <div
       className={cn(
         "relative w-64 h-40 rounded-xl shadow-lg p-5 flex flex-col justify-between text-white",
         colorClass,
-        animationClass,
-        animationDelay,
         rotation // Apply rotation class
       )}
       style={{
@@ -59,7 +50,7 @@ const CreditCardMockup: React.FC<CreditCardMockupProps> = ({
       <div className="absolute inset-0 rounded-xl opacity-20"
            style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 50%, rgba(0,0,0,0.2) 100%)' }}>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
