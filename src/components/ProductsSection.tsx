@@ -1,10 +1,10 @@
 "use client";
 
 import React from 'react';
-import { Card } from '@/components/ui/card';
+import { motion } from 'framer-motion';
 import { DollarSign, Briefcase, Home, Gauge, CreditCard, BarChart } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { Card } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 
 const products = [
@@ -59,52 +59,35 @@ const products = [
 ];
 
 const ProductsSection = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
+  const textVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
   };
 
   return (
     <section className="relative z-10 w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-main-bg text-white overflow-hidden">
-      {/* Animated Background Element */}
-      <motion.div
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 0.1 }}
-        transition={{ duration: 10, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
-        className="absolute inset-0 bg-gradient-to-br from-fintech-blue-accent/10 to-fintech-gradient-purple-start/10 rounded-full blur-3xl opacity-0"
-        style={{ width: '80%', height: '80%', top: '10%', left: '10%' }}
-      />
+      {/* Removed the local animated background element to improve performance */}
 
       <div className="max-w-7xl mx-auto text-center relative z-20">
         <motion.h2
-          variants={containerVariants}
+          variants={textVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           className="text-4xl md:text-5xl font-extrabold leading-tight mb-4"
         >
-          <motion.span variants={itemVariants}>Bringing you the </motion.span>
-          <motion.span variants={itemVariants} className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-transparent bg-clip-text">Best Products</motion.span>
-          <motion.span variants={itemVariants}> from</motion.span>
+          Bringing you the{' '}
+          <span className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-transparent bg-clip-text">Best Products</span>{' '}
+          from
         </motion.h2>
         <motion.h2
-          variants={containerVariants}
+          variants={textVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           className="text-4xl md:text-5xl font-extrabold leading-tight mb-12"
         >
-          <motion.span variants={itemVariants} className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-transparent bg-clip-text">Top Banks & Financial Institutions</motion.span>
+          <span className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-transparent bg-clip-text">Top Banks & Financial Institutions</span>
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
