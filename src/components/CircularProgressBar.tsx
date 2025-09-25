@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { cn } from '@/lib/utils';
 
@@ -41,13 +43,13 @@ const CircularProgressBar: React.FC<CircularProgressBarProps> = ({
         cy={size / 2}
         className={cn("transition-all duration-500 ease-in-out", progressClassName)}
       />
-      {/* Text for percentage */}
+      {/* Text for percentage - removed rotate-90 to keep it upright relative to the viewport */}
       <text
         x="50%"
         y="50%"
         dominantBaseline="middle"
         textAnchor="middle"
-        className="transform rotate-90" // Rotate text back to normal
+        className="transform rotate-90" // Counter-rotate the text to keep it upright
         fill="currentColor" // Use current color for text
         fontSize="14"
         fontWeight="bold"

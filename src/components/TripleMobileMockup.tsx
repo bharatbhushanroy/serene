@@ -34,18 +34,18 @@ const TripleMobileMockup = () => {
     };
 
     return (
-      <motion.div // UNCOMMENTED motion.div
+      <motion.div
         className={`absolute w-[280px] h-[580px] bg-black rounded-[40px] shadow-2xl flex items-center justify-center p-2 border-[8px] border-gray-800 overflow-hidden z-20 ${className}`}
         style={{
           transformStyle: 'preserve-3d',
           transformOrigin: 'center center',
           boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 30px rgba(249, 115, 22, 0.3)', // Enhanced shadow
         }}
-        variants={phoneVariants} // UNCOMMENTED variants
-        initial="initial" // UNCOMMENTED initial
-        animate={["animate", "float"]} // UNCOMMENTED animate
-        whileInView="animate" // ADDED THIS
-        viewport={{ once: true, amount: 0.5 }} // ADDED THIS
+        variants={phoneVariants}
+        initial="initial"
+        animate={["animate", "float"]}
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.5 }}
       >
         {/* Notch */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/5 h-6 bg-black rounded-b-xl z-10"></div>
@@ -53,14 +53,14 @@ const TripleMobileMockup = () => {
         <div className="relative w-full h-full bg-[#1A1A1A] rounded-[30px] overflow-hidden flex flex-col">
           {children}
         </div>
-      </motion.div> // UNCOMMENTED motion.div
+      </motion.div>
     );
   };
 
   return (
     <div className="relative flex items-center justify-center w-full h-full min-h-[650px]">
       {/* Phone 1 (Left, slightly behind) */}
-      <PhoneFrame className="z-10" animationDelay={0.1} rotation={-5} offsetX={-100} offsetY={-20}>
+      <PhoneFrame className="z-10 hidden md:block" animationDelay={0.1} rotation={-5} offsetX={-100} offsetY={-20}>
         <div className="flex items-center justify-between p-3 bg-[#1A1A1A] text-white">
           <User className="h-4 w-4 text-gray-400" />
           <span className="text-sm font-semibold">Rewards</span>
@@ -164,7 +164,7 @@ const TripleMobileMockup = () => {
       </PhoneFrame>
 
       {/* Phone 3 (Right, slightly behind) */}
-      <PhoneFrame className="z-10" animationDelay={0.2} rotation={5} offsetX={100} offsetY={20}>
+      <PhoneFrame className="z-10 hidden md:block" animationDelay={0.2} rotation={5} offsetX={100} offsetY={20}>
         <div className="flex items-center justify-between p-3 bg-[#1A1A1A] text-white">
           <User className="h-4 w-4 text-gray-400" />
           <span className="text-sm font-semibold">Insights</span>

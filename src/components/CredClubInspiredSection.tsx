@@ -21,14 +21,14 @@ const AnimatedSphere = ({ size, x, y, delay, duration, colorClass, innerColorCla
         transformOrigin: 'center center',
       }}
       initial={{ opacity: 0, scale: 0.5, rotate: 0 }}
-      whileInView={{ // ADDED THIS
-        opacity: [0.3, 0.6, 0.3], // Increased opacity for better visibility
-        scale: [0.8, 1.1, 0.9, 1],
-        x: [x, x + 40, x - 20, x], // More pronounced movement
-        y: [y, y - 30, y + 20, y], // More pronounced movement
+      whileInView={{
+        opacity: [0.2, 0.4, 0.2], // Reduced opacity for better performance and subtlety
+        scale: [0.8, 1.05, 0.95, 1], // Slightly less extreme scale
+        x: [x, x + 20, x - 10, x], // Less pronounced movement
+        y: [y, y - 15, y + 10, y], // Less pronounced movement
         rotate: [0, rotation, 0],
       }}
-      viewport={{ once: true, amount: 0.5 }} // ADDED THIS
+      viewport={{ once: true, amount: 0.5 }}
       transition={{
         duration: duration,
         repeat: Infinity,
@@ -71,6 +71,7 @@ const CredClubInspiredSection = () => {
     },
   };
 
+  // Reduced the number of spheres for better performance
   const spheres = [
     { size: '200px', x: '10%', y: '15%', delay: 0, duration: 15, colorClass: 'bg-fintech-blue-accent/60', innerColorClass: 'bg-fintech-blue-soft/80', rotation: 30 },
     { size: '280px', x: '70%', y: '5%', delay: 2, duration: 18, colorClass: 'bg-fintech-gradient-purple-start/60', innerColorClass: 'bg-fintech-gradient-purple-end/80', rotation: -25 },
@@ -80,12 +81,6 @@ const CredClubInspiredSection = () => {
     { size: '300px', x: '25%', y: '40%', delay: 4, duration: 20, colorClass: 'bg-fintech-gradient-pink-start/60', innerColorClass: 'bg-fintech-gradient-pink-end/80', rotation: -15 },
     { size: '130px', x: '90%', y: '30%', delay: 1.5, duration: 10, colorClass: 'bg-gray-700/60', innerColorClass: 'bg-gray-800/80', rotation: 50 },
     { size: '220px', x: '55%', y: '25%', delay: 2.5, duration: 17, colorClass: 'bg-fintech-green-success/50', innerColorClass: 'bg-fintech-cyan-light/70', rotation: -20 },
-    { size: '170px', x: '15%', y: '80%', delay: 3.5, duration: 13, colorClass: 'bg-fintech-orange-accent/50', innerColorClass: 'bg-fintech-peach-background/70', rotation: 25 },
-    { size: '240px', x: '60%', y: '50%', delay: 1.8, duration: 19, colorClass: 'bg-fintech-gradient-blue-start/60', innerColorClass: 'bg-fintech-gradient-blue-end/80', rotation: -45 },
-    { size: '160px', x: '30%', y: '5%', delay: 0.8, duration: 16, colorClass: 'bg-gray-500/60', innerColorClass: 'bg-gray-600/80', rotation: 10 },
-    { size: '210px', x: '5%', y: '30%', delay: 2.2, duration: 14, colorClass: 'bg-fintech-gradient-purple-start/50', innerColorClass: 'bg-fintech-gradient-purple-end/70', rotation: -5 },
-    { size: '190px', x: '75%', y: '45%', delay: 0.3, duration: 13, colorClass: 'bg-fintech-cyan-light/60', innerColorClass: 'bg-fintech-green-success/80', rotation: 15 },
-    { size: '140px', x: '20%', y: '70%', delay: 1.2, duration: 11, colorClass: 'bg-fintech-gradient-pink-start/50', innerColorClass: 'bg-fintech-gradient-pink-end/70', rotation: -10 },
   ];
 
   return (

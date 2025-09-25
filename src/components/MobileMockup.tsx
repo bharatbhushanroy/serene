@@ -55,14 +55,14 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className }) => {
       {/* Floating Cards */}
       {/* Top-Left Card */}
       <motion.div
-        className="absolute top-[10%] left-[-35%] w-[110px] h-[110px] bg-gradient-to-br from-fintech-blue-accent to-fintech-gradient-purple-start p-3 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-white z-10
-                      lg:top-[15%] lg:-left-[20%] lg:w-[160px] lg:h-[160px]" // Adjusted mobile positioning and size
+        className="absolute top-[10%] left-[-25%] w-[110px] h-[110px] bg-gradient-to-br from-fintech-blue-accent to-fintech-gradient-purple-start p-3 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-white z-10
+                      md:top-[15%] md:-left-[15%] md:w-[140px] md:h-[140px] lg:top-[15%] lg:-left-[20%] lg:w-[160px] lg:h-[160px]" // Adjusted mobile positioning and size
         variants={cardVariants}
         initial="initial"
         animate={["animate", "float"]}
         custom={0}
-        whileInView="animate" // ADDED THIS
-        viewport={{ once: true, amount: 0.5 }} // ADDED THIS
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.5 }}
       >
         <Banknote className="h-5 w-5 text-white mb-1" />
         <p className="text-xs text-white">Get Up To</p>
@@ -71,14 +71,14 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className }) => {
       </motion.div>
       {/* Top-Right Card */}
       <motion.div
-        className="absolute top-[10%] right-[-35%] w-[110px] h-[110px] bg-gradient-to-br from-fintech-blue-accent to-fintech-gradient-purple-start p-3 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-white z-10
-                      lg:top-[15%] lg:-right-[20%] lg:w-[160px] lg:h-[160px]" // Adjusted mobile positioning and size
+        className="absolute top-[10%] right-[-25%] w-[110px] h-[110px] bg-gradient-to-br from-fintech-blue-accent to-fintech-gradient-purple-start p-3 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-white z-10
+                      md:top-[15%] md:-right-[15%] md:w-[140px] md:h-[140px] lg:top-[15%] lg:-right-[20%] lg:w-[160px] lg:h-[160px]" // Adjusted mobile positioning and size
         variants={cardVariants}
         initial="initial"
         animate={["animate", "float"]}
         custom={1}
-        whileInView="animate" // ADDED THIS
-        viewport={{ once: true, amount: 0.5 }} // ADDED THIS
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.5 }}
       >
         <Percent className="h-5 w-5 text-white mb-1" />
         <p className="text-xs text-white">Rate starting from</p>
@@ -87,14 +87,14 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className }) => {
       </motion.div>
       {/* Bottom-Left Card */}
       <motion.div
-        className="absolute bottom-[10%] left-[-35%] w-[110px] h-[110px] bg-gradient-to-br from-fintech-blue-accent to-fintech-gradient-purple-start p-3 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-white z-10
-                      lg:bottom-[15%] lg:-left-[20%] lg:w-[160px] lg:h-[160px]" // Adjusted mobile positioning and size
+        className="absolute bottom-[10%] left-[-25%] w-[110px] h-[110px] bg-gradient-to-br from-fintech-blue-accent to-fintech-gradient-purple-start p-3 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-white z-10
+                      md:bottom-[15%] md:-left-[15%] md:w-[140px] md:h-[140px] lg:bottom-[15%] lg:-left-[20%] lg:w-[160px] lg:h-[160px]" // Adjusted mobile positioning and size
         variants={cardVariants}
         initial="initial"
         animate={["animate", "float"]}
         custom={2}
-        whileInView="animate" // ADDED THIS
-        viewport={{ once: true, amount: 0.5 }} // ADDED THIS
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.5 }}
       >
         <Landmark className="h-5 w-5 text-white mb-1" />
         <p className="text-xs text-white">Transfer to</p>
@@ -103,14 +103,14 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className }) => {
       </motion.div>
       {/* Bottom-Right Card */}
       <motion.div
-        className="absolute bottom-[10%] right-[-35%] w-[110px] h-[110px] bg-gradient-to-br from-fintech-blue-accent to-fintech-gradient-purple-start p-3 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-white z-10
-                      lg:bottom-[15%] lg:-right-[20%] lg:w-[160px] lg:h-[160px]" // Adjusted mobile positioning and size
+        className="absolute bottom-[10%] right-[-25%] w-[110px] h-[110px] bg-gradient-to-br from-fintech-blue-accent to-fintech-gradient-purple-start p-3 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-white z-10
+                      md:bottom-[15%] md:-right-[15%] md:w-[140px] md:h-[140px] lg:bottom-[15%] lg:-right-[20%] lg:w-[160px] lg:h-[160px]" // Adjusted mobile positioning and size
         variants={cardVariants}
         initial="initial"
         animate={["animate", "float"]}
         custom={3}
-        whileInView="animate" // ADDED THIS
-        viewport={{ once: true, amount: 0.5 }} // ADDED THIS
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.5 }}
       >
         <CalendarCheck className="h-5 w-5 text-white mb-1" />
         <p className="text-xs text-white">Repay EMI in</p>
@@ -120,7 +120,7 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className }) => {
 
       {/* Phone Frame */}
       <motion.div
-        className="relative w-[320px] h-[650px] bg-black rounded-[40px] shadow-2xl flex items-center justify-center p-2 border-[8px] border-gray-800 overflow-hidden z-20"
+        className="relative w-[320px] h-[650px] bg-black rounded-[40px] shadow-2xl flex items-center justify-center p-1.5 border-[8px] border-gray-800 overflow-hidden z-20"
         style={{
           transformStyle: 'preserve-3d',
           transformOrigin: 'center center',
@@ -129,8 +129,8 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className }) => {
         variants={phoneVariants}
         initial="initial"
         animate={["animate", "float"]}
-        whileInView="animate" // ADDED THIS
-        viewport={{ once: true, amount: 0.5 }} // ADDED THIS
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.5 }}
       >
         {/* Notch */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/5 h-6 bg-black rounded-b-xl z-10"></div>
