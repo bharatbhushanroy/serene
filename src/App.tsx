@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { TooltipProvider } from "@/components/ui/tooltip"; // Corrected import
+import { TooltipProvider } from "@/components/ui/tooltip";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
@@ -22,6 +22,8 @@ import HomeLoanPage from "./pages/products/HomeLoanPage";
 import FreeCreditScorePage from "./pages/products/FreeCreditScorePage";
 import CreditCardsPage from "./pages/products/CreditCardsPage";
 import PersonalFinancePage from "./pages/products/PersonalFinancePage";
+import TermsOfService from "./pages/TermsOfService"; // New import
+import CookiePolicy from "./pages/CookiePolicy"; // New import
 
 const queryClient = new QueryClient();
 
@@ -40,6 +42,8 @@ const App = () => (
             <Route path="/faqs" element={<FAQs />} />
             <Route path="/loan-calculator" element={<LoanCalculatorPage />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/terms" element={<TermsOfService />} /> {/* New route */}
+            <Route path="/cookies" element={<CookiePolicy />} /> {/* New route */}
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/apply-loan" element={<ApplyLoanPage />} />
