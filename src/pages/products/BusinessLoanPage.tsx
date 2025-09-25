@@ -106,8 +106,8 @@ const BusinessLoanPage = () => {
         <CtaSection />
 
       </main>
-      <Footer />
       <MadeWithDyad />
+      <Footer />
     </div>
   );
 };

@@ -49,9 +49,9 @@ const Header = () => {
             <LayoutGrid className="h-4 w-4 mr-1" /> Products <ChevronDown className="ml-1 h-4 w-4" />
           </DropdownMenuTrigger>
           <DropdownMenuContent className="bg-fintech-main-bg border-gray-700 text-fintech-header-text">
-            <Link to="/apply-loan"><DropdownMenuItem className="hover:bg-gray-700">Personal Loans</DropdownMenuItem></Link>
-            <DropdownMenuItem className="hover:bg-gray-700">Business Loans</DropdownMenuItem>
-            <DropdownMenuItem className="hover:bg-gray-700">Home Loans</DropdownMenuItem>
+            <Link to="/products/personal-loan"><DropdownMenuItem className="hover:bg-gray-700">Personal Loans</DropdownMenuItem></Link>
+            <Link to="/products/business-loan"><DropdownMenuItem className="hover:bg-gray-700">Business Loans</DropdownMenuItem></Link>
+            <Link to="/products/home-loan"><DropdownMenuItem className="hover:bg-gray-700">Home Loans</DropdownMenuItem></Link>
           </DropdownMenuContent>
         </DropdownMenu>
         <DropdownMenu>

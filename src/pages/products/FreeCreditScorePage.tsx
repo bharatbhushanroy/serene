@@ -106,8 +106,8 @@ const FreeCreditScorePage = () => {
         <CtaSection />
 
       </main>
-      <Footer />
       <MadeWithDyad />
+      <Footer />
     </div>
   );
 };

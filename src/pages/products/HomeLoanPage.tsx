@@ -106,8 +106,8 @@ const HomeLoanPage = () => {
         <CtaSection />
 
       </main>
-      <Footer />
       <MadeWithDyad />
+      <Footer />
     </div>
   );
 };

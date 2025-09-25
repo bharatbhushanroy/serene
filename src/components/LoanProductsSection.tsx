@@ -63,7 +63,7 @@ const LoanCard: React.FC<LoanCardProps> = ({
             </li>
           ))}
         </ul>
-        <Link to={link} className="block mt-auto">
+        <Link to="/apply-loan" className="block mt-auto"> {/* Changed link to /apply-loan */}
           <Button className={cn("w-full px-8 py-3 rounded-full text-lg font-semibold transition-colors group", buttonColor)}>
             Apply Now <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
           </Button>

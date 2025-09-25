@@ -100,9 +100,11 @@ const CreditCardsPage = () => {
                 Discover a wide range of credit cards from leading banks. Filter by rewards, annual fees, interest rates, and more to find your perfect match.
               </p>
               <IndianBankCreditCardComparison /> {/* New component added here */}
-              <Button className="mt-8 bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity">
-                View All Cards
-              </Button>
+              <Link to="/apply-loan"> {/* Link 'View All Cards' to apply-loan */}
+                <Button className="mt-8 bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity">
+                  View All Cards
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
@@ -111,8 +113,8 @@ const CreditCardsPage = () => {
         <CtaSection />
 
       </main>
-      <Footer />
       <MadeWithDyad />
+      <Footer />
     </div>
   );
 };

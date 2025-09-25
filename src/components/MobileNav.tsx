@@ -60,9 +60,9 @@ const MobileNav = () => {
                 <LayoutGrid className="h-5 w-5 mr-3" /> Products
               </AccordionTrigger>
               <AccordionContent className="pl-8 space-y-1 py-2">
-                <Link to="/apply-loan" onClick={closeSheet}><div className="text-fintech-header-text hover:text-fintech-blue-accent py-1">Personal Loans</div></Link>
-                <div className="text-fintech-header-text hover:text-fintech-blue-accent py-1">Business Loans</div>
-                <div className="text-fintech-header-text hover:text-fintech-blue-accent py-1">Home Loans</div>
+                <Link to="/products/personal-loan" onClick={closeSheet}><div className="text-fintech-header-text hover:text-fintech-blue-accent py-1">Personal Loans</div></Link>
+                <Link to="/products/business-loan" onClick={closeSheet}><div className="text-fintech-header-text hover:text-fintech-blue-accent py-1">Business Loans</div></Link>
+                <Link to="/products/home-loan" onClick={closeSheet}><div className="text-fintech-header-text hover:text-fintech-blue-accent py-1">Home Loans</div></Link>
               </AccordionContent>
             </AccordionItem>
 
