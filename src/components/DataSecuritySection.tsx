@@ -125,7 +125,7 @@ const DataSecuritySection = () => {
   ];
 
   return (
-    <section className="relative w-full py-20 px-6 md:px-12 lg:px-24 bg-black text-white overflow-hidden">
+    <section className="relative w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-main-bg text-white overflow-hidden">
       {/* Animated Background Spheres */}
       {backgroundSpheres.map((sphere, index) => (
         <AnimatedBackgroundSphere key={index} {...sphere} />
@@ -163,7 +163,7 @@ const DataSecuritySection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
-          className="text-white text-xl md:text-2xl font-bold uppercase tracking-wide mb-16"
+          className="text-fintech-text-dark text-xl md:text-2xl font-bold uppercase tracking-wide mb-16"
         >
           YOUR DATA ISN'T OUR BUSINESS. KEEPING IT SAFE IS.
         </motion.p>
@@ -174,7 +174,7 @@ const DataSecuritySection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
-          className="text-gray-500 text-4xl md:text-6xl font-extrabold leading-tight space-y-2"
+          className="text-fintech-text-muted text-4xl md:text-6xl font-extrabold leading-tight space-y-2"
         >
           {mainTextLines.map((line, index) => (
             <motion.p key={index} variants={itemVariants}>
