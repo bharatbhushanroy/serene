@@ -2,8 +2,29 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useIsMobile } from '@/hooks/use-mobile'; // Import the useIsMobile hook
 
 const VideoBackground = () => {
+  const isMobile = useIsMobile(); // Check if the device is mobile
+
+  if (isMobile) {
+    // On mobile, render a static image for better performance
+    return (
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="fixed inset-0 z-[-2] overflow-hidden bg-fintech-main-bg" // Fallback background color
+      >
+        <img
+          src="/public/placeholder.svg" // Use a static placeholder image
+          alt="Background"
+          className="w-full h-full object-cover filter blur-sm opacity-10"
+        />
+      </motion.div>
+    );
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0 }}

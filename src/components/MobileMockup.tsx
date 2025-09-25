@@ -15,8 +15,8 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className }) => {
       {/* Floating Cards */}
       {/* Top-Left Card */}
       <motion.div
-        className="absolute top-[10%] left-[-35%] w-[110px] h-[110px] bg-fintech-peach-background p-3 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-gray-800 -rotate-3 z-10
-                      lg:top-[15%] lg:-left-[20%] lg:w-[160px] lg:h-[160px] animate-card-float-1 animation-delay-2000" // Adjusted mobile positioning and size
+        className="absolute top-[10%] left-[5%] w-[110px] h-[110px] bg-fintech-peach-background p-3 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-gray-800 -rotate-3 z-10
+                      md:top-[15%] md:left-[10%] lg:w-[160px] lg:h-[160px] animate-card-float-1 animation-delay-2000" // Adjusted mobile positioning and size
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
@@ -28,8 +28,8 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className }) => {
       </motion.div>
       {/* Top-Right Card */}
       <motion.div
-        className="absolute top-[10%] right-[-35%] w-[110px] h-[110px] bg-fintech-peach-background p-3 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-gray-800 rotate-3 z-10
-                      lg:top-[15%] lg:-right-[20%] lg:w-[160px] lg:h-[160px] animate-card-float-2 animation-delay-3000" // Adjusted mobile positioning and size
+        className="absolute top-[10%] right-[5%] w-[110px] h-[110px] bg-fintech-peach-background p-3 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-gray-800 rotate-3 z-10
+                      md:top-[15%] md:right-[10%] lg:w-[160px] lg:h-[160px] animate-card-float-2 animation-delay-3000" // Adjusted mobile positioning and size
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.4 }}
@@ -41,8 +41,8 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className }) => {
       </motion.div>
       {/* Bottom-Left Card */}
       <motion.div
-        className="absolute bottom-[10%] left-[-35%] w-[110px] h-[110px] bg-fintech-peach-background p-3 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-gray-800 rotate-3 z-10
-                      lg:bottom-[15%] lg:-left-[20%] lg:w-[160px] lg:h-[160px] animate-card-float-3 animation-delay-4000" // Adjusted mobile positioning and size
+        className="absolute bottom-[10%] left-[5%] w-[110px] h-[110px] bg-fintech-peach-background p-3 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-gray-800 rotate-3 z-10
+                      md:bottom-[15%] md:left-[10%] lg:w-[160px] lg:h-[160px] animate-card-float-3 animation-delay-4000" // Adjusted mobile positioning and size
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.6 }}
@@ -54,8 +54,8 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className }) => {
       </motion.div>
       {/* Bottom-Right Card */}
       <motion.div
-        className="absolute bottom-[10%] right-[-35%] w-[110px] h-[110px] bg-fintech-peach-background p-3 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-gray-800 -rotate-3 z-10
-                      lg:bottom-[15%] lg:-right-[20%] lg:w-[160px] lg:h-[160px] animate-card-float-1 animation-delay-5000" // Adjusted mobile positioning and size
+        className="absolute bottom-[10%] right-[5%] w-[110px] h-[110px] bg-fintech-peach-background p-3 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-gray-800 -rotate-3 z-10
+                      md:bottom-[15%] md:right-[10%] lg:w-[160px] lg:h-[160px] animate-card-float-1 animation-delay-5000" // Adjusted mobile positioning and size
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.8 }}

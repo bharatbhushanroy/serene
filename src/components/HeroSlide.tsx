@@ -69,13 +69,16 @@ const HeroSlide: React.FC<HeroSlideProps> = ({
   };
 
   const renderMockup = () => {
+    const baseMockupClasses = "relative w-full max-w-md h-96 flex items-center justify-center";
+    const responsiveMockupClasses = "lg:max-w-none lg:h-auto"; // Allow mockups to take natural height on larger screens
+
     switch (mockupComponent) {
       case 'MobileMockup':
-        return <MobileMockup {...mockupProps} />;
+        return <MobileMockup className={cn(baseMockupClasses, responsiveMockupClasses, mockupProps?.className)} />;
       case 'CreditCardMockup':
-        return <CreditCardMockup {...mockupProps} />;
+        return <CreditCardMockup {...mockupProps} className={cn(baseMockupClasses, responsiveMockupClasses, mockupProps?.className)} />;
       case 'LoanApprovedMockup':
-        return <LoanApprovedMockup {...mockupProps} />;
+        return <LoanApprovedMockup {...mockupProps} className={cn(baseMockupClasses, responsiveMockupClasses, mockupProps?.className)} />;
       case 'None':
       default:
         return (
@@ -83,7 +86,7 @@ const HeroSlide: React.FC<HeroSlideProps> = ({
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="relative w-full max-w-md h-96 flex items-center justify-center bg-fintech-simulator-card-bg/80 backdrop-blur-lg border border-fintech-border-light rounded-3xl p-6 shadow-2xl shadow-fintech-blue-accent/20"
+            className={cn(baseMockupClasses, responsiveMockupClasses, "bg-fintech-simulator-card-bg/80 backdrop-blur-lg border border-fintech-border-light rounded-3xl p-6 shadow-2xl shadow-fintech-blue-accent/20")}
           >
             <h3 className="text-2xl font-bold text-white text-center">Dynamic Content Here</h3>
           </motion.div>
@@ -93,19 +96,19 @@ const HeroSlide: React.FC<HeroSlideProps> = ({
 
   return (
     <div className="relative w-full min-h-[calc(100vh-80px)] flex items-center justify-center py-16 px-6 md:px-12 lg:px-24 overflow-hidden bg-fintech-main-bg text-white">
-      {/* Local Animated Shapes for this section */}
+      {/* Local Animated Shapes for this section - hidden on small screens */}
       <motion.div
         initial={{ opacity: 0, scale: 0.5, x: -200, y: -100 }}
         animate={{ opacity: 0.1, scale: 1, x: 0, y: 0 }}
         transition={{ duration: 10, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
-        className="absolute top-1/3 left-1/4 w-48 h-48 rounded-full bg-fintech-blue-accent opacity-0"
+        className="absolute top-1/3 left-1/4 w-48 h-48 rounded-full bg-fintech-blue-accent opacity-0 hidden md:block"
         style={{ filter: 'blur(70px)' }}
       />
       <motion.div
         initial={{ opacity: 0, scale: 0.5, x: 200, y: 100 }}
         animate={{ opacity: 0.08, scale: 1, x: 0, y: 0 }}
         transition={{ duration: 12, repeat: Infinity, repeatType: "reverse", ease: "easeInOut", delay: 1 }}
-        className="absolute bottom-1/3 right-1/4 w-56 h-56 rounded-full bg-fintech-cyan-light opacity-0"
+        className="absolute bottom-1/3 right-1/4 w-56 h-56 rounded-full bg-fintech-cyan-light opacity-0 hidden md:block"
         style={{ filter: 'blur(80px)' }}
       />
 
