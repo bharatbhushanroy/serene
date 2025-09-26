@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Users, Lightbulb } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import AnimatedFinancialGraphic from './AnimatedFinancialGraphic'; // Import the new component
 
 const AboutUsHeroSection = () => {
   const containerVariants = {
@@ -23,7 +24,7 @@ const AboutUsHeroSection = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
   };
 
-  const imageVariants = {
+  const graphicVariants = {
     hidden: { opacity: 0, scale: 0.8, rotateY: 15 },
     visible: { opacity: 1, scale: 1, rotateY: 0, transition: { duration: 0.8, ease: "easeOut", delay: 0.3 } },
   };
@@ -61,20 +62,16 @@ const AboutUsHeroSection = () => {
           </motion.div>
         </motion.div>
 
-        {/* Right Content Area: Image/Mockup */}
+        {/* Right Content Area: Animated Graphic */}
         <motion.div
           className="relative w-full max-w-md h-96 flex items-center justify-center lg:justify-end"
-          variants={imageVariants}
+          variants={graphicVariants}
           initial="hidden"
           animate="visible"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
         >
-          <img
-            src="https://images.unsplash.com/photo-1557426801-bb7f7c707789?q=80&w=2070&auto=format&fit=crop"
-            alt="Qicky Team Collaboration"
-            className="w-full h-full object-cover rounded-3xl shadow-2xl border border-fintech-border-light"
-          />
+          <AnimatedFinancialGraphic />
         </motion.div>
       </div>
     </section>

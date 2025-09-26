@@ -10,6 +10,7 @@ import EthosSection from '@/components/EthosSection';
 import TeamSection from '@/components/TeamSection';
 import GrowthStorySection from '@/components/GrowthStorySection';
 import AboutUsHeroSection from '@/components/AboutUsHeroSection'; // New import
+import AnimatedGrowthIllustration from '@/components/AnimatedGrowthIllustration'; // New import
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion'; // Import motion
 
@@ -48,15 +49,15 @@ const AboutUs = () => {
           <p className="text-lg text-fintech-text-muted mb-12 max-w-3xl mx-auto">
             Born from a vision to democratize finance in India, Qicky embarked on a journey to simplify access to credit. We saw a gap between traditional banking complexities and the urgent financial needs of millions. Our founders, a team of seasoned fintech innovators, leveraged cutting-edge technology to build a platform that is not just fast and efficient, but also transparent and trustworthy. Since our inception, we've been committed to empowering individuals and businesses, transforming financial aspirations into reality with every loan disbursed.
           </p>
-          <motion.img
-            src="https://images.unsplash.com/photo-1552664730-d307ca8849d1?q=80&w=2070&auto=format&fit=crop"
-            alt="Qicky's Journey"
-            className="w-full max-w-4xl mx-auto rounded-xl shadow-2xl border border-fintech-border-light object-cover aspect-video"
+          <motion.div
+            className="w-full max-w-4xl mx-auto rounded-xl shadow-2xl border border-fintech-border-light object-cover aspect-video flex items-center justify-center"
             variants={cardVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
-          />
+          >
+            <AnimatedGrowthIllustration /> {/* Replaced static image with animation */}
+          </motion.div>
         </motion.section>
 
         {/* Mission & Vision Section */}
