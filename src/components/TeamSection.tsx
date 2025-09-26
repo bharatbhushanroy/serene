@@ -2,17 +2,45 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { DollarSign, Zap, CreditCard, Server, ShieldCheck } from 'lucide-react'; // Import necessary icons
+import ExpertiseCard from './ExpertiseCard'; // Import the new component
 
-const teamMembers = [
-  { name: "Alice Johnson", role: "CEO", avatar: "https://randomuser.me/api/portraits/women/1.jpg" },
-  { name: "Bob Williams", role: "CTO", avatar: "https://randomuser.me/api/portraits/men/2.jpg" },
-  { name: "Charlie Brown", role: "Lead Developer", avatar: "https://randomuser.me/api/portraits/men/3.jpg" },
-  { name: "Diana Prince", role: "Product Manager", avatar: "https://randomuser.me/api/portraits/women/4.jpg" },
-  { name: "Eve Adams", role: "UX Designer", avatar: "https://randomuser.me/api/portraits/women/5.jpg" },
-  { name: "Frank White", role: "Marketing Lead", avatar: "https://randomuser.me/api/portraits/men/6.jpg" },
-  { name: "Grace Lee", role: "Data Scientist", avatar: "https://randomuser.me/api/portraits/women/7.jpg" },
-  { name: "Henry King", role: "Operations Head", avatar: "https://randomuser.me/api/portraits/men/8.jpg" },
+const expertiseData = [
+  {
+    icon: DollarSign,
+    value: "35+",
+    label: "Years Fixed Income",
+    gradientClass: "bg-gradient-to-br from-fintech-blue-accent to-fintech-blue-soft",
+    iconBgClass: "bg-fintech-blue-accent/30",
+  },
+  {
+    icon: Zap,
+    value: "35+",
+    label: "Years Technology",
+    gradientClass: "bg-gradient-to-br from-fintech-gradient-purple-start to-fintech-gradient-purple-end",
+    iconBgClass: "bg-fintech-gradient-purple-start/30",
+  },
+  {
+    icon: CreditCard,
+    value: "50+",
+    label: "Years Credit",
+    gradientClass: "bg-gradient-to-br from-fintech-gradient-pink-start to-fintech-gradient-pink-end",
+    iconBgClass: "bg-fintech-gradient-pink-start/30",
+  },
+  {
+    icon: Server, // Using Server for Enterprise SaaS
+    value: "35+",
+    label: "Years Enterprise SaaS",
+    gradientClass: "bg-gradient-to-br from-fintech-gradient-cyan-start to-fintech-gradient-cyan-end",
+    iconBgClass: "bg-fintech-gradient-cyan-start/30",
+  },
+  {
+    icon: ShieldCheck,
+    value: "50+",
+    label: "Compliance & Risk Management",
+    gradientClass: "bg-gradient-to-br from-fintech-blue-accent to-fintech-gradient-purple-start", // Blend of blue and purple
+    iconBgClass: "bg-fintech-blue-accent/30",
+  },
 ];
 
 const TeamSection = () => {
@@ -21,14 +49,9 @@ const TeamSection = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
   };
 
-  const cardVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut" } },
-  };
-
   return (
     <motion.section
-      className="py-20 px-6 md:px-12 lg:px-24 bg-fintech-dark-blue text-white text-center"
+      className="py-20 px-6 md:px-12 lg:px-24 bg-fintech-main-bg text-white text-center"
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
@@ -41,24 +64,15 @@ const TeamSection = () => {
         Our Army of <span className="text-fintech-orange-accent">50+</span> Petronas
       </p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-        {teamMembers.map((member, index) => (
-          <motion.div
-            key={index}
-            className="bg-fintech-simulator-card-bg rounded-xl p-6 shadow-lg flex flex-col items-center border border-fintech-border-light hover:border-fintech-blue-accent transition-all duration-300"
-            variants={cardVariants}
-            whileHover={{ y: -5, boxShadow: "0 10px 20px rgba(0,0,0,0.2)" }}
-            viewport={{ once: true, amount: 0.5 }}
-          >
-            <Avatar className="w-24 h-24 mb-4 border-4 border-fintech-orange-accent">
-              <AvatarImage src={member.avatar} alt={member.name} />
-              <AvatarFallback>{member.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
-            </Avatar>
-            <h3 className="text-xl font-semibold text-fintech-text-primary mb-1">{member.name}</h3>
-            <p className="text-fintech-text-muted text-sm">{member.role}</p>
-          </motion.div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl mx-auto mb-12">
+        {expertiseData.map((data, index) => (
+          <ExpertiseCard key={index} {...data} delay={index * 0.1} />
         ))}
       </div>
+
+      <p className="text-lg text-fintech-text-muted max-w-3xl mx-auto">
+        With an exceptional team of professionals, our company boasts an impressive cumulative experience of over 150 years, enabling us to provide unmatched expertise and value to our clients.
+      </p>
     </motion.section>
   );
 };
