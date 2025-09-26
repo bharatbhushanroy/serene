@@ -19,10 +19,10 @@ const GrowthStorySection = () => {
       viewport={{ once: true, amount: 0.3 }}
     >
       <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
-        Our <span className="bg-gradient-to-r from-fintech-blue-accent to-fintech-blue-soft text-transparent bg-clip-text">Growth Journey</span>
+        Our <span className="bg-gradient-to-r from-fintech-blue-accent to-fintech-blue-soft text-transparent bg-clip-text">Rapid Growth Journey</span>
       </h2>
       <p className="text-lg text-fintech-text-muted max-w-3xl mx-auto mb-12">
-        Explore the pivotal moments and innovations that have defined our path to becoming a leader in the fintech industry. Discover how we've evolved and achieved significant milestones over the years.
+        Though Qicky is a young company, we've quickly established ourselves as a dynamic force in digital lending. Discover the key milestones and rapid progress that have marked our journey since inception.
       </p>
       <div className="w-full max-w-4xl mx-auto mt-12">
         <AnimatedTimelineGraphic />

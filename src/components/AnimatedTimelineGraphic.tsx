@@ -10,12 +10,12 @@ interface Milestone {
 }
 
 const milestones: Milestone[] = [
-  { year: "2010", description: "Company Founded, Vision Established" },
-  { year: "2013", description: "First Major Product Launch & Market Entry" },
-  { year: "2016", description: "Expanded to International Markets & Partnerships" },
-  { year: "2019", description: "Achieved 1 Million Users Milestone & Series A Funding" },
-  { year: "2022", description: "Introduced AI-Powered Solutions & New Product Lines" },
-  { year: "2024", description: "Recognized as Industry Leader & Global Expansion" },
+  { year: "2023", description: "Qicky Founded, Vision for Digital Lending Established" },
+  { year: "2023", description: "Successful Seed Funding Round Completed" },
+  { year: "2024", description: "Launch of Instant Personal Loan Product" },
+  { year: "2024", description: "Reached 10,000 Early Adopters & Positive Feedback" },
+  { year: "2024", description: "Formed Key Strategic Partnerships with Financial Institutions" },
+  { year: "2025", description: "Planned Expansion of Product Offerings & Pan-India Reach" },
 ];
 
 const AnimatedTimelineGraphic = () => {
