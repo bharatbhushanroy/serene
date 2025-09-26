@@ -38,12 +38,12 @@ const Index = () => {
         <ProductsSection />
         <QuickLoansFeaturesSection />
         <FeaturesSection />
+        <HowItWorksSection /> {/* Moved HowItWorksSection here, directly after FeaturesSection */}
         <InteractiveLoanSimulatorSection />
         <InsuranceSection />
         <LoanProductsShowcaseSection />
         <LoanProductsSection />
-        <HowItWorksSection />
-        <ApplyStepsSection /> {/* Moved ApplyStepsSection here */}
+        <ApplyStepsSection />
         <LoanComparisonCalculator />
         <MoneyForEverythingSection />
         <MemberTestimonialsSection />
