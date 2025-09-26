@@ -21,16 +21,7 @@ const TripleMobileMockup = () => {
           delay: animationDelay,
         },
       },
-      float: {
-        y: [offsetY, offsetY - 15, offsetY, offsetY + 15, offsetY],
-        x: [offsetX, offsetX + 10, offsetX - 10, offsetX + 10, offsetX],
-        rotate: [rotation, rotation + 1, rotation - 1, rotation + 1, rotation],
-        transition: {
-          duration: 15 + animationDelay * 10,
-          repeat: Infinity,
-          ease: "easeInOut",
-        },
-      },
+      // Removed the 'float' variant to stop continuous animation
     };
 
     return (
@@ -43,7 +34,7 @@ const TripleMobileMockup = () => {
         }}
         variants={phoneVariants}
         initial="initial"
-        animate={["animate", "float"]}
+        animate="animate" // Only animate to the final state
         whileInView="animate"
         viewport={{ once: true, amount: 0.5 }}
       >

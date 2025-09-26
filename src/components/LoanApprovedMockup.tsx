@@ -10,15 +10,7 @@ const LoanApprovedMockup = () => {
   const mockupVariants = {
     initial: { opacity: 0, scale: 0.8, rotateY: 15 },
     animate: { opacity: 1, scale: 1, rotateY: 0, transition: { duration: 0.8, ease: "easeOut" } },
-    float: {
-      y: [0, -10, 0, 10, 0],
-      rotate: [0, 1, 0, -1, 0],
-      transition: {
-        duration: 15,
-        repeat: Infinity,
-        ease: "easeInOut",
-      },
-    },
+    // Removed the 'float' variant to stop continuous animation
   };
 
   return (
@@ -31,7 +23,7 @@ const LoanApprovedMockup = () => {
       }}
       variants={mockupVariants}
       initial="initial"
-      animate={["animate", "float"]}
+      animate="animate" // Only animate to the final state
     >
       <div className="flex flex-col items-center text-center">
         <QickyLogo size="md" /> {/* Use the new QickyLogo component */}

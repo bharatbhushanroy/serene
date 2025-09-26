@@ -31,15 +31,7 @@ const CreditCardMockup: React.FC<CreditCardMockupProps> = ({
         ease: "easeOut",
       },
     },
-    float: {
-      y: [0, -10, 0, 10, 0],
-      rotate: [parseFloat(rotation.replace('rotate-', '')) || 0, (parseFloat(rotation.replace('rotate-', '')) || 0) + 2, (parseFloat(rotation.replace('rotate-', '')) || 0) - 1, (parseFloat(rotation.replace('rotate-', '')) || 0) + 2, (parseFloat(rotation.replace('rotate-', '')) || 0)],
-      transition: {
-        duration: 12,
-        repeat: Infinity,
-        ease: "easeInOut",
-      },
-    },
+    // Removed the 'float' variant to stop continuous animation
   };
 
   return (
@@ -55,7 +47,7 @@ const CreditCardMockup: React.FC<CreditCardMockupProps> = ({
       }}
       variants={cardVariants}
       initial="initial"
-      animate={["animate", "float"]}
+      animate="animate" // Only animate to the final state
     >
       {/* Chip */}
       <div className="w-10 h-8 bg-fintech-card-chip-yellow rounded-md shadow-inner relative overflow-hidden">
