@@ -61,7 +61,7 @@ const InsuranceSection = () => {
           {/* Floating Cards */}
           {/* Top-Left Card */}
           <motion.div
-            className="absolute top-[5%] left-[2%] p-4 rounded-xl shadow-2xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-white z-20 bg-gradient-to-br from-fintech-orange-accent to-fintech-green-success"
+            className="absolute top-[5%] left-[5%] md:top-[10%] md:left-[10%] lg:top-[15%] lg:left-[15%] p-4 rounded-xl shadow-2xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-white z-20 bg-gradient-to-br from-fintech-orange-accent to-fintech-green-success"
             variants={cardVariants}
             initial="initial"
             whileInView={["animate", "float"]}
@@ -74,7 +74,7 @@ const InsuranceSection = () => {
           </motion.div>
           {/* Top-Right Card */}
           <motion.div
-            className="absolute top-[5%] right-[2%] p-4 rounded-xl shadow-2xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-white z-20 bg-gradient-to-br from-fintech-orange-accent to-fintech-green-success"
+            className="absolute top-[5%] right-[5%] md:top-[10%] md:right-[10%] lg:top-[15%] lg:right-[15%] p-4 rounded-xl shadow-2xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-white z-20 bg-gradient-to-br from-fintech-orange-accent to-fintech-green-success"
             variants={cardVariants}
             initial="initial"
             whileInView={["animate", "float"]}
@@ -87,7 +87,7 @@ const InsuranceSection = () => {
           </motion.div>
           {/* Bottom-Left Card */}
           <motion.div
-            className="absolute bottom-[5%] left-[2%] p-4 rounded-xl shadow-2xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-white z-20 bg-gradient-to-br from-fintech-orange-accent to-fintech-green-success"
+            className="absolute bottom-[5%] left-[5%] md:bottom-[10%] md:left-[10%] lg:bottom-[15%] lg:left-[15%] p-4 rounded-xl shadow-2xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-white z-20 bg-gradient-to-br from-fintech-orange-accent to-fintech-green-success"
             variants={cardVariants}
             initial="initial"
             whileInView={["animate", "float"]}
@@ -100,7 +100,7 @@ const InsuranceSection = () => {
           </motion.div>
           {/* Bottom-Right Card */}
           <motion.div
-            className="absolute bottom-[5%] right-[2%] p-4 rounded-xl shadow-2xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-white z-20 bg-gradient-to-br from-fintech-orange-accent to-fintech-green-success"
+            className="absolute bottom-[5%] right-[5%] md:bottom-[10%] md:right-[10%] lg:bottom-[15%] lg:right-[15%] p-4 rounded-xl shadow-2xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-white z-20 bg-gradient-to-br from-fintech-orange-accent to-fintech-green-success"
             variants={cardVariants}
             initial="initial"
             whileInView={["animate", "float"]}
