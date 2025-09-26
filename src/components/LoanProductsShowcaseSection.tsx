@@ -49,7 +49,7 @@ const LoanProductsShowcaseSection = () => {
           {/* Top-Left Card: Loan against Mutual Fund */}
           <motion.div
             className={cn(
-              "absolute top-[10%] left-[5%] bg-gradient-to-br from-fintech-blue-accent to-fintech-gradient-purple-start p-4 rounded-xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-white z-20",
+              "absolute top-[20%] left-[15%] bg-gradient-to-br from-fintech-blue-accent to-fintech-gradient-purple-start p-4 rounded-xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-white z-10", // Changed z-index to 10
               "lg:shadow-2xl lg:shadow-fintech-blue-accent/20 lg:border" // Apply shadow and border only on large screens
             )}
             variants={cardVariants}
@@ -65,7 +65,7 @@ const LoanProductsShowcaseSection = () => {
           {/* Top-Right Card: Home Loan */}
           <motion.div
             className={cn(
-              "absolute top-[10%] right-[5%] bg-gradient-to-br from-fintech-blue-accent to-fintech-gradient-purple-start p-4 rounded-xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-white z-20",
+              "absolute top-[20%] right-[15%] bg-gradient-to-br from-fintech-blue-accent to-fintech-gradient-purple-start p-4 rounded-xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-white z-10", // Changed z-index to 10
               "lg:shadow-2xl lg:shadow-fintech-blue-accent/20 lg:border" // Apply shadow and border only on large screens
             )}
             variants={cardVariants}
@@ -81,7 +81,7 @@ const LoanProductsShowcaseSection = () => {
           {/* Bottom-Left Card: Gold Loan */}
           <motion.div
             className={cn(
-              "absolute bottom-[10%] left-[5%] bg-gradient-to-br from-fintech-blue-accent to-fintech-gradient-purple-start p-4 rounded-xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-white z-20",
+              "absolute bottom-[20%] left-[15%] bg-gradient-to-br from-fintech-blue-accent to-fintech-gradient-purple-start p-4 rounded-xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-white z-10", // Changed z-index to 10
               "lg:shadow-2xl lg:shadow-fintech-blue-accent/20 lg:border" // Apply shadow and border only on large screens
             )}
             variants={cardVariants}
@@ -97,7 +97,7 @@ const LoanProductsShowcaseSection = () => {
           {/* Bottom-Right Card: Credit Cards */}
           <motion.div
             className={cn(
-              "absolute bottom-[10%] right-[5%] bg-gradient-to-br from-fintech-blue-accent to-fintech-gradient-purple-start p-4 rounded-xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-white z-20",
+              "absolute bottom-[20%] right-[15%] bg-gradient-to-br from-fintech-blue-accent to-fintech-gradient-purple-start p-4 rounded-xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-white z-10", // Changed z-index to 10
               "lg:shadow-2xl lg:shadow-fintech-blue-accent/20 lg:border" // Apply shadow and border only on large screens
             )}
             variants={cardVariants}

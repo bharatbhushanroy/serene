@@ -23,7 +23,7 @@ const LoanProductsPhoneMockup = () => {
 
   return (
     <motion.div
-      className="relative w-[320px] h-[650px] bg-black rounded-[40px] shadow-2xl flex items-center justify-center p-2 border-[8px] border-gray-800 overflow-hidden z-10"
+      className="relative w-[320px] h-[650px] bg-black rounded-[40px] shadow-2xl flex items-center justify-center p-2 border-[8px] border-gray-800 overflow-hidden z-20" // Changed z-index to 20
       style={{
         transformStyle: 'preserve-3d',
         transformOrigin: 'center center',
