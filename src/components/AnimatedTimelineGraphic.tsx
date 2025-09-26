@@ -39,6 +39,24 @@ const AnimatedTimelineGraphic = () => {
     visible: { scaleY: 1, transition: { duration: 1.5, ease: "easeInOut" } },
   };
 
+  const milestoneGradientClasses = [
+    "from-fintech-orange-accent to-fintech-peach-background",
+    "from-fintech-blue-accent to-fintech-blue-soft",
+    "from-fintech-gradient-pink-start to-fintech-gradient-pink-end",
+    "from-fintech-green-success to-fintech-cyan-light",
+    "from-fintech-gradient-purple-start to-fintech-gradient-purple-end",
+    "from-fintech-orange-accent to-fintech-peach-background", // Cycle back
+  ];
+
+  const cardGradientClasses = [
+    "from-fintech-gradient-purple-start to-fintech-gradient-purple-end",
+    "from-fintech-gradient-cyan-start to-fintech-gradient-cyan-end",
+    "from-fintech-blue-accent to-fintech-blue-soft",
+    "from-fintech-gradient-pink-start to-fintech-gradient-pink-end",
+    "from-fintech-orange-accent to-fintech-peach-background",
+    "from-fintech-gradient-purple-start to-fintech-gradient-purple-end", // Cycle back
+  ];
+
   return (
     <motion.div
       className="relative py-8 px-4 md:px-8 lg:px-12 bg-fintech-simulator-card-bg rounded-xl shadow-2xl border border-fintech-border-light"
@@ -47,9 +65,9 @@ const AnimatedTimelineGraphic = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
     >
-      {/* Vertical Line */}
+      {/* Vertical Line with Gradient */}
       <motion.div
-        className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-fintech-blue-accent rounded-full z-0"
+        className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-fintech-blue-accent to-fintech-gradient-purple-start rounded-full z-0"
         style={{ height: 'calc(100% - 64px)', top: '32px' }}
         variants={lineVariants}
       />
@@ -63,20 +81,24 @@ const AnimatedTimelineGraphic = () => {
           )}
           variants={itemVariants}
         >
-          {/* Milestone Point */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-fintech-orange-accent rounded-full z-10 flex items-center justify-center border-2 border-fintech-dark-blue">
+          {/* Milestone Point with Gradient */}
+          <div className={cn(
+            "absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full z-10 flex items-center justify-center border-2 border-fintech-dark-blue",
+            "bg-gradient-to-br", milestoneGradientClasses[index % milestoneGradientClasses.length]
+          )}>
             <div className="w-3 h-3 bg-white rounded-full"></div>
           </div>
 
-          {/* Milestone Content */}
+          {/* Milestone Content Card with Gradient */}
           <div
             className={cn(
-              "w-full md:w-1/2 p-4 rounded-lg shadow-md bg-fintech-dark-blue border border-fintech-border-light",
+              "w-full md:w-1/2 p-4 rounded-lg shadow-md border border-fintech-border-light text-white",
+              "bg-gradient-to-br", cardGradientClasses[index % cardGradientClasses.length],
               index % 2 === 0 ? "md:pr-16 text-right" : "md:pl-16 text-left"
             )}
           >
-            <h3 className="text-xl font-bold text-fintech-blue-accent mb-2">{milestone.year}</h3>
-            <p className="text-fintech-text-primary text-sm">{milestone.description}</p>
+            <h3 className="text-xl font-bold text-white mb-2">{milestone.year}</h3>
+            <p className="text-white/90 text-sm">{milestone.description}</p>
           </div>
         </motion.div>
       ))}
