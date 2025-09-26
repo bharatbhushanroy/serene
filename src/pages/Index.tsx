@@ -19,8 +19,8 @@ import WalkTheTalkSection from "@/components/WalkTheTalkSection";
 import LoanProductsSection from "@/components/LoanProductsSection";
 import LoanProductsShowcaseSection from "@/components/LoanProductsShowcaseSection";
 import CredClubInspiredSection from "@/components/CredClubInspiredSection";
-import DataSecuritySection from "@/components/DataSecuritySection"; // New import
-import { Helmet } from 'react-helmet-async'; // New import
+import DataSecuritySection from "@/components/DataSecuritySection";
+import { Helmet } from 'react-helmet-async';
 
 const Index = () => {
   return (
@@ -36,7 +36,6 @@ const Index = () => {
         <CredClubInspiredSection />
         <TopUpLoansSection />
         <ProductsSection />
-        <ApplyStepsSection />
         <QuickLoansFeaturesSection />
         <FeaturesSection />
         <InteractiveLoanSimulatorSection />
@@ -44,10 +43,11 @@ const Index = () => {
         <LoanProductsShowcaseSection />
         <LoanProductsSection />
         <HowItWorksSection />
+        <ApplyStepsSection /> {/* Moved ApplyStepsSection here */}
         <LoanComparisonCalculator />
         <MoneyForEverythingSection />
         <MemberTestimonialsSection />
-        <DataSecuritySection /> {/* Added the new DataSecuritySection here */}
+        <DataSecuritySection />
         <CtaSection />
         <WalkTheTalkSection />
       </main>
