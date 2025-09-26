@@ -63,7 +63,7 @@ const LoanCard: React.FC<LoanCardProps> = ({
             </li>
           ))}
         </ul>
-        <Link to="/apply-loan" className="block mt-auto"> {/* Changed link to /apply-loan */}
+        <Link to="/apply-loan" className="block mt-auto">
           <Button className={cn("w-full px-8 py-3 rounded-full text-lg font-semibold transition-colors group", buttonColor)}>
             Apply Now <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
           </Button>
@@ -88,7 +88,7 @@ const LoanProductsSection = () => {
         "Quick disbursement",
       ],
       bgColor: "bg-fintech-loan-card-purple",
-      buttonColor: "bg-fintech-loan-card-purple-darker hover:bg-fintech-loan-card-purple-darkest",
+      buttonColor: "bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white hover:opacity-90",
       isPopular: true,
       link: "/products/personal-loan",
     },
@@ -105,7 +105,7 @@ const LoanProductsSection = () => {
         "Doorstep service",
       ],
       bgColor: "bg-fintech-loan-card-blue",
-      buttonColor: "bg-fintech-loan-card-blue-darker hover:bg-fintech-loan-card-blue-darkest",
+      buttonColor: "bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white hover:opacity-90",
       link: "/products/home-loan",
     },
     {
@@ -121,7 +121,7 @@ const LoanProductsSection = () => {
         "Easy repayment after course completion",
       ],
       bgColor: "bg-fintech-loan-card-green",
-      buttonColor: "bg-fintech-loan-card-green-darker hover:bg-fintech-loan-card-green-darkest",
+      buttonColor: "bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white hover:opacity-90",
       link: "/products/education-loan",
     },
   ];
