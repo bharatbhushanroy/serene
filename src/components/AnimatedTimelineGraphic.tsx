@@ -62,35 +62,26 @@ const AnimatedTimelineGraphic = () => {
   return (
     <div className="relative w-full h-full flex items-center justify-center min-h-[350px] py-8">
       <svg className="w-full h-full max-w-2xl" viewBox="0 0 500 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* Background Gradients and Filters */}
-        <defs>
-          <linearGradient id="timelineGradient" x1="20" y1="150" x2="480" y2="150" gradientUnits="userSpaceOnUse">
-            <stop stopColor="hsl(var(--fintech-blue-accent))" />
-            <stop offset="1" stopColor="hsl(var(--fintech-green-success))" />
-          </linearGradient>
-          {/* Glow filter for path and dots */}
-          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
-            <feMerge>
-              <feMergeNode in="blur" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-        </defs>
-
         {/* Main Timeline Path */}
         <motion.path
           d="M20 150 H480" // Horizontal line
           stroke="url(#timelineGradient)"
-          strokeWidth="8" {/* Increased stroke width */}
+          strokeWidth="6"
           strokeLinecap="round"
           fill="none"
-          filter="url(#glow)" {/* Applied glow filter */}
           variants={lineVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
         />
+
+        {/* Gradient for the timeline path */}
+        <defs>
+          <linearGradient id="timelineGradient" x1="20" y1="150" x2="480" y2="150" gradientUnits="userSpaceOnUse">
+            <stop stopColor="hsl(var(--fintech-blue-accent))" />
+            <stop offset="1" stopColor="hsl(var(--fintech-green-success))" />
+          </linearGradient>
+        </defs>
 
         {/* Milestones */}
         {milestones.map((milestone, i) => (
@@ -98,7 +89,7 @@ const AnimatedTimelineGraphic = () => {
             {/* Vertical line from timeline to milestone dot */}
             <motion.line
               x1={milestone.x} y1="150" x2={milestone.x} y2="120"
-              stroke="hsl(var(--fintech-blue-soft))" strokeWidth="3" {/* Brighter stroke and increased width */}
+              stroke="hsl(var(--fintech-text-muted))" strokeWidth="2"
               variants={{
                 hidden: { pathLength: 0, opacity: 0 },
                 visible: { pathLength: 1, opacity: 1, transition: { delay: 1.5 + i * 0.3, duration: 0.4 } }
@@ -106,9 +97,8 @@ const AnimatedTimelineGraphic = () => {
             />
             {/* Milestone Dot */}
             <motion.circle
-              cx={milestone.x} cy="120" r="12" {/* Increased radius */}
-              fill="hsl(var(--fintech-blue-accent))" {/* Changed fill to a vibrant blue */}
-              filter="url(#glow)" {/* Applied glow filter */}
+              cx={milestone.x} cy="120" r="10"
+              fill="hsl(var(--fintech-orange-accent))"
               variants={milestoneVariants}
               animate="float" // Apply float animation
             />
@@ -117,7 +107,7 @@ const AnimatedTimelineGraphic = () => {
               x={milestone.x} y="100"
               textAnchor="middle"
               fill="hsl(var(--fintech-text-primary))"
-              fontSize="18" {/* Increased font size */}
+              fontSize="16"
               fontWeight="bold"
               variants={textVariants}
             >
@@ -127,8 +117,8 @@ const AnimatedTimelineGraphic = () => {
             <motion.text
               x={milestone.x} y="170"
               textAnchor="middle"
-              fill="hsl(var(--fintech-text-primary))" {/* Changed fill to primary text color for clarity */}
-              fontSize="14" {/* Increased font size */}
+              fill="hsl(var(--fintech-text-muted))"
+              fontSize="12"
               variants={textVariants}
             >
               {milestone.event}
