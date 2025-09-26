@@ -19,6 +19,7 @@ import WalkTheTalkSection from "@/components/WalkTheTalkSection";
 import LoanProductsSection from "@/components/LoanProductsSection";
 import LoanProductsShowcaseSection from "@/components/LoanProductsShowcaseSection";
 import CredClubInspiredSection from "@/components/CredClubInspiredSection";
+import DataSecuritySection from "@/components/DataSecuritySection"; // New import
 import { Helmet } from 'react-helmet-async'; // New import
 
 const Index = () => {
@@ -33,7 +34,7 @@ const Index = () => {
         {/* HeroCarousel already contains the primary h1 for the page */}
         <HeroCarousel />
         <CredClubInspiredSection />
-        <TopUpLoansSection /> {/* Moved TopUpLoansSection here */}
+        <TopUpLoansSection />
         <ProductsSection />
         <ApplyStepsSection />
         <QuickLoansFeaturesSection />
@@ -46,6 +47,7 @@ const Index = () => {
         <LoanComparisonCalculator />
         <MoneyForEverythingSection />
         <MemberTestimonialsSection />
+        <DataSecuritySection /> {/* Added the new DataSecuritySection here */}
         <CtaSection />
         <WalkTheTalkSection />
       </main>
