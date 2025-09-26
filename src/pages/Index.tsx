@@ -33,11 +33,11 @@ const Index = () => {
         {/* HeroCarousel already contains the primary h1 for the page */}
         <HeroCarousel />
         <CredClubInspiredSection />
+        <TopUpLoansSection /> {/* Moved TopUpLoansSection here */}
         <ProductsSection />
         <ApplyStepsSection />
         <QuickLoansFeaturesSection />
         <FeaturesSection />
-        <TopUpLoansSection />
         <InteractiveLoanSimulatorSection />
         <InsuranceSection />
         <LoanProductsShowcaseSection />
