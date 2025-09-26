@@ -3,15 +3,27 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { MadeWithDyad } from '@/components/made-with-dyad';
 import { Card } from '@/components/ui/card';
-import { Users, Lightbulb } from 'lucide-react';
+import { Users, Lightbulb, Target, Handshake } from 'lucide-react'; // Added Target, Handshake
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import EthosSection from '@/components/EthosSection';
 import TeamSection from '@/components/TeamSection';
 import GrowthStorySection from '@/components/GrowthStorySection';
-import { Helmet } from 'react-helmet-async'; // New import
+import AboutUsHeroSection from '@/components/AboutUsHeroSection'; // New import
+import { Helmet } from 'react-helmet-async';
+import { motion } from 'framer-motion'; // Import motion
 
 const AboutUs = () => {
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+
   return (
     <div className="min-h-screen bg-fintech-main-bg text-white">
       <Helmet>
@@ -19,57 +31,126 @@ const AboutUs = () => {
         <meta name="description" content="Learn about Qicky's mission to provide fast, flexible, and transparent financial solutions. Discover our values, team, and growth story." />
       </Helmet>
       <Header />
-      <main className="relative z-10 py-20 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
-        <h1 className="text-5xl md:text-6xl font-extrabold text-center leading-tight mb-8">
-          About <span className="bg-gradient-to-r from-fintech-blue-accent to-fintech-blue-soft text-transparent bg-clip-text">Qicky</span>
-        </h1>
-        <p className="text-lg text-fintech-text-muted text-center mb-16 max-w-3xl mx-auto">
-          At Qicky, we believe in empowering individuals with fast, flexible, and transparent financial solutions. Our mission is to simplify the loan process and make financial freedom accessible to everyone across India.
-        </p>
+      <main className="relative z-10">
+        <AboutUsHeroSection /> {/* New Hero Section */}
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
-          <div className="space-y-8">
-            <Card className="bg-fintech-simulator-card-bg border border-fintech-border-light p-8 rounded-xl shadow-lg">
+        {/* Our Story Section */}
+        <motion.section
+          className="py-20 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto text-center"
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
+            Our <span className="bg-gradient-to-r from-fintech-blue-accent to-fintech-blue-soft text-transparent bg-clip-text">Journey</span>
+          </h2>
+          <p className="text-lg text-fintech-text-muted mb-12 max-w-3xl mx-auto">
+            Born from a vision to democratize finance in India, Qicky embarked on a journey to simplify access to credit. We saw a gap between traditional banking complexities and the urgent financial needs of millions. Our founders, a team of seasoned fintech innovators, leveraged cutting-edge technology to build a platform that is not just fast and efficient, but also transparent and trustworthy. Since our inception, we've been committed to empowering individuals and businesses, transforming financial aspirations into reality with every loan disbursed.
+          </p>
+          <motion.img
+            src="https://images.unsplash.com/photo-1552664730-d307ca8849d1?q=80&w=2070&auto=format&fit=crop"
+            alt="Qicky's Journey"
+            className="w-full max-w-4xl mx-auto rounded-xl shadow-2xl border border-fintech-border-light object-cover aspect-video"
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+          />
+        </motion.section>
+
+        {/* Mission & Vision Section */}
+        <motion.section
+          className="py-20 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20"
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <motion.div variants={cardVariants} className="space-y-8">
+            <Card className="bg-fintech-simulator-card-bg border border-fintech-border-light p-8 rounded-xl shadow-lg h-full">
               <div className="flex items-center mb-4">
-                <Users className="h-8 w-8 text-fintech-blue-accent mr-4" />
+                <Target className="h-8 w-8 text-fintech-blue-accent mr-4" />
+                <h2 className="text-3xl font-bold text-white">Our Mission</h2>
+              </div>
+              <p className="text-fintech-text-muted text-lg">
+                To empower every Indian with seamless, transparent, and accessible financial solutions, fostering economic growth and personal prosperity through innovative digital lending.
+              </p>
+            </Card>
+          </motion.div>
+          <motion.div variants={cardVariants} className="space-y-8">
+            <Card className="bg-fintech-simulator-card-bg border border-fintech-border-light p-8 rounded-xl shadow-lg h-full">
+              <div className="flex items-center mb-4">
+                <Lightbulb className="h-8 w-8 text-fintech-blue-accent mr-4" />
                 <h2 className="text-3xl font-bold text-white">Our Vision</h2>
               </div>
               <p className="text-fintech-text-muted text-lg">
-                To be the leading digital lending platform in India, recognized for our innovative approach, customer-centric services, and unwavering commitment to financial inclusion. We envision a world where financial support is just a click away, without the traditional hurdles.
+                To be the most trusted and preferred digital financial partner in India, setting new benchmarks for customer experience, technological excellence, and social impact.
               </p>
             </Card>
-            <Card className="bg-fintech-simulator-card-bg border border-fintech-border-light p-8 rounded-xl shadow-lg">
-              <div className="flex items-center mb-4">
-                <Lightbulb className="h-8 w-8 text-fintech-blue-accent mr-4" />
-                <h2 className="text-3xl font-bold text-white">Our Values</h2>
-              </div>
-              <ul className="list-disc list-inside text-fintech-text-muted text-lg space-y-2">
-                <li><span className="font-semibold text-white">Transparency:</span> No hidden fees, clear terms for every loan.</li>
-                <li><span className="font-semibold text-white">Innovation:</span> Leveraging cutting-edge technology for a superior borrowing experience.</li>
-                <li><span className="font-semibold text-white">Customer Focus:</span> Your financial needs are our utmost priority.</li>
-                <li><span className="font-semibold text-white">Integrity:</span> Upholding honest and ethical practices in all our dealings.</li>
-              </ul>
-            </Card>
-          </div>
-          <div className="flex items-center justify-center">
-            <img
-              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop"
-              alt="Our team working together"
-              className="w-full max-w-lg rounded-xl shadow-2xl border border-fintech-border-light object-cover aspect-square"
-            />
-          </div>
-        </div>
+          </motion.div>
+        </motion.section>
 
-        {/* New Ethos Section */}
+        {/* Our Values Section */}
+        <motion.section
+          className="py-20 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto text-center"
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-12">
+            Core <span className="bg-gradient-to-r from-fintech-blue-accent to-fintech-blue-soft text-transparent bg-clip-text">Values</span>
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <motion.div variants={cardVariants}>
+              <Card className="bg-fintech-simulator-card-bg border border-fintech-border-light p-8 rounded-xl shadow-lg h-full">
+                <div className="flex items-center justify-center mb-4">
+                  <Handshake className="h-8 w-8 text-fintech-orange-accent" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">Integrity & Trust</h3>
+                <p className="text-fintech-text-muted text-base">
+                  Upholding the highest ethical standards and fostering transparent relationships with our customers.
+                </p>
+              </Card>
+            </motion.div>
+            <motion.div variants={cardVariants} custom={1}>
+              <Card className="bg-fintech-simulator-card-bg border border-fintech-border-light p-8 rounded-xl shadow-lg h-full">
+                <div className="flex items-center justify-center mb-4">
+                  <Lightbulb className="h-8 w-8 text-fintech-green-success" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">Innovation & Agility</h3>
+                <p className="text-fintech-text-muted text-base">
+                  Continuously evolving our technology and services to meet the dynamic needs of the market.
+                </p>
+              </Card>
+            </motion.div>
+            <motion.div variants={cardVariants} custom={2}>
+              <Card className="bg-fintech-simulator-card-bg border border-fintech-border-light p-8 rounded-xl shadow-lg h-full">
+                <div className="flex items-center justify-center mb-4">
+                  <Users className="h-8 w-8 text-fintech-blue-accent" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">Customer Centricity</h3>
+                <p className="text-fintech-text-muted text-base">
+                  Placing our customers at the heart of every decision, ensuring their financial well-being.
+                </p>
+              </Card>
+            </motion.div>
+          </div>
+        </motion.section>
+
+        {/* Existing Sections */}
         <EthosSection />
-
-        {/* New Team Section */}
         <TeamSection />
-
-        {/* New Growth Story Section */}
         <GrowthStorySection />
 
-        <div className="text-center mt-20">
+        <motion.div
+          className="text-center mt-20 py-20 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto"
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
           <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
             Join the <span className="bg-gradient-to-r from-fintech-blue-accent to-fintech-blue-soft text-transparent bg-clip-text">Qicky Family</span>
           </h2>
@@ -81,7 +162,7 @@ const AboutUs = () => {
               Apply for a Loan
             </Button>
           </Link>
-        </div>
+        </motion.div>
       </main>
       <Footer />
       <MadeWithDyad />
