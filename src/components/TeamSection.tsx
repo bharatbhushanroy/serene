@@ -38,7 +38,7 @@ const TeamSection = () => {
         Meet Our <span className="bg-gradient-to-r from-fintech-blue-accent to-fintech-blue-soft text-transparent bg-clip-text">Exceptional Team</span>
       </h2>
       <p className="text-3xl md:text-4xl font-bold text-center text-white mb-12">
-        Our Army of <span className="text-fintech-orange-accent">50+</span>
+        Our Army of <span className="text-fintech-orange-accent">50+</span> Petronas
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
