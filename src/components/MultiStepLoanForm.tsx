@@ -14,6 +14,7 @@ import { User, Home, Briefcase, CreditCard, CalendarIcon, HelpCircle, ArrowRight
 import { showSuccess, showError } from '@/utils/toast';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
+import { motion } from 'framer-motion'; // Import motion
 
 const MultiStepLoanForm = () => {
   const [currentStep, setCurrentStep] = useState('personal');
@@ -91,8 +92,35 @@ const MultiStepLoanForm = () => {
     // Optionally reset form or redirect
   };
 
+  const cardAnimationVariants = {
+    hidden: { opacity: 0, y: 50, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.7,
+        ease: "easeOut",
+      },
+    },
+    float: {
+      y: [0, -5, 0, 5, 0],
+      rotate: [0, 0.5, 0, -0.5, 0],
+      transition: {
+        duration: 10,
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
-    <Card className="bg-fintech-simulator-card-bg border border-fintech-border-light p-8 rounded-2xl shadow-2xl shadow-fintech-blue-accent/10 max-w-4xl w-full">
+    <motion.div
+      className="bg-fintech-simulator-card-bg border border-fintech-border-light p-8 rounded-2xl shadow-2xl shadow-fintech-blue-accent/10 max-w-4xl w-full"
+      variants={cardAnimationVariants}
+      initial="hidden"
+      animate={["visible", "float"]} // Apply both initial and floating animations
+    >
       <CardHeader className="text-center">
         <CardTitle className="text-4xl font-extrabold text-white mb-4">
           Loan Application
@@ -481,7 +509,7 @@ const MultiStepLoanForm = () => {
           </TabsContent>
         </Tabs>
       </CardContent>
-    </Card>
+    </motion.div>
   );
 };
 
