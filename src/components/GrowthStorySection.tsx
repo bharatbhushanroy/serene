@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import AnimatedTimelineGraphic from './AnimatedTimelineGraphic'; // Import the new component
+import AnimatedTimelineGraphic from './AnimatedTimelineGraphic';
 
 const GrowthStorySection = () => {
   const sectionVariants = {
@@ -12,20 +12,20 @@ const GrowthStorySection = () => {
 
   return (
     <motion.section
-      className="py-20 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto text-center"
+      className="py-20 px-6 md:px-12 lg:px-24 bg-fintech-main-bg text-white text-center"
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
     >
       <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
-        Our <span className="bg-gradient-to-r from-fintech-blue-accent to-fintech-blue-soft text-transparent bg-clip-text">Growth Story</span>
+        Our <span className="bg-gradient-to-r from-fintech-blue-accent to-fintech-blue-soft text-transparent bg-clip-text">Growth Journey</span>
       </h2>
-      <p className="text-lg text-fintech-text-muted mb-12 max-w-3xl mx-auto">
-        From a humble beginning to a leading fintech innovator, our journey is marked by relentless dedication, groundbreaking technology, and a deep commitment to our users.
+      <p className="text-lg text-fintech-text-muted max-w-3xl mx-auto mb-12">
+        Explore the pivotal moments and innovations that have defined our path to becoming a leader in the fintech industry. Discover how we've evolved and achieved significant milestones over the years.
       </p>
-      <div className="w-full max-w-4xl mx-auto rounded-xl shadow-2xl border border-fintech-border-light bg-fintech-simulator-card-bg p-8 mt-12">
-        <AnimatedTimelineGraphic /> {/* Integrate the new animated graphic */}
+      <div className="w-full max-w-4xl mx-auto mt-12">
+        <AnimatedTimelineGraphic />
       </div>
     </motion.section>
   );

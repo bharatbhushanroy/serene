@@ -2,131 +2,85 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
 
-const milestones = [
-  { year: 2018, event: "Founded Qicky", x: 50 },
-  { year: 2019, event: "First Product Launch", x: 150 },
-  { year: 2020, event: "Achieved 1M Users", x: 250 },
-  { year: 2022, event: "Expanded to 100 Cities", x: 350 },
-  { year: 2024, event: "Launched AI-Powered Lending", x: 450 },
+interface Milestone {
+  year: string;
+  description: string;
+}
+
+const milestones: Milestone[] = [
+  { year: "2010", description: "Company Founded, Vision Established" },
+  { year: "2013", description: "First Major Product Launch & Market Entry" },
+  { year: "2016", description: "Expanded to International Markets & Partnerships" },
+  { year: "2019", description: "Achieved 1 Million Users Milestone & Series A Funding" },
+  { year: "2022", description: "Introduced AI-Powered Solutions & New Product Lines" },
+  { year: "2024", description: "Recognized as Industry Leader & Global Expansion" },
 ];
 
 const AnimatedTimelineGraphic = () => {
-  const lineVariants = {
-    hidden: { pathLength: 0, opacity: 0 },
+  const containerVariants = {
+    hidden: { opacity: 0 },
     visible: {
-      pathLength: 1,
       opacity: 1,
       transition: {
-        duration: 2,
-        ease: "easeInOut",
+        staggerChildren: 0.2,
       },
     },
   };
 
-  const milestoneVariants = {
-    hidden: { opacity: 0, scale: 0, y: 20 },
-    visible: (i: number) => ({
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      transition: {
-        delay: 1.5 + i * 0.3, // Staggered appearance after line is drawn
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    }),
-    float: {
-      y: [0, -5, 0],
-      transition: {
-        duration: 3,
-        repeat: Infinity,
-        ease: "easeInOut",
-      },
-    },
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
   };
 
-  const textVariants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: 1.8 + i * 0.3, // Staggered appearance after milestone dot
-        duration: 0.5,
-        ease: "easeOut",
-      },
-    }),
+  const lineVariants = {
+    hidden: { scaleY: 0 },
+    visible: { scaleY: 1, transition: { duration: 1.5, ease: "easeInOut" } },
   };
 
   return (
-    <div className="relative w-full h-full flex items-center justify-center min-h-[350px] py-8">
-      <svg className="w-full h-full max-w-2xl" viewBox="0 0 500 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* Main Timeline Path */}
-        <motion.path
-          d="M20 150 H480" // Horizontal line
-          stroke="url(#timelineGradient)"
-          strokeWidth="6"
-          strokeLinecap="round"
-          fill="none"
-          variants={lineVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-        />
+    <motion.div
+      className="relative py-8 px-4 md:px-8 lg:px-12 bg-fintech-simulator-card-bg rounded-xl shadow-2xl border border-fintech-border-light"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+    >
+      {/* Vertical Line */}
+      <motion.div
+        className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-fintech-blue-accent rounded-full z-0"
+        style={{ height: 'calc(100% - 64px)', top: '32px' }}
+        variants={lineVariants}
+      />
 
-        {/* Gradient for the timeline path */}
-        <defs>
-          <linearGradient id="timelineGradient" x1="20" y1="150" x2="480" y2="150" gradientUnits="userSpaceOnUse">
-            <stop stopColor="hsl(var(--fintech-blue-accent))" />
-            <stop offset="1" stopColor="hsl(var(--fintech-green-success))" />
-          </linearGradient>
-        </defs>
+      {milestones.map((milestone, index) => (
+        <motion.div
+          key={index}
+          className={cn(
+            "relative flex items-center mb-12 last:mb-0",
+            index % 2 === 0 ? "justify-start md:justify-end" : "justify-start"
+          )}
+          variants={itemVariants}
+        >
+          {/* Milestone Point */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-fintech-orange-accent rounded-full z-10 flex items-center justify-center border-2 border-fintech-dark-blue">
+            <div className="w-3 h-3 bg-white rounded-full"></div>
+          </div>
 
-        {/* Milestones */}
-        {milestones.map((milestone, i) => (
-          <motion.g key={i} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.5 }}>
-            {/* Vertical line from timeline to milestone dot */}
-            <motion.line
-              x1={milestone.x} y1="150" x2={milestone.x} y2="120"
-              stroke="hsl(var(--fintech-text-muted))" strokeWidth="2"
-              variants={{
-                hidden: { pathLength: 0, opacity: 0 },
-                visible: { pathLength: 1, opacity: 1, transition: { delay: 1.5 + i * 0.3, duration: 0.4 } }
-              }}
-            />
-            {/* Milestone Dot */}
-            <motion.circle
-              cx={milestone.x} cy="120" r="10"
-              fill="hsl(var(--fintech-orange-accent))"
-              variants={milestoneVariants}
-              animate="float" // Apply float animation
-            />
-            {/* Milestone Year */}
-            <motion.text
-              x={milestone.x} y="100"
-              textAnchor="middle"
-              fill="hsl(var(--fintech-text-primary))"
-              fontSize="16"
-              fontWeight="bold"
-              variants={textVariants}
-            >
-              {milestone.year}
-            </motion.text>
-            {/* Milestone Event */}
-            <motion.text
-              x={milestone.x} y="170"
-              textAnchor="middle"
-              fill="hsl(var(--fintech-text-muted))"
-              fontSize="12"
-              variants={textVariants}
-            >
-              {milestone.event}
-            </motion.text>
-          </motion.g>
-        ))}
-      </svg>
-    </div>
+          {/* Milestone Content */}
+          <div
+            className={cn(
+              "w-full md:w-1/2 p-4 rounded-lg shadow-md bg-fintech-dark-blue border border-fintech-border-light",
+              index % 2 === 0 ? "md:pr-16 text-right" : "md:pl-16 text-left"
+            )}
+          >
+            <h3 className="text-xl font-bold text-fintech-blue-accent mb-2">{milestone.year}</h3>
+            <p className="text-fintech-text-primary text-sm">{milestone.description}</p>
+          </div>
+        </motion.div>
+      ))}
+    </motion.div>
   );
 };
 
