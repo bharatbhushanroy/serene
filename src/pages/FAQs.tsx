@@ -8,6 +8,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import { Helmet } from 'react-helmet-async'; // New import
 
 const faqs = [
   {
@@ -39,6 +40,10 @@ const faqs = [
 const FAQs = () => {
   return (
     <div className="min-h-screen bg-fintech-main-bg text-fintech-text-dark hero-background">
+      <Helmet>
+        <title>Qicky FAQs - Answers to Your Loan Questions</title>
+        <meta name="description" content="Find answers to common questions about Qicky's loans, application process, eligibility, and services in our comprehensive FAQ section." />
+      </Helmet>
       <Header />
       <main className="relative z-10 py-20 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
         <h1 className="text-5xl md:text-6xl font-extrabold text-center leading-tight mb-8 text-white">

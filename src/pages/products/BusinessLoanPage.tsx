@@ -8,8 +8,9 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Briefcase, TrendingUp, DollarSign, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import AdvanceLoanSimulator from '@/components/AdvanceLoanSimulator'; // Reusing existing simulator
+import AdvanceLoanSimulator from '@/components/AdvanceLoanSimulator';
 import CtaSection from '@/components/CtaSection';
+import { Helmet } from 'react-helmet-async'; // New import
 
 const BusinessLoanPage = () => {
   const features = [
@@ -37,6 +38,10 @@ const BusinessLoanPage = () => {
 
   return (
     <div className="min-h-screen bg-fintech-main-bg text-white">
+      <Helmet>
+        <title>Business Loans - Fuel Your Enterprise with Qicky</title>
+        <meta name="description" content="Secure flexible business loans from Qicky to expand your operations, manage cash flow, and invest in new opportunities." />
+      </Helmet>
       <Header />
       <main>
         {/* Hero Section */}

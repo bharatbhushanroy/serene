@@ -9,9 +9,10 @@ import { ArrowRight, CheckCircle, DollarSign, ShieldCheck, Clock } from 'lucide-
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import InteractiveLoanSimulatorSection from '@/components/InteractiveLoanSimulatorSection';
-import LoanApprovedMockup from '@/components/LoanApprovedMockup'; // Reusing existing mockup
-import HowItWorksSection from '@/components/HowItWorksSection'; // Reusing existing section
-import CtaSection from '@/components/CtaSection'; // Reusing existing section
+import LoanApprovedMockup from '@/components/LoanApprovedMockup';
+import HowItWorksSection from '@/components/HowItWorksSection';
+import CtaSection from '@/components/CtaSection';
+import { Helmet } from 'react-helmet-async'; // New import
 
 const PersonalLoanPage = () => {
   const features = [
@@ -39,6 +40,10 @@ const PersonalLoanPage = () => {
 
   return (
     <div className="min-h-screen bg-fintech-main-bg text-white">
+      <Helmet>
+        <title>Personal Loans - Quick & Easy Funds from Qicky</title>
+        <meta name="description" content="Get instant personal loans up to ₹5,00,000 with Qicky. Enjoy quick approvals, flexible repayment, and a 100% digital process." />
+      </Helmet>
       <Header />
       <main>
         {/* Hero Section */}

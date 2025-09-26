@@ -8,7 +8,8 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin } from 'lucide-react';
-import { showSuccess, showError } from '@/utils/toast'; // Assuming these are available
+import { showSuccess, showError } from '@/utils/toast';
+import { Helmet } from 'react-helmet-async'; // New import
 
 const ContactUs = () => {
   const [name, setName] = useState('');
@@ -33,6 +34,10 @@ const ContactUs = () => {
 
   return (
     <div className="min-h-screen bg-fintech-main-bg text-white">
+      <Helmet>
+        <title>Contact Qicky - Get Support & Inquiries</title>
+        <meta name="description" content="Have questions or need assistance? Contact Qicky's support team via our online form, email, or phone. We're here to help." />
+      </Helmet>
       <Header />
       <main className="relative z-10 py-20 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
         <h1 className="text-5xl md:text-6xl font-extrabold text-center leading-tight mb-8">

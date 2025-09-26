@@ -1,6 +1,6 @@
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import Header from "@/components/Header";
-import HeroCarousel from "@/components/HeroCarousel"; // Changed import from InstantLoansHeroSection
+import HeroCarousel from "@/components/HeroCarousel";
 import MoneyForEverythingSection from "@/components/MoneyForEverythingSection";
 import ApplyStepsSection from "@/components/ApplyStepsSection";
 import FeaturesSection from "@/components/FeaturesSection";
@@ -8,10 +8,9 @@ import HowItWorksSection from "@/components/HowItWorksSection";
 import MemberTestimonialsSection from "@/components/MemberTestimonialsSection";
 import Footer from "@/components/Footer";
 import QuickLoansFeaturesSection from "@/components/QuickLoansFeaturesSection";
-import CtaSection from "@/components/CtaSection"; // Re-added CtaSection import
+import CtaSection from "@/components/CtaSection";
 import TopUpLoansSection from "@/components/TopUpLoansSection";
 import InteractiveLoanSimulatorSection from "@/components/InteractiveLoanSimulatorSection";
-// import FinancialFreedomSection from "@/components/FinancialFreedomSection"; // Removed FinancialFreedomSection import
 import LoanComparisonCalculator from "@/components/LoanComparisonCalculator";
 import InsuranceSection from "@/components/InsuranceSection";
 import MadeInBharatSection from "@/components/MadeInBharatSection";
@@ -20,32 +19,34 @@ import WalkTheTalkSection from "@/components/WalkTheTalkSection";
 import LoanProductsSection from "@/components/LoanProductsSection";
 import LoanProductsShowcaseSection from "@/components/LoanProductsShowcaseSection";
 import CredClubInspiredSection from "@/components/CredClubInspiredSection";
-// import DataSecuritySection from "@/components/DataSecuritySection"; // New import - UNCOMMENTED
+import { Helmet } from 'react-helmet-async'; // New import
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-fintech-background-light text-fintech-text-dark">
+      <Helmet>
+        <title>Qicky - Instant Personal Loans & Financial Solutions</title>
+        <meta name="description" content="Get instant personal loans, explore credit cards, and manage your finances with Qicky. Quick approvals, flexible terms, and 100% digital process." />
+      </Helmet>
       <Header />
       <main>
-        <HeroCarousel /> {/* Render the new HeroCarousel */}
-        <CredClubInspiredSection /> {/* Added the new CredClubInspiredSection here */}
+        {/* HeroCarousel already contains the primary h1 for the page */}
+        <HeroCarousel />
+        <CredClubInspiredSection />
         <ProductsSection />
         <ApplyStepsSection />
         <QuickLoansFeaturesSection />
-        {/* <CheckEligibilitySection /> Removed the component */}
         <FeaturesSection />
         <TopUpLoansSection />
         <InteractiveLoanSimulatorSection />
         <InsuranceSection />
-        <LoanProductsShowcaseSection /> {/* Added the new section here */}
+        <LoanProductsShowcaseSection />
         <LoanProductsSection />
         <HowItWorksSection />
         <LoanComparisonCalculator />
-        <MoneyForEverythingSection /> {/* Moved this section here */}
-        {/* <FinancialFreedomSection /> Removed the FinancialFreedomSection component */}
-        {/* DataSecuritySection is now part of FinancialFreedomSection */}
+        <MoneyForEverythingSection />
         <MemberTestimonialsSection />
-        <CtaSection /> {/* Re-added the CtaSection component */}
+        <CtaSection />
         <WalkTheTalkSection />
       </main>
       <Footer />

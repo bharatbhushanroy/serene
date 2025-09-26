@@ -10,6 +10,7 @@ import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { showSuccess, showError } from '@/utils/toast';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async'; // New import
 
 const SignupPage = () => {
   const [name, setName] = useState('');
@@ -18,14 +19,10 @@ const SignupPage = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, you would send this data to a registration service.
-    // For now, we'll just log it and show a toast notification.
     console.log({ name, email, password });
 
     if (name && email && password) {
       showSuccess("Registration successful! Please log in.");
-      // Redirect to login page after successful registration
-      // navigate('/login'); // You would use useNavigate hook here
     } else {
       showError("Please fill in all fields.");
     }
@@ -33,12 +30,16 @@ const SignupPage = () => {
 
   return (
     <div className="min-h-screen bg-fintech-main-bg text-fintech-text-dark hero-background">
+      <Helmet>
+        <title>Sign Up for Qicky - Start Your Financial Journey</title>
+        <meta name="description" content="Create your Qicky account today to apply for instant loans, explore financial products, and manage your money with ease." />
+      </Helmet>
       <Header />
       <main className="relative z-10 py-20 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto flex items-center justify-center">
         <Card className="bg-fintech-simulator-card-bg border border-fintech-border-light p-8 rounded-xl shadow-lg max-w-md w-full">
           <CardHeader className="text-center">
             <CardTitle className="text-4xl font-extrabold text-white mb-4">
-              Join <span className="bg-gradient-to-r from-fintech-blue-accent to-fintech-blue-soft text-transparent bg-clip-text">Qicky</span>
+              <h1>Join <span className="bg-gradient-to-r from-fintech-blue-accent to-fintech-blue-soft text-transparent bg-clip-text">Qicky</span></h1>
             </CardTitle>
             <p className="text-fintech-text-muted text-lg">Create your account to get started</p>
           </CardHeader>

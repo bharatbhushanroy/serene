@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import AdvanceLoanSimulator from '@/components/AdvanceLoanSimulator';
 import CtaSection from '@/components/CtaSection';
+import { Helmet } from 'react-helmet-async'; // New import
 
 const HomeLoanPage = () => {
   const features = [
@@ -37,6 +38,10 @@ const HomeLoanPage = () => {
 
   return (
     <div className="min-h-screen bg-fintech-main-bg text-white">
+      <Helmet>
+        <title>Home Loans - Make Your Dream Home a Reality with Qicky</title>
+        <meta name="description" content="Achieve homeownership with Qicky Home Loans. Benefit from competitive interest rates, long tenures, and expert guidance." />
+      </Helmet>
       <Header />
       <main>
         {/* Hero Section */}

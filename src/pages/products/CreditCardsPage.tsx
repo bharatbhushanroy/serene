@@ -10,7 +10,8 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import CreditCardMockup from '@/components/CreditCardMockup';
 import CtaSection from '@/components/CtaSection';
-import IndianBankCreditCardComparison from '@/components/IndianBankCreditCardComparison'; // New import
+import IndianBankCreditCardComparison from '@/components/IndianBankCreditCardComparison';
+import { Helmet } from 'react-helmet-async'; // New import
 
 const CreditCardsPage = () => {
   const features = [
@@ -38,6 +39,10 @@ const CreditCardsPage = () => {
 
   return (
     <div className="min-h-screen bg-fintech-main-bg text-white">
+      <Helmet>
+        <title>Credit Cards - Compare & Apply for Top Offers with Qicky</title>
+        <meta name="description" content="Find the perfect credit card with Qicky. Compare exclusive rewards, low interest rates, and secure online transactions from leading banks." />
+      </Helmet>
       <Header />
       <main>
         {/* Hero Section */}
@@ -56,12 +61,12 @@ const CreditCardsPage = () => {
                 Find the perfect credit card to match your lifestyle and financial goals. Compare features, rewards, and benefits.
               </motion.p>
               <motion.div variants={itemVariants} className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-8">
-                <Link to="/apply-loan"> {/* Placeholder for actual credit card application */}
+                <Link to="/apply-loan">
                   <Button className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-all duration-300 group">
                     Apply Now <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </Link>
-                <Link to="/products/credit-cards"> {/* Link to this page for comparison */}
+                <Link to="/products/credit-cards">
                   <Button variant="outline" className="bg-transparent border-gray-700 text-gray-200 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-800 hover:border-fintech-blue-accent transition-colors">
                     Compare Cards
                   </Button>
@@ -99,8 +104,8 @@ const CreditCardsPage = () => {
               <p className="text-lg text-fintech-text-muted mb-6">
                 Discover a wide range of credit cards from leading banks. Filter by rewards, annual fees, interest rates, and more to find your perfect match.
               </p>
-              <IndianBankCreditCardComparison /> {/* New component added here */}
-              <Link to="/apply-loan"> {/* Link 'View All Cards' to apply-loan */}
+              <IndianBankCreditCardComparison />
+              <Link to="/apply-loan">
                 <Button className="mt-8 bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity">
                   View All Cards
                 </Button>

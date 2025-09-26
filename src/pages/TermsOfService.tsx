@@ -2,10 +2,15 @@ import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { MadeWithDyad } from '@/components/made-with-dyad';
+import { Helmet } from 'react-helmet-async'; // New import
 
 const TermsOfService = () => {
   return (
     <div className="min-h-screen bg-fintech-main-bg text-fintech-text-dark hero-background">
+      <Helmet>
+        <title>Qicky Terms of Service - Legal Agreement</title>
+        <meta name="description" content="Review Qicky's Terms of Service to understand the legal agreement governing your use of our website and financial services." />
+      </Helmet>
       <Header />
       <main className="relative z-10 py-20 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
         <h1 className="text-5xl md:text-6xl font-extrabold text-center leading-tight mb-8 text-white">

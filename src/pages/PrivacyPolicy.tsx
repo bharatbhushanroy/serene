@@ -2,10 +2,15 @@ import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { MadeWithDyad } from '@/components/made-with-dyad';
+import { Helmet } from 'react-helmet-async'; // New import
 
 const PrivacyPolicy = () => {
   return (
     <div className="min-h-screen bg-fintech-main-bg text-fintech-text-dark hero-background">
+      <Helmet>
+        <title>Qicky Privacy Policy - Your Data Protection</title>
+        <meta name="description" content="Read Qicky's Privacy Policy to understand how we collect, use, and protect your personal information when you use our services." />
+      </Helmet>
       <Header />
       <main className="relative z-10 py-20 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
         <h1 className="text-5xl md:text-6xl font-extrabold text-center leading-tight mb-8 text-white">

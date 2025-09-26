@@ -9,7 +9,8 @@ import { ArrowRight, BarChart, Wallet, TrendingUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import CtaSection from '@/components/CtaSection';
-import SpendingChart from '@/components/SpendingChart'; // Reusing existing chart
+import SpendingChart from '@/components/SpendingChart';
+import { Helmet } from 'react-helmet-async'; // New import
 
 const PersonalFinancePage = () => {
   const features = [
@@ -37,6 +38,10 @@ const PersonalFinancePage = () => {
 
   return (
     <div className="min-h-screen bg-fintech-main-bg text-white">
+      <Helmet>
+        <title>Personal Finance Management - Qicky Tools & Advice</title>
+        <meta name="description" content="Take control of your money with Qicky's personal finance tools. Track expenses, set goals, and get insights for smart financial management." />
+      </Helmet>
       <Header />
       <main>
         {/* Hero Section */}
@@ -55,7 +60,7 @@ const PersonalFinancePage = () => {
                 Take control of your money with our intuitive tools and expert advice. Achieve your financial goals with confidence.
               </motion.p>
               <motion.div variants={itemVariants} className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-8">
-                <Link to="/dashboard"> {/* Link to dashboard for finance management */}
+                <Link to="/dashboard">
                   <Button className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-all duration-300 group">
                     Start Managing <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>

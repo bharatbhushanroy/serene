@@ -8,11 +8,16 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import EthosSection from '@/components/EthosSection';
 import TeamSection from '@/components/TeamSection';
-import GrowthStorySection from '@/components/GrowthStorySection'; // New import
+import GrowthStorySection from '@/components/GrowthStorySection';
+import { Helmet } from 'react-helmet-async'; // New import
 
 const AboutUs = () => {
   return (
     <div className="min-h-screen bg-fintech-main-bg text-white">
+      <Helmet>
+        <title>About Qicky - Our Mission, Vision & Team</title>
+        <meta name="description" content="Learn about Qicky's mission to provide fast, flexible, and transparent financial solutions. Discover our values, team, and growth story." />
+      </Helmet>
       <Header />
       <main className="relative z-10 py-20 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
         <h1 className="text-5xl md:text-6xl font-extrabold text-center leading-tight mb-8">

@@ -5,7 +5,8 @@ import { MadeWithDyad } from '@/components/made-with-dyad';
 import { Card } from '@/components/ui/card';
 import { Calendar, Tag } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import NewsletterSection from '@/components/NewsletterSection'; // New import
+import NewsletterSection from '@/components/NewsletterSection';
+import { Helmet } from 'react-helmet-async'; // New import
 
 const blogPosts = [
   {
@@ -37,6 +38,10 @@ const blogPosts = [
 const Blog = () => {
   return (
     <div className="min-h-screen bg-fintech-main-bg text-fintech-text-dark hero-background">
+      <Helmet>
+        <title>Qicky Blog - Personal Finance, Loans & Fintech Insights</title>
+        <meta name="description" content="Stay informed with Qicky's blog. Get the latest tips, news, and insights on personal finance, loan management, and the fintech industry." />
+      </Helmet>
       <Header />
       <main className="relative z-10 py-20 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
         <h1 className="text-5xl md:text-6xl font-extrabold text-center leading-tight mb-8 text-white">
