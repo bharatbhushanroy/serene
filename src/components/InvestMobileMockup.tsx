@@ -28,7 +28,7 @@ const InvestMobileMockup: React.FC<InvestMobileMockupProps> = ({ isMobile }) => 
 
   return (
     <motion.div
-      className="relative w-full aspect-[280/580] mx-auto bg-black rounded-[40px] shadow-2xl flex items-center justify-center p-2 border-[8px] border-gray-800 overflow-hidden z-20"
+      className="relative w-[70%] sm:w-[60%] md:w-[50%] lg:w-full aspect-[280/580] mx-auto bg-black rounded-[40px] shadow-2xl flex items-center justify-center p-2 border-[8px] border-gray-800 overflow-hidden z-20"
       style={{
         transformStyle: 'preserve-3d',
         transformOrigin: 'center center',
