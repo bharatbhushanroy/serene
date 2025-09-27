@@ -31,7 +31,7 @@ const DashboardHeader = () => {
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" className="relative h-9 w-9 rounded-full">
               <Avatar className="h-9 w-9 border-2 border-fintech-dashboard-accent-blue">
-                <AvatarImage src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop" alt="User Avatar" />
+                <AvatarImage src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop" alt="User Avatar" width={36} height={36} />
                 <AvatarFallback className="bg-fintech-dashboard-accent-blue text-white">JD</AvatarFallback>
               </Avatar>
             </Button>

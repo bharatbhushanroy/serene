@@ -35,7 +35,7 @@ const TripleMobileMockup = () => {
             </div>
             <div className="bg-gray-800 rounded-xl p-3">
               <p className="text-sm text-gray-400">Tips</p>
-              <p className="text-lg font-bold text-white">Save More</p>
+              <p className="text-lg font-bold text-white">Savings Goals</p>
             </div>
           </div>
         </div>

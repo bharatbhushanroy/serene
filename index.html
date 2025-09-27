@@ -8,10 +8,13 @@
     <link rel="preconnect" href="https://images.unsplash.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Consider adding <link rel="preload" href="path/to/hero-image.webp" as="image"> for your LCP image -->
+    <!-- Consider adding <link rel="preload" href="path/to/custom-font.woff2" as="font" type="font/woff2" crossorigin> for critical fonts -->
   </head>
 
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <!-- For image modernization, consider using AVIF/WebP formats with responsive srcset/sizes for all images. -->
   </body>
 </html>
