@@ -58,6 +58,30 @@ const MadeInBharatSection = () => {
       <div className="absolute bottom-1/3 right-1/3 h-64 w-64 bg-fintech-green-accent rounded-full mix-blend-lighten filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
 
       <div className="max-w-7xl mx-auto text-center relative z-10 px-4">
+        {/* Indian Flag SVG */}
+        <div className="mb-4 flex justify-center">
+          <svg width="40" height="27" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            {/* Saffron */}
+            <rect width="300" height="66.67" fill="#FF9933"/>
+            {/* White */}
+            <rect y="66.67" width="300" height="66.67" fill="#FFFFFF"/>
+            {/* Green */}
+            <rect y="133.34" width="300" height="66.67" fill="#138808"/>
+            {/* Ashoka Chakra */}
+            <circle cx="150" cy="100" r="25" fill="#000080"/>
+            {Array.from({ length: 24 }).map((_, i) => (
+              <line
+                key={i}
+                x1="150"
+                y1="100"
+                x2={150 + 25 * Math.cos((i * 15 - 90) * Math.PI / 180)}
+                y2={100 + 25 * Math.sin((i * 15 - 90) * Math.PI / 180)}
+                stroke="#FFFFFF"
+                strokeWidth="2"
+              />
+            ))}
+          </svg>
+        </div>
         <motion.h2
           variants={textVariants}
           className="text-3xl md:text-5xl font-extrabold leading-tight mb-4 text-white bg-clip-text text-transparent bg-gradient-to-r from-fintech-blue-accent to-fintech-green-accent"
