@@ -64,7 +64,7 @@ const TripleMobileMockup = () => {
   return (
     <div className="relative flex items-center justify-center w-full h-full min-h-[650px] scale-90 md:scale-100">
       {/* Phone 1 (Left - UPI) */}
-      <PhoneFrame className="z-10 -translate-x-[140px] -translate-y-[20px] rotate-[-8deg] hidden sm:block" animationDelay={0.1} rotation={-8} zIndex={10}>
+      <PhoneFrame className="z-10 -translate-x-[180px] -translate-y-[30px] rotate-[-10deg] hidden sm:block" animationDelay={0.1} rotation={-10} zIndex={10}>
         {/* Top Bar */}
         <div className="flex items-center justify-between p-3 bg-[#1A1A1A] text-white">
           <User className="h-4 w-4 text-gray-400" />
@@ -173,7 +173,7 @@ const TripleMobileMockup = () => {
           <div className="bg-gradient-to-r from-fintech-blue-accent to-fintech-gradient-purple-start rounded-xl p-3 mb-4 relative overflow-hidden">
             <span className="inline-block bg-white text-fintech-blue-accent text-xs px-2 py-0.5 rounded-full mb-2 font-semibold">NEW</span>
             <p className="text-lg font-bold mb-1">Insurance</p>
-            <p className="text-sm text-gray-100 mb-3">Starting at ₹129. Protect your future!</p>
+            <p className="text-sm text-gray-100 mb-3">Starting at ₹129</p>
             <Link to="/contact">
               <Button className="bg-white text-fintech-blue-accent text-sm px-4 py-2 rounded-full flex items-center hover:bg-gray-100">
                 See plans <ArrowRight className="ml-1 h-4 w-4" />
@@ -226,7 +226,7 @@ const TripleMobileMockup = () => {
       </PhoneFrame>
 
       {/* Phone 3 (Right - Invest in Gold) */}
-      <PhoneFrame className="z-10 translate-x-[140px] -translate-y-[20px] rotate-[8deg] hidden sm:block" animationDelay={0.2} rotation={8} zIndex={10}>
+      <PhoneFrame className="z-10 translate-x-[180px] -translate-y-[30px] rotate-[10deg] hidden sm:block" animationDelay={0.2} rotation={10} zIndex={10}>
         {/* Top Bar */}
         <div className="flex items-center p-3 bg-[#1A1A1A] text-white">
           <Link to="/" className="mr-2">
