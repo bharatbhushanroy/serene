@@ -8,10 +8,10 @@ import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom'; // Import Link
 
 interface UpiMobileMockupProps {
-  isMobile: boolean; // Add isMobile prop
+  // isMobile: boolean; // Removed isMobile prop
 }
 
-const UpiMobileMockup: React.FC<UpiMobileMockupProps> = ({ isMobile }) => {
+const UpiMobileMockup: React.FC<UpiMobileMockupProps> = () => {
   const phoneVariants = {
     initial: { opacity: 0, scale: 0.8, rotateY: 15 },
     animate: { opacity: 1, scale: 1, rotateY: 0, transition: { duration: 0.8, ease: "easeOut" } },

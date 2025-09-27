@@ -141,9 +141,8 @@ const TripleMobileMockup: React.FC<TripleMobileMockupProps> = () => {
                 <p className="text-sm font-semibold">Credit score</p>
                 <p className="text-xs text-gray-400">Check now</p>
               </div>
-              <Link to="/products/free-credit-score">
-                <img src="/public/placeholder.svg" alt="Credit score" className="h-8 w-8" width={32} height={32} loading="lazy" /> {/* Added width/height and lazy loading */}
-              </Link>
+              <img src="/public/placeholder.svg" alt="Credit score" className="h-8 w-8" width={32} height={32} loading="lazy" /> {/* Added width/height and lazy loading */}
+            </Link>
             </div>
           </div>
         </div>

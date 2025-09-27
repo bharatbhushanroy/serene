@@ -16,6 +16,8 @@ interface CreditCardMockupProps {
 
 const CreditCardMockup: React.FC<CreditCardMockupProps> = ({
   colorClass,
+  animationDelay,
+  animationClass,
   cardNumber,
   cardHolder,
   rotation = 'rotate-0', // Default to no rotation
@@ -50,6 +52,8 @@ const CreditCardMockup: React.FC<CreditCardMockupProps> = ({
       className={cn(
         "relative w-64 h-40 rounded-xl shadow-lg p-5 flex flex-col justify-between text-white",
         colorClass,
+        animationDelay,
+        animationClass,
       )}
       style={{
         transformStyle: 'preserve-3d',
