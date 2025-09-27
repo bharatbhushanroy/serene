@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import { User, Gift, QrCode, Smartphone, Landmark, Banknote, ArrowRight, BarChart, TrendingUp } from 'lucide-react';
+import { User, Gift, QrCode, Smartphone, Landmark, Banknote, ArrowRight, BarChart, TrendingUp, Wallet, Repeat, Target, Home, Percent, CalendarDays, Gem } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -16,25 +16,26 @@ const TripleMobileMockup = () => {
   const mockups = [
     {
       id: 1, // Left phone (behind)
-      className: "rotate-[-8deg] translate-x-[-20%] z-10 w-[200px] h-[400px]",
+      className: "rotate-[-12deg] translate-x-[-35%] z-10 w-[220px] h-[440px]", // Increased size and translation
       content: (
         <div className="relative w-full h-full bg-[#1A1A1A] rounded-[24px] overflow-hidden flex flex-col">
           {/* Top Bar */}
           <div className="flex items-center justify-between p-3 bg-[#1A1A1A] text-white">
             <User className="h-4 w-4 text-gray-400" />
-            <span className="text-xs text-gray-400">Re</span>
+            <span className="text-xs text-gray-400">Rewards</span>
           </div>
           {/* Main Content */}
-          <div className="flex-1 p-3 overflow-y-auto text-white text-left">
-            <p className="text-sm text-gray-400 mb-1">You</p>
+          <div className="flex-1 p-3 text-white text-left"> {/* Removed overflow-y-auto */}
+            <p className="text-sm text-gray-400 mb-1">You have</p>
             <p className="text-4xl font-bold text-fintech-orange-accent mb-4">12</p>
+            <p className="text-lg font-bold text-white mb-3">Qicky Points</p>
             <div className="bg-gray-800 rounded-xl p-3 mb-3">
-              <p className="text-sm text-gray-400">Redeem</p>
-              <p className="text-lg font-bold text-white">Get 10</p>
+              <p className="text-sm text-gray-400">Redeem for</p>
+              <p className="text-lg font-bold text-white">Get ₹10 Cashback</p>
             </div>
             <div className="bg-gray-800 rounded-xl p-3">
-              <p className="text-sm text-gray-400">Ti</p>
-              <p className="text-lg font-bold text-white">Sav</p>
+              <p className="text-sm text-gray-400">Tips</p>
+              <p className="text-lg font-bold text-white">Save More</p>
             </div>
           </div>
         </div>
@@ -137,7 +138,7 @@ const TripleMobileMockup = () => {
     },
     {
       id: 3, // Right phone (behind)
-      className: "rotate-[8deg] translate-x-[20%] z-10 w-[200px] h-[400px]",
+      className: "rotate-[12deg] translate-x-[35%] z-10 w-[220px] h-[440px]", // Increased size and translation
       content: (
         <div className="relative w-full h-full bg-[#1A1A1A] rounded-[24px] overflow-hidden flex flex-col">
           {/* Top Bar */}
@@ -146,16 +147,17 @@ const TripleMobileMockup = () => {
             <BarChart className="h-4 w-4 text-gray-400" />
           </div>
           {/* Main Content */}
-          <div className="flex-1 p-3 overflow-y-auto text-white text-left">
-            <p className="text-sm text-gray-400 mb-1">Analysis</p>
+          <div className="flex-1 p-3 text-white text-left"> {/* Removed overflow-y-auto */}
+            <p className="text-sm text-gray-400 mb-1">Financial Analysis</p>
             <p className="text-4xl font-bold text-fintech-green-success mb-4">00</p>
+            <p className="text-lg font-bold text-white mb-3">Insights</p>
             <div className="bg-gray-800 rounded-xl p-3 mb-3">
               <p className="text-sm text-gray-400">Expenses</p>
-              <p className="text-lg font-bold text-white">ing</p>
+              <p className="text-lg font-bold text-white">Spending Trends</p>
             </div>
             <div className="bg-gray-800 rounded-xl p-3">
-              <p className="text-sm text-gray-400">Ti</p>
-              <p className="text-lg font-bold text-white">Sav</p>
+              <p className="text-sm text-gray-400">Tips</p>
+              <p className="text-lg font-bold text-white">Savings Goals</p>
             </div>
           </div>
         </div>
