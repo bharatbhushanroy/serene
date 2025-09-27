@@ -80,30 +80,16 @@ const heroSlidesData = [
   },
 ];
 
-const HeroCarousel: React.FC<HeroCarouselProps> = () => { // Accept isMobile
-  const [emblaRef, emblaApi] = useState<any>(null);
+const HeroCarousel: React.FC<HeroCarouselProps> = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }); // Directly get emblaApi from the hook
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
 
-  const [emblaRefCallback, embla] = useEmblaCarousel({ loop: true });
-
-  useEffect(() => {
-    if (embla) {
-      setEmblaApi(embla);
-    }
-  }, [embla]);
-
-  const setEmblaApi = useCallback((emblaInstance: any) => {
-    if (!emblaInstance) return;
-    emblaInstance.on('select', onSelect);
-    emblaInstance.on('reInit', onSelect);
-    setEmblaApiState(emblaInstance);
-  }, []);
-
-  const setEmblaApiState = (emblaInstance: any) => {
-    setSelectedIndex(emblaInstance.selectedScrollSnap());
-    setScrollSnaps(emblaInstance.scrollSnapList());
-  };
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+    setScrollSnaps(emblaApi.scrollSnapList());
+  }, [emblaApi, setSelectedIndex, setScrollSnaps]);
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
@@ -120,30 +106,24 @@ const HeroCarousel: React.FC<HeroCarouselProps> = () => { // Accept isMobile
     [emblaApi]
   );
 
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setSelectedIndex(emblaApi.selectedScrollSnap());
-  }, [emblaApi, setSelectedIndex]);
-
   useEffect(() => {
     if (!emblaApi) return;
-    onSelect();
-    setScrollSnaps(emblaApi.scrollSnapList());
+    onSelect(); // Initial call to set selectedIndex and scrollSnaps
     emblaApi.on('select', onSelect);
     emblaApi.on('reInit', onSelect);
     return () => {
       emblaApi.off('select', onSelect);
       emblaApi.off('reInit', onSelect);
     };
-  }, [emblaApi, setScrollSnaps, onSelect]);
+  }, [emblaApi, onSelect]);
 
   return (
     <div className="relative w-full">
-      <div className="overflow-hidden" ref={emblaRefCallback}>
+      <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex">
           {heroSlidesData.map((slide, index) => (
             <div className="flex-none w-full" key={index}>
-              <HeroSlide {...slide} /> {/* Pass isMobile to HeroSlide */}
+              <HeroSlide {...slide} />
             </div>
           ))}
         </div>
