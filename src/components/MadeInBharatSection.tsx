@@ -2,7 +2,8 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Building2, IndianRupee, Globe } from 'lucide-react'; // Added icons
+import { MapPin, Building2, IndianRupee } from 'lucide-react'; // Removed Globe import
+import IndianFlagIcon from './IndianFlagIcon'; // New import
 
 const MadeInBharatSection = () => {
   const sectionVariants = {
@@ -52,7 +53,7 @@ const MadeInBharatSection = () => {
     >
       {/* Background elements for visual interest */}
       <div className="absolute inset-0 opacity-10">
-        <Globe className="h-full w-full text-fintech-blue-accent animate-pulse-slow" />
+        <IndianFlagIcon className="h-full w-full animate-pulse-slow" /> {/* Replaced Globe with IndianFlagIcon */}
       </div>
       <div className="absolute top-1/4 left-1/4 h-48 w-48 bg-fintech-blue-accent rounded-full mix-blend-lighten filter blur-3xl opacity-20 animate-blob"></div>
       <div className="absolute bottom-1/3 right-1/3 h-64 w-64 bg-fintech-green-accent rounded-full mix-blend-lighten filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
