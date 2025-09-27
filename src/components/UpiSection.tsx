@@ -40,6 +40,7 @@ const UpiSection = () => {
       subtitle: "Scan & Pay with UPI",
       gradient: "bg-gradient-to-br from-fintech-blue-accent to-fintech-gradient-purple-start",
       delay: 0,
+      positionClasses: "top-[10%] left-[5%] md:top-[15%] md:left-[10%] lg:top-[15%] lg:left-[15%]",
     },
     {
       icon: Zap,
@@ -47,6 +48,7 @@ const UpiSection = () => {
       subtitle: "24/7 Instant Transfer",
       gradient: "bg-gradient-to-br from-fintech-gradient-pink-start to-fintech-gradient-cyan-end",
       delay: 0.1,
+      positionClasses: "top-[10%] right-[5%] md:top-[15%] md:right-[10%] lg:top-[15%] lg:right-[15%]",
     },
     {
       icon: CreditCard,
@@ -54,6 +56,7 @@ const UpiSection = () => {
       subtitle: "Credit on UPI with RuPay",
       gradient: "bg-gradient-to-br from-fintech-orange-accent to-fintech-peach-background",
       delay: 0.2,
+      positionClasses: "bottom-[10%] left-[5%] md:bottom-[15%] md:left-[10%] lg:bottom-[15%] lg:left-[15%]",
     },
     {
       icon: ShieldCheck,
@@ -61,6 +64,7 @@ const UpiSection = () => {
       subtitle: "Secured Transactions",
       gradient: "bg-gradient-to-br from-fintech-green-success to-fintech-cyan-light",
       delay: 0.3,
+      positionClasses: "bottom-[10%] right-[5%] md:bottom-[15%] md:right-[10%] lg:bottom-[15%] lg:right-[15%]",
     },
   ];
 
@@ -113,11 +117,8 @@ const UpiSection = () => {
               key={index}
               className={cn(
                 "absolute p-4 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-white w-[160px] h-[120px] md:w-[180px] md:h-[140px]",
-                index === 0 && "top-[10%] left-[5%] md:top-[15%] md:left-[10%] lg:top-[15%] lg:left-[15%]",
-                index === 1 && "top-[10%] right-[5%] md:top-[15%] md:right-[10%] lg:top-[15%] lg:right-[15%]",
-                index === 2 && "bottom-[10%] left-[5%] md:bottom-[15%] md:left-[10%] lg:bottom-[15%] lg:left-[15%]",
-                index === 3 && "bottom-[10%] right-[5%] md:bottom-[15%] md:right-[10%] lg:bottom-[15%] lg:right-[15%]",
-                "z-10" // Ensure cards are above background blobs but below phone overlay
+                feature.positionClasses, // Apply dynamic positioning
+                "z-10 border border-fintech-border-light transform hover:scale-[1.03] transition-transform duration-300 hover:shadow-glow-blue" // Added border and hover effects
               )}
               variants={featureCardVariants}
               initial="initial"
