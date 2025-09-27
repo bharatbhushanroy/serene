@@ -26,6 +26,18 @@ const UpiMobileMockup: React.FC<UpiMobileMockupProps> = ({ isMobile }) => {
     },
   };
 
+  const comingSoonVariants = {
+    animate: {
+      scale: [1, 1.05, 1],
+      opacity: [0.9, 1, 0.9],
+      transition: {
+        duration: 2,
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
     <motion.div
       className="relative w-[70%] sm:w-[60%] md:w-[50%] lg:w-full aspect-[320/650] mx-auto bg-black rounded-[40px] shadow-2xl flex items-center justify-center p-2 border-[8px] border-gray-800 overflow-hidden z-20"
@@ -42,7 +54,7 @@ const UpiMobileMockup: React.FC<UpiMobileMockupProps> = ({ isMobile }) => {
     >
       {/* Notch */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/5 h-6 bg-black rounded-b-xl z-10"></div>
-      {/* Screen Content */}
+      {/* Screen Content (Behind Coming Soon) */}
       <div className="relative w-full h-full bg-[#1A1A1A] rounded-[30px] overflow-hidden flex flex-col">
         {/* Top Bar */}
         <div className="flex items-center justify-between p-3 bg-[#1A1A1A] text-white">
@@ -126,6 +138,25 @@ const UpiMobileMockup: React.FC<UpiMobileMockupProps> = ({ isMobile }) => {
             <span className="text-xs">Bills</span>
           </div>
         </div>
+
+        {/* Coming Soon Overlay */}
+        <motion.div
+          className="absolute inset-0 flex items-center justify-center bg-black/90 backdrop-blur-sm rounded-[30px] p-4"
+          variants={comingSoonVariants}
+          initial="animate" // Animations will now run on all devices
+          animate="animate" // Animations will now run on all devices
+        >
+          <div className="text-center p-4">
+            <Clock className="h-20 w-20 text-fintech-orange-accent mx-auto mb-6 animate-pulse" />
+            <h3 className="text-5xl font-extrabold text-white mb-4">Coming Soon!</h3>
+            <p className="text-xl text-gray-300 max-w-xs mx-auto">Qicky UPI is launching very soon. Get ready for seamless payments!</p>
+            <Link to="/signup"> {/* Added Link component */}
+              <Button className="mt-8 bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-colors">
+                Get Notified <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+          </div>
+        </motion.div>
       </div>
     </motion.div>
   );
