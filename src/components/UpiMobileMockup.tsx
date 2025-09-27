@@ -40,7 +40,7 @@ const UpiMobileMockup: React.FC<UpiMobileMockupProps> = ({ isMobile }) => {
 
   return (
     <motion.div
-      className="relative w-full max-w-[320px] aspect-[320/650] mx-auto bg-black rounded-[40px] shadow-2xl flex items-center justify-center p-2 border-[8px] border-gray-800 overflow-hidden z-20"
+      className="relative w-[320px] h-[650px] bg-black rounded-[40px] shadow-2xl flex items-center justify-center p-2 border-[8px] border-gray-800 overflow-hidden z-20"
       style={{
         transformStyle: 'preserve-3d',
         transformOrigin: 'center center',

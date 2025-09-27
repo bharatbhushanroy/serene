@@ -81,7 +81,7 @@ const AllInOneFinancialAppSection: React.FC<AllInOneFinancialAppSectionProps> = 
           Qicky - Your all-in-one financial app
         </motion.h2>
 
-        <div className="flex flex-col lg:flex-row justify-center items-center w-full gap-8 md:gap-12 lg:gap-16">
+        <div className="flex flex-col lg:flex-row justify-center items-center w-full gap-8 md:gap-12 lg:gap-16 min-h-[700px] md:min-h-[800px] lg:min-h-[600px]">
           <UpiMobileMockup isMobile={isMobile} /> {/* Pass isMobile */}
           <BorrowInsureMobileMockup isMobile={isMobile} /> {/* Pass isMobile */}
           <InvestMobileMockup isMobile={isMobile} /> {/* Pass isMobile */}
