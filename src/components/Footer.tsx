@@ -59,12 +59,9 @@ const Footer = () => {
           <ul className="space-y-2 text-center md:text-left">
             <li><Link to="/fd-calculator" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">Fixed Deposit Calculator</Link></li>
             <li><Link to="/rd-calculator" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">Recurring Deposit Calculator</Link></li>
-            {/* Removed Personal Loan EMI Calculator, keeping general EMI Calculator */}
-            <li><Link to="/emi-calculator" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">EMI Calculator</Link></li>
             <li><Link to="/car-loan-emi-calculator" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">Car Loan EMI Calculator</Link></li>
             <li><Link to="/loan-comparison" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">Loan Comparison</Link></li>
             <li><Link to="/interactive-loan-simulator" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">Interactive Simulator</Link></li>
-            <li><Link to="/loan-calculator" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">Advance Loan Simulator</Link></li>
           </ul>
         </motion.div>
 
