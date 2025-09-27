@@ -60,7 +60,7 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className, isMobile }) => {
                       md:top-[15%] md:-left-[15%] md:w-[140px] md:h-[140px] lg:top-[15%] lg:-left-[20%] lg:w-[160px] lg:h-[160px]" // Adjusted mobile positioning and size
         variants={cardVariants}
         initial="initial"
-        animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
+        animate={["animate", "float"]} // Animations will now run on all devices
         custom={0}
         whileInView="animate"
         viewport={{ once: true, amount: 0.5 }}
@@ -76,7 +76,7 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className, isMobile }) => {
                       md:top-[15%] md:-right-[15%] md:w-[140px] md:h-[140px] lg:top-[15%] lg:-right-[20%] lg:w-[160px] lg:h-[160px]" // Adjusted mobile positioning and size
         variants={cardVariants}
         initial="initial"
-        animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
+        animate={["animate", "float"]} // Animations will now run on all devices
         custom={1}
         whileInView="animate"
         viewport={{ once: true, amount: 0.5 }}
@@ -92,7 +92,7 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className, isMobile }) => {
                       md:bottom-[15%] md:-left-[15%] md:w-[140px] md:h-[140px] lg:bottom-[15%] lg:-left-[20%] lg:w-[160px] lg:h-[160px]" // Adjusted mobile positioning and size
         variants={cardVariants}
         initial="initial"
-        animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
+        animate={["animate", "float"]} // Animations will now run on all devices
         custom={2}
         whileInView="animate"
         viewport={{ once: true, amount: 0.5 }}
@@ -108,7 +108,7 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className, isMobile }) => {
                       md:bottom-[15%] md:-right-[15%] md:w-[140px] md:h-[140px] lg:bottom-[15%] lg:-right-[20%] lg:w-[160px] lg:h-[160px]" // Adjusted mobile positioning and size
         variants={cardVariants}
         initial="initial"
-        animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
+        animate={["animate", "float"]} // Animations will now run on all devices
         custom={3}
         whileInView="animate"
         viewport={{ once: true, amount: 0.5 }}
@@ -129,7 +129,7 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className, isMobile }) => {
         }}
         variants={phoneVariants}
         initial="initial"
-        animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
+        animate={["animate", "float"]} // Animations will now run on all devices
         whileInView="animate"
         viewport={{ once: true, amount: 0.5 }}
       >

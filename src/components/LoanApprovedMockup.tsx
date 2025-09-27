@@ -35,7 +35,7 @@ const LoanApprovedMockup: React.FC<LoanApprovedMockupProps> = ({ isMobile }) => 
       }}
       variants={mockupVariants}
       initial="initial"
-      animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
+      animate={["animate", "float"]} // Animations will now run on all devices
     >
       <div className="flex flex-col items-center text-center">
         <QickyLogo size="md" /> {/* Use the new QickyLogo component */}

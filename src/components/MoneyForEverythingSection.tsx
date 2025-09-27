@@ -63,7 +63,7 @@ const PhoneSimulatorMockup: React.FC<PhoneSimulatorMockupProps> = ({ isMobile })
       }}
       variants={phoneVariants}
       initial="initial"
-      animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
+      animate={["animate", "float"]} // Animations will now run on all devices
     >
       {/* Notch */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-4 bg-black rounded-b-md z-10"></div>
@@ -115,13 +115,13 @@ const MoneyForEverythingSection: React.FC<MoneyForEverythingSectionProps> = ({ i
       {/* Animated Background Shapes */}
       <motion.div
         initial={{ opacity: 0, scale: 0.5, x: -100, y: -100 }}
-        animate={isMobile ? "initial" : { opacity: 0.1, scale: 1, x: 0, y: 0 }} // Conditional animation
+        animate={{ opacity: 0.1, scale: 1, x: 0, y: 0 }} // Animations will now run on all devices
         transition={{ duration: 15, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
         className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-fintech-orange-accent/20 blur-3xl opacity-0"
       />
       <motion.div
         initial={{ opacity: 0, scale: 0.5, x: 100, y: 100 }}
-        animate={isMobile ? "initial" : { opacity: 0.08, scale: 1, x: 0, y: 0 }} // Conditional animation
+        animate={{ opacity: 0.08, scale: 1, x: 0, y: 0 }} // Animations will now run on all devices
         transition={{ duration: 18, repeat: Infinity, repeatType: "reverse", ease: "easeInOut", delay: 2 }}
         className="absolute bottom-1/4 right-1/4 w-72 h-72 rounded-full bg-fintech-gradient-pink-start/20 blur-3xl opacity-0"
       />

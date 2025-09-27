@@ -61,7 +61,7 @@ const AllInOneFinancialAppSection: React.FC<AllInOneFinancialAppSectionProps> = 
           key={i}
           custom={i}
           variants={backgroundBlobVariants}
-          animate={isMobile ? "initial" : "animate"} // Conditionally disable continuous animation
+          animate="animate" // Animations will now run on all devices
           className={cn(
             "absolute rounded-full mix-blend-lighten filter blur-3xl opacity-0",
             i === 0 && "top-1/4 left-1/4 w-64 h-64 bg-fintech-blue-accent",

@@ -58,7 +58,7 @@ const CreditCardMockup: React.FC<CreditCardMockupProps> = ({
       }}
       variants={cardVariants}
       initial="initial"
-      animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
+      animate={["animate", "float"]} // Animations will now run on all devices
     >
       {/* Chip */}
       <div className="w-10 h-8 bg-fintech-card-chip-yellow rounded-md shadow-inner relative overflow-hidden">

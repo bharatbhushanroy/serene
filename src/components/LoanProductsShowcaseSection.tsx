@@ -58,7 +58,7 @@ const LoanProductsShowcaseSection: React.FC<LoanProductsShowcaseSectionProps> = 
             )}
             variants={cardVariants}
             initial="initial"
-            animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
+            animate={["animate", "float"]} // Animations will now run on all devices
             viewport={{ once: true, amount: 0.5 }}
             custom={0}
           >
@@ -74,7 +74,7 @@ const LoanProductsShowcaseSection: React.FC<LoanProductsShowcaseSectionProps> = 
             )}
             variants={cardVariants}
             initial="initial"
-            animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
+            animate={["animate", "float"]} // Animations will now run on all devices
             viewport={{ once: true, amount: 0.5 }}
             custom={1}
           >
@@ -90,7 +90,7 @@ const LoanProductsShowcaseSection: React.FC<LoanProductsShowcaseSectionProps> = 
             )}
             variants={cardVariants}
             initial="initial"
-            animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
+            animate={["animate", "float"]} // Animations will now run on all devices
             viewport={{ once: true, amount: 0.5 }}
             custom={2}
           >
@@ -106,7 +106,7 @@ const LoanProductsShowcaseSection: React.FC<LoanProductsShowcaseSectionProps> = 
             )}
             variants={cardVariants}
             initial="initial"
-            animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
+            animate={["animate", "float"]} // Animations will now run on all devices
             viewport={{ once: true, amount: 0.5 }}
             custom={3}
           >

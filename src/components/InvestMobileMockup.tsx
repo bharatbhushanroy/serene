@@ -36,7 +36,7 @@ const InvestMobileMockup: React.FC<InvestMobileMockupProps> = ({ isMobile }) => 
       }}
       variants={phoneVariants}
       initial="initial"
-      animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
+      animate={["animate", "float"]} // Animations will now run on all devices
       whileInView="animate"
       viewport={{ once: true, amount: 0.5 }}
     >
@@ -63,7 +63,7 @@ const InvestMobileMockup: React.FC<InvestMobileMockupProps> = ({ isMobile }) => 
               <p className="text-sm text-gray-400">Gold buy price</p>
               <motion.span
                 className="bg-red-500 text-white text-xs px-2 py-0.5 rounded-full"
-                animate={isMobile ? undefined : { scale: [1, 1.05, 1], opacity: [0.8, 1, 0.8] }} // Conditional animation
+                animate={{ scale: [1, 1.05, 1], opacity: [0.8, 1, 0.8] }} // Animations will now run on all devices
                 transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
               >
                 LIVE

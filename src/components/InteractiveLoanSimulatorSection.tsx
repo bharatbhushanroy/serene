@@ -125,7 +125,7 @@ const InteractiveLoanSimulatorSection: React.FC<InteractiveLoanSimulatorSectionP
       clearInterval(animationIntervalRef.current);
     }
 
-    if (!isMobile && !animationPaused && chartData.length > 0) { // Only animate if not mobile
+    if (!animationPaused && chartData.length > 0) { // Animations will now run on all devices
       const speed = animationSpeed === 'normal' ? 200 : 50; // milliseconds
       animationIntervalRef.current = setInterval(() => {
         setCurrentMonth((prevMonth) => {

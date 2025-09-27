@@ -37,6 +37,22 @@ const UpiSection: React.FC<UpiSectionProps> = ({ isMobile }) => {
     }),
   };
 
+  const backgroundBlobVariants = {
+    animate: (i: number) => ({
+      y: [0, 50 + i * 10, 0],
+      x: [0, 30 + i * 5, 0],
+      scale: [0.8, 1.2, 0.8],
+      opacity: [0.1, 0.2, 0.1],
+      rotate: [0, 360, 0],
+      transition: {
+        duration: 20 + i * 5,
+        repeat: Infinity,
+        ease: "linear",
+        delay: i * 2,
+      },
+    }),
+  };
+
   const features = [
     {
       icon: QrCode,
@@ -72,22 +88,6 @@ const UpiSection: React.FC<UpiSectionProps> = ({ isMobile }) => {
     },
   ];
 
-  const backgroundBlobVariants = {
-    animate: (i: number) => ({
-      y: [0, 50 + i * 10, 0],
-      x: [0, 30 + i * 5, 0],
-      scale: [0.8, 1.2, 0.8],
-      opacity: [0.1, 0.2, 0.1],
-      rotate: [0, 360, 0],
-      transition: {
-        duration: 20 + i * 5,
-        repeat: Infinity,
-        ease: "linear",
-        delay: i * 2,
-      },
-    }),
-  };
-
   return (
     <section className="relative w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-main-bg text-white overflow-hidden">
       {/* Background Animated Blobs */}
@@ -96,7 +96,7 @@ const UpiSection: React.FC<UpiSectionProps> = ({ isMobile }) => {
           key={i}
           custom={i}
           variants={backgroundBlobVariants}
-          animate={isMobile ? "initial" : "animate"} // Conditionally disable continuous animation
+          animate="animate" // Animations will now run on all devices
           className={cn(
             "absolute rounded-full mix-blend-lighten filter blur-3xl opacity-0",
             i === 0 && "top-1/4 left-1/4 w-64 h-64 bg-fintech-blue-accent",
@@ -126,7 +126,7 @@ const UpiSection: React.FC<UpiSectionProps> = ({ isMobile }) => {
               )}
               variants={featureCardVariants}
               initial="initial"
-              animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
+              animate={["animate", "float"]} // Animations will now run on all devices
               viewport={{ once: true, amount: 0.5 }}
               custom={index}
             >

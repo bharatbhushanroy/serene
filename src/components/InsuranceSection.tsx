@@ -56,7 +56,7 @@ const InsuranceSection: React.FC<InsuranceSectionProps> = ({ isMobile }) => {
             className="absolute top-[5%] left-[5%] md:top-[10%] md:left-[10%] lg:top-[15%] lg:left-[15%] p-4 rounded-xl shadow-2xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-white z-20 bg-gradient-to-br from-fintech-orange-accent to-fintech-green-success"
             variants={cardVariants}
             initial="initial"
-            animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
+            animate={["animate", "float"]} // Animations will now run on all devices
             viewport={{ once: true, amount: 0.5 }}
             custom={0}
           >
@@ -69,7 +69,7 @@ const InsuranceSection: React.FC<InsuranceSectionProps> = ({ isMobile }) => {
             className="absolute top-[5%] right-[5%] md:top-[10%] md:right-[10%] lg:top-[15%] lg:right-[15%] p-4 rounded-xl shadow-2xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-white z-20 bg-gradient-to-br from-fintech-orange-accent to-fintech-green-success"
             variants={cardVariants}
             initial="initial"
-            animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
+            animate={["animate", "float"]} // Animations will now run on all devices
             viewport={{ once: true, amount: 0.5 }}
             custom={1}
           >
@@ -82,7 +82,7 @@ const InsuranceSection: React.FC<InsuranceSectionProps> = ({ isMobile }) => {
             className="absolute bottom-[5%] left-[5%] md:bottom-[10%] md:left-[10%] lg:bottom-[15%] lg:left-[15%] p-4 rounded-xl shadow-2xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-white z-20 bg-gradient-to-br from-fintech-orange-accent to-fintech-green-success"
             variants={cardVariants}
             initial="initial"
-            animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
+            animate={["animate", "float"]} // Animations will now run on all devices
             viewport={{ once: true, amount: 0.5 }}
             custom={2}
           >
@@ -95,7 +95,7 @@ const InsuranceSection: React.FC<InsuranceSectionProps> = ({ isMobile }) => {
             className="absolute bottom-[5%] right-[5%] md:bottom-[10%] md:right-[10%] lg:bottom-[15%] lg:right-[15%] p-4 rounded-xl shadow-2xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-white z-20 bg-gradient-to-br from-fintech-orange-accent to-fintech-green-success"
             variants={cardVariants}
             initial="initial"
-            animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
+            animate={["animate", "float"]} // Animations will now run on all devices
             viewport={{ once: true, amount: 0.5 }}
             custom={3}
           >

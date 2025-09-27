@@ -77,7 +77,7 @@ const WalkTheTalkSection: React.FC<WalkTheTalkSectionProps> = ({ isMobile }) => 
               r="200"
               fill="hsl(var(--fintech-orange-accent))"
               variants={sunVariants}
-              animate={isMobile ? "initial" : "animate"} // Conditionally disable continuous animation
+              animate="animate" // Animations will now run on all devices
             />
 
             {/* Ground Line */}
@@ -95,7 +95,7 @@ const WalkTheTalkSection: React.FC<WalkTheTalkSectionProps> = ({ isMobile }) => 
             {/* Person */}
             <motion.g
               variants={personWalkVariants}
-              animate={isMobile ? "initial" : "animate"} // Conditionally disable continuous animation
+              animate="animate" // Animations will now run on all devices
               transform="translate(200, 100)"
             >
               {/* Body */}
@@ -121,7 +121,7 @@ const WalkTheTalkSection: React.FC<WalkTheTalkSectionProps> = ({ isMobile }) => 
             {/* Dog */}
             <motion.g
               variants={dogWalkVariants}
-              animate={isMobile ? "initial" : "animate"} // Conditionally disable continuous animation
+              animate="animate" // Animations will now run on all devices
               transform="translate(350, 250)"
             >
               {/* Body */}
@@ -145,7 +145,7 @@ const WalkTheTalkSection: React.FC<WalkTheTalkSectionProps> = ({ isMobile }) => 
                 strokeWidth="8"
                 strokeLinecap="round"
                 variants={dogTailVariants}
-                animate={isMobile ? "initial" : "animate"} // Conditionally disable continuous animation
+                animate="animate" // Animations will now run on all devices
                 transform-origin="40px 110px"
               />
               {/* Collar */}

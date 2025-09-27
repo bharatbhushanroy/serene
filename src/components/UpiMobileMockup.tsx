@@ -48,7 +48,7 @@ const UpiMobileMockup: React.FC<UpiMobileMockupProps> = ({ isMobile }) => {
       }}
       variants={phoneVariants}
       initial="initial"
-      animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
+      animate={["animate", "float"]} // Animations will now run on all devices
       whileInView="animate"
       viewport={{ once: true, amount: 0.5 }}
     >
@@ -143,8 +143,8 @@ const UpiMobileMockup: React.FC<UpiMobileMockupProps> = ({ isMobile }) => {
         <motion.div
           className="absolute inset-0 flex items-center justify-center bg-black/90 backdrop-blur-sm rounded-[30px] p-4"
           variants={comingSoonVariants}
-          initial={isMobile ? undefined : "animate"} // Conditional animation
-          animate={isMobile ? undefined : "animate"} // Conditional animation
+          initial="animate" // Animations will now run on all devices
+          animate="animate" // Animations will now run on all devices
         >
           <div className="text-center p-4">
             <Clock className="h-20 w-20 text-fintech-orange-accent mx-auto mb-6 animate-pulse" />

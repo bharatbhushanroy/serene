@@ -51,7 +51,7 @@ const AnimatedSphere: React.FC<AnimatedSphereProps> = ({ size, x, y, delay, dura
         transformOrigin: 'center center',
       }}
       initial="initial"
-      animate={isMobile ? "initial" : "animate"} // Conditionally disable continuous animation
+      animate="animate" // Animations will now run on all devices
       viewport={{ once: true, amount: 0.5 }}
     >
       {innerColorClass && (

@@ -64,19 +64,19 @@ const TopUpLoansSection: React.FC<TopUpLoansSectionProps> = ({ isMobile }) => {
       <div className="absolute inset-0 z-0 opacity-10">
         <motion.div
           className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-70"
-          animate={isMobile ? "initial" : "animate"} // Conditionally disable continuous animation
+          animate="animate" // Animations will now run on all devices
           variants={backgroundBlobVariants}
           custom={0}
         ></motion.div>
         <motion.div
           className="absolute top-1/2 right-1/4 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-70"
-          animate={isMobile ? "initial" : "animate"} // Conditionally disable continuous animation
+          animate="animate" // Animations will now run on all devices
           variants={backgroundBlobVariants}
           custom={1}
         ></motion.div>
         <motion.div
           className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-orange-500 rounded-full mix-blend-multiply filter blur-xl opacity-70"
-          animate={isMobile ? "initial" : "animate"} // Conditionally disable continuous animation
+          animate="animate" // Animations will now run on all devices
           variants={backgroundBlobVariants}
           custom={2}
         ></motion.div>

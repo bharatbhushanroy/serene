@@ -194,7 +194,7 @@ const TripleMobileMockup: React.FC<TripleMobileMockupProps> = ({ isMobile }) => 
           }}
           variants={phoneVariants}
           initial="initial"
-          animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
+          animate={["animate", "float"]} // Animations will now run on all devices
           whileInView="animate"
           viewport={{ once: true, amount: 0.5 }}
           transition={{ delay: index * 0.1 }}
