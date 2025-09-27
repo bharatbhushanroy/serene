@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { ShieldCheck, Car, Home, Heart, Briefcase, Plane, GraduationCap, Stethoscope, ArrowRight } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom'; // Import Link
 
 const InsuranceSection = () => {
   const cardVariants = {
@@ -157,9 +158,11 @@ const InsuranceSection = () => {
                     <ArrowRight className="h-5 w-5 text-fintech-orange-accent" />
                   </div>
                 </div>
-                <button className="mt-6 w-full py-3 bg-fintech-orange-accent text-white rounded-full font-semibold">
-                  Explore More Insurance
-                </button>
+                <Link to="/contact"> {/* Wrapped button in Link */}
+                  <button className="mt-6 w-full py-3 bg-fintech-orange-accent text-white rounded-full font-semibold">
+                    Explore More Insurance
+                  </button>
+                </Link>
               </div>
               {/* Bottom Nav */}
               <div className="flex justify-around p-3 bg-white border-t border-gray-200 text-gray-600">

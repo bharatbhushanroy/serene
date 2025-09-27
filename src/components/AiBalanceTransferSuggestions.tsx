@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Lightbulb, ArrowRight, CreditCard, DollarSign } from 'lucide-react';
 import { showSuccess } from '@/utils/toast';
+import { Link } from 'react-router-dom'; // Import Link
 
 const AiBalanceTransferSuggestions = () => {
   const mockHighInterestDebt = 50000; // Example high-interest debt
@@ -41,12 +42,14 @@ const AiBalanceTransferSuggestions = () => {
           <p className="text-xs text-fintech-dashboard-text-secondary mt-1">over 12 months</p>
         </div>
 
-        <Button
-          onClick={handleSuggestBalanceTransfer}
-          className="w-full bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-6 py-3 rounded-lg text-base font-semibold hover:opacity-90 transition-opacity flex items-center justify-center group"
-        >
-          Explore Balance Transfer <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
-        </Button>
+        <Link to="/products/personal-finance"> {/* Wrapped button in Link */}
+          <Button
+            onClick={handleSuggestBalanceTransfer}
+            className="w-full bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-6 py-3 rounded-lg text-base font-semibold hover:opacity-90 transition-opacity flex items-center justify-center group"
+          >
+            Explore Balance Transfer <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
+          </Button>
+        </Link>
       </CardContent>
     </Card>
   );

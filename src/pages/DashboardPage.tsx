@@ -10,6 +10,8 @@ import AiBalanceTransferSuggestions from '@/components/AiBalanceTransferSuggesti
 import CreditCardUtilizationChart from '@/components/CreditCardUtilizationChart';
 import { DollarSign, TrendingUp, TrendingDown } from 'lucide-react';
 import { Helmet } from 'react-helmet-async'; // New import
+import { Link } from 'react-router-dom'; // Import Link
+import { Button } from '@/components/ui/button'; // Import Button if not already
 
 const DashboardPage = () => {
   return (

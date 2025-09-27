@@ -5,6 +5,7 @@ import { User, Gift, QrCode, Smartphone, Landmark, Banknote, ArrowRight, Home, G
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom'; // Import Link
 
 const UpiPhoneMockup = () => {
   const phoneVariants = {
@@ -136,9 +137,11 @@ const UpiPhoneMockup = () => {
             <Clock className="h-20 w-20 text-fintech-orange-accent mx-auto mb-6 animate-pulse" />
             <h3 className="text-5xl font-extrabold text-white mb-4">Coming Soon!</h3>
             <p className="text-xl text-gray-300 max-w-xs mx-auto">Qicky UPI is launching very soon. Get ready for seamless payments!</p>
-            <Button className="mt-8 bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-colors">
-              Get Notified <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+            <Link to="/signup"> {/* Added Link component */}
+              <Button className="mt-8 bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-colors">
+                Get Notified <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
           </div>
         </motion.div>
       </div>

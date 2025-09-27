@@ -5,6 +5,7 @@ import { User, Gift, ArrowRight, DollarSign, Home, Gem, CreditCard, BarChart } f
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { motion } from 'framer-motion'; // Import motion
+import { Link } from 'react-router-dom'; // Import Link
 
 const LoanProductsPhoneMockup = () => {
   const phoneVariants = {
@@ -49,41 +50,51 @@ const LoanProductsPhoneMockup = () => {
 
           <div className="space-y-3">
             {/* Loan Offer Card 1 */}
-            <Card className="bg-gray-800 p-4 rounded-lg flex items-center justify-between">
-              <div>
-                <p className="text-white font-semibold">Personal Loan</p>
-                <p className="text-sm text-gray-400">Up to ₹5 Lakhs</p>
-              </div>
-              <ArrowRight className="h-5 w-5 text-fintech-blue-accent" />
-            </Card>
+            <Link to="/products/personal-loan"> {/* Wrapped in Link */}
+              <Card className="bg-gray-800 p-4 rounded-lg flex items-center justify-between hover:bg-gray-700 transition-colors">
+                <div>
+                  <p className="text-white font-semibold">Personal Loan</p>
+                  <p className="text-sm text-gray-400">Up to ₹5 Lakhs</p>
+                </div>
+                <ArrowRight className="h-5 w-5 text-fintech-blue-accent" />
+              </Card>
+            </Link>
             {/* Loan Offer Card 2 */}
-            <Card className="bg-gray-800 p-4 rounded-lg flex items-center justify-between">
-              <div>
-                <p className="text-white font-semibold">Home Loan</p>
-                <p className="text-sm text-gray-400">Low interest rates</p>
-              </div>
-              <ArrowRight className="h-5 w-5 text-fintech-blue-accent" />
-            </Card>
+            <Link to="/products/home-loan"> {/* Wrapped in Link */}
+              <Card className="bg-gray-800 p-4 rounded-lg flex items-center justify-between hover:bg-gray-700 transition-colors">
+                <div>
+                  <p className="text-white font-semibold">Home Loan</p>
+                  <p className="text-sm text-gray-400">Low interest rates</p>
+                </div>
+                <ArrowRight className="h-5 w-5 text-fintech-blue-accent" />
+              </Card>
+            </Link>
             {/* Loan Offer Card 3 */}
-            <Card className="bg-gray-800 p-4 rounded-lg flex items-center justify-between">
-              <div>
-                <p className="text-white font-semibold">Gold Loan</p>
-                <p className="text-sm text-gray-400">Instant approval</p>
-              </div>
-              <ArrowRight className="h-5 w-5 text-fintech-blue-accent" />
-            </Card>
+            <Link to="/apply-loan"> {/* Wrapped in Link (generic for Gold Loan) */}
+              <Card className="bg-gray-800 p-4 rounded-lg flex items-center justify-between hover:bg-gray-700 transition-colors">
+                <div>
+                  <p className="text-white font-semibold">Gold Loan</p>
+                  <p className="text-sm text-gray-400">Instant approval</p>
+                </div>
+                <ArrowRight className="h-5 w-5 text-fintech-blue-accent" />
+              </Card>
+            </Link>
             {/* Loan Offer Card 4 */}
-            <Card className="bg-gray-800 p-4 rounded-lg flex items-center justify-between">
-              <div>
-                <p className="text-white font-semibold">Mutual Fund Loan</p>
-                <p className="text-sm text-gray-400">Against your investments</p>
-              </div>
-              <ArrowRight className="h-5 w-5 text-fintech-blue-accent" />
-            </Card>
+            <Link to="/apply-loan"> {/* Wrapped in Link (generic for Mutual Fund Loan) */}
+              <Card className="bg-gray-800 p-4 rounded-lg flex items-center justify-between hover:bg-gray-700 transition-colors">
+                <div>
+                  <p className="text-white font-semibold">Mutual Fund Loan</p>
+                  <p className="text-sm text-gray-400">Against your investments</p>
+                </div>
+                <ArrowRight className="h-5 w-5 text-fintech-blue-accent" />
+              </Card>
+            </Link>
           </div>
-          <Button className="mt-6 w-full py-3 bg-fintech-blue-accent text-white rounded-full font-semibold hover:bg-blue-600">
-            Explore All Loan Products
-          </Button>
+          <Link to="/products/personal-loan"> {/* Wrapped button in Link */}
+            <Button className="mt-6 w-full py-3 bg-fintech-blue-accent text-white rounded-full font-semibold hover:bg-blue-600">
+              Explore All Loan Products
+            </Button>
+          </Link>
         </div>
         {/* Bottom Nav */}
         <div className="flex justify-around p-3 bg-white border-t border-gray-200 text-gray-600">

@@ -3,6 +3,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import TripleMobileMockup from './TripleMobileMockup'; // Import the new TripleMobileMockup component
+import { Link } from 'react-router-dom'; // Import Link
 
 const TopUpLoansSection = () => {
   return (
@@ -20,12 +21,16 @@ const TopUpLoansSection = () => {
             Need more funds? Get additional loans quickly and easily with our seamless top-up process.
           </p>
           <div className="flex justify-center lg:justify-start space-x-4">
-            <Button className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-8 py-3 rounded-full text-lg font-semibold">
-              Check Eligibility
-            </Button>
-            <Button variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-800 px-8 py-3 rounded-full text-lg font-semibold">
-              Contact Support
-            </Button>
+            <Link to="/apply-loan"> {/* Added Link component */}
+              <Button className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-8 py-3 rounded-full text-lg font-semibold">
+                Check Eligibility
+              </Button>
+            </Link>
+            <Link to="/contact"> {/* Added Link component */}
+              <Button variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-800 px-8 py-3 rounded-full text-lg font-semibold">
+                Contact Support
+              </Button>
+            </Link>
           </div>
         </div>
 

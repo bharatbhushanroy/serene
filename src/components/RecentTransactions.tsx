@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowUpRight, ArrowDownLeft, MoreHorizontal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Link } from 'react-router-dom'; // Import Link
 
 interface Transaction {
   id: string;
@@ -31,7 +32,7 @@ const transactions: Transaction[] = [
     amount: 3500.00,
     date: '2023-10-25',
     description: 'Monthly salary deposit',
-    icon: 'https://images.unsplash.com/photo-1560523160-ff43e6916a4c?q=80&w=1974&auto=format&fit=crop',
+    icon: 'https://images.unsplash.com/photo-1560523160-ff43e6916a4c?q=80&w=1974&auto=format&fit=fit',
   },
   {
     id: '3',
@@ -67,9 +68,11 @@ const RecentTransactions = () => {
     <Card className="bg-fintech-dashboard-card-bg border border-fintech-dashboard-border text-fintech-dashboard-text-primary rounded-xl shadow-md h-full">
       <CardHeader className="flex flex-row items-center justify-between">
         <CardTitle className="text-lg font-semibold text-fintech-dashboard-text-primary">Recent Transactions</CardTitle>
-        <Button variant="ghost" size="sm" className="text-fintech-dashboard-accent-blue hover:bg-fintech-dashboard-border">
-          View All
-        </Button>
+        <Link to="/dashboard/transactions"> {/* Wrapped button in Link */}
+          <Button variant="ghost" size="sm" className="text-fintech-dashboard-accent-blue hover:bg-fintech-dashboard-border">
+            View All
+          </Button>
+        </Link>
       </CardHeader>
       <CardContent className="space-y-4">
         {transactions.map((transaction) => (
