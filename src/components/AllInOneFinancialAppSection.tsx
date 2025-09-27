@@ -2,7 +2,9 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import TripleMobileMockup from './TripleMobileMockup';
+import UpiMobileMockup from './UpiMobileMockup'; // New import
+import BorrowInsureMobileMockup from './BorrowInsureMobileMockup'; // New import
+import InvestMobileMockup from './InvestMobileMockup'; // New import
 import { cn } from '@/lib/utils';
 
 const AllInOneFinancialAppSection = () => {
@@ -75,8 +77,10 @@ const AllInOneFinancialAppSection = () => {
           Qicky - Your all-in-one financial app
         </motion.h2>
 
-        <div className="flex justify-center items-center w-full min-h-[700px] md:min-h-[800px] lg:min-h-[900px]">
-          <TripleMobileMockup />
+        <div className="flex flex-col lg:flex-row justify-center items-center w-full gap-8 md:gap-12 lg:gap-16 min-h-[700px] md:min-h-[800px] lg:min-h-[600px]">
+          <UpiMobileMockup />
+          <BorrowInsureMobileMockup />
+          <InvestMobileMockup />
         </div>
       </div>
     </motion.section>
