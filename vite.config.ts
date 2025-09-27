@@ -13,7 +13,21 @@ export default defineConfig(() => ({
     react({
       // Explicitly configure SWC to use the automatic JSX runtime
       // This ensures JSX syntax is correctly transformed.
-      jsxRuntime: 'automatic' 
+      jsxRuntime: 'automatic',
+      // Further ensure SWC processes JSX correctly by explicitly setting parser and transform options.
+      swc: {
+        jsc: {
+          parser: {
+            syntax: 'typescript',
+            tsx: true // Enable TSX parsing
+          },
+          transform: {
+            react: {
+              runtime: 'automatic', // Use automatic JSX runtime
+            }
+          }
+        }
+      }
     })
   ],
   resolve: {
