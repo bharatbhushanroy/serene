@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import { User, Gift, QrCode, Smartphone, Landmark, Banknote, ArrowRight, BarChart, Bell, TrendingUp, Wallet, Repeat, Target, Home, Percent, CalendarDays, Gem } from 'lucide-react';
+import { User, Gift, QrCode, Smartphone, Landmark, Banknote, ArrowRight, BarChart, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -16,40 +16,26 @@ const TripleMobileMockup = () => {
   const mockups = [
     {
       id: 1, // Left phone (behind)
-      className: "rotate-[-10deg] translate-x-[-30%] z-10 w-[200px] h-[400px]",
+      className: "rotate-[-8deg] translate-x-[-20%] z-10 w-[200px] h-[400px]",
       content: (
         <div className="relative w-full h-full bg-[#1A1A1A] rounded-[24px] overflow-hidden flex flex-col">
           {/* Top Bar */}
           <div className="flex items-center justify-between p-3 bg-[#1A1A1A] text-white">
             <User className="h-4 w-4 text-gray-400" />
-            <Bell className="h-4 w-4 text-gray-400" />
-          </div>
-          {/* Tabs (Simplified) */}
-          <div className="flex justify-around p-1 bg-[#1A1A1A] text-xs">
-            <span className="px-2 py-1 rounded-full bg-fintech-blue-accent text-white">Home</span>
-            <span className="px-2 py-1 rounded-full bg-gray-800 text-gray-400">Accounts</span>
-            <span className="px-2 py-1 rounded-full bg-gray-800 text-gray-400">Txns</span>
+            <span className="text-xs text-gray-400">Re</span>
           </div>
           {/* Main Content */}
           <div className="flex-1 p-3 overflow-y-auto text-white text-left">
-            <p className="text-sm text-gray-400 mb-1">Total Balance</p>
-            <p className="text-3xl font-bold text-fintech-green-success mb-4">₹1,25,000</p>
+            <p className="text-sm text-gray-400 mb-1">You</p>
+            <p className="text-4xl font-bold text-fintech-orange-accent mb-4">12</p>
             <div className="bg-gray-800 rounded-xl p-3 mb-3">
-              <p className="text-sm text-gray-400">Recent Activity</p>
-              <div className="flex items-center justify-between mt-2">
-                <span className="text-sm">Shopping</span>
-                <span className="text-sm text-fintech-dashboard-accent-red">-₹120</span>
-              </div>
-              <div className="flex items-center justify-between mt-1">
-                <span className="text-sm">Salary</span>
-                <span className="text-sm text-fintech-dashboard-accent-green">+₹3500</span>
-              </div>
+              <p className="text-sm text-gray-400">Redeem</p>
+              <p className="text-lg font-bold text-white">Get 10</p>
             </div>
-            <Link to="/dashboard">
-              <Button className="w-full bg-gray-700 text-white text-xs px-3 py-1 rounded-full flex items-center justify-center mt-3 hover:bg-gray-600">
-                View Dashboard <ArrowRight className="ml-1 h-3 w-3" />
-              </Button>
-            </Link>
+            <div className="bg-gray-800 rounded-xl p-3">
+              <p className="text-sm text-gray-400">Ti</p>
+              <p className="text-lg font-bold text-white">Sav</p>
+            </div>
           </div>
         </div>
       ),
@@ -151,40 +137,26 @@ const TripleMobileMockup = () => {
     },
     {
       id: 3, // Right phone (behind)
-      className: "rotate-[10deg] translate-x-[30%] z-10 w-[200px] h-[400px]",
+      className: "rotate-[8deg] translate-x-[20%] z-10 w-[200px] h-[400px]",
       content: (
         <div className="relative w-full h-full bg-[#1A1A1A] rounded-[24px] overflow-hidden flex flex-col">
           {/* Top Bar */}
           <div className="flex items-center justify-between p-3 bg-[#1A1A1A] text-white">
             <User className="h-4 w-4 text-gray-400" />
-            <TrendingUp className="h-4 w-4 text-gray-400" />
-          </div>
-          {/* Tabs (Simplified) */}
-          <div className="flex justify-around p-1 bg-[#1A1A1A] text-xs">
-            <span className="px-2 py-1 rounded-full bg-fintech-blue-accent text-white">Invest</span>
-            <span className="px-2 py-1 rounded-full bg-gray-800 text-gray-400">Gold</span>
-            <span className="px-2 py-1 rounded-full bg-gray-800 text-gray-400">FD</span>
+            <BarChart className="h-4 w-4 text-gray-400" />
           </div>
           {/* Main Content */}
           <div className="flex-1 p-3 overflow-y-auto text-white text-left">
-            <p className="text-sm text-gray-400 mb-1">My Investments</p>
-            <p className="text-3xl font-bold text-fintech-star-yellow mb-4">₹50,000</p>
+            <p className="text-sm text-gray-400 mb-1">Analysis</p>
+            <p className="text-4xl font-bold text-fintech-green-success mb-4">00</p>
             <div className="bg-gray-800 rounded-xl p-3 mb-3">
-              <p className="text-sm text-gray-400">Digital Gold</p>
-              <div className="flex items-center justify-between mt-2">
-                <span className="text-sm">Holdings</span>
-                <span className="text-sm text-white">5.2 gm</span>
-              </div>
-              <div className="flex items-center justify-between mt-1">
-                <span className="text-sm">Growth</span>
-                <span className="text-sm text-fintech-dashboard-accent-green">+15%</span>
-              </div>
+              <p className="text-sm text-gray-400">Expenses</p>
+              <p className="text-lg font-bold text-white">ing</p>
             </div>
-            <Link to="/products/personal-finance">
-              <Button className="w-full bg-gray-700 text-white text-xs px-3 py-1 rounded-full flex items-center justify-center mt-3 hover:bg-gray-600">
-                View Portfolio <ArrowRight className="ml-1 h-3 w-3" />
-              </Button>
-            </Link>
+            <div className="bg-gray-800 rounded-xl p-3">
+              <p className="text-sm text-gray-400">Ti</p>
+              <p className="text-lg font-bold text-white">Sav</p>
+            </div>
           </div>
         </div>
       ),
