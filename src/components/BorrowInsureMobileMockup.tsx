@@ -36,7 +36,7 @@ const BorrowInsureMobileMockup: React.FC<BorrowInsureMobileMockupProps> = () => 
       }}
       variants={phoneVariants}
       initial="initial"
-      animate={["animate", "float"]} // Animations will now run on all devices
+      animate={["animate", "float"]}
       whileInView="animate"
       viewport={{ once: true, amount: 0.5 }}
     >
@@ -108,7 +108,7 @@ const BorrowInsureMobileMockup: React.FC<BorrowInsureMobileMockupProps> = () => 
               <p className="text-xs text-gray-400">Check now</p>
             </div>
             <Link to="/products/free-credit-score">
-              <img src="/public/placeholder.svg" alt="Credit score" className="h-8 w-8" width={32} height={32} loading="lazy" /> {/* Added width/height and lazy loading */}
+              <img src="/public/placeholder.svg" alt="Credit score" className="h-8 w-8" />
             </Link>
           </div>
         </div>

@@ -69,7 +69,7 @@ const SidebarNav = () => {
       <div className="mt-auto pt-6 border-t border-fintech-dashboard-border">
         <div className="flex items-center space-x-3 mb-6">
           <Avatar className="h-10 w-10 border-2 border-fintech-dashboard-accent-blue">
-            <AvatarImage src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop" alt="User Avatar" width={40} height={40} />
+            <AvatarImage src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop" alt="User Avatar" />
             <AvatarFallback className="bg-fintech-dashboard-accent-blue text-white">JD</AvatarFallback>
           </Avatar>
           <div>
