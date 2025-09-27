@@ -52,6 +52,9 @@ const Header = () => {
             <Link to="/products/personal-loan"><DropdownMenuItem className="hover:bg-gray-700">Personal Loans</DropdownMenuItem></Link>
             <Link to="/products/business-loan"><DropdownMenuItem className="hover:bg-gray-700">Business Loans</DropdownMenuItem></Link>
             <Link to="/products/home-loan"><DropdownMenuItem className="hover:bg-gray-700">Home Loans</DropdownMenuItem></Link>
+            <Link to="/products/credit-cards"><DropdownMenuItem className="hover:bg-gray-700">Credit Cards</DropdownMenuItem></Link>
+            <Link to="/products/free-credit-score"><DropdownMenuItem className="hover:bg-gray-700">Free Credit Score</DropdownMenuItem></Link>
+            <Link to="/products/personal-finance"><DropdownMenuItem className="hover:bg-gray-700">Personal Finance</DropdownMenuItem></Link>
           </DropdownMenuContent>
         </DropdownMenu>
         <DropdownMenu>
@@ -59,8 +62,10 @@ const Header = () => {
             <Settings className="h-4 w-4 mr-1" /> Tools <ChevronDown className="ml-1 h-4 w-4" />
           </DropdownMenuTrigger>
           <DropdownMenuContent className="bg-fintech-main-bg border-gray-700 text-fintech-header-text">
-            <Link to="/loan-calculator"><DropdownMenuItem className="hover:bg-gray-700">Loan Calculator</DropdownMenuItem></Link>
-            <DropdownMenuItem className="hover:bg-gray-700">EMI Calculator</DropdownMenuItem>
+            <Link to="/emi-calculator"><DropdownMenuItem className="hover:bg-gray-700">EMI Calculator</DropdownMenuItem></Link>
+            <Link to="/loan-comparison"><DropdownMenuItem className="hover:bg-gray-700">Loan Comparison</DropdownMenuItem></Link>
+            <Link to="/interactive-loan-simulator"><DropdownMenuItem className="hover:bg-gray-700">Interactive Loan Simulator</DropdownMenuItem></Link>
+            <Link to="/loan-calculator"><DropdownMenuItem className="hover:bg-gray-700">Advance Loan Simulator</DropdownMenuItem></Link> {/* Keep existing link */}
           </DropdownMenuContent>
         </DropdownMenu>
         <DropdownMenu>
@@ -71,6 +76,8 @@ const Header = () => {
             <Link to="/blog"><DropdownMenuItem className="hover:bg-gray-700">Blog Posts</DropdownMenuItem></Link>
             <Link to="/faqs"><DropdownMenuItem className="hover:bg-gray-700">FAQs</DropdownMenuItem></Link>
             <Link to="/privacy"><DropdownMenuItem className="hover:bg-gray-700">Privacy Policy</DropdownMenuItem></Link>
+            <Link to="/terms"><DropdownMenuItem className="hover:bg-gray-700">Terms of Service</DropdownMenuItem></Link>
+            <Link to="/cookies"><DropdownMenuItem className="hover:bg-gray-700">Cookie Policy</DropdownMenuItem></Link>
           </DropdownMenuContent>
         </DropdownMenu>
         <Link to="/about" className="flex items-center text-fintech-header-text hover:text-fintech-blue-accent transition-colors">

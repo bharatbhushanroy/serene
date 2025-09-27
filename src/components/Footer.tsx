@@ -26,14 +26,14 @@ const Footer = () => {
   return (
     <footer className="relative z-10 w-full bg-fintech-main-bg text-fintech-header-text py-12 px-6 md:px-12 lg:px-24 border-t border-gray-800">
       <motion.div
-        className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-8"
+        className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-8" // Adjusted grid columns for new section
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
         {/* Logo and Description */}
-        <motion.div variants={itemVariants} className="col-span-full lg:col-span-1 flex flex-col items-center md:items-start text-center md:text-left">
+        <motion.div variants={itemVariants} className="col-span-full lg:col-span-2 flex flex-col items-center md:items-start text-center md:text-left">
           <Link to="/" className="flex items-center mb-4">
             <QickyLogo size="md" /> {/* Use the new QickyLogo component */}
           </Link>
@@ -42,7 +42,7 @@ const Footer = () => {
           </p>
         </motion.div>
 
-        {/* Navigation Links */}
+        {/* Company Links */}
         <motion.div variants={itemVariants} className="col-span-1 flex flex-col items-center md:items-start">
           <h4 className="text-lg font-semibold mb-4 text-fintech-header-text">Company</h4>
           <ul className="space-y-2 text-center md:text-left">
@@ -53,13 +53,14 @@ const Footer = () => {
           </ul>
         </motion.div>
 
-        {/* Tools & Resources */}
+        {/* Calculators Section (New) */}
         <motion.div variants={itemVariants} className="col-span-1 flex flex-col items-center md:items-start">
-          <h4 className="text-lg font-semibold mb-4 text-fintech-header-text">Resources</h4>
+          <h4 className="text-lg font-semibold mb-4 text-fintech-header-text">Calculators</h4>
           <ul className="space-y-2 text-center md:text-left">
-            <li><Link to="/faqs" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">FAQs</Link></li>
-            <li><Link to="/loan-calculator" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">Loan Calculator</Link></li>
-            <li><Link to="/blog" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">Blog Posts</Link></li>
+            <li><Link to="/emi-calculator" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">EMI Calculator</Link></li>
+            <li><Link to="/loan-comparison" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">Loan Comparison</Link></li>
+            <li><Link to="/interactive-loan-simulator" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">Interactive Simulator</Link></li>
+            <li><Link to="/loan-calculator" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">Advance Loan Simulator</Link></li>
           </ul>
         </motion.div>
 

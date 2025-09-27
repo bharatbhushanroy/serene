@@ -22,8 +22,11 @@ import HomeLoanPage from "./pages/products/HomeLoanPage";
 import FreeCreditScorePage from "./pages/products/FreeCreditScorePage";
 import CreditCardsPage from "./pages/products/CreditCardsPage";
 import PersonalFinancePage from "./pages/products/PersonalFinancePage";
-import TermsOfService from "./pages/TermsOfService"; // New import
-import CookiePolicy from "./pages/CookiePolicy"; // New import
+import TermsOfService from "./pages/TermsOfService";
+import CookiePolicy from "./pages/CookiePolicy";
+import EMICalculatorPage from "./pages/EMICalculatorPage"; // New import
+import LoanComparisonPage from "./pages/LoanComparisonPage"; // New import
+import InteractiveLoanSimulatorPage from "./pages/InteractiveLoanSimulatorPage"; // New import
 
 const queryClient = new QueryClient();
 
@@ -40,10 +43,13 @@ const App = () => (
             <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/faqs" element={<FAQs />} />
-            <Route path="/loan-calculator" element={<LoanCalculatorPage />} />
+            <Route path="/loan-calculator" element={<LoanCalculatorPage />} /> {/* This page already exists and uses AdvanceLoanSimulator */}
+            <Route path="/emi-calculator" element={<EMICalculatorPage />} /> {/* New route */}
+            <Route path="/loan-comparison" element={<LoanComparisonPage />} /> {/* New route */}
+            <Route path="/interactive-loan-simulator" element={<InteractiveLoanSimulatorPage />} /> {/* New route */}
             <Route path="/privacy" element={<PrivacyPolicy />} />
-            <Route path="/terms" element={<TermsOfService />} /> {/* New route */}
-            <Route path="/cookies" element={<CookiePolicy />} /> {/* New route */}
+            <Route path="/terms" element={<TermsOfService />} />
+            <Route path="/cookies" element={<CookiePolicy />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/apply-loan" element={<ApplyLoanPage />} />
