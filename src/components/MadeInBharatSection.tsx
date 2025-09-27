@@ -60,7 +60,7 @@ const MadeInBharatSection = () => {
       <div className="max-w-7xl mx-auto text-center relative z-10 px-4">
         {/* Indian Flag SVG */}
         <div className="mb-4 flex justify-center">
-          <svg width="40" height="27" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="60" height="40" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
             {/* Saffron */}
             <rect width="300" height="66.67" fill="#FF9933"/>
             {/* White */}
