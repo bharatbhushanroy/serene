@@ -28,7 +28,7 @@ const BorrowInsureMobileMockup: React.FC<BorrowInsureMobileMockupProps> = ({ isM
 
   return (
     <motion.div
-      className="relative w-[280px] h-[580px] bg-black rounded-[40px] shadow-2xl flex items-center justify-center p-2 border-[8px] border-gray-800 overflow-hidden z-20"
+      className="relative w-full max-w-[280px] aspect-[280/580] mx-auto bg-black rounded-[40px] shadow-2xl flex items-center justify-center p-2 border-[8px] border-gray-800 overflow-hidden z-20"
       style={{
         transformStyle: 'preserve-3d',
         transformOrigin: 'center center',
