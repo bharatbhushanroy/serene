@@ -36,27 +36,26 @@ const Index = () => {
       </Helmet>
       <Header />
       <main>
-        {/* HeroCarousel already contains the primary h1 for the page */}
         <HeroCarousel />
-        <AllInOneFinancialAppSection />
-        <CredClubInspiredSection />
-        <UpiSection />
-        <TopUpLoansSection />
-        <ProductsSection />
         <QuickLoansFeaturesSection />
-        <FeaturesSection />
+        <ProductsSection />
         <HowItWorksSection />
-        <InteractiveLoanSimulatorSection />
-        <InsuranceSection />
+        <FeaturesSection />
+        <MoneyForEverythingSection />
         <LoanProductsShowcaseSection />
         <LoanProductsSection />
-        <ApplyStepsSection />
+        <InteractiveLoanSimulatorSection />
         <LoanComparisonCalculator />
-        <MoneyForEverythingSection />
+        <CredClubInspiredSection />
+        <AllInOneFinancialAppSection />
+        <UpiSection />
+        <TopUpLoansSection />
+        <InsuranceSection />
+        <ApplyStepsSection />
         <MemberTestimonialsSection />
         <DataSecuritySection />
-        <CtaSection />
         <WalkTheTalkSection />
+        <CtaSection />
       </main>
       <Footer />
       <MadeInBharatSection />
