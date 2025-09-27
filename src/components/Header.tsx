@@ -62,12 +62,13 @@ const Header = () => {
             <Settings className="h-4 w-4 mr-1" /> Tools <ChevronDown className="ml-1 h-4 w-4" />
           </DropdownMenuTrigger>
           <DropdownMenuContent className="bg-fintech-main-bg border-gray-700 text-fintech-header-text">
-            <Link to="/emi-calculator"><DropdownMenuItem className="hover:bg-gray-700">Personal Loan EMI Calculator</DropdownMenuItem></Link> {/* Updated text */}
-            <Link to="/car-loan-emi-calculator"><DropdownMenuItem className="hover:bg-gray-700">Car Loan EMI Calculator</DropdownMenuItem></Link> {/* New link */}
+            {/* Removed Personal Loan EMI Calculator, keeping general EMI Calculator */}
+            <Link to="/emi-calculator"><DropdownMenuItem className="hover:bg-gray-700">EMI Calculator</DropdownMenuItem></Link>
+            <Link to="/car-loan-emi-calculator"><DropdownMenuItem className="hover:bg-gray-700">Car Loan EMI Calculator</DropdownMenuItem></Link>
             <Link to="/loan-comparison"><DropdownMenuItem className="hover:bg-gray-700">Loan Comparison</DropdownMenuItem></Link>
             <Link to="/interactive-loan-simulator"><DropdownMenuItem className="hover:bg-gray-700">Interactive Loan Simulator</DropdownMenuItem></Link>
-            <Link to="/fd-calculator"><DropdownMenuItem className="hover:bg-gray-700">Fixed Deposit Calculator</DropdownMenuItem></Link> {/* New link */}
-            <Link to="/rd-calculator"><DropdownMenuItem className="hover:bg-gray-700">Recurring Deposit Calculator</DropdownMenuItem></Link> {/* New link */}
+            <Link to="/fd-calculator"><DropdownMenuItem className="hover:bg-gray-700">Fixed Deposit Calculator</DropdownMenuItem></Link>
+            <Link to="/rd-calculator"><DropdownMenuItem className="hover:bg-gray-700">Recurring Deposit Calculator</DropdownMenuItem></Link>
             <Link to="/loan-calculator"><DropdownMenuItem className="hover:bg-gray-700">Advance Loan Simulator</DropdownMenuItem></Link>
           </DropdownMenuContent>
         </DropdownMenu>
