@@ -72,7 +72,7 @@ const AllInOneFinancialAppSection = () => {
           className="text-4xl md:text-5xl font-extrabold leading-tight mb-12"
           variants={titleVariants}
         >
-          <span className="bg-gradient-to-r from-fintech-blue-accent to-fintech-gradient-purple-start text-transparent bg-clip-text">Invest, Borrow, UPI, Insure</span>{' '}
+          <span className="bg-gradient-to-r from-fintech-blue-accent to-fintech-gradient-purple-end text-transparent bg-clip-text">Invest, Borrow, UPI, Insure</span>{' '}
           <br className="hidden sm:block" />
           Qicky - Your all-in-one financial app
         </motion.h2>
