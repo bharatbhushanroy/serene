@@ -3,8 +3,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import { User, Gift, QrCode, Smartphone, Landmark, Banknote, ArrowRight, BarChart } from 'lucide-react';
+import { User, Gift, QrCode, Smartphone, Landmark, Banknote, ArrowRight, BarChart, ArrowUpRight, ArrowDownLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const TripleMobileMockup = () => {
   const phoneVariants = {
@@ -59,7 +60,10 @@ const TripleMobileMockup = () => {
           </div>
           {/* Main Content Area */}
           <div className="flex-1 bg-[#1A1A1A] p-3 overflow-y-auto text-white">
-            <p className="text-sm text-gray-400 mb-3">UPI payments</p>
+            <div className="flex items-center justify-between text-sm mb-3">
+              <p className="font-semibold text-gray-400">UPI payments</p>
+              <ArrowRight className="h-4 w-4 text-gray-400" />
+            </div>
             <div className="grid grid-cols-4 gap-2 text-center text-xs mb-4">
               <div className="flex flex-col items-center">
                 <div className="bg-gray-800 p-2 rounded-lg mb-1"><QrCode className="h-5 w-5 text-gray-400" /></div>
@@ -83,17 +87,40 @@ const TripleMobileMockup = () => {
               <span className="inline-block bg-white text-fintech-blue-accent text-xs px-2 py-0.5 rounded-full mb-2 font-semibold">NEW</span>
               <p className="text-lg font-bold mb-1">Insurance</p>
               <p className="text-sm text-gray-100 mb-3">Starting at ₹129</p>
-              <Button className="bg-white text-fintech-blue-accent text-sm px-4 py-2 rounded-full flex items-center hover:bg-gray-100">
-                See plans <ArrowRight className="ml-1 h-4 w-4" />
-              </Button>
+              <Link to="/contact">
+                <Button className="bg-white text-fintech-blue-accent text-sm px-4 py-2 rounded-full flex items-center hover:bg-gray-100">
+                  See plans <ArrowRight className="ml-1 h-4 w-4" />
+                </Button>
+              </Link>
             </div>
 
             <div className="bg-gray-800 rounded-xl p-3 mb-4">
               <p className="text-lg font-bold mb-1">Borrow limit</p>
               <p className="text-2xl font-bold text-[#F97316] mb-3">₹1,50,000</p>
-              <Button className="bg-[#F97316] text-white text-sm px-4 py-2 rounded-full flex items-center hover:bg-orange-600">
-                Activate now <ArrowRight className="ml-1 h-4 w-4" />
-              </Button>
+              <Link to="/apply-loan">
+                <Button className="bg-[#F97316] text-white text-sm px-4 py-2 rounded-full flex items-center hover:bg-orange-600">
+                  Activate now <ArrowRight className="ml-1 h-4 w-4" />
+                </Button>
+              </Link>
+            </div>
+            <div className="bg-gray-800 rounded-xl p-3 mb-4">
+              <p className="text-sm font-semibold">DIGITAL GOLD</p>
+              <p className="text-sm text-gray-400 mb-2">Buy as low as</p>
+              <p className="text-xl font-bold text-[#F97316]">₹10</p>
+              <Link to="/products/personal-finance">
+                <Button className="bg-gray-700 text-white text-xs px-3 py-1 rounded-full flex items-center mt-2 hover:bg-gray-600">
+                  Buy now <ArrowRight className="ml-1 h-3 w-3" />
+                </Button>
+              </Link>
+            </div>
+            <div className="bg-gray-800 rounded-xl p-3">
+              <p className="text-sm font-semibold">Invest in FD</p>
+              <p className="text-sm text-gray-400 mb-2">with 9% p.a.</p>
+              <Link to="/fd-calculator">
+                <Button className="bg-gray-700 text-white text-xs px-3 py-1 rounded-full flex items-center mt-2 hover:bg-gray-600">
+                  Invest now <ArrowRight className="ml-1 h-3 w-3" />
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
