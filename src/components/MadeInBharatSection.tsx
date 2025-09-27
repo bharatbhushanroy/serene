@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Building2, IndianRupee } from 'lucide-react'; // Added icons
+import { MapPin, Building2, IndianRupee, Globe } from 'lucide-react'; // Added icons
 
 const MadeInBharatSection = () => {
   const sectionVariants = {
@@ -50,7 +50,12 @@ const MadeInBharatSection = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
     >
-      {/* Removed background elements for performance */}
+      {/* Background elements for visual interest */}
+      <div className="absolute inset-0 opacity-10">
+        <Globe className="h-full w-full text-fintech-blue-accent animate-pulse-slow" />
+      </div>
+      <div className="absolute top-1/4 left-1/4 h-48 w-48 bg-fintech-blue-accent rounded-full mix-blend-lighten filter blur-3xl opacity-20 animate-blob"></div>
+      <div className="absolute bottom-1/3 right-1/3 h-64 w-64 bg-fintech-green-accent rounded-full mix-blend-lighten filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
 
       <div className="max-w-7xl mx-auto text-center relative z-10 px-4">
         {/* Indian Flag SVG */}
@@ -92,7 +97,7 @@ const MadeInBharatSection = () => {
 
         <motion.div
           className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 mt-12"
-          variants={sectionVariants} // Use a container variant for staggered children
+          variants={containerVariants} // Use a container variant for staggered children
         >
           {cities.map((city, index) => (
             <motion.div
