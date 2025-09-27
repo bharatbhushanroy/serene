@@ -67,7 +67,7 @@ const DataSecuritySection: React.FC<DataSecuritySectionProps> = () => {
           className="text-lg text-fintech-text-muted mb-12 max-w-3xl mx-auto"
         >
           We employ industry-leading security measures to protect your personal and financial information, ensuring a safe and trustworthy experience.
-        </p>
+        </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {securityFeatures.map((feature, index) => (
