@@ -4,7 +4,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Building2, IndianRupee, Globe } from 'lucide-react'; // Added icons
 
-const MadeInBharatSection = () => {
+interface MadeInBharatSectionProps {
+  // isMobile: boolean; // Removed isMobile prop
+}
+
+const MadeInBharatSection: React.FC<MadeInBharatSectionProps> = () => {
   const sectionVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {

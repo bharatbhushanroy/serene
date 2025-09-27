@@ -73,7 +73,11 @@ const LoanCard: React.FC<LoanCardProps> = ({
   );
 };
 
-const LoanProductsSection = () => {
+interface LoanProductsSectionProps {
+  // isMobile: boolean; // Removed isMobile prop
+}
+
+const LoanProductsSection: React.FC<LoanProductsSectionProps> = () => {
   const loanProducts = [
     {
       title: "Personal Loan",

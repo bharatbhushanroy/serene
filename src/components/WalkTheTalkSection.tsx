@@ -5,10 +5,10 @@ import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
 interface WalkTheTalkSectionProps {
-  isMobile: boolean; // Add isMobile prop
+  // isMobile: boolean; // Removed isMobile prop
 }
 
-const WalkTheTalkSection: React.FC<WalkTheTalkSectionProps> = ({ isMobile }) => {
+const WalkTheTalkSection: React.FC<WalkTheTalkSectionProps> = () => {
   const personWalkVariants = {
     animate: {
       x: [0, 5, 0, -5, 0],

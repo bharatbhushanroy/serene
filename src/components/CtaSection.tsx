@@ -3,7 +3,11 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const CtaSection = () => {
+interface CtaSectionProps {
+  // isMobile: boolean; // Removed isMobile prop
+}
+
+const CtaSection: React.FC<CtaSectionProps> = () => {
   return (
     <section className="relative z-10 w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-main-bg">
       <div className="max-w-5xl mx-auto text-center bg-gradient-to-r from-fintech-blue-accent to-fintech-blue-soft p-12 rounded-2xl shadow-lg shadow-fintech-blue-accent/30">

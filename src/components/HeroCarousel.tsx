@@ -8,7 +8,7 @@ import HeroSlide from './HeroSlide'; // Import the new HeroSlide component
 import { cn } from '@/lib/utils';
 
 interface HeroCarouselProps {
-  isMobile: boolean; // Add isMobile prop
+  // isMobile: boolean; // Removed isMobile prop
 }
 
 const heroSlidesData = [
@@ -80,10 +80,30 @@ const heroSlidesData = [
   },
 ];
 
-const HeroCarousel: React.FC<HeroCarouselProps> = ({ isMobile }) => { // Accept isMobile
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+const HeroCarousel: React.FC<HeroCarouselProps> = () => { // Accept isMobile
+  const [emblaRef, emblaApi] = useState<any>(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+
+  const [emblaRefCallback, embla] = useEmblaCarousel({ loop: true });
+
+  useEffect(() => {
+    if (embla) {
+      setEmblaApi(embla);
+    }
+  }, [embla]);
+
+  const setEmblaApi = useCallback((emblaInstance: any) => {
+    if (!emblaInstance) return;
+    emblaInstance.on('select', onSelect);
+    emblaInstance.on('reInit', onSelect);
+    setEmblaApiState(emblaInstance);
+  }, []);
+
+  const setEmblaApiState = (emblaInstance: any) => {
+    setSelectedIndex(emblaInstance.selectedScrollSnap());
+    setScrollSnaps(emblaInstance.scrollSnapList());
+  };
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
@@ -119,11 +139,11 @@ const HeroCarousel: React.FC<HeroCarouselProps> = ({ isMobile }) => { // Accept 
 
   return (
     <div className="relative w-full">
-      <div className="overflow-hidden" ref={emblaRef}>
+      <div className="overflow-hidden" ref={emblaRefCallback}>
         <div className="flex">
           {heroSlidesData.map((slide, index) => (
             <div className="flex-none w-full" key={index}>
-              <HeroSlide {...slide} isMobile={isMobile} /> {/* Pass isMobile to HeroSlide */}
+              <HeroSlide {...slide} /> {/* Pass isMobile to HeroSlide */}
             </div>
           ))}
         </div>

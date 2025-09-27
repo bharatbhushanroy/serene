@@ -8,10 +8,10 @@ import InvestMobileMockup from './InvestMobileMockup'; // New import
 import { cn } from '@/lib/utils';
 
 interface AllInOneFinancialAppSectionProps {
-  isMobile: boolean; // Add isMobile prop
+  // isMobile: boolean; // Removed isMobile prop
 }
 
-const AllInOneFinancialAppSection: React.FC<AllInOneFinancialAppSectionProps> = ({ isMobile }) => {
+const AllInOneFinancialAppSection: React.FC<AllInOneFinancialAppSectionProps> = () => {
   const sectionVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -82,9 +82,9 @@ const AllInOneFinancialAppSection: React.FC<AllInOneFinancialAppSectionProps> = 
         </motion.h2>
 
         <div className="flex flex-col lg:flex-row justify-center items-center w-full gap-8 md:gap-12 lg:gap-16 min-h-[700px] md:min-h-[800px] lg:min-h-[600px]">
-          <UpiMobileMockup isMobile={isMobile} /> {/* Pass isMobile */}
-          <BorrowInsureMobileMockup isMobile={isMobile} /> {/* Pass isMobile */}
-          <InvestMobileMockup isMobile={isMobile} /> {/* Pass isMobile */}
+          <UpiMobileMockup /> {/* Pass isMobile */}
+          <BorrowInsureMobileMockup /> {/* Pass isMobile */}
+          <InvestMobileMockup /> {/* Pass isMobile */}
         </div>
       </div>
     </motion.section>

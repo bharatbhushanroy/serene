@@ -3,7 +3,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const AnimatedBackgroundShapes = () => {
+interface AnimatedBackgroundShapesProps {
+  // isMobile: boolean; // Removed isMobile prop
+}
+
+const AnimatedBackgroundShapes: React.FC<AnimatedBackgroundShapesProps> = () => {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {/* Large, subtle circle 1 */}

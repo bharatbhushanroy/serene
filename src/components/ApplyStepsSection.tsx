@@ -4,6 +4,10 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion'; // Import motion for animations
 
+interface ApplyStepsSectionProps {
+  // isMobile: boolean; // Removed isMobile prop
+}
+
 const steps = [
   {
     number: "01",
@@ -27,7 +31,7 @@ const steps = [
   },
 ];
 
-const ApplyStepsSection = () => {
+const ApplyStepsSection: React.FC<ApplyStepsSectionProps> = () => {
   return (
     <section className="relative w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-main-bg text-fintech-text-dark overflow-hidden">
       <div className="max-w-7xl mx-auto text-center">

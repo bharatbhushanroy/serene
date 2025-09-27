@@ -27,10 +27,10 @@ interface ChartDataPoint {
 }
 
 interface InteractiveLoanSimulatorSectionProps {
-  isMobile: boolean; // Add isMobile prop
+  // isMobile: boolean; // Removed isMobile prop
 }
 
-const InteractiveLoanSimulatorSection: React.FC<InteractiveLoanSimulatorSectionProps> = ({ isMobile }) => {
+const InteractiveLoanSimulatorSection: React.FC<InteractiveLoanSimulatorSectionProps> = () => {
   const [loanAmount, setLoanAmount] = useState<number>(100000);
   const [interestRate, setInterestRate] = useState<number>(10.5); // Annual interest rate in percentage
   const [loanTenure, setLoanTenure] = useState<number>(24); // Loan tenure in months
@@ -143,7 +143,7 @@ const InteractiveLoanSimulatorSection: React.FC<InteractiveLoanSimulatorSectionP
         clearInterval(animationIntervalRef.current);
       }
     };
-  }, [animationPaused, animationSpeed, chartData, loanTenure, isMobile]);
+  }, [animationPaused, animationSpeed, chartData, loanTenure]);
 
   const displayedChartData = chartData.slice(0, currentMonth + 1);
 

@@ -7,10 +7,10 @@ import { Link } from 'react-router-dom'; // Import Link
 import { motion } from 'framer-motion'; // Import motion
 
 interface TopUpLoansSectionProps {
-  isMobile: boolean; // Add isMobile prop
+  // isMobile: boolean; // Removed isMobile prop
 }
 
-const TopUpLoansSection: React.FC<TopUpLoansSectionProps> = ({ isMobile }) => {
+const TopUpLoansSection: React.FC<TopUpLoansSectionProps> = () => {
   const backgroundBlobVariants = {
     animate: (i: number) => ({
       y: [0, 50 + i * 10, 0],
@@ -57,7 +57,7 @@ const TopUpLoansSection: React.FC<TopUpLoansSectionProps> = ({ isMobile }) => {
 
         {/* Right content - TripleMobileMockup */}
         <div className="relative lg:w-1/2 flex justify-center items-center z-10">
-          <TripleMobileMockup isMobile={isMobile} />
+          <TripleMobileMockup />
         </div>
       </div>
       {/* Background elements */}

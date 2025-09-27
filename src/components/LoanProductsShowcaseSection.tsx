@@ -8,10 +8,10 @@ import { cn } from '@/lib/utils';
 import LoanProductsPhoneMockup from './LoanProductsPhoneMockup'; // Import the new phone mockup
 
 interface LoanProductsShowcaseSectionProps {
-  isMobile: boolean; // Add isMobile prop
+  // isMobile: boolean; // Removed isMobile prop
 }
 
-const LoanProductsShowcaseSection: React.FC<LoanProductsShowcaseSectionProps> = ({ isMobile }) => {
+const LoanProductsShowcaseSection: React.FC<LoanProductsShowcaseSectionProps> = () => {
   const cardVariants = {
     initial: { opacity: 0, y: 50, scale: 0.8, rotate: 0 },
     animate: (i: number) => ({
@@ -116,7 +116,7 @@ const LoanProductsShowcaseSection: React.FC<LoanProductsShowcaseSectionProps> = 
           </motion.div>
 
           {/* Central Phone Mockup */}
-          <LoanProductsPhoneMockup isMobile={isMobile} />
+          <LoanProductsPhoneMockup />
         </div>
       </div>
     </section>

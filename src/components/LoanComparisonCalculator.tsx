@@ -46,7 +46,11 @@ const calculateLoanDetails = (principal: number, annualRate: number, years: numb
   return { emi, totalInterest, totalPayable, loanEfficiency };
 };
 
-const LoanComparisonCalculator = () => {
+interface LoanComparisonCalculatorProps {
+  // isMobile: boolean; // Removed isMobile prop
+}
+
+const LoanComparisonCalculator: React.FC<LoanComparisonCalculatorProps> = () => {
   // State for Loan A
   const [loanAAmount, setLoanAAmount] = useState<number>(100000);
   const [loanARate, setLoanARate] = useState<number>(12);

@@ -11,7 +11,7 @@ interface CreditCardMockupProps {
   cardNumber: string;
   cardHolder: string;
   rotation?: string; // New prop for rotation, e.g., 'rotate-3'
-  isMobile: boolean; // Add isMobile prop
+  // isMobile: boolean; // Removed isMobile prop
 }
 
 const CreditCardMockup: React.FC<CreditCardMockupProps> = ({
@@ -19,7 +19,7 @@ const CreditCardMockup: React.FC<CreditCardMockupProps> = ({
   cardNumber,
   cardHolder,
   rotation = 'rotate-0', // Default to no rotation
-  isMobile, // Accept isMobile
+  // isMobile, // Removed isMobile
 }) => {
   const cardVariants = {
     initial: { opacity: 0, y: 50, scale: 0.8, rotate: 0 },

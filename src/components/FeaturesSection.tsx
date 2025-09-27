@@ -2,6 +2,10 @@ import React from 'react';
 import { Card } from '@/components/ui/card';
 import { Zap, ShieldCheck, TrendingUp } from 'lucide-react';
 
+interface FeaturesSectionProps {
+  // isMobile: boolean; // Removed isMobile prop
+}
+
 const features = [
   {
     icon: Zap,
@@ -26,7 +30,7 @@ const features = [
   },
 ];
 
-const FeaturesSection = () => {
+const FeaturesSection: React.FC<FeaturesSectionProps> = () => {
   return (
     <section className="relative z-10 w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-main-bg text-fintech-text-dark">
       <div className="max-w-7xl mx-auto text-center">

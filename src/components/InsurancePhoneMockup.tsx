@@ -7,10 +7,10 @@ import { Card } from '@/components/ui/card';
 import { motion } from 'framer-motion'; // Import motion
 
 interface InsurancePhoneMockupProps {
-  isMobile: boolean; // Add isMobile prop
+  // isMobile: boolean; // Removed isMobile prop
 }
 
-const InsurancePhoneMockup: React.FC<InsurancePhoneMockupProps> = ({ isMobile }) => {
+const InsurancePhoneMockup: React.FC<InsurancePhoneMockupProps> = () => {
   const phoneVariants = {
     initial: { opacity: 0, scale: 0.8, rotateY: 15 },
     animate: { opacity: 1, scale: 1, rotateY: 0, transition: { duration: 0.8, ease: "easeOut" } },

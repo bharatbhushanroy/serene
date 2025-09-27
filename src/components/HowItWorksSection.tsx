@@ -2,6 +2,10 @@ import React from 'react';
 import { Card } from '@/components/ui/card';
 import { UserPlus, FileText, DollarSign, CheckCircle } from 'lucide-react';
 
+interface HowItWorksSectionProps {
+  // isMobile: boolean; // Removed isMobile prop
+}
+
 const steps = [
   { icon: UserPlus, title: "1. Register & Apply", description: "Sign up in minutes and fill out our simple online application form." },
   { icon: FileText, title: "2. Submit Documents", description: "Upload necessary documents securely for quick verification." },
@@ -9,7 +13,7 @@ const steps = [
   { icon: CheckCircle, title: "4. Funds Disbursed", description: "Funds are transferred directly to your account within hours." },
 ];
 
-const HowItWorksSection = () => {
+const HowItWorksSection: React.FC<HowItWorksSectionProps> = () => {
   return (
     <section className="relative z-10 w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-main-bg text-fintech-text-dark">
       <div className="max-w-7xl mx-auto text-center">

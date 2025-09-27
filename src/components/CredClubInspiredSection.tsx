@@ -13,10 +13,10 @@ interface AnimatedSphereProps {
   colorClass: string;
   innerColorClass?: string;
   rotation: number;
-  isMobile: boolean; // Add isMobile prop
+  // isMobile: boolean; // Removed isMobile prop
 }
 
-const AnimatedSphere: React.FC<AnimatedSphereProps> = ({ size, x, y, delay, duration, colorClass, innerColorClass, rotation, isMobile }) => {
+const AnimatedSphere: React.FC<AnimatedSphereProps> = ({ size, x, y, delay, duration, colorClass, innerColorClass, rotation }) => {
   const sphereVariants = {
     initial: { opacity: 0, scale: 0.5, rotate: 0 },
     animate: {
@@ -62,10 +62,10 @@ const AnimatedSphere: React.FC<AnimatedSphereProps> = ({ size, x, y, delay, dura
 };
 
 interface CredClubInspiredSectionProps {
-  isMobile: boolean; // Add isMobile prop
+  // isMobile: boolean; // Removed isMobile prop
 }
 
-const CredClubInspiredSection: React.FC<CredClubInspiredSectionProps> = ({ isMobile }) => {
+const CredClubInspiredSection: React.FC<CredClubInspiredSectionProps> = () => {
   const titleVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -108,7 +108,7 @@ const CredClubInspiredSection: React.FC<CredClubInspiredSectionProps> = ({ isMob
     <section className="relative w-full min-h-screen flex items-center justify-center py-20 px-6 md:px-12 lg:px-24 overflow-hidden bg-black text-white">
       {/* Animated Spheres Background */}
       {spheres.map((sphere, index) => (
-        <AnimatedSphere key={index} {...sphere} isMobile={isMobile} />
+        <AnimatedSphere key={index} {...sphere} />
       ))}
 
       {/* Content */}

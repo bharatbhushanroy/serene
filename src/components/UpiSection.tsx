@@ -8,10 +8,10 @@ import { cn } from '@/lib/utils';
 import UpiPhoneMockup from './UpiPhoneMockup'; // Import the new UpiPhoneMockup component
 
 interface UpiSectionProps {
-  isMobile: boolean; // Add isMobile prop
+  // isMobile: boolean; // Removed isMobile prop
 }
 
-const UpiSection: React.FC<UpiSectionProps> = ({ isMobile }) => {
+const UpiSection: React.FC<UpiSectionProps> = () => {
   const featureCardVariants = {
     initial: { opacity: 0, scale: 0.8, rotate: 0 },
     animate: (i: number) => ({
@@ -144,7 +144,7 @@ const UpiSection: React.FC<UpiSectionProps> = ({ isMobile }) => {
 
           {/* Central iPhone Mockup */}
           <div className="relative z-20">
-            <UpiPhoneMockup isMobile={isMobile} />
+            <UpiPhoneMockup />
           </div>
         </div>
       </div>

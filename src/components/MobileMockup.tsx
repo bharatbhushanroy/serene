@@ -7,10 +7,10 @@ import { motion } from 'framer-motion'; // Import motion
 
 interface MobileMockupProps {
   className?: string;
-  isMobile: boolean; // Add isMobile prop
+  // isMobile: boolean; // Removed isMobile prop
 }
 
-const MobileMockup: React.FC<MobileMockupProps> = ({ className, isMobile }) => {
+const MobileMockup: React.FC<MobileMockupProps> = ({ className }) => {
   const cardVariants = {
     initial: { opacity: 0, y: 50, rotate: 0, scale: 0.8 },
     animate: (i: number) => ({

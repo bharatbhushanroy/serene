@@ -6,7 +6,11 @@ import AnimatedBackgroundShapes from './AnimatedBackgroundShapes';
 import { motion } from 'framer-motion'; // Import motion from framer-motion
 import LoanApprovedMockup from './LoanApprovedMockup'; // Import the new LoanApprovedMockup component
 
-const HeroSection = () => {
+interface HeroSectionProps {
+  // isMobile: boolean; // Removed isMobile prop
+}
+
+const HeroSection: React.FC<HeroSectionProps> = () => {
   const [showCookieBanner, setShowCookieBanner] = useState(true);
 
   const features = [

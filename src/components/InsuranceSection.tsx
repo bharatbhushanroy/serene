@@ -9,10 +9,10 @@ import { Link } from 'react-router-dom'; // Import Link
 import InsurancePhoneMockup from './InsurancePhoneMockup'; // Import the new InsurancePhoneMockup
 
 interface InsuranceSectionProps {
-  isMobile: boolean; // Add isMobile prop
+  // isMobile: boolean; // Removed isMobile prop
 }
 
-const InsuranceSection: React.FC<InsuranceSectionProps> = ({ isMobile }) => {
+const InsuranceSection: React.FC<InsuranceSectionProps> = () => {
   const cardVariants = {
     initial: { opacity: 0, y: 50, scale: 0.8, rotate: 0 },
     animate: (i: number) => ({
@@ -105,7 +105,7 @@ const InsuranceSection: React.FC<InsuranceSectionProps> = ({ isMobile }) => {
           </motion.div>
 
           {/* Central Phone Mockup */}
-          <InsurancePhoneMockup isMobile={isMobile} />
+          <InsurancePhoneMockup />
         </div>
       </div>
     </section>

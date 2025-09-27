@@ -26,7 +26,11 @@ const securityFeatures = [
   },
 ];
 
-const DataSecuritySection = () => {
+interface DataSecuritySectionProps {
+  // isMobile: boolean; // Removed isMobile prop
+}
+
+const DataSecuritySection: React.FC<DataSecuritySectionProps> = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -63,7 +67,7 @@ const DataSecuritySection = () => {
           className="text-lg text-fintech-text-muted mb-12 max-w-3xl mx-auto"
         >
           We employ industry-leading security measures to protect your personal and financial information, ensuring a safe and trustworthy experience.
-        </motion.p>
+        </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {securityFeatures.map((feature, index) => (

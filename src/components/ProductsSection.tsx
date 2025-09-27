@@ -8,7 +8,7 @@ import { Card } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 
 interface ProductsSectionProps {
-  isMobile: boolean; // Add isMobile prop
+  // isMobile: boolean; // Removed isMobile prop
 }
 
 const products = [
@@ -62,7 +62,7 @@ const products = [
   },
 ];
 
-const ProductsSection: React.FC<ProductsSectionProps> = ({ isMobile }) => {
+const ProductsSection: React.FC<ProductsSectionProps> = () => {
   const textVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },

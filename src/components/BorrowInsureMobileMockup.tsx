@@ -8,10 +8,10 @@ import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 
 interface BorrowInsureMobileMockupProps {
-  isMobile: boolean; // Add isMobile prop
+  // isMobile: boolean; // Removed isMobile prop
 }
 
-const BorrowInsureMobileMockup: React.FC<BorrowInsureMobileMockupProps> = ({ isMobile }) => {
+const BorrowInsureMobileMockup: React.FC<BorrowInsureMobileMockupProps> = () => {
   const phoneVariants = {
     initial: { opacity: 0, scale: 0.8, rotateY: 15 },
     animate: { opacity: 1, scale: 1, rotateY: 0, transition: { duration: 0.8, ease: "easeOut" } },

@@ -7,10 +7,23 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom'; // Import Link
 
-const UpiPhoneMockup = () => {
+interface UpiPhoneMockupProps {
+  // isMobile: boolean; // Removed isMobile prop
+}
+
+const UpiPhoneMockup: React.FC<UpiPhoneMockupProps> = () => {
   const phoneVariants = {
     initial: { opacity: 0, scale: 0.8, rotateY: 15 },
     animate: { opacity: 1, scale: 1, rotateY: 0, transition: { duration: 0.8, ease: "easeOut" } },
+    float: {
+      y: [0, -5, 0, 5, 0],
+      rotate: [0, 0.5, 0, -0.5, 0],
+      transition: {
+        duration: 10,
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
+    },
   };
 
   const comingSoonVariants = {
@@ -35,7 +48,7 @@ const UpiPhoneMockup = () => {
       }}
       variants={phoneVariants}
       initial="initial"
-      animate="animate"
+      animate={["animate", "float"]} // Animations will now run on all devices
       whileInView="animate"
       viewport={{ once: true, amount: 0.5 }}
     >
@@ -130,8 +143,8 @@ const UpiPhoneMockup = () => {
         <motion.div
           className="absolute inset-0 flex items-center justify-center bg-black/90 backdrop-blur-sm rounded-[30px] p-4"
           variants={comingSoonVariants}
-          initial="animate"
-          animate="animate"
+          initial="animate" // Animations will now run on all devices
+          animate="animate" // Animations will now run on all devices
         >
           <div className="text-center p-4">
             <Clock className="h-20 w-20 text-fintech-orange-accent mx-auto mb-6 animate-pulse" />

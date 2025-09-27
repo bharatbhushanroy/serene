@@ -8,10 +8,10 @@ import { motion } from 'framer-motion'; // Import motion
 import { Link } from 'react-router-dom'; // Import Link
 
 interface LoanProductsPhoneMockupProps {
-  isMobile: boolean; // Add isMobile prop
+  // isMobile: boolean; // Removed isMobile prop
 }
 
-const LoanProductsPhoneMockup: React.FC<LoanProductsPhoneMockupProps> = ({ isMobile }) => {
+const LoanProductsPhoneMockup: React.FC<LoanProductsPhoneMockupProps> = () => {
   const phoneVariants = {
     initial: { opacity: 0, scale: 0.8, rotateY: 15 },
     animate: { opacity: 1, scale: 1, rotateY: 0, transition: { duration: 0.8, ease: "easeOut" } },

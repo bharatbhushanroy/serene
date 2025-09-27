@@ -34,7 +34,11 @@ const StatCard: React.FC<StatCardProps> = ({ icon: Icon, title, value, iconColor
   </Card>
 );
 
-const MemberTestimonialsSection = () => {
+interface MemberTestimonialsSectionProps {
+  // isMobile: boolean; // Removed isMobile prop
+}
+
+const MemberTestimonialsSection: React.FC<MemberTestimonialsSectionProps> = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
 
   const scrollPrev = useCallback(() => {
@@ -146,12 +150,12 @@ const MemberTestimonialsSection = () => {
 
             <div className="flex items-center justify-between mt-8 px-4">
               <div className="flex space-x-2">
-                {testimonials.map((_, index) => (
+                {emblaApi && scrollSnaps.map((_, index) => (
                   <button
                     key={index}
                     className={cn(
                       "h-2 w-2 rounded-full transition-colors",
-                      emblaApi && index === emblaApi.selectedScrollSnap()
+                      index === selectedIndex
                         ? "bg-fintech-blue-accent w-6"
                         : "bg-fintech-text-muted opacity-50"
                     )}
