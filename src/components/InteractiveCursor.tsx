@@ -44,7 +44,7 @@ const InteractiveCursor = () => {
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
-      document.removeEventListener('mouseover', handleMouseOver);
+      document.removeEventListener('mouseover', handleMouseOut);
       document.removeEventListener('mouseout', handleMouseOut);
     };
   }, [isMobile]);
@@ -53,14 +53,13 @@ const InteractiveCursor = () => {
     return null; // Don't render on mobile
   }
 
+  const cursorSize = cursorVariant === 'default' ? 40 : 80; // Base size for the SVG container
+  const circleRadius = cursorVariant === 'default' ? 10 : 20; // Radius of individual circles
+
   const variants = {
     default: {
-      width: 24,
-      height: 24,
-      backgroundColor: 'hsl(var(--fintech-blue-accent))',
-      opacity: 0.4,
-      scale: 1,
-      mixBlendMode: 'normal',
+      width: cursorSize,
+      height: cursorSize,
       transition: {
         type: 'spring',
         mass: 0.1,
@@ -69,12 +68,8 @@ const InteractiveCursor = () => {
       },
     },
     interactive: {
-      width: 40,
-      height: 40,
-      backgroundColor: 'hsl(var(--fintech-orange-accent))',
-      opacity: 0.6,
-      scale: 1.2,
-      mixBlendMode: 'difference', // Creates a cool inversion effect
+      width: cursorSize,
+      height: cursorSize,
       transition: {
         type: 'spring',
         mass: 0.1,
@@ -84,19 +79,71 @@ const InteractiveCursor = () => {
     },
   };
 
+  const circleVariants = {
+    default: (i: number) => ({
+      r: circleRadius,
+      cx: cursorSize / 2 + Math.cos(i * Math.PI / 2) * 5,
+      cy: cursorSize / 2 + Math.sin(i * Math.PI / 2) * 5,
+      fill: 'hsl(var(--fintech-blue-accent))',
+      transition: {
+        type: 'spring',
+        mass: 0.1,
+        stiffness: 1000,
+        damping: 50,
+      },
+    }),
+    interactive: (i: number) => ({
+      r: circleRadius * 1.5, // Larger radius
+      cx: cursorSize / 2 + Math.cos(i * Math.PI / 2 + Math.PI / 4) * 15, // More spread out
+      cy: cursorSize / 2 + Math.sin(i * Math.PI / 2 + Math.PI / 4) * 15,
+      fill: 'hsl(var(--fintech-orange-accent))',
+      transition: {
+        type: 'spring',
+        mass: 0.1,
+        stiffness: 1000,
+        damping: 50,
+      },
+    }),
+  };
+
   return (
-    <motion.div
-      className={cn(
-        "fixed rounded-full pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2",
-        "hidden md:block" // Ensure it's hidden on small screens
-      )}
-      variants={variants}
-      animate={cursorVariant}
-      style={{
-        x: mousePosition.x,
-        y: mousePosition.y,
-      }}
-    />
+    <>
+      {/* SVG filter definition - hidden from view */}
+      <svg style={{ position: 'absolute', width: 0, height: 0 }}>
+        <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+          <feBlend in="SourceGraphic" in2="goo" />
+        </filter>
+      </svg>
+
+      <motion.div
+        className={cn(
+          "fixed rounded-full pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2",
+          "hidden md:block" // Ensure it's hidden on small screens
+        )}
+        variants={variants}
+        animate={cursorVariant}
+        style={{
+          x: mousePosition.x,
+          y: mousePosition.y,
+          mixBlendMode: 'difference', // Apply blend mode to the container
+        }}
+      >
+        <svg className="w-full h-full" style={{ filter: 'url(#goo)' }}>
+          <g>
+            {[...Array(4)].map((_, i) => (
+              <motion.circle
+                key={i}
+                custom={i}
+                variants={circleVariants}
+                animate={cursorVariant}
+              />
+            ))}
+          </g>
+        </svg>
+      </motion.div>
+    </>
   );
 };
 
