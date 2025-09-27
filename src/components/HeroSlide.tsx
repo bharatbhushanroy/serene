@@ -24,6 +24,7 @@ interface HeroSlideProps {
   features: string[];
   mockupComponent: 'MobileMockup' | 'CreditCardMockup' | 'LoanApprovedMockup' | 'None';
   mockupProps?: any; // Props specific to the mockup component
+  isMobile: boolean; // Add isMobile prop
 }
 
 const HeroSlide: React.FC<HeroSlideProps> = ({
@@ -40,6 +41,7 @@ const HeroSlide: React.FC<HeroSlideProps> = ({
   features,
   mockupComponent,
   mockupProps,
+  isMobile, // Accept isMobile
 }) => {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -71,11 +73,11 @@ const HeroSlide: React.FC<HeroSlideProps> = ({
   const renderMockup = () => {
     switch (mockupComponent) {
       case 'MobileMockup':
-        return <MobileMockup {...mockupProps} />;
+        return <MobileMockup {...mockupProps} isMobile={isMobile} />; // Pass isMobile
       case 'CreditCardMockup':
-        return <CreditCardMockup {...mockupProps} />;
+        return <CreditCardMockup {...mockupProps} isMobile={isMobile} />; // Pass isMobile
       case 'LoanApprovedMockup':
-        return <LoanApprovedMockup {...mockupProps} />;
+        return <LoanApprovedMockup {...mockupProps} isMobile={isMobile} />; // Pass isMobile
       case 'None':
       default:
         return (

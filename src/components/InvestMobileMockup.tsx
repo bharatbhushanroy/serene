@@ -7,7 +7,11 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 
-const InvestMobileMockup = () => {
+interface InvestMobileMockupProps {
+  isMobile: boolean; // Add isMobile prop
+}
+
+const InvestMobileMockup: React.FC<InvestMobileMockupProps> = ({ isMobile }) => {
   const phoneVariants = {
     initial: { opacity: 0, scale: 0.8, rotateY: 15 },
     animate: { opacity: 1, scale: 1, rotateY: 0, transition: { duration: 0.8, ease: "easeOut" } },
@@ -32,7 +36,7 @@ const InvestMobileMockup = () => {
       }}
       variants={phoneVariants}
       initial="initial"
-      animate={["animate", "float"]}
+      animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
       whileInView="animate"
       viewport={{ once: true, amount: 0.5 }}
     >
@@ -59,7 +63,7 @@ const InvestMobileMockup = () => {
               <p className="text-sm text-gray-400">Gold buy price</p>
               <motion.span
                 className="bg-red-500 text-white text-xs px-2 py-0.5 rounded-full"
-                animate={{ scale: [1, 1.05, 1], opacity: [0.8, 1, 0.8] }}
+                animate={isMobile ? undefined : { scale: [1, 1.05, 1], opacity: [0.8, 1, 0.8] }} // Conditional animation
                 transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
               >
                 LIVE

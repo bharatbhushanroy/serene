@@ -7,6 +7,10 @@ import { Button } from '@/components/ui/button';
 import HeroSlide from './HeroSlide'; // Import the new HeroSlide component
 import { cn } from '@/lib/utils';
 
+interface HeroCarouselProps {
+  isMobile: boolean; // Add isMobile prop
+}
+
 const heroSlidesData = [
   {
     badgeText: "Instant Loans",
@@ -76,7 +80,7 @@ const heroSlidesData = [
   },
 ];
 
-const HeroCarousel = () => {
+const HeroCarousel: React.FC<HeroCarouselProps> = ({ isMobile }) => { // Accept isMobile
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
@@ -119,7 +123,7 @@ const HeroCarousel = () => {
         <div className="flex">
           {heroSlidesData.map((slide, index) => (
             <div className="flex-none w-full" key={index}>
-              <HeroSlide {...slide} />
+              <HeroSlide {...slide} isMobile={isMobile} /> {/* Pass isMobile to HeroSlide */}
             </div>
           ))}
         </div>

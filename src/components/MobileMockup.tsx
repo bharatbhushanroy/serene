@@ -7,9 +7,10 @@ import { motion } from 'framer-motion'; // Import motion
 
 interface MobileMockupProps {
   className?: string;
+  isMobile: boolean; // Add isMobile prop
 }
 
-const MobileMockup: React.FC<MobileMockupProps> = ({ className }) => {
+const MobileMockup: React.FC<MobileMockupProps> = ({ className, isMobile }) => {
   const cardVariants = {
     initial: { opacity: 0, y: 50, rotate: 0, scale: 0.8 },
     animate: (i: number) => ({
@@ -24,11 +25,11 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className }) => {
       },
     }),
     float: (i: number) => ({
-      y: [0, 10, 0, -10, 0],
-      x: [0, i * 5, 0, -i * 5, 0],
-      rotate: [i % 2 === 0 ? -3 : 3, i % 2 === 0 ? -5 : 5, i % 2 === 0 ? -3 : 3, i % 2 === 0 ? -1 : 1, i % 2 === 0 ? -3 : 3],
+      y: [0, 10, 0, -10, 0], // Reduced y movement
+      x: [0, i * 3, 0, -i * 3, 0], // Reduced x movement
+      rotate: [i % 2 === 0 ? -3 : 3, i % 2 === 0 ? -4 : 4, i % 2 === 0 ? -3 : 3, i % 2 === 0 ? -2 : 2, i % 2 === 0 ? -3 : 3], // Reduced rotation
       transition: {
-        duration: 10 + i * 2,
+        duration: 12 + i * 2, // Increased duration for slower animation
         repeat: Infinity,
         ease: "easeInOut",
         delay: i * 0.5,
@@ -40,10 +41,10 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className }) => {
     initial: { opacity: 0, scale: 0.8, rotateY: 15 },
     animate: { opacity: 1, scale: 1, rotateY: 0, transition: { duration: 0.8, ease: "easeOut" } },
     float: {
-      y: [0, -10, 0, 10, 0],
-      rotate: [0, 1, 0, -1, 0],
+      y: [0, -8, 0, 8, 0], // Reduced y movement
+      rotate: [0, 0.5, 0, -0.5, 0], // Reduced rotation
       transition: {
-        duration: 15,
+        duration: 18, // Increased duration for slower animation
         repeat: Infinity,
         ease: "easeInOut",
       },
@@ -59,7 +60,7 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className }) => {
                       md:top-[15%] md:-left-[15%] md:w-[140px] md:h-[140px] lg:top-[15%] lg:-left-[20%] lg:w-[160px] lg:h-[160px]" // Adjusted mobile positioning and size
         variants={cardVariants}
         initial="initial"
-        animate={["animate", "float"]}
+        animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
         custom={0}
         whileInView="animate"
         viewport={{ once: true, amount: 0.5 }}
@@ -75,7 +76,7 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className }) => {
                       md:top-[15%] md:-right-[15%] md:w-[140px] md:h-[140px] lg:top-[15%] lg:-right-[20%] lg:w-[160px] lg:h-[160px]" // Adjusted mobile positioning and size
         variants={cardVariants}
         initial="initial"
-        animate={["animate", "float"]}
+        animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
         custom={1}
         whileInView="animate"
         viewport={{ once: true, amount: 0.5 }}
@@ -91,7 +92,7 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className }) => {
                       md:bottom-[15%] md:-left-[15%] md:w-[140px] md:h-[140px] lg:bottom-[15%] lg:-left-[20%] lg:w-[160px] lg:h-[160px]" // Adjusted mobile positioning and size
         variants={cardVariants}
         initial="initial"
-        animate={["animate", "float"]}
+        animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
         custom={2}
         whileInView="animate"
         viewport={{ once: true, amount: 0.5 }}
@@ -107,7 +108,7 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className }) => {
                       md:bottom-[15%] md:-right-[15%] md:w-[140px] md:h-[140px] lg:bottom-[15%] lg:-right-[20%] lg:w-[160px] lg:h-[160px]" // Adjusted mobile positioning and size
         variants={cardVariants}
         initial="initial"
-        animate={["animate", "float"]}
+        animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
         custom={3}
         whileInView="animate"
         viewport={{ once: true, amount: 0.5 }}
@@ -128,7 +129,7 @@ const MobileMockup: React.FC<MobileMockupProps> = ({ className }) => {
         }}
         variants={phoneVariants}
         initial="initial"
-        animate={["animate", "float"]}
+        animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
         whileInView="animate"
         viewport={{ once: true, amount: 0.5 }}
       >

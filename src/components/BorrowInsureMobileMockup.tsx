@@ -7,7 +7,11 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 
-const BorrowInsureMobileMockup = () => {
+interface BorrowInsureMobileMockupProps {
+  isMobile: boolean; // Add isMobile prop
+}
+
+const BorrowInsureMobileMockup: React.FC<BorrowInsureMobileMockupProps> = ({ isMobile }) => {
   const phoneVariants = {
     initial: { opacity: 0, scale: 0.8, rotateY: 15 },
     animate: { opacity: 1, scale: 1, rotateY: 0, transition: { duration: 0.8, ease: "easeOut" } },
@@ -32,7 +36,7 @@ const BorrowInsureMobileMockup = () => {
       }}
       variants={phoneVariants}
       initial="initial"
-      animate={["animate", "float"]}
+      animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
       whileInView="animate"
       viewport={{ once: true, amount: 0.5 }}
     >

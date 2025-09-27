@@ -11,6 +11,7 @@ interface CreditCardMockupProps {
   cardNumber: string;
   cardHolder: string;
   rotation?: string; // New prop for rotation, e.g., 'rotate-3'
+  isMobile: boolean; // Add isMobile prop
 }
 
 const CreditCardMockup: React.FC<CreditCardMockupProps> = ({
@@ -18,6 +19,7 @@ const CreditCardMockup: React.FC<CreditCardMockupProps> = ({
   cardNumber,
   cardHolder,
   rotation = 'rotate-0', // Default to no rotation
+  isMobile, // Accept isMobile
 }) => {
   const cardVariants = {
     initial: { opacity: 0, y: 50, scale: 0.8, rotate: 0 },
@@ -31,7 +33,6 @@ const CreditCardMockup: React.FC<CreditCardMockupProps> = ({
         ease: "easeOut",
       },
     },
-    // Removed the 'float' variant to stop continuous animation
   };
 
   return (
@@ -39,6 +40,7 @@ const CreditCardMockup: React.FC<CreditCardMockupProps> = ({
       className={cn(
         "relative w-64 h-40 rounded-xl shadow-lg p-5 flex flex-col justify-between text-white",
         colorClass,
+        !isMobile && animationClass, // Conditionally apply animationClass
       )}
       style={{
         transformStyle: 'preserve-3d',

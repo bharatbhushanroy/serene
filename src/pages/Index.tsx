@@ -23,8 +23,11 @@ import DataSecuritySection from "@/components/DataSecuritySection";
 import UpiSection from "@/components/UpiSection";
 import AllInOneFinancialAppSection from "@/components/AllInOneFinancialAppSection";
 import { Helmet } from 'react-helmet-async';
+import { useIsMobile } from "@/hooks/use-mobile"; // Import useIsMobile
 
 const Index = () => {
+  const isMobile = useIsMobile(); // Get mobile state
+
   return (
     <div className="min-h-screen bg-fintech-background-light text-fintech-text-dark">
       <Helmet>
@@ -34,26 +37,26 @@ const Index = () => {
       <Header />
       <main>
         {/* HeroCarousel already contains the primary h1 for the page */}
-        <HeroCarousel />
-        <AllInOneFinancialAppSection />
-        <CredClubInspiredSection /> {/* Moved this section up */}
-        <UpiSection /> {/* This section is now below CredClubInspiredSection */}
-        <TopUpLoansSection />
-        <ProductsSection />
-        <QuickLoansFeaturesSection />
-        <FeaturesSection />
-        <HowItWorksSection />
-        <InteractiveLoanSimulatorSection />
-        <InsuranceSection />
-        <LoanProductsShowcaseSection />
-        <LoanProductsSection />
-        <ApplyStepsSection />
-        <LoanComparisonCalculator />
-        <MoneyForEverythingSection />
-        <MemberTestimonialsSection />
-        <DataSecuritySection />
-        <CtaSection />
-        <WalkTheTalkSection />
+        <HeroCarousel isMobile={isMobile} />
+        <AllInOneFinancialAppSection isMobile={isMobile} />
+        <CredClubInspiredSection isMobile={isMobile} />
+        <UpiSection isMobile={isMobile} />
+        <TopUpLoansSection isMobile={isMobile} />
+        <ProductsSection isMobile={isMobile} />
+        <QuickLoansFeaturesSection isMobile={isMobile} />
+        <FeaturesSection isMobile={isMobile} />
+        <HowItWorksSection isMobile={isMobile} />
+        <InteractiveLoanSimulatorSection isMobile={isMobile} />
+        <InsuranceSection isMobile={isMobile} />
+        <LoanProductsShowcaseSection isMobile={isMobile} />
+        <LoanProductsSection isMobile={isMobile} />
+        <ApplyStepsSection isMobile={isMobile} />
+        <LoanComparisonCalculator isMobile={isMobile} />
+        <MoneyForEverythingSection isMobile={isMobile} />
+        <MemberTestimonialsSection isMobile={isMobile} />
+        <DataSecuritySection isMobile={isMobile} />
+        <CtaSection isMobile={isMobile} />
+        <WalkTheTalkSection isMobile={isMobile} />
       </main>
       <Footer />
       <MadeInBharatSection />
