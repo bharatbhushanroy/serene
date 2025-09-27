@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import TripleMobileMockup from './TripleMobileMockup'; // Import the TripleMobileMockup component
 import { Link } from 'react-router-dom'; // Import Link
 
 const TopUpLoansSection = () => {
@@ -33,9 +34,9 @@ const TopUpLoansSection = () => {
           </div>
         </div>
 
-        {/* Right content - Placeholder for a mockup or illustration */}
-        <div className="relative lg:w-1/2 flex justify-center items-center z-10 h-[400px] bg-fintech-simulator-card-bg/50 rounded-xl border border-fintech-border-light">
-          <p className="text-fintech-text-muted text-lg">Illustration for Top-Up Loans</p>
+        {/* Right content - TripleMobileMockup */}
+        <div className="relative lg:w-1/2 flex justify-center items-center z-10">
+          <TripleMobileMockup />
         </div>
       </div>
       {/* Background elements */}
