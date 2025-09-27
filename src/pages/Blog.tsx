@@ -54,7 +54,7 @@ const Blog = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {blogPosts.map((post) => (
             <Card key={post.id} className="bg-fintech-simulator-card-bg border border-fintech-border-light rounded-xl shadow-lg overflow-hidden">
-              <img src={post.imageUrl} alt={post.title} className="w-full h-48 object-cover" />
+              <img src={post.imageUrl} alt={post.title} className="w-full h-48 object-cover" width={400} height={192} loading="lazy" />
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-white mb-3">{post.title}</h3>
                 <div className="flex items-center text-fintech-text-muted text-sm mb-4 space-x-4">

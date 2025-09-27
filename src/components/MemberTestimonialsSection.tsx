@@ -124,7 +124,7 @@ const MemberTestimonialsSection = () => {
                       <Quote className="h-16 w-16 text-fintech-blue-accent/20 mb-6" />
                       <p className="text-xl font-medium mb-6 leading-relaxed">"{testimonial.quote}"</p>
                       <div className="flex items-center">
-                        <img src={testimonial.avatar} alt={testimonial.name} className="h-12 w-12 rounded-full object-cover mr-4" />
+                        <img src={testimonial.avatar} alt={testimonial.name} className="h-12 w-12 rounded-full object-cover mr-4" width={48} height={48} loading="lazy" /> {/* Added width/height and lazy loading */}
                         <div>
                           <p className="font-semibold text-lg text-fintech-blue-accent">{testimonial.name}</p>
                           <p className="text-sm text-fintech-text-muted">{testimonial.title} • {testimonial.location}</p>

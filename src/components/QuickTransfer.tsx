@@ -56,7 +56,7 @@ const QuickTransfer = () => {
                 onClick={() => setSelectedRecipient(recipient)}
               >
                 <Avatar className="h-12 w-12 border-2 border-transparent">
-                  <AvatarImage src={recipient.avatar} alt={recipient.name} />
+                  <AvatarImage src={recipient.avatar} alt={recipient.name} width={48} height={48} /> {/* Added width/height */}
                   <AvatarFallback className="bg-fintech-dashboard-accent-blue text-white">{recipient.name.charAt(0)}</AvatarFallback>
                 </Avatar>
                 <p className="text-xs text-fintech-dashboard-text-secondary mt-1">{recipient.name}</p>

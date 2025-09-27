@@ -79,7 +79,7 @@ const RecentTransactions = () => {
           <div key={transaction.id} className="flex items-center justify-between p-3 rounded-lg hover:bg-fintech-dashboard-border transition-colors">
             <div className="flex items-center space-x-3">
               <Avatar className="h-9 w-9">
-                <AvatarImage src={transaction.icon} alt={transaction.category} />
+                <AvatarImage src={transaction.icon} alt={transaction.category} width={36} height={36} loading="lazy" /> {/* Added width/height and lazy loading */}
                 <AvatarFallback className="bg-fintech-dashboard-border text-fintech-dashboard-text-secondary">
                   {transaction.category.charAt(0)}
                 </AvatarFallback>

@@ -3,6 +3,8 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { Suspense } from 'react'; // Import Suspense
+
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import AboutUs from "./pages/AboutUs";
@@ -27,9 +29,12 @@ import CookiePolicy from "./pages/CookiePolicy";
 import EMICalculatorPage from "./pages/EMICalculatorPage";
 import LoanComparisonPage from "./pages/LoanComparisonPage";
 import InteractiveLoanSimulatorPage from "./pages/InteractiveLoanSimulatorPage";
-import FixedDepositCalculatorPage from "./pages/FixedDepositCalculatorPage"; // New import
-import RecurringDepositCalculatorPage from "./pages/RecurringDepositCalculatorPage"; // New import
-import CarLoanEMICalculatorPage from "./pages/CarLoanEMICalculatorPage"; // New import
+import FixedDepositCalculatorPage from "./pages/FixedDepositCalculatorPage";
+import RecurringDepositCalculatorPage from "./pages/RecurringDepositCalculatorPage";
+import CarLoanEMICalculatorPage from "./pages/CarLoanEMICalculatorPage";
+
+// Lazy load the AiChatbot component
+const LazyAiChatbot = React.lazy(() => import("./components/AiChatbot"));
 
 const queryClient = new QueryClient();
 
@@ -50,9 +55,9 @@ const App = () => (
             <Route path="/emi-calculator" element={<EMICalculatorPage />} />
             <Route path="/loan-comparison" element={<LoanComparisonPage />} />
             <Route path="/interactive-loan-simulator" element={<InteractiveLoanSimulatorPage />} />
-            <Route path="/fd-calculator" element={<FixedDepositCalculatorPage />} /> {/* New route */}
-            <Route path="/rd-calculator" element={<RecurringDepositCalculatorPage />} /> {/* New route */}
-            <Route path="/car-loan-emi-calculator" element={<CarLoanEMICalculatorPage />} /> {/* New route */}
+            <Route path="/fd-calculator" element={<FixedDepositCalculatorPage />} />
+            <Route path="/rd-calculator" element={<RecurringDepositCalculatorPage />} />
+            <Route path="/car-loan-emi-calculator" element={<CarLoanEMICalculatorPage />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<TermsOfService />} />
             <Route path="/cookies" element={<CookiePolicy />} />
@@ -70,6 +75,10 @@ const App = () => (
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
+        {/* Render the lazy-loaded AiChatbot with Suspense */}
+        <Suspense fallback={null}>
+          <LazyAiChatbot />
+        </Suspense>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

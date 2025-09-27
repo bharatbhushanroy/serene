@@ -80,7 +80,7 @@ const UpiPhoneMockup = () => {
           <div className="bg-gray-800 rounded-xl p-4 mb-4">
             <p className="text-sm text-gray-400">Paying to</p>
             <div className="flex items-center mt-1">
-              <img src="https://images.unsplash.com/photo-1535713875002-d1d0cfdce506?q=80&w=2080&auto=format&fit=crop" alt="Recipient" className="h-8 w-8 rounded-full mr-3" />
+              <img src="https://images.unsplash.com/photo-1535713875002-d1d0cfdce506?q=80&w=2080&auto=format&fit=crop" alt="Recipient" className="h-8 w-8 rounded-full mr-3" width={32} height={32} loading="lazy" /> {/* Added width/height and lazy loading */}
               <div>
                 <p className="font-semibold text-white">Charlie P.</p>
                 <p className="text-xs text-gray-400">charlie@upi</p>

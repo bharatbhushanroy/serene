@@ -82,7 +82,7 @@ const UpiMobileMockup = () => {
             <p className="text-sm text-gray-400">Recent Transactions</p>
             <div className="flex items-center justify-between mt-2">
               <div className="flex items-center">
-                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cfdce506?q=80&w=2080&auto=format&fit=crop" alt="Recipient" className="h-8 w-8 rounded-full mr-3" />
+                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cfdce506?q=80&w=2080&auto=format&fit=crop" alt="Recipient" className="h-8 w-8 rounded-full mr-3" width={32} height={32} loading="lazy" /> {/* Added width/height and lazy loading */}
                 <div>
                   <p className="font-semibold">Charlie P.</p>
                   <p className="text-xs text-gray-400">Paid for groceries</p>

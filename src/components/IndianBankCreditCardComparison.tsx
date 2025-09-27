@@ -104,7 +104,7 @@ const IndianBankCreditCardComparison = () => {
           <div className="absolute inset-0 opacity-20" style={{ backgroundImage: `url(${card.image})`, backgroundSize: 'cover', backgroundPosition: 'center', filter: 'blur(10px)' }}></div>
           <div className="relative z-10 flex flex-col md:flex-row items-center md:items-start gap-6">
             <div className="flex-shrink-0 w-32 h-20 md:w-40 md:h-24 bg-white rounded-lg shadow-lg flex items-center justify-center overflow-hidden">
-              <img src={card.image} alt={`${card.bank} ${card.cardName}`} className="object-contain h-full w-full p-2" />
+              <img src={card.image} alt={`${card.bank} ${card.cardName}`} className="object-contain h-full w-full p-2" width={160} height={96} loading="lazy" /> {/* Added width/height and lazy loading */}
             </div>
             <div className="flex-grow text-center md:text-left">
               <h3 className="text-xl md:text-2xl font-bold text-white mb-1">{card.cardName}</h3>
