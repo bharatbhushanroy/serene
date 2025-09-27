@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import TripleMobileMockup from './TripleMobileMockup'; // Import the new TripleMobileMockup component
 import { Link } from 'react-router-dom'; // Import Link
 
 const TopUpLoansSection = () => {
@@ -21,12 +20,12 @@ const TopUpLoansSection = () => {
             Need more funds? Get additional loans quickly and easily with our seamless top-up process.
           </p>
           <div className="flex justify-center lg:justify-start space-x-4">
-            <Link to="/apply-loan"> {/* Added Link component */}
+            <Link to="/apply-loan">
               <Button className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-8 py-3 rounded-full text-lg font-semibold">
                 Check Eligibility
               </Button>
             </Link>
-            <Link to="/contact"> {/* Added Link component */}
+            <Link to="/contact">
               <Button variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-800 px-8 py-3 rounded-full text-lg font-semibold">
                 Contact Support
               </Button>
@@ -34,10 +33,9 @@ const TopUpLoansSection = () => {
           </div>
         </div>
 
-        {/* Right content - Triple Phone Mockup */}
-        <div className="relative lg:w-1/2 flex justify-center items-center z-10">
-          {/* The TripleMobileMockup component is placed here */}
-          <TripleMobileMockup />
+        {/* Right content - Placeholder for a mockup or illustration */}
+        <div className="relative lg:w-1/2 flex justify-center items-center z-10 h-[400px] bg-fintech-simulator-card-bg/50 rounded-xl border border-fintech-border-light">
+          <p className="text-fintech-text-muted text-lg">Illustration for Top-Up Loans</p>
         </div>
       </div>
       {/* Background elements */}
