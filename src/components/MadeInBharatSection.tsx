@@ -58,39 +58,6 @@ const MadeInBharatSection = () => {
       <div className="absolute bottom-1/3 right-1/3 h-64 w-64 bg-fintech-green-accent rounded-full mix-blend-lighten filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
 
       <div className="max-w-7xl mx-auto text-center relative z-10 px-4">
-        {/* Indian Flag SVG */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mb-6 flex justify-center"
-        >
-          <svg width="80" height="53" viewBox="0 0 80 53" fill="none" xmlns="http://www.w3.org/2000/svg">
-            {/* Saffron */}
-            <rect width="80" height="17.6667" fill="#FF9933"/>
-            {/* White */}
-            <rect y="17.6667" width="80" height="17.6667" fill="#FFFFFF"/>
-            {/* Green */}
-            <rect y="35.3333" width="80" height="17.6667" fill="#138808"/>
-            {/* Ashoka Chakra */}
-            <circle cx="40" cy="26.5" r="8.5" fill="#000080"/>
-            <circle cx="40" cy="26.5" r="7.5" fill="#FFFFFF"/>
-            <circle cx="40" cy="26.5" r="2.5" fill="#000080"/>
-            {Array.from({ length: 24 }).map((_, i) => (
-              <line
-                key={i}
-                x1="40"
-                y1="26.5"
-                x2={40 + 7.5 * Math.cos((i * 15 - 90) * Math.PI / 180)}
-                y2={26.5 + 7.5 * Math.sin((i * 15 - 90) * Math.PI / 180)}
-                stroke="#000080"
-                strokeWidth="0.5"
-              />
-            ))}
-          </svg>
-        </motion.div>
-
         <motion.h2
           variants={textVariants}
           className="text-3xl md:text-5xl font-extrabold leading-tight mb-4 text-white bg-clip-text text-transparent bg-gradient-to-r from-fintech-blue-accent to-fintech-green-accent"
