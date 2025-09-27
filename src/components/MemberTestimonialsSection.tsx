@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -40,6 +40,8 @@ interface MemberTestimonialsSectionProps {
 
 const MemberTestimonialsSection: React.FC<MemberTestimonialsSectionProps> = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
@@ -48,6 +50,30 @@ const MemberTestimonialsSection: React.FC<MemberTestimonialsSectionProps> = () =
   const scrollNext = useCallback(() => {
     if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+    setScrollSnaps(emblaApi.scrollSnapList());
+  }, [emblaApi, setSelectedIndex, setScrollSnaps]);
+
+  const scrollTo = useCallback(
+    (index: number) => {
+      if (emblaApi) emblaApi.scrollTo(index);
+    },
+    [emblaApi]
+  );
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect(); // Initial call to set selectedIndex and scrollSnaps
+    emblaApi.on('select', onSelect);
+    emblaApi.on('reInit', onSelect);
+    return () => {
+      emblaApi.off('select', onSelect);
+      emblaApi.off('reInit', onSelect);
+    };
+  }, [emblaApi, onSelect]);
 
   const testimonials: Testimonial[] = [
     {
@@ -150,7 +176,7 @@ const MemberTestimonialsSection: React.FC<MemberTestimonialsSectionProps> = () =
 
             <div className="flex items-center justify-between mt-8 px-4">
               <div className="flex space-x-2">
-                {emblaApi && scrollSnaps.map((_, index) => (
+                {scrollSnaps.map((_, index) => (
                   <button
                     key={index}
                     className={cn(
@@ -159,7 +185,7 @@ const MemberTestimonialsSection: React.FC<MemberTestimonialsSectionProps> = () =
                         ? "bg-fintech-blue-accent w-6"
                         : "bg-fintech-text-muted opacity-50"
                     )}
-                    onClick={() => emblaApi && emblaApi.scrollTo(index)}
+                    onClick={() => scrollTo(index)}
                   />
                 ))}
               </div>
