@@ -24,9 +24,12 @@ import CreditCardsPage from "./pages/products/CreditCardsPage";
 import PersonalFinancePage from "./pages/products/PersonalFinancePage";
 import TermsOfService from "./pages/TermsOfService";
 import CookiePolicy from "./pages/CookiePolicy";
-import EMICalculatorPage from "./pages/EMICalculatorPage"; // New import
-import LoanComparisonPage from "./pages/LoanComparisonPage"; // New import
-import InteractiveLoanSimulatorPage from "./pages/InteractiveLoanSimulatorPage"; // New import
+import EMICalculatorPage from "./pages/EMICalculatorPage";
+import LoanComparisonPage from "./pages/LoanComparisonPage";
+import InteractiveLoanSimulatorPage from "./pages/InteractiveLoanSimulatorPage";
+import FixedDepositCalculatorPage from "./pages/FixedDepositCalculatorPage"; // New import
+import RecurringDepositCalculatorPage from "./pages/RecurringDepositCalculatorPage"; // New import
+import CarLoanEMICalculatorPage from "./pages/CarLoanEMICalculatorPage"; // New import
 
 const queryClient = new QueryClient();
 
@@ -43,10 +46,13 @@ const App = () => (
             <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/faqs" element={<FAQs />} />
-            <Route path="/loan-calculator" element={<LoanCalculatorPage />} /> {/* This page already exists and uses AdvanceLoanSimulator */}
-            <Route path="/emi-calculator" element={<EMICalculatorPage />} /> {/* New route */}
-            <Route path="/loan-comparison" element={<LoanComparisonPage />} /> {/* New route */}
-            <Route path="/interactive-loan-simulator" element={<InteractiveLoanSimulatorPage />} /> {/* New route */}
+            <Route path="/loan-calculator" element={<LoanCalculatorPage />} />
+            <Route path="/emi-calculator" element={<EMICalculatorPage />} />
+            <Route path="/loan-comparison" element={<LoanComparisonPage />} />
+            <Route path="/interactive-loan-simulator" element={<InteractiveLoanSimulatorPage />} />
+            <Route path="/fd-calculator" element={<FixedDepositCalculatorPage />} /> {/* New route */}
+            <Route path="/rd-calculator" element={<RecurringDepositCalculatorPage />} /> {/* New route */}
+            <Route path="/car-loan-emi-calculator" element={<CarLoanEMICalculatorPage />} /> {/* New route */}
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<TermsOfService />} />
             <Route path="/cookies" element={<CookiePolicy />} />

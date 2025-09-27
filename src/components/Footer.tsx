@@ -57,7 +57,10 @@ const Footer = () => {
         <motion.div variants={itemVariants} className="col-span-1 flex flex-col items-center md:items-start">
           <h4 className="text-lg font-semibold mb-4 text-fintech-header-text">Calculators</h4>
           <ul className="space-y-2 text-center md:text-left">
-            <li><Link to="/emi-calculator" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">EMI Calculator</Link></li>
+            <li><Link to="/fd-calculator" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">Fixed Deposit Calculator</Link></li> {/* New link */}
+            <li><Link to="/rd-calculator" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">Recurring Deposit Calculator</Link></li> {/* New link */}
+            <li><Link to="/emi-calculator" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">Personal Loan EMI Calculator</Link></li> {/* Updated text */}
+            <li><Link to="/car-loan-emi-calculator" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">Car Loan EMI Calculator</Link></li> {/* New link */}
             <li><Link to="/loan-comparison" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">Loan Comparison</Link></li>
             <li><Link to="/interactive-loan-simulator" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">Interactive Simulator</Link></li>
             <li><Link to="/loan-calculator" className="text-gray-400 hover:text-fintech-blue-accent transition-colors">Advance Loan Simulator</Link></li>
