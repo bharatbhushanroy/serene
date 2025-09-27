@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import { User, Gift, QrCode, Smartphone, Landmark, Banknote, ArrowRight, BarChart, ArrowUpRight, ArrowDownLeft } from 'lucide-react';
+import { User, Gift, QrCode, Smartphone, Landmark, Banknote, ArrowRight, BarChart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -42,7 +42,7 @@ const TripleMobileMockup = () => {
     },
     {
       id: 2,
-      className: "z-20",
+      className: "z-20", // Main phone in front
       content: (
         <div className="relative w-full h-full bg-[#1A1A1A] rounded-[24px] overflow-hidden flex flex-col">
           {/* Top Bar */}
@@ -120,6 +120,15 @@ const TripleMobileMockup = () => {
                 <Button className="bg-gray-700 text-white text-xs px-3 py-1 rounded-full flex items-center mt-2 hover:bg-gray-600">
                   Invest now <ArrowRight className="ml-1 h-3 w-3" />
                 </Button>
+              </Link>
+            </div>
+            <div className="bg-gray-800 rounded-xl p-3 mt-4 flex items-center justify-between">
+              <div>
+                <p className="text-sm font-semibold">Credit score</p>
+                <p className="text-xs text-gray-400">Check now</p>
+              </div>
+              <Link to="/products/free-credit-score">
+                <img src="/public/placeholder.svg" alt="Credit score" className="h-8 w-8" />
               </Link>
             </div>
           </div>
