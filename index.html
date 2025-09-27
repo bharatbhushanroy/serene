@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://images.unsplash.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Preload the main stylesheet to shorten the critical rendering path -->
+    <link rel="preload" as="style" href="/src/globals.css">
     <!-- Consider adding <link rel="preload" href="path/to/hero-image.webp" as="image"> for your LCP image -->
     <!-- Consider adding <link rel="preload" href="path/to/custom-font.woff2" as="font" type="font/woff2" crossorigin> for critical fonts -->
   </head>
@@ -16,5 +18,6 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <!-- For image modernization, consider using AVIF/WebP formats with responsive srcset/sizes for all images. -->
+    <!-- Ensure your build process optimizes images and inlines critical CSS for above-the-fold content. -->
   </body>
 </html>
