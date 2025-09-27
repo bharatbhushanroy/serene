@@ -64,107 +64,77 @@ const UpiSection = () => {
     },
   ];
 
+  const backgroundBlobVariants = {
+    animate: (i: number) => ({
+      y: [0, 50 + i * 10, 0],
+      x: [0, 30 + i * 5, 0],
+      scale: [0.8, 1.2, 0.8],
+      opacity: [0.1, 0.2, 0.1],
+      rotate: [0, 360, 0],
+      transition: {
+        duration: 20 + i * 5,
+        repeat: Infinity,
+        ease: "linear",
+        delay: i * 2,
+      },
+    }),
+  };
+
   return (
     <section className="relative w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-main-bg text-white overflow-hidden">
-      <div className="max-w-7xl mx-auto text-center">
+      {/* Background Animated Blobs */}
+      {[...Array(3)].map((_, i) => (
+        <motion.div
+          key={i}
+          custom={i}
+          variants={backgroundBlobVariants}
+          animate="animate"
+          className={cn(
+            "absolute rounded-full mix-blend-lighten filter blur-3xl opacity-0",
+            i === 0 && "top-1/4 left-1/4 w-64 h-64 bg-fintech-blue-accent",
+            i === 1 && "bottom-1/3 right-1/4 w-72 h-72 bg-fintech-gradient-purple-start",
+            i === 2 && "top-1/2 left-1/2 w-56 h-56 bg-fintech-orange-accent"
+          )}
+        />
+      ))}
+
+      <div className="max-w-7xl mx-auto text-center relative z-10">
         <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
-          Say Hi <motion.span
-            className="inline-block"
-            animate={{ rotate: [0, 15, -15, 0], y: [0, -5, 5, 0] }}
-            transition={{ duration: 1, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-          >
-            👋
-          </motion.span> to{' '}
-          <span className="bg-gradient-to-r from-fintech-blue-accent to-fintech-gradient-purple-start text-transparent bg-clip-text">Qicky UPI</span>
+          Experience the Future of <span className="bg-gradient-to-r from-fintech-blue-accent to-fintech-gradient-purple-start text-transparent bg-clip-text">Payments</span>
         </h2>
         <p className="text-lg text-fintech-text-muted mb-12 max-w-3xl mx-auto">
-          Experience the future of digital payments with Qicky UPI. Fast, secure, and incredibly convenient.
+          Introducing Qicky UPI: Your gateway to instant, secure, and seamless digital transactions. Get ready to pay and receive money with unparalleled ease.
         </p>
 
         <div className="relative flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-0 min-h-[700px]">
-          {/* Feature Cards - Left Side */}
-          <div className="absolute top-1/2 left-0 transform -translate-y-1/2 flex flex-col space-y-8 z-10 hidden lg:block">
+          {/* Feature Cards - Dynamically positioned */}
+          {features.map((feature, index) => (
             <motion.div
-              className="w-[200px] h-[150px] p-4 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-white"
+              key={index}
+              className={cn(
+                "absolute p-4 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-white w-[160px] h-[120px] md:w-[180px] md:h-[140px]",
+                index === 0 && "top-[10%] left-[5%] md:top-[15%] md:left-[10%] lg:top-[15%] lg:left-[15%]",
+                index === 1 && "top-[10%] right-[5%] md:top-[15%] md:right-[10%] lg:top-[15%] lg:right-[15%]",
+                index === 2 && "bottom-[10%] left-[5%] md:bottom-[15%] md:left-[10%] lg:bottom-[15%] lg:left-[15%]",
+                index === 3 && "bottom-[10%] right-[5%] md:bottom-[15%] md:right-[10%] lg:bottom-[15%] lg:right-[15%]",
+                "z-10" // Ensure cards are above background blobs but below phone overlay
+              )}
               variants={featureCardVariants}
               initial="initial"
               whileInView={["animate", "float"]}
               viewport={{ once: true, amount: 0.5 }}
-              custom={0}
-              style={{ background: features[0].gradient }}
+              custom={index}
+              style={{ background: feature.gradient }}
             >
-              <QrCode className="h-8 w-8 text-white mb-2" />
-              <p className="text-sm font-medium">{features[0].title}</p>
-              <p className="text-lg font-bold">{features[0].subtitle}</p>
+              <feature.icon className="h-7 w-7 text-white mb-2" />
+              <p className="text-sm font-medium">{feature.title}</p>
+              <p className="text-lg font-bold">{feature.subtitle}</p>
             </motion.div>
-            <motion.div
-              className="w-[200px] h-[150px] p-4 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-white"
-              variants={featureCardVariants}
-              initial="initial"
-              whileInView={["animate", "float"]}
-              viewport={{ once: true, amount: 0.5 }}
-              custom={1}
-              style={{ background: features[1].gradient }}
-            >
-              <Zap className="h-8 w-8 text-white mb-2" />
-              <p className="text-sm font-medium">{features[1].title}</p>
-              <p className="text-lg font-bold">{features[1].subtitle}</p>
-            </motion.div>
-          </div>
+          ))}
 
           {/* Central iPhone Mockup */}
           <div className="relative z-20">
             <UpiPhoneMockup />
-          </div>
-
-          {/* Feature Cards - Right Side */}
-          <div className="absolute top-1/2 right-0 transform -translate-y-1/2 flex flex-col space-y-8 z-10 hidden lg:block">
-            <motion.div
-              className="w-[200px] h-[150px] p-4 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-white"
-              variants={featureCardVariants}
-              initial="initial"
-              whileInView={["animate", "float"]}
-              viewport={{ once: true, amount: 0.5 }}
-              custom={2}
-              style={{ background: features[2].gradient }}
-            >
-              <CreditCard className="h-8 w-8 text-white mb-2" />
-              <p className="text-sm font-medium">{features[2].title}</p>
-              <p className="text-lg font-bold">{features[2].subtitle}</p>
-            </motion.div>
-            <motion.div
-              className="w-[200px] h-[150px] p-4 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-white"
-              variants={featureCardVariants}
-              initial="initial"
-              whileInView={["animate", "float"]}
-              viewport={{ once: true, amount: 0.5 }}
-              custom={3}
-              style={{ background: features[3].gradient }}
-            >
-              <ShieldCheck className="h-8 w-8 text-white mb-2" />
-              <p className="text-sm font-medium">{features[3].title}</p>
-              <p className="text-lg font-bold">{features[3].subtitle}</p>
-            </motion.div>
-          </div>
-
-          {/* Feature Cards for smaller screens (below lg) */}
-          <div className="lg:hidden grid grid-cols-2 gap-4 mt-8 w-full max-w-md mx-auto">
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                className="p-4 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-white h-[120px]"
-                variants={featureCardVariants}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true, amount: 0.5 }}
-                custom={index}
-                style={{ background: feature.gradient }}
-              >
-                <feature.icon className="h-6 w-6 text-white mb-1" />
-                <p className="text-xs font-medium">{feature.title}</p>
-                <p className="text-base font-bold">{feature.subtitle}</p>
-              </motion.div>
-            ))}
           </div>
         </div>
       </div>
