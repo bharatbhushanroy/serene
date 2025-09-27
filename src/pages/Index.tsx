@@ -34,7 +34,7 @@ const Index = () => {
       <main>
         {/* HeroCarousel already contains the primary h1 for the page */}
         <HeroCarousel />
-        <UpiSection /> {/* Added the new UPI section here */}
+        <UpiSection /> {/* Moved the new UPI section here */}
         <CredClubInspiredSection />
         <TopUpLoansSection />
         <ProductsSection />
@@ -42,7 +42,7 @@ const Index = () => {
         <FeaturesSection />
         <HowItWorksSection /> {/* Moved HowItWorksSection here, directly after FeaturesSection */}
         <InteractiveLoanSimulatorSection />
-        <InsuranceSection />
+        <InsuranceSection /> {/* Now below UpiSection */}
         <LoanProductsShowcaseSection />
         <LoanProductsSection />
         <ApplyStepsSection />

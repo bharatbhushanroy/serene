@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { QrCode, Zap, CreditCard, ShieldCheck, Hand } from 'lucide-react';
-import { Card } from '@/components/ui/card';
+import { Card } from '@/components/ui/card'; // Ensure Card is imported
 import { cn } from '@/lib/utils';
 import UpiPhoneMockup from './UpiPhoneMockup'; // Import the new UpiPhoneMockup component
 
@@ -116,20 +116,25 @@ const UpiSection = () => {
             <motion.div
               key={index}
               className={cn(
-                "absolute p-4 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-white w-[160px] h-[120px] md:w-[180px] md:h-[140px]",
+                "absolute w-[160px] h-[120px] md:w-[180px] md:h-[140px]", // Base size and positioning
                 feature.positionClasses, // Apply dynamic positioning
-                "z-10 border border-fintech-border-light transform hover:scale-[1.03] transition-transform duration-300 hover:shadow-glow-blue" // Added border and hover effects
+                "z-10 transform hover:scale-[1.03] transition-transform duration-300 hover:shadow-glow-blue" // Hover effects
               )}
               variants={featureCardVariants}
               initial="initial"
               whileInView={["animate", "float"]}
               viewport={{ once: true, amount: 0.5 }}
               custom={index}
-              style={{ background: feature.gradient }}
             >
-              <feature.icon className="h-7 w-7 text-white mb-2" />
-              <p className="text-sm font-medium">{feature.title}</p>
-              <p className="text-lg font-bold">{feature.subtitle}</p>
+              <Card className={cn(
+                "p-4 rounded-xl shadow-lg text-center flex flex-col items-center justify-center text-white h-full w-full",
+                feature.gradient, // Apply gradient background
+                "border border-fintech-border-light" // Add border
+              )}>
+                <feature.icon className="h-7 w-7 text-white mb-2" />
+                <p className="text-sm font-medium">{feature.title}</p>
+                <p className="text-lg font-bold">{feature.subtitle}</p>
+              </Card>
             </motion.div>
           ))}
 
