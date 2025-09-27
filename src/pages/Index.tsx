@@ -20,6 +20,7 @@ import LoanProductsSection from "@/components/LoanProductsSection";
 import LoanProductsShowcaseSection from "@/components/LoanProductsShowcaseSection";
 import CredClubInspiredSection from "@/components/CredClubInspiredSection";
 import DataSecuritySection from "@/components/DataSecuritySection";
+import UpiSection from "@/components/UpiSection"; // New import
 import { Helmet } from 'react-helmet-async';
 
 const Index = () => {
@@ -33,6 +34,7 @@ const Index = () => {
       <main>
         {/* HeroCarousel already contains the primary h1 for the page */}
         <HeroCarousel />
+        <UpiSection /> {/* Added the new UPI section here */}
         <CredClubInspiredSection />
         <TopUpLoansSection />
         <ProductsSection />
