@@ -83,7 +83,7 @@ const AnimatedTimelineGraphic = () => {
         >
           {/* Milestone Point with Gradient */}
           <div className={cn(
-            "absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full z-10 flex items-center justify-center border-2 border-fintech-dark-blue",
+            "absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full z-10 flex items-center justify-center border-2 border-fintech-main-bg",
             "bg-gradient-to-br", milestoneGradientClasses[index % milestoneGradientClasses.length]
           )}>
             <div className="w-3 h-3 bg-white rounded-full"></div>
