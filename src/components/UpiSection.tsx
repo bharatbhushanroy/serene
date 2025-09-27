@@ -7,7 +7,11 @@ import { Card } from '@/components/ui/card'; // Ensure Card is imported
 import { cn } from '@/lib/utils';
 import UpiPhoneMockup from './UpiPhoneMockup'; // Import the new UpiPhoneMockup component
 
-const UpiSection = () => {
+interface UpiSectionProps {
+  isMobile: boolean; // Add isMobile prop
+}
+
+const UpiSection: React.FC<UpiSectionProps> = ({ isMobile }) => {
   const featureCardVariants = {
     initial: { opacity: 0, scale: 0.8, rotate: 0 },
     animate: (i: number) => ({
@@ -92,7 +96,7 @@ const UpiSection = () => {
           key={i}
           custom={i}
           variants={backgroundBlobVariants}
-          animate="animate"
+          animate={isMobile ? "initial" : "animate"} // Conditionally disable continuous animation
           className={cn(
             "absolute rounded-full mix-blend-lighten filter blur-3xl opacity-0",
             i === 0 && "top-1/4 left-1/4 w-64 h-64 bg-fintech-blue-accent",
@@ -122,7 +126,7 @@ const UpiSection = () => {
               )}
               variants={featureCardVariants}
               initial="initial"
-              whileInView={["animate", "float"]}
+              animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
               viewport={{ once: true, amount: 0.5 }}
               custom={index}
             >
@@ -140,7 +144,7 @@ const UpiSection = () => {
 
           {/* Central iPhone Mockup */}
           <div className="relative z-20">
-            <UpiPhoneMockup />
+            <UpiPhoneMockup isMobile={isMobile} />
           </div>
         </div>
       </div>

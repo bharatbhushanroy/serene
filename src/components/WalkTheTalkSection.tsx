@@ -4,7 +4,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
-const WalkTheTalkSection = () => {
+interface WalkTheTalkSectionProps {
+  isMobile: boolean; // Add isMobile prop
+}
+
+const WalkTheTalkSection: React.FC<WalkTheTalkSectionProps> = ({ isMobile }) => {
   const personWalkVariants = {
     animate: {
       x: [0, 5, 0, -5, 0],
@@ -73,7 +77,7 @@ const WalkTheTalkSection = () => {
               r="200"
               fill="hsl(var(--fintech-orange-accent))"
               variants={sunVariants}
-              animate="animate"
+              animate={isMobile ? "initial" : "animate"} // Conditionally disable continuous animation
             />
 
             {/* Ground Line */}
@@ -91,7 +95,7 @@ const WalkTheTalkSection = () => {
             {/* Person */}
             <motion.g
               variants={personWalkVariants}
-              animate="animate"
+              animate={isMobile ? "initial" : "animate"} // Conditionally disable continuous animation
               transform="translate(200, 100)"
             >
               {/* Body */}
@@ -117,7 +121,7 @@ const WalkTheTalkSection = () => {
             {/* Dog */}
             <motion.g
               variants={dogWalkVariants}
-              animate="animate"
+              animate={isMobile ? "initial" : "animate"} // Conditionally disable continuous animation
               transform="translate(350, 250)"
             >
               {/* Body */}
@@ -141,7 +145,7 @@ const WalkTheTalkSection = () => {
                 strokeWidth="8"
                 strokeLinecap="round"
                 variants={dogTailVariants}
-                animate="animate"
+                animate={isMobile ? "initial" : "animate"} // Conditionally disable continuous animation
                 transform-origin="40px 110px"
               />
               {/* Collar */}

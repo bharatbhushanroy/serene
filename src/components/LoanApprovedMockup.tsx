@@ -6,11 +6,23 @@ import QickyLogo from './QickyLogo'; // Import the new QickyLogo component
 import { motion } from 'framer-motion'; // Import motion
 import { Progress } from '@/components/ui/progress'; // Import Progress component
 
-const LoanApprovedMockup = () => {
+interface LoanApprovedMockupProps {
+  isMobile: boolean; // Add isMobile prop
+}
+
+const LoanApprovedMockup: React.FC<LoanApprovedMockupProps> = ({ isMobile }) => {
   const mockupVariants = {
     initial: { opacity: 0, scale: 0.8, rotateY: 15 },
     animate: { opacity: 1, scale: 1, rotateY: 0, transition: { duration: 0.8, ease: "easeOut" } },
-    // Removed the 'float' variant to stop continuous animation
+    float: {
+      y: [0, -8, 0, 8, 0], // Reduced y movement
+      rotate: [0, 0.5, 0, -0.5, 0], // Reduced rotation
+      transition: {
+        duration: 18, // Increased duration for slower animation
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
+    },
   };
 
   return (
@@ -23,7 +35,7 @@ const LoanApprovedMockup = () => {
       }}
       variants={mockupVariants}
       initial="initial"
-      animate="animate" // Only animate to the final state
+      animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
     >
       <div className="flex flex-col items-center text-center">
         <QickyLogo size="md" /> {/* Use the new QickyLogo component */}

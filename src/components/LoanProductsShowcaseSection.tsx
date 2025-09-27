@@ -7,7 +7,11 @@ import { Card } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import LoanProductsPhoneMockup from './LoanProductsPhoneMockup'; // Import the new phone mockup
 
-const LoanProductsShowcaseSection = () => {
+interface LoanProductsShowcaseSectionProps {
+  isMobile: boolean; // Add isMobile prop
+}
+
+const LoanProductsShowcaseSection: React.FC<LoanProductsShowcaseSectionProps> = ({ isMobile }) => {
   const cardVariants = {
     initial: { opacity: 0, y: 50, scale: 0.8, rotate: 0 },
     animate: (i: number) => ({
@@ -54,7 +58,7 @@ const LoanProductsShowcaseSection = () => {
             )}
             variants={cardVariants}
             initial="initial"
-            whileInView={["animate", "float"]}
+            animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
             viewport={{ once: true, amount: 0.5 }}
             custom={0}
           >
@@ -70,7 +74,7 @@ const LoanProductsShowcaseSection = () => {
             )}
             variants={cardVariants}
             initial="initial"
-            whileInView={["animate", "float"]}
+            animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
             viewport={{ once: true, amount: 0.5 }}
             custom={1}
           >
@@ -86,7 +90,7 @@ const LoanProductsShowcaseSection = () => {
             )}
             variants={cardVariants}
             initial="initial"
-            whileInView={["animate", "float"]}
+            animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
             viewport={{ once: true, amount: 0.5 }}
             custom={2}
           >
@@ -102,7 +106,7 @@ const LoanProductsShowcaseSection = () => {
             )}
             variants={cardVariants}
             initial="initial"
-            whileInView={["animate", "float"]}
+            animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
             viewport={{ once: true, amount: 0.5 }}
             custom={3}
           >
@@ -112,7 +116,7 @@ const LoanProductsShowcaseSection = () => {
           </motion.div>
 
           {/* Central Phone Mockup */}
-          <LoanProductsPhoneMockup />
+          <LoanProductsPhoneMockup isMobile={isMobile} />
         </div>
       </div>
     </section>

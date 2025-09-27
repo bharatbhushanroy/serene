@@ -7,11 +7,23 @@ import { Card } from '@/components/ui/card';
 import { motion } from 'framer-motion'; // Import motion
 import { Link } from 'react-router-dom'; // Import Link
 
-const LoanProductsPhoneMockup = () => {
+interface LoanProductsPhoneMockupProps {
+  isMobile: boolean; // Add isMobile prop
+}
+
+const LoanProductsPhoneMockup: React.FC<LoanProductsPhoneMockupProps> = ({ isMobile }) => {
   const phoneVariants = {
     initial: { opacity: 0, scale: 0.8, rotateY: 15 },
     animate: { opacity: 1, scale: 1, rotateY: 0, transition: { duration: 0.8, ease: "easeOut" } },
-    // Removed the 'float' variant to stop continuous animation
+    float: {
+      y: [0, -5, 0, 5, 0],
+      rotate: [0, 0.5, 0, -0.5, 0],
+      transition: {
+        duration: 10,
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
+    },
   };
 
   return (
@@ -24,7 +36,7 @@ const LoanProductsPhoneMockup = () => {
       }}
       variants={phoneVariants}
       initial="initial"
-      animate="animate" // Only animate to the final state
+      animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
       whileInView="animate"
       viewport={{ once: true, amount: 0.5 }}
     >

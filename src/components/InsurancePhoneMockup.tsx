@@ -6,7 +6,11 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { motion } from 'framer-motion'; // Import motion
 
-const InsurancePhoneMockup = () => {
+interface InsurancePhoneMockupProps {
+  isMobile: boolean; // Add isMobile prop
+}
+
+const InsurancePhoneMockup: React.FC<InsurancePhoneMockupProps> = ({ isMobile }) => {
   const phoneVariants = {
     initial: { opacity: 0, scale: 0.8, rotateY: 15 },
     animate: { opacity: 1, scale: 1, rotateY: 0, transition: { duration: 0.8, ease: "easeOut" } },
@@ -31,7 +35,7 @@ const InsurancePhoneMockup = () => {
       }}
       variants={phoneVariants}
       initial="initial"
-      animate={["animate", "float"]}
+      animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
       whileInView="animate"
       viewport={{ once: true, amount: 0.5 }}
     >

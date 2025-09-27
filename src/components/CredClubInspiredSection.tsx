@@ -4,7 +4,37 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils'; // Assuming cn is available for utility classes
 
-const AnimatedSphere = ({ size, x, y, delay, duration, colorClass, innerColorClass, rotation }) => {
+interface AnimatedSphereProps {
+  size: string;
+  x: string;
+  y: string;
+  delay: number;
+  duration: number;
+  colorClass: string;
+  innerColorClass?: string;
+  rotation: number;
+  isMobile: boolean; // Add isMobile prop
+}
+
+const AnimatedSphere: React.FC<AnimatedSphereProps> = ({ size, x, y, delay, duration, colorClass, innerColorClass, rotation, isMobile }) => {
+  const sphereVariants = {
+    initial: { opacity: 0, scale: 0.5, rotate: 0 },
+    animate: {
+      opacity: [0.2, 0.4, 0.2], // Reduced opacity for better performance and subtlety
+      scale: [0.8, 1.05, 0.95, 1], // Slightly less extreme scale
+      x: [x, x + 20, x - 10, x], // Less pronounced movement
+      y: [y, y - 15, y + 10, y], // Less pronounced movement
+      rotate: [0, rotation, 0],
+      transition: {
+        duration: duration,
+        repeat: Infinity,
+        repeatType: "reverse",
+        ease: "easeInOut",
+        delay: delay,
+      },
+    },
+  };
+
   return (
     <motion.div
       className={cn(
@@ -20,22 +50,9 @@ const AnimatedSphere = ({ size, x, y, delay, duration, colorClass, innerColorCla
         transformStyle: 'preserve-3d',
         transformOrigin: 'center center',
       }}
-      initial={{ opacity: 0, scale: 0.5, rotate: 0 }}
-      whileInView={{
-        opacity: [0.2, 0.4, 0.2], // Reduced opacity for better performance and subtlety
-        scale: [0.8, 1.05, 0.95, 1], // Slightly less extreme scale
-        x: [x, x + 20, x - 10, x], // Less pronounced movement
-        y: [y, y - 15, y + 10, y], // Less pronounced movement
-        rotate: [0, rotation, 0],
-      }}
+      initial="initial"
+      animate={isMobile ? "initial" : "animate"} // Conditionally disable continuous animation
       viewport={{ once: true, amount: 0.5 }}
-      transition={{
-        duration: duration,
-        repeat: Infinity,
-        repeatType: "reverse",
-        ease: "easeInOut",
-        delay: delay,
-      }}
     >
       {innerColorClass && (
         <div className={cn("w-2/3 h-2/3 rounded-full", innerColorClass)} style={{ filter: 'blur(15px)' }}></div>
@@ -44,7 +61,11 @@ const AnimatedSphere = ({ size, x, y, delay, duration, colorClass, innerColorCla
   );
 };
 
-const CredClubInspiredSection = () => {
+interface CredClubInspiredSectionProps {
+  isMobile: boolean; // Add isMobile prop
+}
+
+const CredClubInspiredSection: React.FC<CredClubInspiredSectionProps> = ({ isMobile }) => {
   const titleVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -87,7 +108,7 @@ const CredClubInspiredSection = () => {
     <section className="relative w-full min-h-screen flex items-center justify-center py-20 px-6 md:px-12 lg:px-24 overflow-hidden bg-black text-white">
       {/* Animated Spheres Background */}
       {spheres.map((sphere, index) => (
-        <AnimatedSphere key={index} {...sphere} />
+        <AnimatedSphere key={index} {...sphere} isMobile={isMobile} />
       ))}
 
       {/* Content */}

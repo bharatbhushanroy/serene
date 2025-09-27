@@ -4,8 +4,29 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import TripleMobileMockup from './TripleMobileMockup'; // Import the TripleMobileMockup component
 import { Link } from 'react-router-dom'; // Import Link
+import { motion } from 'framer-motion'; // Import motion
 
-const TopUpLoansSection = () => {
+interface TopUpLoansSectionProps {
+  isMobile: boolean; // Add isMobile prop
+}
+
+const TopUpLoansSection: React.FC<TopUpLoansSectionProps> = ({ isMobile }) => {
+  const backgroundBlobVariants = {
+    animate: (i: number) => ({
+      y: [0, 50 + i * 10, 0],
+      x: [0, 30 + i * 5, 0],
+      scale: [0.8, 1.2, 0.8],
+      opacity: [0.1, 0.2, 0.1],
+      rotate: [0, 360, 0],
+      transition: {
+        duration: 20 + i * 5,
+        repeat: Infinity,
+        ease: "linear",
+        delay: i * 2,
+      },
+    }),
+  };
+
   return (
     <section className="relative py-20 bg-fintech-main-bg text-white overflow-hidden">
       <div className="container mx-auto px-6 flex flex-col lg:flex-row items-center justify-between">
@@ -36,14 +57,29 @@ const TopUpLoansSection = () => {
 
         {/* Right content - TripleMobileMockup */}
         <div className="relative lg:w-1/2 flex justify-center items-center z-10">
-          <TripleMobileMockup />
+          <TripleMobileMockup isMobile={isMobile} />
         </div>
       </div>
       {/* Background elements */}
       <div className="absolute inset-0 z-0 opacity-10">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-        <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-orange-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+        <motion.div
+          className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-70"
+          animate={isMobile ? "initial" : "animate"} // Conditionally disable continuous animation
+          variants={backgroundBlobVariants}
+          custom={0}
+        ></motion.div>
+        <motion.div
+          className="absolute top-1/2 right-1/4 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-70"
+          animate={isMobile ? "initial" : "animate"} // Conditionally disable continuous animation
+          variants={backgroundBlobVariants}
+          custom={1}
+        ></motion.div>
+        <motion.div
+          className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-orange-500 rounded-full mix-blend-multiply filter blur-xl opacity-70"
+          animate={isMobile ? "initial" : "animate"} // Conditionally disable continuous animation
+          variants={backgroundBlobVariants}
+          custom={2}
+        ></motion.div>
       </div>
     </section>
   );

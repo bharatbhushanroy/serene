@@ -17,9 +17,10 @@ interface IconCardProps {
   iconColor?: string;
   className?: string;
   delay?: number; // Added delay prop for staggered animation
+  isMobile: boolean; // Add isMobile prop
 }
 
-const IconCard: React.FC<IconCardProps> = ({ icon: Icon, text, backgroundClass = 'bg-fintech-dark-card-bg', textColor = 'text-fintech-dark-text-primary', iconColor = 'text-fintech-icon-orange', className, delay = 0 }) => (
+const IconCard: React.FC<IconCardProps> = ({ icon: Icon, text, backgroundClass = 'bg-fintech-dark-card-bg', textColor = 'text-fintech-dark-text-primary', iconColor = 'text-fintech-icon-orange', className, delay = 0, isMobile }) => (
   <motion.div
     className={cn("p-6 rounded-2xl flex flex-col items-center justify-center text-center h-full transform hover:scale-[1.05] transition-transform duration-300 hover:shadow-glow-orange", backgroundClass, className)}
     initial={{ opacity: 0, y: 30, rotateX: 10 }}
@@ -33,11 +34,23 @@ const IconCard: React.FC<IconCardProps> = ({ icon: Icon, text, backgroundClass =
 );
 
 // Custom Phone Mockup for this section
-const PhoneSimulatorMockup = () => {
+interface PhoneSimulatorMockupProps {
+  isMobile: boolean; // Add isMobile prop
+}
+
+const PhoneSimulatorMockup: React.FC<PhoneSimulatorMockupProps> = ({ isMobile }) => {
   const phoneVariants = {
     initial: { opacity: 0, scale: 0.8, rotateY: 15 },
     animate: { opacity: 1, scale: 1, rotateY: 0, transition: { duration: 0.8, ease: "easeOut" } },
-    // Removed the 'float' variant to stop continuous animation
+    float: {
+      y: [0, -5, 0, 5, 0],
+      rotate: [0, 0.5, 0, -0.5, 0],
+      transition: {
+        duration: 10,
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
+    },
   };
 
   return (
@@ -50,7 +63,7 @@ const PhoneSimulatorMockup = () => {
       }}
       variants={phoneVariants}
       initial="initial"
-      animate="animate" // Only animate to the final state
+      animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
     >
       {/* Notch */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-4 bg-black rounded-b-md z-10"></div>
@@ -77,7 +90,11 @@ const PhoneSimulatorMockup = () => {
   );
 };
 
-const MoneyForEverythingSection = () => {
+interface MoneyForEverythingSectionProps {
+  isMobile: boolean; // Add isMobile prop
+}
+
+const MoneyForEverythingSection: React.FC<MoneyForEverythingSectionProps> = ({ isMobile }) => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -98,13 +115,13 @@ const MoneyForEverythingSection = () => {
       {/* Animated Background Shapes */}
       <motion.div
         initial={{ opacity: 0, scale: 0.5, x: -100, y: -100 }}
-        animate={{ opacity: 0.1, scale: 1, x: 0, y: 0 }}
+        animate={isMobile ? "initial" : { opacity: 0.1, scale: 1, x: 0, y: 0 }} // Conditional animation
         transition={{ duration: 15, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
         className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-fintech-orange-accent/20 blur-3xl opacity-0"
       />
       <motion.div
         initial={{ opacity: 0, scale: 0.5, x: 100, y: 100 }}
-        animate={{ opacity: 0.08, scale: 1, x: 0, y: 0 }}
+        animate={isMobile ? "initial" : { opacity: 0.08, scale: 1, x: 0, y: 0 }} // Conditional animation
         transition={{ duration: 18, repeat: Infinity, repeatType: "reverse", ease: "easeInOut", delay: 2 }}
         className="absolute bottom-1/4 right-1/4 w-72 h-72 rounded-full bg-fintech-gradient-pink-start/20 blur-3xl opacity-0"
       />
@@ -150,12 +167,12 @@ const MoneyForEverythingSection = () => {
           </motion.div>
 
           {/* Grid of smaller Icon Cards */}
-          <IconCard icon={ShoppingBag} text="Daily Groceries" backgroundClass="bg-gradient-to-br from-fintech-gradient-purple-start to-fintech-gradient-pink-end" iconColor="text-white" textColor="text-white" delay={0.1} />
-          <IconCard icon={Book} text="Books & Education" backgroundClass="bg-gradient-to-br from-fintech-gradient-cyan-start to-fintech-gradient-blue-end" iconColor="text-white" textColor="text-white" delay={0.2} />
-          <IconCard icon={Fuel} text="Fuel & Transport" backgroundClass="bg-gradient-to-br from-fintech-gradient-pink-start to-fintech-gradient-cyan-end" iconColor="text-white" textColor="text-white" delay={0.3} />
-          <IconCard icon={Home} text="House Rent" backgroundClass="bg-gradient-to-br from-fintech-gradient-blue-start to-fintech-gradient-purple-end" iconColor="text-white" textColor="text-white" delay={0.4} />
-          <IconCard icon={Plane} text="Travel Expenses" backgroundClass="bg-gradient-to-br from-fintech-gradient-purple-start to-fintech-gradient-cyan-end" iconColor="text-white" textColor="text-white" delay={0.5} />
-          <IconCard icon={Banknote} text="Get up to ₹ 20,000" iconColor="text-white" backgroundClass="bg-gradient-to-br from-fintech-orange-accent to-fintech-dashboard-accent-red" textColor="text-white" delay={0.6} />
+          <IconCard icon={ShoppingBag} text="Daily Groceries" backgroundClass="bg-gradient-to-br from-fintech-gradient-purple-start to-fintech-gradient-pink-end" iconColor="text-white" textColor="text-white" delay={0.1} isMobile={isMobile} />
+          <IconCard icon={Book} text="Books & Education" backgroundClass="bg-gradient-to-br from-fintech-gradient-cyan-start to-fintech-gradient-blue-end" iconColor="text-white" textColor="text-white" delay={0.2} isMobile={isMobile} />
+          <IconCard icon={Fuel} text="Fuel & Transport" backgroundClass="bg-gradient-to-br from-fintech-gradient-pink-start to-fintech-gradient-cyan-end" iconColor="text-white" textColor="text-white" delay={0.3} isMobile={isMobile} />
+          <IconCard icon={Home} text="House Rent" backgroundClass="bg-gradient-to-br from-fintech-gradient-blue-start to-fintech-gradient-purple-end" iconColor="text-white" textColor="text-white" delay={0.4} isMobile={isMobile} />
+          <IconCard icon={Plane} text="Travel Expenses" backgroundClass="bg-gradient-to-br from-fintech-gradient-purple-start to-fintech-gradient-cyan-end" iconColor="text-white" textColor="text-white" delay={0.5} isMobile={isMobile} />
+          <IconCard icon={Banknote} text="Get up to ₹ 20,000" iconColor="text-white" backgroundClass="bg-gradient-to-br from-fintech-orange-accent to-fintech-dashboard-accent-red" textColor="text-white" delay={0.6} isMobile={isMobile} />
         </div>
 
         {/* Phone Simulator Mockup with CTA */}
@@ -163,7 +180,7 @@ const MoneyForEverythingSection = () => {
           {/* Background grid pattern */}
           <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
           <div className="relative z-10 flex justify-center lg:justify-end">
-            <PhoneSimulatorMockup />
+            <PhoneSimulatorMockup isMobile={isMobile} />
           </div>
           <div className="relative z-10 text-center lg:text-left">
             <h3 className="text-4xl font-bold text-white mb-4 leading-tight">

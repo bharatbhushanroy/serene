@@ -7,7 +7,11 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import LoanApprovedMockup from './LoanApprovedMockup'; // Keep this mockup
 
-const QuickLoansFeaturesSection = () => {
+interface QuickLoansFeaturesSectionProps {
+  isMobile: boolean; // Add isMobile prop
+}
+
+const QuickLoansFeaturesSection: React.FC<QuickLoansFeaturesSectionProps> = ({ isMobile }) => {
   const features = [
     "Instant Personal loans up to ₹5,00,000",
     "Disbursement in 5 minutes",
@@ -79,7 +83,7 @@ const QuickLoansFeaturesSection = () => {
 
         {/* Right Content Area: Loan Approved Mockup */}
         <div className="relative w-full max-w-md h-96 flex items-center justify-center lg:justify-end">
-          <LoanApprovedMockup />
+          <LoanApprovedMockup isMobile={isMobile} />
         </div>
       </div>
     </section>

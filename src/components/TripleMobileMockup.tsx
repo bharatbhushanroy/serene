@@ -7,10 +7,23 @@ import { User, Gift, QrCode, Smartphone, Landmark, Banknote, ArrowRight, BarChar
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
-const TripleMobileMockup = () => {
+interface TripleMobileMockupProps {
+  isMobile: boolean; // Add isMobile prop
+}
+
+const TripleMobileMockup: React.FC<TripleMobileMockupProps> = ({ isMobile }) => {
   const phoneVariants = {
     initial: { opacity: 0, scale: 0.8, rotateY: 15 },
     animate: { opacity: 1, scale: 1, rotateY: 0, transition: { duration: 0.8, ease: "easeOut" } },
+    float: {
+      y: [0, -5, 0, 5, 0],
+      rotate: [0, 0.5, 0, -0.5, 0],
+      transition: {
+        duration: 10,
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
+    },
   };
 
   const mockups = [
@@ -181,7 +194,7 @@ const TripleMobileMockup = () => {
           }}
           variants={phoneVariants}
           initial="initial"
-          animate="animate"
+          animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
           whileInView="animate"
           viewport={{ once: true, amount: 0.5 }}
           transition={{ delay: index * 0.1 }}

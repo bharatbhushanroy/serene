@@ -33,6 +33,16 @@ const CreditCardMockup: React.FC<CreditCardMockupProps> = ({
         ease: "easeOut",
       },
     },
+    // Define a float animation if it's meant to float on desktop
+    float: {
+      y: [0, 5, 0, -5, 0],
+      rotate: [0, 1, 0, -1, 0],
+      transition: {
+        duration: 10,
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
+    },
   };
 
   return (
@@ -40,7 +50,6 @@ const CreditCardMockup: React.FC<CreditCardMockupProps> = ({
       className={cn(
         "relative w-64 h-40 rounded-xl shadow-lg p-5 flex flex-col justify-between text-white",
         colorClass,
-        !isMobile && animationClass, // Conditionally apply animationClass
       )}
       style={{
         transformStyle: 'preserve-3d',
@@ -49,7 +58,7 @@ const CreditCardMockup: React.FC<CreditCardMockupProps> = ({
       }}
       variants={cardVariants}
       initial="initial"
-      animate="animate" // Only animate to the final state
+      animate={isMobile ? "animate" : ["animate", "float"]} // Conditional animation
     >
       {/* Chip */}
       <div className="w-10 h-8 bg-fintech-card-chip-yellow rounded-md shadow-inner relative overflow-hidden">
