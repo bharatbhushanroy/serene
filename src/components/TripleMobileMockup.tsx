@@ -30,7 +30,7 @@ const TripleMobileMockup: React.FC<TripleMobileMockupProps> = () => {
     {
       id: 1, // Left phone (behind)
       className: "rotate-[-12deg] translate-x-[-35%] z-10 w-[220px] h-[440px]", // Increased size and translation
-      content: (
+      content: () => ( // Wrapped JSX in a function
         <div className="relative w-full h-full bg-[#1A1A1A] rounded-[24px] overflow-hidden flex flex-col">
           {/* Top Bar */}
           <div className="flex items-center justify-between p-3 bg-[#1A1A1A] text-white">
@@ -57,7 +57,7 @@ const TripleMobileMockup: React.FC<TripleMobileMockupProps> = () => {
     {
       id: 2, // Central phone (main)
       className: "z-20 w-[250px] h-[500px]",
-      content: (
+      content: () => ( // Wrapped JSX in a function
         <div className="relative w-full h-full bg-[#1A1A1A] rounded-[24px] overflow-hidden flex flex-col">
           {/* Top Bar */}
           <div className="flex items-center justify-between p-3 bg-[#1A1A1A] text-white">
@@ -142,7 +142,6 @@ const TripleMobileMockup: React.FC<TripleMobileMockupProps> = () => {
                 <p className="text-xs text-gray-400">Check now</p>
               </div>
               <img src="/public/placeholder.svg" alt="Credit score" className="h-8 w-8" width={32} height={32} loading="lazy" /> {/* Added width/height and lazy loading */}
-            </Link>
             </div>
           </div>
         </div>
@@ -151,7 +150,7 @@ const TripleMobileMockup: React.FC<TripleMobileMockupProps> = () => {
     {
       id: 3, // Right phone (behind)
       className: "rotate-[12deg] translate-x-[35%] z-10 w-[220px] h-[440px]", // Increased size and translation
-      content: (
+      content: () => ( // Wrapped JSX in a function
         <div className="relative w-full h-full bg-[#1A1A1A] rounded-[24px] overflow-hidden flex flex-col">
           {/* Top Bar */}
           <div className="flex items-center justify-between p-3 bg-[#1A1A1A] text-white">
@@ -201,7 +200,7 @@ const TripleMobileMockup: React.FC<TripleMobileMockupProps> = () => {
           {/* Notch */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/5 h-5 bg-black rounded-b-xl z-10"></div>
           {/* Screen Content */}
-          {mockup.content}
+          {mockup.content()} {/* Call the function to render JSX */}
         </motion.div>
       ))}
     </div>
