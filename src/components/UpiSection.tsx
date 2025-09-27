@@ -40,7 +40,8 @@ const UpiSection = () => {
       subtitle: "Scan & Pay with UPI",
       gradient: "bg-gradient-to-br from-fintech-blue-accent to-fintech-gradient-purple-start",
       delay: 0,
-      positionClasses: "top-[10%] left-[5%] md:top-[15%] md:left-[10%] lg:top-[15%] lg:left-[15%]",
+      // Adjusted positioning to spread cards further out
+      positionClasses: "top-[15%] left-[5%] md:top-[20%] md:left-[10%] lg:top-[25%] lg:left-[15%]",
     },
     {
       icon: Zap,
@@ -48,7 +49,8 @@ const UpiSection = () => {
       subtitle: "24/7 Instant Transfer",
       gradient: "bg-gradient-to-br from-fintech-gradient-pink-start to-fintech-gradient-cyan-end",
       delay: 0.1,
-      positionClasses: "top-[10%] right-[5%] md:top-[15%] md:right-[10%] lg:top-[15%] lg:right-[15%]",
+      // Adjusted positioning to spread cards further out
+      positionClasses: "top-[15%] right-[5%] md:top-[20%] md:right-[10%] lg:top-[25%] lg:right-[15%]",
     },
     {
       icon: CreditCard,
@@ -56,7 +58,8 @@ const UpiSection = () => {
       subtitle: "Credit on UPI with RuPay",
       gradient: "bg-gradient-to-br from-fintech-orange-accent to-fintech-peach-background",
       delay: 0.2,
-      positionClasses: "bottom-[10%] left-[5%] md:bottom-[15%] md:left-[10%] lg:bottom-[15%] lg:left-[15%]",
+      // Adjusted positioning to spread cards further out
+      positionClasses: "bottom-[15%] left-[5%] md:bottom-[20%] md:left-[10%] lg:bottom-[25%] lg:left-[15%]",
     },
     {
       icon: ShieldCheck,
@@ -64,7 +67,8 @@ const UpiSection = () => {
       subtitle: "Secured Transactions",
       gradient: "bg-gradient-to-br from-fintech-green-success to-fintech-cyan-light",
       delay: 0.3,
-      positionClasses: "bottom-[10%] right-[5%] md:bottom-[15%] md:right-[10%] lg:bottom-[15%] lg:right-[15%]",
+      // Adjusted positioning to spread cards further out
+      positionClasses: "bottom-[15%] right-[5%] md:bottom-[20%] md:right-[10%] lg:bottom-[25%] lg:right-[15%]",
     },
   ];
 
