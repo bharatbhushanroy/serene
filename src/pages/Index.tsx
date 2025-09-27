@@ -20,7 +20,8 @@ import LoanProductsSection from "@/components/LoanProductsSection";
 import LoanProductsShowcaseSection from "@/components/LoanProductsShowcaseSection";
 import CredClubInspiredSection from "@/components/CredClubInspiredSection";
 import DataSecuritySection from "@/components/DataSecuritySection";
-import UpiSection from "@/components/UpiSection"; // New import
+import UpiSection from "@/components/UpiSection";
+import AllInOneFinancialAppSection from "@/components/AllInOneFinancialAppSection"; // New import
 import { Helmet } from 'react-helmet-async';
 
 const Index = () => {
@@ -34,15 +35,16 @@ const Index = () => {
       <main>
         {/* HeroCarousel already contains the primary h1 for the page */}
         <HeroCarousel />
-        <UpiSection /> {/* Moved the new UPI section here */}
+        <AllInOneFinancialAppSection /> {/* New section added here */}
+        <UpiSection />
         <CredClubInspiredSection />
         <TopUpLoansSection />
         <ProductsSection />
         <QuickLoansFeaturesSection />
         <FeaturesSection />
-        <HowItWorksSection /> {/* Moved HowItWorksSection here, directly after FeaturesSection */}
+        <HowItWorksSection />
         <InteractiveLoanSimulatorSection />
-        <InsuranceSection /> {/* Now below UpiSection */}
+        <InsuranceSection />
         <LoanProductsShowcaseSection />
         <LoanProductsSection />
         <ApplyStepsSection />
