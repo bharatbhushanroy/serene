@@ -1,6 +1,6 @@
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import Header from "@/components/Header";
-import HeroSection from "@/components/HeroSection"; // Import the new HeroSection
+import HeroCarousel from "@/components/HeroCarousel"; // Re-import the HeroCarousel
 import MoneyForEverythingSection from "@/components/MoneyForEverythingSection";
 import ApplyStepsSection from "@/components/ApplyStepsSection";
 import FeaturesSection from "@/components/FeaturesSection";
@@ -33,8 +33,8 @@ const Index = () => {
       </Helmet>
       <Header />
       <main>
-        <HeroSection /> {/* New Hero Section */}
-        <QuickLoansFeaturesSection /> {/* This section is now directly below the new hero */}
+        <HeroCarousel /> {/* Re-added the HeroCarousel */}
+        <QuickLoansFeaturesSection />
         <ProductsSection />
         <HowItWorksSection />
         <FeaturesSection />
