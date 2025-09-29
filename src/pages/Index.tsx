@@ -1,6 +1,6 @@
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import Header from "@/components/Header";
-import HeroCarousel from "@/components/HeroCarousel";
+import HeroSection from "@/components/HeroSection"; // Import the new HeroSection
 import MoneyForEverythingSection from "@/components/MoneyForEverythingSection";
 import ApplyStepsSection from "@/components/ApplyStepsSection";
 import FeaturesSection from "@/components/FeaturesSection";
@@ -23,11 +23,8 @@ import DataSecuritySection from "@/components/DataSecuritySection";
 import UpiSection from "@/components/UpiSection";
 import AllInOneFinancialAppSection from "@/components/AllInOneFinancialAppSection";
 import { Helmet } from 'react-helmet-async';
-import { useIsMobile } from "@/hooks/use-mobile"; // Import useIsMobile
 
 const Index = () => {
-  const isMobile = useIsMobile(); // Get mobile state
-
   return (
     <div className="min-h-screen bg-fintech-background-light text-fintech-text-dark">
       <Helmet>
@@ -36,8 +33,8 @@ const Index = () => {
       </Helmet>
       <Header />
       <main>
-        <HeroCarousel />
-        <QuickLoansFeaturesSection />
+        <HeroSection /> {/* New Hero Section */}
+        <QuickLoansFeaturesSection /> {/* This section is now directly below the new hero */}
         <ProductsSection />
         <HowItWorksSection />
         <FeaturesSection />

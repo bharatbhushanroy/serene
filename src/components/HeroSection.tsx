@@ -1,18 +1,15 @@
-import React, { useState } from 'react';
+"use client";
+
+import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AnimatedBackgroundShapes from './AnimatedBackgroundShapes';
-import { motion } from 'framer-motion'; // Import motion from framer-motion
-import LoanApprovedMockup from './LoanApprovedMockup'; // Import the new LoanApprovedMockup component
+import { motion } from 'framer-motion';
+import LoanApprovedMockup from './LoanApprovedMockup';
+import { cn } from '@/lib/utils';
 
-interface HeroSectionProps {
-  // isMobile: boolean; // Removed isMobile prop
-}
-
-const HeroSection: React.FC<HeroSectionProps> = () => {
-  const [showCookieBanner, setShowCookieBanner] = useState(true);
-
+const HeroSection: React.FC = () => {
   const features = [
     "Instant Personal loans up to ₹5,00,000",
     "Disbursement in 5 minutes",
@@ -32,6 +29,18 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  };
+
+  const gradientTextVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
   };
 
   return (
@@ -54,13 +63,19 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
             </span>
             Instant Approvals Available
           </motion.div>
-          <motion.h1 variants={itemVariants} className="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-4">
-            Quick Loans for <span className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-transparent bg-clip-text">Every Need</span>
+          <motion.h1 variants={containerVariants} initial="hidden" animate="visible" className="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-4">
+            <motion.span variants={itemVariants}>Quick Loans for </motion.span>
+            <motion.span
+              variants={gradientTextVariants}
+              className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-transparent bg-clip-text bg-[length:200%_auto] animate-gradient-flow"
+            >
+              Every Need
+            </motion.span>
           </motion.h1>
-          <motion.p variants={itemVariants} className="text-lg text-gray-300 mb-8 max-w-xl">
+          <motion.p variants={itemVariants} initial="hidden" animate="visible" className="text-lg text-gray-300 mb-8 max-w-xl">
             Get instant access to personal loans with flexible repayment options, competitive interest rates, and a seamless digital experience.
           </motion.p>
-          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-8">
+          <motion.div variants={itemVariants} initial="hidden" animate="visible" className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-8">
             <Link to="/apply-loan">
               <Button className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-all duration-300 hover:shadow-glow-blue group">
                 Apply Now <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -101,22 +116,6 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
           />
         </div>
       </div>
-
-      {/* Cookie Consent Banner */}
-      {showCookieBanner && (
-        <div className="absolute bottom-0 left-0 right-0 bg-gray-900/90 backdrop-blur-sm p-4 flex flex-col md:flex-row items-center justify-between text-gray-200 text-sm border-t border-gray-800">
-          <div className="flex items-center mb-2 md:mb-0">
-            <span className="mr-2 text-fintech-blue-accent">🍪</span>
-            <p>
-              We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.
-            </p>
-          </div>
-          <div className="flex space-x-2">
-            <Button variant="outline" className="border-gray-700 text-gray-200 hover:bg-gray-800" onClick={() => setShowCookieBanner(false)}>Decline</Button>
-            <Button className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white hover:opacity-90" onClick={() => setShowCookieBanner(false)}>Accept All</Button>
-          </div>
-        </div>
-      )}
     </section>
   );
 };
