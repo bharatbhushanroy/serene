@@ -2,122 +2,160 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Home, Gem, CreditCard, BarChart, ArrowRight } from 'lucide-react';
-import { Card } from '@/components/ui/card';
-import { cn } from '@/lib/utils';
-import LoanProductsPhoneMockup from './LoanProductsPhoneMockup'; // Import the new phone mockup
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { PhoneMockup } from '@/components/PhoneMockup';
+import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 
-interface LoanProductsShowcaseSectionProps {
-  // isMobile: boolean; // Removed isMobile prop
-}
-
-const LoanProductsShowcaseSection: React.FC<LoanProductsShowcaseSectionProps> = () => {
+const LoanProductsShowcaseSection: React.FC = () => {
   const cardVariants = {
-    initial: { opacity: 0, y: 50, scale: 0.8, rotate: 0 },
-    animate: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      rotate: i % 2 === 0 ? -5 : 5, // Alternate rotation
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-        delay: i * 0.1,
-      },
-    }),
-    float: (i: number) => ({
-      y: [0, 15, 0, -15, 0],
-      x: [0, i * 5, 0, -i * 5, 0],
-      rotate: [i % 2 === 0 ? -5 : 5, i % 2 === 0 ? -7 : 7, i % 2 === 0 ? -5 : 5, i % 2 === 0 ? -3 : 3, i % 2 === 0 ? -5 : 5],
-      transition: {
-        duration: 10 + i * 2,
-        repeat: Infinity,
-        ease: "easeInOut",
-        delay: i * 0.5,
-      },
-    }),
+    initial: { opacity: 0, scale: 0.8, y: 20 },
+    animate: { opacity: 1, scale: 1, y: 0 },
+    hover: { scale: 1.05, boxShadow: "0 10px 20px rgba(0,0,0,0.2)" },
   };
 
   return (
-    <section className="relative w-full py-20 px-6 md:px-12 lg:px-24 bg-fintech-main-bg text-white overflow-hidden">
-      <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
-          Explore Our <span className="text-white lg:bg-gradient-to-r lg:from-fintech-button-primary-gradient-start lg:to-fintech-button-primary-gradient-end lg:text-transparent lg:bg-clip-text">Financial Products</span>
-        </h2>
-        <p className="text-lg text-fintech-text-muted mb-12 max-w-2xl mx-auto">
-          Discover a wide range of loan options and credit solutions tailored to your needs.
-        </p>
+    <section className="relative py-16 md:py-24 bg-fintech-main-bg text-white overflow-hidden">
+      <div className="container mx-auto px-6 md:px-12 text-center">
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-5xl font-extrabold mb-4 leading-tight bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-transparent bg-clip-text"
+        >
+          Explore Our Diverse Loan Products
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-lg md:text-xl text-gray-300 mb-12 max-w-3xl mx-auto"
+        >
+          From personal loans to business financing, we have a solution tailored for your unique needs.
+        </motion.p>
 
         <div className="relative flex items-center justify-center w-full h-[700px] lg:h-[800px]">
           {/* Floating Cards */}
           {/* Top-Left Card: Loan against Mutual Fund */}
           <motion.div
-            className={cn(
-              "absolute top-[20%] left-[15%] bg-gradient-to-br from-fintech-blue-accent to-fintech-gradient-purple-start p-4 rounded-xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-white z-10", // Changed z-index to 10
-              "lg:shadow-2xl lg:shadow-fintech-blue-accent/20 lg:border" // Apply shadow and border only on large screens
-            )}
+            className="absolute top-10 left-1/2 -translate-x-1/2 lg:top-20 lg:left-1/4 lg:-translate-x-1/2 w-72 md:w-80 bg-fintech-card-bg rounded-xl shadow-lg p-6 border border-fintech-border-light z-20" // Added z-20
             variants={cardVariants}
             initial="initial"
-            animate={["animate", "float"]} // Animations will now run on all devices
-            viewport={{ once: true, amount: 0.5 }}
-            custom={0}
+            whileInView="animate"
+            whileHover="hover"
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <BarChart className="h-7 w-7 md:h-8 md:w-8 text-white mb-1" />
-            <p className="text-base md:text-lg font-semibold">Mutual Fund Loan</p>
-            <p className="text-xs md:text-sm text-white/80">Leverage investments</p>
-          </motion.div>
-          {/* Top-Right Card: Home Loan */}
-          <motion.div
-            className={cn(
-              "absolute top-[20%] right-[15%] bg-gradient-to-br from-fintech-blue-accent to-fintech-gradient-purple-start p-4 rounded-xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-white z-10", // Changed z-index to 10
-              "lg:shadow-2xl lg:shadow-fintech-blue-accent/20 lg:border" // Apply shadow and border only on large screens
-            )}
-            variants={cardVariants}
-            initial="initial"
-            animate={["animate", "float"]} // Animations will now run on all devices
-            viewport={{ once: true, amount: 0.5 }}
-            custom={1}
-          >
-            <Home className="h-7 w-7 md:h-8 md:w-8 text-white mb-1" />
-            <p className="text-base md:text-lg font-semibold">Home Loan</p>
-            <p className="text-xs md:text-sm text-white/80">Your dream home</p>
-          </motion.div>
-          {/* Bottom-Left Card: Gold Loan */}
-          <motion.div
-            className={cn(
-              "absolute bottom-[20%] left-[15%] bg-gradient-to-br from-fintech-blue-accent to-fintech-gradient-purple-start p-4 rounded-xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-white z-10", // Changed z-index to 10
-              "lg:shadow-2xl lg:shadow-fintech-blue-accent/20 lg:border" // Apply shadow and border only on large screens
-            )}
-            variants={cardVariants}
-            initial="initial"
-            animate={["animate", "float"]} // Animations will now run on all devices
-            viewport={{ once: true, amount: 0.5 }}
-            custom={2}
-          >
-            <Gem className="h-7 w-7 md:h-8 md:w-8 text-white mb-1" />
-            <p className="text-base md:text-lg font-semibold">Gold Loan</p>
-            <p className="text-xs md:text-sm text-white/80">Quick funds against gold</p>
-          </motion.div>
-          {/* Bottom-Right Card: Credit Cards */}
-          <motion.div
-            className={cn(
-              "absolute bottom-[20%] right-[15%] bg-gradient-to-br from-fintech-blue-accent to-fintech-gradient-purple-start p-4 rounded-xl text-center w-[140px] h-[140px] md:w-[160px] md:h-[160px] lg:w-[180px] lg:h-[180px] flex flex-col items-center justify-center text-white z-10", // Changed z-index to 10
-              "lg:shadow-2xl lg:shadow-fintech-blue-accent/20 lg:border" // Apply shadow and border only on large screens
-            )}
-            variants={cardVariants}
-            initial="initial"
-            animate={["animate", "float"]} // Animations will now run on all devices
-            viewport={{ once: true, amount: 0.5 }}
-            custom={3}
-          >
-            <CreditCard className="h-7 w-7 md:h-8 md:w-8 text-white mb-1" />
-            <p className="text-base md:text-lg font-semibold">Credit Cards</p>
-            <p className="text-xs md:text-sm text-white/80">Exclusive offers</p>
+            <Card className="bg-transparent border-none shadow-none text-left">
+              <CardHeader className="p-0 mb-4">
+                <CardTitle className="text-xl font-semibold text-fintech-text-light">Loan against Mutual Fund</CardTitle>
+              </CardHeader>
+              <CardContent className="p-0">
+                <p className="text-gray-400 text-sm mb-4">Unlock liquidity from your mutual fund investments without selling them.</p>
+                <Link to="/loan-against-mutual-fund" className="text-fintech-blue-accent hover:underline flex items-center text-sm font-medium">
+                  Learn More <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
+              </CardContent>
+            </Card>
           </motion.div>
 
-          {/* Central Phone Mockup */}
-          <LoanProductsPhoneMockup />
+          {/* Bottom-Left Card: Personal Loan */}
+          <motion.div
+            className="absolute bottom-10 left-1/2 -translate-x-1/2 lg:bottom-20 lg:left-1/4 lg:-translate-x-1/2 w-72 md:w-80 bg-fintech-card-bg rounded-xl shadow-lg p-6 border border-fintech-border-light z-20" // Added z-20
+            variants={cardVariants}
+            initial="initial"
+            whileInView="animate"
+            whileHover="hover"
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <Card className="bg-transparent border-none shadow-none text-left">
+              <CardHeader className="p-0 mb-4">
+                <CardTitle className="text-xl font-semibold text-fintech-text-light">Personal Loan</CardTitle>
+              </CardHeader>
+              <CardContent className="p-0">
+                <p className="text-gray-400 text-sm mb-4">Get quick funds for any personal need, from emergencies to dream vacations.</p>
+                <Link to="/personal-loan" className="text-fintech-blue-accent hover:underline flex items-center text-sm font-medium">
+                  Learn More <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
+              </CardContent>
+            </Card>
+          </motion.div>
+
+          {/* Top-Right Card: Business Loan */}
+          <motion.div
+            className="absolute top-10 right-1/2 translate-x-1/2 lg:top-20 lg:right-1/4 lg:translate-x-1/2 w-72 md:w-80 bg-fintech-card-bg rounded-xl shadow-lg p-6 border border-fintech-border-light z-20" // Added z-20
+            variants={cardVariants}
+            initial="initial"
+            whileInView="animate"
+            whileHover="hover"
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
+            <Card className="bg-transparent border-none shadow-none text-left">
+              <CardHeader className="p-0 mb-4">
+                <CardTitle className="text-xl font-semibold text-fintech-text-light">Business Loan</CardTitle>
+              </CardHeader>
+              <CardContent className="p-0">
+                <p className="text-gray-400 text-sm mb-4">Fuel your business growth with flexible and accessible business loans.</p>
+                <Link to="/business-loan" className="text-fintech-blue-accent hover:underline flex items-center text-sm font-medium">
+                  Learn More <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
+              </CardContent>
+            </Card>
+          </motion.div>
+
+          {/* Bottom-Right Card: Home Loan */}
+          <motion.div
+            className="absolute bottom-10 right-1/2 translate-x-1/2 lg:bottom-20 lg:right-1/4 lg:translate-x-1/2 w-72 md:w-80 bg-fintech-card-bg rounded-xl shadow-lg p-6 border border-fintech-border-light z-20" // Added z-20
+            variants={cardVariants}
+            initial="initial"
+            whileInView="animate"
+            whileHover="hover"
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+          >
+            <Card className="bg-transparent border-none shadow-none text-left">
+              <CardHeader className="p-0 mb-4">
+                <CardTitle className="text-xl font-semibold text-fintech-text-light">Home Loan</CardTitle>
+              </CardHeader>
+              <CardContent className="p-0">
+                <p className="text-gray-400 text-sm mb-4">Achieve your dream of homeownership with our competitive home loan options.</p>
+                <Link to="/home-loan" className="text-fintech-blue-accent hover:underline flex items-center text-sm font-medium">
+                  Learn More <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
+              </CardContent>
+            </Card>
+          </motion.div>
+
+          {/* Phone Mockup */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="relative z-10" // Ensure phone mockup has a lower z-index
+          >
+            <PhoneMockup />
+          </motion.div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6, delay: 1 }}
+          className="mt-16"
+        >
+          <Link to="/all-products">
+            <Button className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-all duration-300 hover:shadow-glow-blue group">
+              View All Products <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
