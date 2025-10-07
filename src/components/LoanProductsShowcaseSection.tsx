@@ -2,9 +2,9 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+// Removed Card, CardContent, CardHeader, CardTitle imports as they are no longer used for floating cards
 import LoanProductsPhoneMockup from '@/components/LoanProductsPhoneMockup';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, QrCode, Zap, CreditCard, ShieldCheck } from 'lucide-react'; // Added new icons
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
@@ -39,9 +39,9 @@ const LoanProductsShowcaseSection: React.FC = () => {
 
         <div className="relative flex items-center justify-center w-full h-[700px] lg:h-[800px]">
           {/* Floating Cards */}
-          {/* Top-Left Card: Loan against Mutual Fund */}
+          {/* Top-Left Card: Scan & Pay */}
           <motion.div
-            className="absolute top-10 left-1/2 -translate-x-1/2 lg:top-40 lg:left-[25%] lg:-translate-x-1/2 w-72 md:w-80 bg-fintech-card-bg rounded-xl shadow-lg p-6 border border-fintech-border-light z-20"
+            className="absolute top-[15%] left-1/2 -translate-x-1/2 lg:top-[15%] lg:left-[10%] w-72 md:w-80 rounded-xl shadow-lg p-6 z-20 bg-gradient-to-br from-[#8B5CF6] to-[#6366F1] transform -rotate-12 text-white flex flex-col items-start justify-center"
             variants={cardVariants}
             initial="initial"
             whileInView="animate"
@@ -49,22 +49,13 @@ const LoanProductsShowcaseSection: React.FC = () => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <Card className="bg-transparent border-none shadow-none text-left">
-              <CardHeader className="p-0 mb-4">
-                <CardTitle className="text-xl font-semibold text-fintech-text-light">Loan against Mutual Fund</CardTitle>
-              </CardHeader>
-              <CardContent className="p-0">
-                <p className="text-gray-400 text-sm mb-4">Unlock liquidity from your mutual fund investments without selling them.</p>
-                <Link to="/loan-against-mutual-fund" className="text-fintech-blue-accent hover:underline flex items-center text-sm font-medium">
-                  Learn More <ArrowRight className="ml-1 h-4 w-4" />
-                </Link>
-              </CardContent>
-            </Card>
+            <QrCode className="h-10 w-10 mb-4" />
+            <p className="text-xl font-semibold leading-tight">Anytime Anywhere Scan & Pay with UPI</p>
           </motion.div>
 
-          {/* Bottom-Left Card: Personal Loan */}
+          {/* Bottom-Left Card: Credit on UPI */}
           <motion.div
-            className="absolute bottom-10 left-1/2 -translate-x-1/2 lg:bottom-40 lg:left-[25%] lg:-translate-x-1/2 w-72 md:w-80 bg-fintech-card-bg rounded-xl shadow-lg p-6 border border-fintech-border-light z-20"
+            className="absolute bottom-[15%] left-1/2 -translate-x-1/2 lg:bottom-[15%] lg:left-[10%] w-72 md:w-80 rounded-xl shadow-lg p-6 z-20 bg-gradient-to-br from-[#F59E0B] to-[#FBBF24] transform rotate-12 text-white flex flex-col items-start justify-center"
             variants={cardVariants}
             initial="initial"
             whileInView="animate"
@@ -72,22 +63,13 @@ const LoanProductsShowcaseSection: React.FC = () => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <Card className="bg-transparent border-none shadow-none text-left">
-              <CardHeader className="p-0 mb-4">
-                <CardTitle className="text-xl font-semibold text-fintech-text-light">Personal Loan</CardTitle>
-              </CardHeader>
-              <CardContent className="p-0">
-                <p className="text-gray-400 text-sm mb-4">Get quick funds for any personal need, from emergencies to dream vacations.</p>
-                <Link to="/personal-loan" className="text-fintech-blue-accent hover:underline flex items-center text-sm font-medium">
-                  Learn More <ArrowRight className="ml-1 h-4 w-4" />
-                </Link>
-              </CardContent>
-            </Card>
+            <CreditCard className="h-10 w-10 mb-4" />
+            <p className="text-xl font-semibold leading-tight">Pay Using Credit on UPI with RuPay</p>
           </motion.div>
 
-          {/* Top-Right Card: Business Loan */}
+          {/* Top-Right Card: Instant Transfer */}
           <motion.div
-            className="absolute top-10 right-1/2 translate-x-1/2 lg:top-40 lg:right-[25%] lg:translate-x-1/2 w-72 md:w-80 bg-fintech-card-bg rounded-xl shadow-lg p-6 border border-fintech-border-light z-20"
+            className="absolute top-[15%] right-1/2 translate-x-1/2 lg:top-[15%] lg:right-[10%] w-72 md:w-80 rounded-xl shadow-lg p-6 z-20 bg-gradient-to-br from-[#EC4899] to-[#3B82F6] transform rotate-12 text-white flex flex-col items-start justify-center"
             variants={cardVariants}
             initial="initial"
             whileInView="animate"
@@ -95,22 +77,13 @@ const LoanProductsShowcaseSection: React.FC = () => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            <Card className="bg-transparent border-none shadow-none text-left">
-              <CardHeader className="p-0 mb-4">
-                <CardTitle className="text-xl font-semibold text-fintech-text-light">Business Loan</CardTitle>
-              </CardHeader>
-              <CardContent className="p-0">
-                <p className="text-gray-400 text-sm mb-4">Fuel your business growth with flexible and accessible business loans.</p>
-                <Link to="/business-loan" className="text-fintech-blue-accent hover:underline flex items-center text-sm font-medium">
-                  Learn More <ArrowRight className="ml-1 h-4 w-4" />
-                </Link>
-              </CardContent>
-            </Card>
+            <Zap className="h-10 w-10 mb-4" />
+            <p className="text-xl font-semibold leading-tight">Fast & Reliable 24/7 Instant Transfer</p>
           </motion.div>
 
-          {/* Bottom-Right Card: Home Loan */}
+          {/* Bottom-Right Card: Secured Transactions */}
           <motion.div
-            className="absolute bottom-10 right-1/2 translate-x-1/2 lg:bottom-40 lg:right-[25%] lg:translate-x-1/2 w-72 md:w-80 bg-fintech-card-bg rounded-xl shadow-lg p-6 border border-fintech-border-light z-20"
+            className="absolute bottom-[15%] right-1/2 translate-x-1/2 lg:bottom-[15%] lg:right-[10%] w-72 md:w-80 rounded-xl shadow-lg p-6 z-20 bg-gradient-to-br from-[#10B981] to-[#059669] transform -rotate-12 text-white flex flex-col items-start justify-center"
             variants={cardVariants}
             initial="initial"
             whileInView="animate"
@@ -118,17 +91,8 @@ const LoanProductsShowcaseSection: React.FC = () => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, delay: 0.8 }}
           >
-            <Card className="bg-transparent border-none shadow-none text-left">
-              <CardHeader className="p-0 mb-4">
-                <CardTitle className="text-xl font-semibold text-fintech-text-light">Home Loan</CardTitle>
-              </CardHeader>
-              <CardContent className="p-0">
-                <p className="text-gray-400 text-sm mb-4">Achieve your dream of homeownership with our competitive home loan options.</p>
-                <Link to="/home-loan" className="text-fintech-blue-accent hover:underline flex items-center text-sm font-medium">
-                  Learn More <ArrowRight className="ml-1 h-4 w-4" />
-                </Link>
-              </CardContent>
-            </Card>
+            <ShieldCheck className="h-10 w-10 mb-4" />
+            <p className="text-xl font-semibold leading-tight">Safe Secured Transactions</p>
           </motion.div>
 
           {/* Phone Mockup */}
