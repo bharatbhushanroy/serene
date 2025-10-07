@@ -2,9 +2,8 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-// Removed Card, CardContent, CardHeader, CardTitle imports as they are no longer used for floating cards
 import LoanProductsPhoneMockup from '@/components/LoanProductsPhoneMockup';
-import { ArrowRight, QrCode, Zap, CreditCard, ShieldCheck } from 'lucide-react'; // Added new icons
+import { ArrowRight, QrCode, Zap, CreditCard, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
@@ -41,7 +40,7 @@ const LoanProductsShowcaseSection: React.FC = () => {
           {/* Floating Cards */}
           {/* Top-Left Card: Scan & Pay */}
           <motion.div
-            className="absolute top-[15%] left-1/2 -translate-x-1/2 lg:top-[15%] lg:left-[10%] w-72 md:w-80 rounded-xl shadow-lg p-6 z-20 bg-gradient-to-br from-[#8B5CF6] to-[#6366F1] transform -rotate-12 text-white flex flex-col items-start justify-center"
+            className="absolute top-[15%] left-1/2 -translate-x-1/2 lg:top-[15%] lg:left-[10%] w-64 p-4 md:w-80 md:p-6 rounded-xl shadow-lg z-20 bg-gradient-to-br from-[#8B5CF6] to-[#6366F1] transform -rotate-12 text-white flex flex-col items-start justify-center"
             variants={cardVariants}
             initial="initial"
             whileInView="animate"
@@ -49,13 +48,13 @@ const LoanProductsShowcaseSection: React.FC = () => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <QrCode className="h-10 w-10 mb-4" />
-            <p className="text-xl font-semibold leading-tight">Anytime Anywhere Scan & Pay with UPI</p>
+            <QrCode className="h-8 w-8 md:h-10 md:w-10 mb-3 md:mb-4" />
+            <p className="text-lg md:text-xl font-semibold leading-tight">Anytime Anywhere Scan & Pay with UPI</p>
           </motion.div>
 
           {/* Bottom-Left Card: Credit on UPI */}
           <motion.div
-            className="absolute bottom-[15%] left-1/2 -translate-x-1/2 lg:bottom-[15%] lg:left-[10%] w-72 md:w-80 rounded-xl shadow-lg p-6 z-20 bg-gradient-to-br from-[#F59E0B] to-[#FBBF24] transform rotate-12 text-white flex flex-col items-start justify-center"
+            className="absolute bottom-[15%] left-1/2 -translate-x-1/2 lg:bottom-[15%] lg:left-[10%] w-64 p-4 md:w-80 md:p-6 rounded-xl shadow-lg z-20 bg-gradient-to-br from-[#F59E0B] to-[#FBBF24] transform rotate-12 text-white flex flex-col items-start justify-center"
             variants={cardVariants}
             initial="initial"
             whileInView="animate"
@@ -63,13 +62,13 @@ const LoanProductsShowcaseSection: React.FC = () => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <CreditCard className="h-10 w-10 mb-4" />
-            <p className="text-xl font-semibold leading-tight">Pay Using Credit on UPI with RuPay</p>
+            <CreditCard className="h-8 w-8 md:h-10 md:w-10 mb-3 md:mb-4" />
+            <p className="text-lg md:text-xl font-semibold leading-tight">Pay Using Credit on UPI with RuPay</p>
           </motion.div>
 
           {/* Top-Right Card: Instant Transfer */}
           <motion.div
-            className="absolute top-[15%] right-1/2 translate-x-1/2 lg:top-[15%] lg:right-[10%] w-72 md:w-80 rounded-xl shadow-lg p-6 z-20 bg-gradient-to-br from-[#EC4899] to-[#3B82F6] transform rotate-12 text-white flex flex-col items-start justify-center"
+            className="absolute top-[15%] right-1/2 translate-x-1/2 lg:top-[15%] lg:right-[10%] w-64 p-4 md:w-80 md:p-6 rounded-xl shadow-lg z-20 bg-gradient-to-br from-[#EC4899] to-[#3B82F6] transform rotate-12 text-white flex flex-col items-start justify-center"
             variants={cardVariants}
             initial="initial"
             whileInView="animate"
@@ -77,13 +76,13 @@ const LoanProductsShowcaseSection: React.FC = () => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            <Zap className="h-10 w-10 mb-4" />
-            <p className="text-xl font-semibold leading-tight">Fast & Reliable 24/7 Instant Transfer</p>
+            <Zap className="h-8 w-8 md:h-10 md:w-10 mb-3 md:mb-4" />
+            <p className="text-lg md:text-xl font-semibold leading-tight">Fast & Reliable 24/7 Instant Transfer</p>
           </motion.div>
 
           {/* Bottom-Right Card: Secured Transactions */}
           <motion.div
-            className="absolute bottom-[15%] right-1/2 translate-x-1/2 lg:bottom-[15%] lg:right-[10%] w-72 md:w-80 rounded-xl shadow-lg p-6 z-20 bg-gradient-to-br from-[#10B981] to-[#059669] transform -rotate-12 text-white flex flex-col items-start justify-center"
+            className="absolute bottom-[15%] right-1/2 translate-x-1/2 lg:bottom-[15%] lg:right-[10%] w-64 p-4 md:w-80 md:p-6 rounded-xl shadow-lg z-20 bg-gradient-to-br from-[#10B981] to-[#059669] transform -rotate-12 text-white flex flex-col items-start justify-center"
             variants={cardVariants}
             initial="initial"
             whileInView="animate"
@@ -91,8 +90,8 @@ const LoanProductsShowcaseSection: React.FC = () => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, delay: 0.8 }}
           >
-            <ShieldCheck className="h-10 w-10 mb-4" />
-            <p className="text-xl font-semibold leading-tight">Safe Secured Transactions</p>
+            <ShieldCheck className="h-8 w-8 md:h-10 md:w-10 mb-3 md:mb-4" />
+            <p className="text-lg md:text-xl font-semibold leading-tight">Safe Secured Transactions</p>
           </motion.div>
 
           {/* Phone Mockup */}
