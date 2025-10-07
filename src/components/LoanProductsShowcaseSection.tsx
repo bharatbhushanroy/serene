@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import LoanProductsPhoneMockup from '@/components/LoanProductsPhoneMockup'; // Corrected import
+import { PhoneMockup } from '@/components/PhoneMockup'; // Reverted import
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -139,7 +139,7 @@ const LoanProductsShowcaseSection: React.FC = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="relative z-10"
           >
-            <LoanProductsPhoneMockup /> {/* Used the correct component */}
+            <PhoneMockup /> {/* Reverted to PhoneMockup */}
           </motion.div>
         </div>
 
