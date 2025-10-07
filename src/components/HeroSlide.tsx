@@ -73,11 +73,11 @@ const HeroSlide: React.FC<HeroSlideProps> = ({
   const renderMockup = () => {
     switch (mockupComponent) {
       case 'MobileMockup':
-        return <MobileMockup {...mockupProps} />; // Pass isMobile
+        return <MobileMockup {...mockupProps} />;
       case 'CreditCardMockup':
-        return <CreditCardMockup {...mockupProps} />; // Pass isMobile
+        return <CreditCardMockup {...mockupProps} />;
       case 'LoanApprovedMockup':
-        return <LoanApprovedMockup {...mockupProps} />; // Pass isMobile
+        return <LoanApprovedMockup {...mockupProps} />;
       case 'None':
       default:
         return (
@@ -114,6 +114,19 @@ const HeroSlide: React.FC<HeroSlideProps> = ({
       <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between w-full max-w-7xl gap-12">
         {/* Left content */}
         <div className="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0 z-10">
+          {/* New: India's #1 All In One Super APP */}
+          <motion.div
+            variants={itemVariants}
+            initial="hidden"
+            animate="visible"
+            className="mb-6"
+          >
+            <h2 className="text-4xl md:text-5xl font-extrabold leading-tight text-white">
+              India's #1 <br className="sm:hidden" />
+              <span className="text-fintech-orange-accent">All In One Super APP</span>
+            </h2>
+          </motion.div>
+
           <motion.span variants={itemVariants} initial="hidden" animate="visible" className="inline-block bg-fintech-orange-accent text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">
             {badgeText}
           </motion.span>
