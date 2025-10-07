@@ -121,8 +121,8 @@ const HeroSlide: React.FC<HeroSlideProps> = ({
             animate="visible"
             className="mb-6"
           >
-            <h2 className="text-4xl md:text-5xl font-extrabold leading-tight text-white">
-              India's #1 <br className="sm:hidden" />
+            <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">
+              <span className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-transparent bg-clip-text">India's #1</span> <br className="sm:hidden" />
               <span className="text-fintech-orange-accent">All In One Super APP</span>
             </h2>
           </motion.div>
@@ -130,8 +130,8 @@ const HeroSlide: React.FC<HeroSlideProps> = ({
           <motion.span variants={itemVariants} initial="hidden" animate="visible" className="inline-block bg-fintech-orange-accent text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">
             {badgeText}
           </motion.span>
-          <motion.h1 variants={containerVariants} initial="hidden" animate="visible" className="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6">
-            <motion.span variants={itemVariants}>{titlePart1}</motion.span>{' '}
+          <motion.h1 variants={containerVariants} initial="hidden" animate="visible" className="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+            <motion.span variants={itemVariants} className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-transparent bg-clip-text">{titlePart1}</motion.span>{' '}
             <motion.span
               variants={gradientTextVariants}
               className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-transparent bg-clip-text bg-[length:200%_auto] animate-gradient-flow"
@@ -139,7 +139,7 @@ const HeroSlide: React.FC<HeroSlideProps> = ({
               {gradientWord1}
             </motion.span>{' '}
             <br className="hidden md:block" />
-            <motion.span variants={itemVariants}>{titlePart2}</motion.span>{' '}
+            <motion.span variants={itemVariants} className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-transparent bg-clip-text">{titlePart2}</motion.span>{' '}
             <motion.span
               variants={gradientTextVariants}
               className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-transparent bg-clip-text bg-[length:200%_auto] animate-gradient-flow"
@@ -157,7 +157,7 @@ const HeroSlide: React.FC<HeroSlideProps> = ({
               </Button>
             </Link>
             <Link to={ctaButton2Link}>
-              <Button variant="outline" className="bg-transparent border-gray-700 text-gray-200 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-800 hover:border-fintech-blue-accent transition-colors">
+              <Button variant="outline" className="bg-transparent border-gray-700 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-800 hover:border-fintech-blue-accent transition-colors bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-transparent bg-clip-text">
                 {ctaButton2Text}
               </Button>
             </Link>
