@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { PhoneMockup } from '@/components/PhoneMockup'; // Reverted import
+import LoanProductsPhoneMockup from '@/components/LoanProductsPhoneMockup'; // Corrected import
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -41,7 +41,7 @@ const LoanProductsShowcaseSection: React.FC = () => {
           {/* Floating Cards */}
           {/* Top-Left Card: Loan against Mutual Fund */}
           <motion.div
-            className="absolute top-10 left-1/2 -translate-x-1/2 lg:top-20 lg:left-1/4 lg:-translate-x-1/2 w-72 md:w-80 bg-fintech-card-bg rounded-xl shadow-lg p-6 border border-fintech-border-light z-20"
+            className="absolute top-10 left-1/2 -translate-x-1/2 lg:top-20 lg:left-1/4 lg:-translate-x-1/2 w-72 md:w-80 bg-fintech-card-bg rounded-xl shadow-lg p-6 border border-fintech-border-light z-20" // z-20 for cards
             variants={cardVariants}
             initial="initial"
             whileInView="animate"
@@ -64,7 +64,7 @@ const LoanProductsShowcaseSection: React.FC = () => {
 
           {/* Bottom-Left Card: Personal Loan */}
           <motion.div
-            className="absolute bottom-10 left-1/2 -translate-x-1/2 lg:bottom-20 lg:left-1/4 lg:-translate-x-1/2 w-72 md:w-80 bg-fintech-card-bg rounded-xl shadow-lg p-6 border border-fintech-border-light z-20"
+            className="absolute bottom-10 left-1/2 -translate-x-1/2 lg:bottom-20 lg:left-1/4 lg:-translate-x-1/2 w-72 md:w-80 bg-fintech-card-bg rounded-xl shadow-lg p-6 border border-fintech-border-light z-20" // z-20 for cards
             variants={cardVariants}
             initial="initial"
             whileInView="animate"
@@ -87,7 +87,7 @@ const LoanProductsShowcaseSection: React.FC = () => {
 
           {/* Top-Right Card: Business Loan */}
           <motion.div
-            className="absolute top-10 right-1/2 translate-x-1/2 lg:top-20 lg:right-1/4 lg:translate-x-1/2 w-72 md:w-80 bg-fintech-card-bg rounded-xl shadow-lg p-6 border border-fintech-border-light z-20"
+            className="absolute top-10 right-1/2 translate-x-1/2 lg:top-20 lg:right-1/4 lg:translate-x-1/2 w-72 md:w-80 bg-fintech-card-bg rounded-xl shadow-lg p-6 border border-fintech-border-light z-20" // z-20 for cards
             variants={cardVariants}
             initial="initial"
             whileInView="animate"
@@ -110,7 +110,7 @@ const LoanProductsShowcaseSection: React.FC = () => {
 
           {/* Bottom-Right Card: Home Loan */}
           <motion.div
-            className="absolute bottom-10 right-1/2 translate-x-1/2 lg:bottom-20 lg:right-1/4 lg:translate-x-1/2 w-72 md:w-80 bg-fintech-card-bg rounded-xl shadow-lg p-6 border border-fintech-border-light z-20"
+            className="absolute bottom-10 right-1/2 translate-x-1/2 lg:bottom-20 lg:right-1/4 lg:translate-x-1/2 w-72 md:w-80 bg-fintech-card-bg rounded-xl shadow-lg p-6 border border-fintech-border-light z-20" // z-20 for cards
             variants={cardVariants}
             initial="initial"
             whileInView="animate"
@@ -137,9 +137,9 @@ const LoanProductsShowcaseSection: React.FC = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="relative z-10"
+            className="relative z-10" // z-10 for phone mockup
           >
-            <PhoneMockup /> {/* Reverted to PhoneMockup */}
+            <LoanProductsPhoneMockup /> {/* Used the correct component */}
           </motion.div>
         </div>
 
