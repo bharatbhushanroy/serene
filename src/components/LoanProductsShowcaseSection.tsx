@@ -40,7 +40,7 @@ const LoanProductsShowcaseSection: React.FC = () => {
           {/* Floating Cards */}
           {/* Top-Left Card: Scan & Pay */}
           <motion.div
-            className="absolute top-[15%] left-1/2 -translate-x-1/2 lg:top-[15%] lg:left-[10%] w-64 p-4 md:w-80 md:p-6 rounded-xl shadow-lg z-20 bg-gradient-to-br from-[#8B5CF6] to-[#6366F1] transform -rotate-12 text-white flex flex-col items-start justify-center"
+            className="absolute top-10 left-1/2 -translate-x-1/2 lg:top-[15%] lg:left-[10%] w-64 p-4 md:w-80 md:p-6 rounded-xl shadow-lg z-20 bg-gradient-to-br from-[#8B5CF6] to-[#6366F1] transform lg:-rotate-12 text-white flex flex-col items-start justify-center"
             variants={cardVariants}
             initial="initial"
             whileInView="animate"
@@ -54,7 +54,7 @@ const LoanProductsShowcaseSection: React.FC = () => {
 
           {/* Bottom-Left Card: Credit on UPI */}
           <motion.div
-            className="absolute bottom-[15%] left-1/2 -translate-x-1/2 lg:bottom-[15%] lg:left-[10%] w-64 p-4 md:w-80 md:p-6 rounded-xl shadow-lg z-20 bg-gradient-to-br from-[#F59E0B] to-[#FBBF24] transform rotate-12 text-white flex flex-col items-start justify-center"
+            className="absolute bottom-10 left-1/2 -translate-x-1/2 lg:bottom-[15%] lg:left-[10%] w-64 p-4 md:w-80 md:p-6 rounded-xl shadow-lg z-20 bg-gradient-to-br from-[#F59E0B] to-[#FBBF24] transform lg:rotate-12 text-white flex flex-col items-start justify-center"
             variants={cardVariants}
             initial="initial"
             whileInView="animate"
@@ -68,7 +68,7 @@ const LoanProductsShowcaseSection: React.FC = () => {
 
           {/* Top-Right Card: Instant Transfer */}
           <motion.div
-            className="absolute top-[15%] right-1/2 translate-x-1/2 lg:top-[15%] lg:right-[10%] w-64 p-4 md:w-80 md:p-6 rounded-xl shadow-lg z-20 bg-gradient-to-br from-[#EC4899] to-[#3B82F6] transform rotate-12 text-white flex flex-col items-start justify-center"
+            className="absolute top-10 right-1/2 translate-x-1/2 lg:top-[15%] lg:right-[10%] w-64 p-4 md:w-80 md:p-6 rounded-xl shadow-lg z-20 bg-gradient-to-br from-[#EC4899] to-[#3B82F6] transform lg:rotate-12 text-white flex flex-col items-start justify-center"
             variants={cardVariants}
             initial="initial"
             whileInView="animate"
@@ -82,7 +82,7 @@ const LoanProductsShowcaseSection: React.FC = () => {
 
           {/* Bottom-Right Card: Secured Transactions */}
           <motion.div
-            className="absolute bottom-[15%] right-1/2 translate-x-1/2 lg:bottom-[15%] lg:right-[10%] w-64 p-4 md:w-80 md:p-6 rounded-xl shadow-lg z-20 bg-gradient-to-br from-[#10B981] to-[#059669] transform -rotate-12 text-white flex flex-col items-start justify-center"
+            className="absolute bottom-10 right-1/2 translate-x-1/2 lg:bottom-[15%] lg:right-[10%] w-64 p-4 md:w-80 md:p-6 rounded-xl shadow-lg z-20 bg-gradient-to-br from-[#10B981] to-[#059669] transform lg:-rotate-12 text-white flex flex-col items-start justify-center"
             variants={cardVariants}
             initial="initial"
             whileInView="animate"
