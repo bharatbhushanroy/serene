@@ -120,7 +120,7 @@ const MemberTestimonialsSection: React.FC<MemberTestimonialsSectionProps> = () =
     {
       icon: Scale, // Using Scale for loan volume
       title: "Loan Volume",
-      value: "₹500Cr+",
+      value: "₹70Cr",
       valueColor: "text-fintech-gradient-pink-start",
       iconColor: "bg-fintech-gradient-pink-start/20",
     },

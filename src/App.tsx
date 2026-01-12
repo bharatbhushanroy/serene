@@ -69,7 +69,7 @@ const App = () => (
             <Route path="/products/personal-loan" element={<PersonalLoanPage />} />
             <Route path="/products/business-loan" element={<BusinessLoanPage />} />
             <Route path="/products/home-loan" element={<HomeLoanPage />} />
-            <Route path="/products/free-credit-score" element={<FreeCreditScorePage />} />
+            {/* <Route path="/products/free-credit-score" element={<FreeCreditScorePage />} /> */}
             <Route path="/products/credit-cards" element={<CreditCardsPage />} />
             <Route path="/products/personal-finance" element={<PersonalFinancePage />} />
           </Route>

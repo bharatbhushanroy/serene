@@ -143,7 +143,7 @@ const AboutUs = () => {
         {/* Existing Sections */}
         <EthosSection />
         <TeamSection />
-        <GrowthStorySection />
+        {/* <GrowthStorySection /> */}
 
         <motion.div
           className="text-center mt-20 py-20 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto"

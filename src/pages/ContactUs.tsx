@@ -112,15 +112,15 @@ const ContactUs = () => {
                 </div>
                 <div className="flex items-start">
                   <MapPin className="h-6 w-6 text-fintech-blue-accent mr-3 mt-1" />
-                  <span>123 Financial Street, Suite 400, Metropolis, State 12345</span>
+                  <span>Shubhjivan Arcade, A-902, Swami Vivekananda Rd,<br /> near Borivali Station, opp. Moksh Plaza, Mhatre Wadi, Borivali West, Mumbai, Maharashtra 400092</span>
                 </div>
               </div>
             </Card>
 
             {/* Optional: Map Placeholder */}
-            <Card className="bg-fintech-simulator-card-bg border border-fintech-border-light p-8 rounded-xl shadow-lg h-64 flex items-center justify-center">
+            {/* <Card className="bg-fintech-simulator-card-bg border border-fintech-border-light p-8 rounded-xl shadow-lg h-64 flex items-center justify-center">
               <p className="text-fintech-text-muted text-lg">Map Placeholder</p>
-            </Card>
+            </Card> */}
           </div>
         </div>
       </main>

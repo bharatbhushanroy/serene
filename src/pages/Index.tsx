@@ -44,8 +44,8 @@ const Index = () => {
         <InteractiveLoanSimulatorSection />
         <LoanComparisonCalculator />
         <CredClubInspiredSection />
-        <AllInOneFinancialAppSection />
-        <UpiSection />
+        {/* <AllInOneFinancialAppSection /> */}
+        {/* <UpiSection /> */}
         <TopUpLoansSection />
         <InsuranceSection />
         <ApplyStepsSection />

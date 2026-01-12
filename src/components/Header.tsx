@@ -89,10 +89,10 @@ const Header = () => {
         </Link>
       </nav>
       <div className="hidden lg:flex items-center space-x-4">
-        <ThemeToggle />
-        <Link to="/login"><Button variant="ghost" className="flex items-center text-fintech-header-text hover:bg-fintech-header-bg/50">
+        {/* <ThemeToggle /> */}
+        {/* <Link to="/login"><Button variant="ghost" className="flex items-center text-fintech-header-text hover:bg-fintech-header-bg/50">
           <LogIn className="h-4 w-4 mr-2" /> Login
-        </Button></Link>
+        </Button></Link> */}
         <Link to="/apply-loan">
           <Button className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-6 py-2 rounded-full hover:opacity-90 transition-opacity flex items-center group">
             Apply Now <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
