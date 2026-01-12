@@ -166,7 +166,7 @@ const AboutUs = () => {
         </motion.div>
       </main>
       <Footer />
-      <MadeWithDyad />
+      {/* <MadeWithDyad /> */}
     </div>
   );
 };

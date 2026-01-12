@@ -19,7 +19,7 @@ const CarLoanEMICalculatorPage = () => {
         <CarLoanEMICalculator />
       </main>
       <Footer />
-      <MadeWithDyad />
+      {/* <MadeWithDyad /> */}
     </div>
   );
 };

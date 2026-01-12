@@ -119,7 +119,7 @@ const PersonalFinancePage = () => {
 
       </main>
       <Footer />
-      <MadeWithDyad />
+      {/* <MadeWithDyad /> */}
     </div>
   );
 };

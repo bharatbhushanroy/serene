@@ -81,7 +81,7 @@ const Blog = () => {
 
       </main>
       <Footer />
-      <MadeWithDyad />
+      {/* <MadeWithDyad /> */}
     </div>
   );
 };

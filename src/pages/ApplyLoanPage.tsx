@@ -125,7 +125,7 @@ const ApplyLoanPage = () => {
         </motion.div>
       </main>
       <Footer />
-      <MadeWithDyad />
+      {/* <MadeWithDyad /> */}
     </div>
   );
 };
