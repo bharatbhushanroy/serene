@@ -24,7 +24,7 @@ const indianCreditCards: CreditCardData[] = [
   {
     bank: "HDFC Bank",
     cardName: "Regalia Credit Card",
-    image: "https://www.hdfcbank.com/content/api/contentstream-id/staticfile/20230920100000-regalia-card-image.png", // Example image
+    image: "/cards/HDFCRegalia.webp", // Example image
     features: [
       { icon: Star, text: "Reward Points on every spend" },
       { icon: Gift, text: "Complimentary Airport Lounge Access" },
@@ -36,7 +36,7 @@ const indianCreditCards: CreditCardData[] = [
   {
     bank: "ICICI Bank",
     cardName: "Amazon Pay ICICI Bank Credit Card",
-    image: "https://www.icicibank.com/content/dam/icicibank/india/managed-assets/images/personal/cards/credit-card/amazon-pay-icici-bank-credit-card/amazon-pay-icici-bank-credit-card-new.png", // Example image
+    image: "/cards/Amazoncard.jpg", // Example image
     features: [
       { icon: PiggyBank, text: "5% Cashback on Amazon India" },
       { icon: Shield, text: "No Annual Fee" },
@@ -48,7 +48,7 @@ const indianCreditCards: CreditCardData[] = [
   {
     bank: "SBI Card",
     cardName: "SimplyCLICK Credit Card",
-    image: "https://www.sbicard.com/sbi-card-en/assets/images/personal/credit-cards/simplyclick-sbi-card.png", // Example image
+    image: "/cards/SBISimplyCLICK.webp", // Example image
     features: [
       { icon: Star, text: "10X Rewards on Online Spends" },
       { icon: Percent, text: "Fuel Surcharge Waiver" },
@@ -60,7 +60,7 @@ const indianCreditCards: CreditCardData[] = [
   {
     bank: "Axis Bank",
     cardName: "Magnus Credit Card",
-    image: "https://www.axisbank.com/images/default-source/revamp_images/cards/credit-cards/magnus-credit-card.png", // Example image
+    image: "/cards/MagnusCreditCard.jpg", // Example image
     features: [
       { icon: Star, text: "Premium Travel Benefits" },
       { icon: Gift, text: "Complimentary Flights" },

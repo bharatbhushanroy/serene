@@ -189,12 +189,12 @@ const MoneyForEverythingSection: React.FC<MoneyForEverythingSectionProps> = () =
             <p className="text-gray-200 mb-8">
               Experience financial flexibility with Qicky. Only pay interest on the amount you actually borrow, not the entire approved limit.
             </p>
-            <Link to="/signup">
+            <Link to="/apply-loan">
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-fintech-button-primary-gradient-start to-fintech-button-primary-gradient-end text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-colors group"
               >
-                Sign Up Now <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                Apply Now <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
             <p className="text-xs text-gray-300 mt-2">*Terms & Conditions Apply</p>
