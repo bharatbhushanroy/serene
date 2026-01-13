@@ -39,14 +39,14 @@ const Index = () => {
         <QuickLoansFeaturesSection /> {/* Moved to 4th position */}
         <FeaturesSection />
         <MoneyForEverythingSection />
-        <LoanProductsShowcaseSection />
+        {/* <LoanProductsShowcaseSection /> */}
         <LoanProductsSection />
         <InteractiveLoanSimulatorSection />
         <LoanComparisonCalculator />
         <CredClubInspiredSection />
         {/* <AllInOneFinancialAppSection /> */}
         {/* <UpiSection /> */}
-        <TopUpLoansSection />
+        {/* <TopUpLoansSection /> */}
         <InsuranceSection />
         <ApplyStepsSection />
         <MemberTestimonialsSection />
