@@ -32,6 +32,7 @@ import InteractiveLoanSimulatorPage from "./pages/InteractiveLoanSimulatorPage";
 import FixedDepositCalculatorPage from "./pages/FixedDepositCalculatorPage";
 import RecurringDepositCalculatorPage from "./pages/RecurringDepositCalculatorPage";
 import CarLoanEMICalculatorPage from "./pages/CarLoanEMICalculatorPage";
+import ScrollToTop from "./components/ScrollToTop";
 
 // Lazy load the AiChatbot component
 const LazyAiChatbot = React.lazy(() => import("./components/AiChatbot"));
@@ -44,6 +45,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+       <ScrollToTop />
         <Routes>
           <Route element={<RootLayout />}>
             <Route path="/" element={<Index />} />
