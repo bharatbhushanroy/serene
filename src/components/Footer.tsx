@@ -131,7 +131,7 @@ const Footer = () => {
         transition={{ duration: 0.5, ease: "easeOut", delay: 0.5 }}
         className="mt-12 pt-8 border-t border-gray-800/50 text-center text-sm text-gray-400"
       >
-        &copy; {new Date().getFullYear()} Qicky. All rights reserved.
+        Copyright © 2026 QICKY GLOBALTECH PRIVATE LIMITED All rights reserved.
       </motion.div>
     </footer>
   );
